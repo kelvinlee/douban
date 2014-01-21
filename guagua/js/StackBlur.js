@@ -82,7 +82,7 @@ function stackBlurImage( imageID, canvasID, radius, blurAlphaChannel )
  	var img = document.getElementById( imageID );
 	var w = img.width;
   var h = img.height;
-  console.log(w,h);
+  // console.log(w,h);
 	var canvas = document.getElementById( canvasID );
       
     // canvas.style.width  = w + "px";
@@ -93,7 +93,7 @@ function stackBlurImage( imageID, canvasID, radius, blurAlphaChannel )
     var context = canvas.getContext("2d");
     context.clearRect( 0, 0, w, h );
     context.drawImage( img, 0, 0, w, h);
-    console.log(img);
+    // console.log(img);
 	if ( isNaN(radius) || radius < 1 ) return;
 	
 	if ( blurAlphaChannel )

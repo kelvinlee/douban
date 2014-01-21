@@ -1,7 +1,7 @@
 # here is your CoffeeScript.
 size = 
-	w:720
-	h:1080
+	w:640
+	h:960
 canvas = {}
 ctx = {}
 # 完成百分比,显示 不能高于85
@@ -16,69 +16,11 @@ prev = {x:-1,y:-1}
 GameEndBool = true
 # first step
 
-firstStep = ->
-	body = $ 'body'
-	if body.width() > size.w 
-		$("#loading span").text '请使用手机浏览,并刷新.'
-		return false
-	ran = parseInt Math.random()*100
-	src = "img/bg-1.jpg"
-	if ran > rxl
-		model = 2
-		src = "img/bg-2.jpg"
-	img = document.getElementById 'img'
-	img.onload = loadimg
-	img.src = src;
 
-loadimg = ->
-	body = $ 'body'
-	obsize = {} 
-	epsize = 
-		w:body.width()
-		h:body.height()
-	if epsize.h>size.h
-		obsize.h = epsize.h
-		$('#img').height obsize.h
-		$('#img,#canvas').css 
-			'margin-left':'-'+$('#img').width()/2+'px'
-	else
-		if size.w>epsize.w
-			$('#img').width epsize.w
-			$('#img,#canvas').css 
-				'margin-left':'-'+$('#img').width()/2+'px'
-	$("#canvas").attr 'width':$('#img').width()
-	$("#canvas").attr 'height':$('#img').height()
-	canvas = stackBlurImage "img", "canvas", 20, false
-	ctx = canvas.getContext '2d'
-	ctx.globalCompositeOperation = "destination-out"
-	ctx.lineWidth = r
-	ctx.lineCap = 'round'
-	ctx.lineJoin = 'round'
-	ctx.beginPath()
-	# 关闭loading
-	$("#loading").fadeOut 500
-	GameEndBool = false
+movexx = ->
 	$("#note").css
-		"top":"50%"
-	$("#fly").addClass 'b'+model
-	setTimeout ->
-		$("#note").css
-			"top":"101%"
-			"margin":"0px"
-	,2000
-	ss = new Snow 20, 60
-
-$(document).ready -> 
-	
-	$(document).on 'touchstart',->
-		return false if GameEndBool
-		mouseMove()
-		document.addEventListener "touchmove",mouseMove
-	$(document).on 'touchend', ->
-		return false if GameEndBool
-		document.removeEventListener "touchmove",mouseMove
-		checkCanvas()
-		r = 70
+		"top":"101%"
+		"margin":"0px"
 checkCanvas = ->
 	prev =
 		x:-1
@@ -91,7 +33,6 @@ checkCanvas = ->
 			index = y * imageData.width + x
 			p = index * 4
 			op++ if imageData.data[p + offset] is 0
-	# console.log imageData.data[0 + offset],op,imageData.data.length
 	ps = (op/imageData.data.length*4*100)
 	# console.log ps+"%"
 	if parseInt(ps) > pshow#65
@@ -103,16 +44,6 @@ mouseMove = (ev)->
 	ev.preventDefault()
 	mousePos = mouseCoords ev
 	mouse = mouseOver mousePos
-	# for(var i=0;i<=r;i++)
-	# for(var j=0;j<=r;j++)
-	# for i in [0..r]
-	# 	for j in [0..r]
-	# 		result1 = r*r - (i*i+j*j)
-	# 		if result1>=0
-	# 			ctx.clearRect mouse.x+i-9,mouse.y+j,1,1
-	# 			ctx.clearRect mouse.x-i-9,mouse.y+j,1,1
-	# 			ctx.clearRect mouse.x-i-9,mouse.y-j,1,1
-	# 			ctx.clearRect mouse.x+i-9,mouse.y-j,1,1
 	return '' if mouse.x < 0 && mouse.y < 0
 	clearMove mouse.x,mouse.y
 	r++ if r <=42
@@ -123,6 +54,7 @@ clearMove = (x,y)->
 		prev.x = x
 		prev.y = y
 		ctx.moveTo x,y
+		movexx()
 		return false
 	if prev.y < 0
 		prev.x = x
@@ -162,6 +94,66 @@ GameEnd = ->
 	$("#replay").swipe
 		tap: (e,t)->
 			window.location.reload()
+loadimg = ->
+	body = $ 'body'
+	obsize = {} 
+	epsize = 
+		w:body.width()
+		h:body.height()
+	$('#img').width epsize.w
+	$('#img,#canvas').css 
+		'margin-left':'-'+$('#img').width()/2+'px'
+	if epsize.h>size.h
+		obsize.h = epsize.h
+		$('#img').height obsize.h
+		$('#img,#canvas').css 
+			'margin-left':'-'+$('#img').width()/2+'px'
+	else
+		if size.w>epsize.w
+			$('#img').width epsize.w
+			$('#img,#canvas').css 
+				'margin-left':'-'+$('#img').width()/2+'px'
+	$("#canvas").attr 'width':$('#img').width()
+	$("#canvas").attr 'height':$('#img').height()
+	canvas = stackBlurImage "img", "canvas", 20, false
+	ctx = canvas.getContext '2d'
+	ctx.globalCompositeOperation = "destination-out"
+	ctx.lineWidth = r
+	ctx.lineCap = 'round'
+	ctx.lineJoin = 'round'
+	ctx.beginPath()
+	# 关闭loading
+	# $("#loading").fadeOut 500
+	$("#loading").hide()
+	GameEndBool = false
+	$("#note").css
+		"top":"50%"
+	$("#fly").addClass 'b'+model
+	# setTimeout movexx,2000
+	ss = new Snow 20, 60
+firstStep = ->
+	body = $ 'body'
+	if body.width() > size.w 
+		$("#loading span").text '请使用手机浏览,并刷新.'
+		return false
+	ran = parseInt Math.random()*100
+	src = "img/bg-1.jpg"
+	if ran > rxl
+		model = 2
+		src = "img/bg-2.jpg"
+	img = document.getElementById 'img'
+	img.onload = loadimg
+	img.src = src;
 
-
+$(document).ready -> 
+	
+	$(document).on 'touchstart',->
+		return false if GameEndBool
+		mouseMove()
+		document.addEventListener "touchmove",mouseMove
+	$(document).on 'touchend', ->
+		return false if GameEndBool
+		document.removeEventListener "touchmove",mouseMove
+		checkCanvas()
+		r = 70
 firstStep()
