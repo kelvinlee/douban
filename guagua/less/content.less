@@ -1,0 +1,88 @@
+// here is your style
+.main {
+	.mp();
+	.wh(640px,100%);
+	overflow: hidden;
+	position: relative;
+}
+#canvas {
+	.tl(@l:50%);
+	z-index: 200;
+}
+#loading {
+	.tl();
+	.wh(640px,100%);
+	z-index: 999;
+	background:@cw;
+	span {
+		color: red;
+		display: block;
+		.tl(50%);
+		.wh(640px,40px);
+		line-height: 40px;
+		text-align: center;
+		margin-top:-40px;
+		font-size: 24px;
+	}
+}
+.note {
+	.tl(-70px);
+	.wh(640px,70px);
+	.b("../img/note.png",no-repeat,center,center);
+	.tram();
+	.no-text();
+	margin-top:-40px;
+	z-index: 201;
+}
+#replay {
+	.bl(-65px,220px);
+	.wh(199px,65px);
+	.b("../img/replay.png",no-repeat,center,center);
+	z-index: 102;
+	.tram();
+}
+#logo {
+	.tl(-100px,45px);
+	.wh(180px,60px);
+	.b("../img/logo.png",no-repeat,bottom,center);
+	padding-top:40px;
+	z-index: 102;
+	.tram();
+}
+#fly {
+	.bl(130px,-520px);
+	.wh(520px,140px);
+	z-index: 102;
+	.b("../img/fly-1.png",no-repeat,top,left);
+	.tram();
+	.pro {
+		.tr(-30px,30px);
+		.wh(190px,163px);
+	}
+}
+#snowWrap {
+	.tl();
+	.wh(100%,100%);
+	z-index: 101;
+	div{
+		color: #fff; position: absolute; -moz-user-select: none; -webkit-user-select: none; user-select: none; -webkit-text-size-adjust: none;
+		.b("../img/snow.png",no-repeat,center,center);
+		background-size: cover;
+		.no-text();
+	} 
+}
+.b1 {
+	background-image: url("../img/fly-1.png") !important;
+	.pro {
+		.b("../img/pro-1.png",no-repeat,center,center);
+	}
+}
+.b2 {
+	background-image: url("../img/fly-2.png") !important;
+	.pro {
+		.b("../img/pro-2.png",no-repeat,center,center);
+	}
+}
+.op {
+	.tl(@l:50%);
+}

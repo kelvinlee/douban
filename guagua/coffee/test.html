@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+
+    <meta name="viewport" content=" initial-scale=0.80,user-scalable=no" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />   
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+    
+    
+    <title>Pencil</title>
+    <style type="text/css">
+        ul, li{
+            clear:both;
+            list-style:none;
+            margin:0 auto;
+            display: inline; 
+        }
+    
+        html, body {
+            width: 100%;
+            height: 100%;
+             
+        }    
+        
+        #sketch {
+            border: 10px solid gray;
+            height: 100%;
+            position: relative;
+             
+        }
+        #tmp_canvas {
+            position: absolute;
+            left: 0px; right: 0;
+            bottom: 0; top: 0;
+            cursor: crosshair;
+        }
+    </style>
+     
+    <script type="text/javascript">
+
+
+    $(document).ready(function(){
+        var canvas = document.querySelector('#paint');
+        var ctx = canvas.getContext('2d');
+        
+        var sketch = document.querySelector('#sketch');
+        var sketch_style = getComputedStyle(sketch);
+        canvas.width = parseInt(sketch_style.getPropertyValue('width'));
+        canvas.height = parseInt(sketch_style.getPropertyValue('height'));
+        
+        
+        // Creating a tmp canvas
+        var tmp_canvas = document.createElement('canvas');
+        var tmp_ctx = tmp_canvas.getContext('2d');
+        tmp_canvas.id = 'tmp_canvas';
+        tmp_canvas.width = canvas.width;
+        tmp_canvas.height = canvas.height;
+        
+        sketch.appendChild(tmp_canvas);
+
+        var mouse = {x: 0, y: 0};
+        var last_mouse = {x: 0, y: 0};
+        
+        var paint = {
+            init:function(canvasID_, canvas, context, brushImage){
+                this.canvasID_ = canvasID_;
+                this.canvasID = $("#"+canvasID_);
+                this.canvas = canvas;
+                this.context = context;
+                    
+                /** Drawing on Line Paint App */
+                this.context.lineWidth = 5;
+                this.context.lineJoin = 'round';
+                this.context.lineCap = 'round';
+                this.context.strokeStyle = 'red';
+                this.context.fillStyle = 'red';        
+
+                this.color=["#000000","#9E9E9E","#FFFFFF","#8B5742","#FF0000","#FFC125","#00688B","#CDB38B","#CD8C95"];                    
+                                
+                this.lock = false;    
+                this.line = false;                
+                
+                ppts = [];        // Pencil Points                     
+                
+                this.brush = brushImage;
+                this.context.globalAlpha = 1;
+                
+                /** mouse event */                
+                if (this.touchSupported) {
+                    this.mouseDownEvent = "touchstart";
+                    this.mouseMoveEvent = "touchmove";
+                    this.mouseUpEvent = "touchend";
+                }
+                else {
+                    this.mouseDownEvent = "mousedown";
+                    this.mouseMoveEvent = "mousemove";
+                    this.mouseUpEvent = "mouseup";
+                }
+                
+                this.bind();
+            },    
+            bind:function(){
+                var t = this; //paint Instance     
+                this.canvasID.live({        
+                    mousedown: function(e){        
+                    
+                        mouse.x = typeof e.offsetX !== 'undefined' ? e.offsetX : e.layerX;
+                        mouse.y = typeof e.offsetY !== 'undefined' ? e.offsetY : e.layerY;
+                        
+                        ppts.push({x: mouse.x , y: mouse.y}); 
+                        
+                        t.lock=true;
+                    },
+                    mousemove: function(e){                    
+                        if(t.lock){                    
+                            mouse.x = typeof e.offsetX !== 'undefined' ? e.offsetX : e.layerX;
+                            mouse.y = typeof e.offsetY !== 'undefined' ? e.offsetY : e.layerY;                            
+                            
+                            ppts.push({x: mouse.x , y: mouse.y });
+                            
+                            //tmp_ctx.clearRect(0, 0, 2000, 2000);
+                            
+                            //if(t.line == true){ //draw line
+                                t.onPaint();                                                                
+                            //}    
+                            //if(t.line ==false){
+                                //t.drawPoint();    //draw image                                
+                            //}
+                            
+                            
+                        }            
+                    },
+                    mouseleave:function(e){
+                        t.lock = false;    
+                        //ctx.drawImage(tmp_canvas, 0, 0);
+                        //tmp_ctx.clearRect(0, 0, 2000, 2000);        
+                        ppts = [];
+                    },
+                    mouseup: function(e){            
+                        t.lock = false;    
+                        //ctx.drawImage(tmp_canvas, 0, 0);
+                        //tmp_ctx.clearRect(0, 0, 2000, 2000);    
+                        //tmp_ctx.drawImage(canvas, 0, 0);
+                        ppts = [];                
+                    }
+                });    
+
+            },
+            onPaint:function() 
+            {
+                var tmp_ctx = this.context;                    
+                // Tmp canvas is always cleared up before drawing.
+                tmp_ctx.clearRect(0, 0, 2000, 2000);      //取消齿痕； 如果想用橡皮，则注释这句，因为绘图痕迹绘在两个图层中。          
+                
+                if (ppts.length < 3) {
+                    var b = ppts[0];
+                    tmp_ctx.beginPath();
+
+                    tmp_ctx.arc(b.x, b.y, tmp_ctx.lineWidth / 2, 0, Math.PI * 2, !0);
+                    tmp_ctx.fill();
+                    tmp_ctx.closePath();
+                    
+                    return;
+                }                
+                                
+                tmp_ctx.beginPath();
+                tmp_ctx.moveTo(ppts[0].x, ppts[0].y);
+                
+                for (var i = 1; i < ppts.length - 2; i++) {
+                    var c = (ppts[i].x + ppts[i + 1].x) / 2;
+                    var d = (ppts[i].y + ppts[i + 1].y) / 2;                        
+                    tmp_ctx.quadraticCurveTo(ppts[i].x, ppts[i].y, c, d);    
+                }
+                            
+                // For the last 2 points
+                tmp_ctx.quadraticCurveTo(
+                    ppts[i].x,
+                    ppts[i].y,
+                    ppts[i + 1].x,
+                    ppts[i + 1].y
+                );                
+                tmp_ctx.stroke();                
+            },
+            changeColor:function(style,color)
+            {          
+                var t=this;
+                var styleNum = style;
+                var colorNum = color;                
+                
+                console.debug("pen ="+style+", color="+color);
+                
+                t.context.strokeStyle = t.color[colorNum];
+                t.context.fillStyle = t.color[colorNum];    
+                
+                if(styleNum == 0){  //mark pen    
+                    t.line = true;    
+                    t.context.lineWidth = 30;
+                    t.context.globalAlpha = 0.5;
+                    t.context.globalCompositeOperation = 'source-over';         
+                    
+                    console.debug("mark");    
+                    
+                }
+                if(styleNum == 1){  //peicnl   
+                    t.line = true;    
+                    t.context.lineWidth = 5;
+                    t.context.globalAlpha = 1;    
+                    t.context.globalCompositeOperation = 'source-over';    
+                    
+                    console.debug("pencil");    
+                    
+                }
+                if(styleNum == 2){  //resetEraser 
+                    t.line = true;    
+                    //t.context = ctx;
+                    t.resetEraser();
+                }             
+                    
+                
+            },
+            resetEraser:function()
+            {         
+                var t=this; 
+                //t.context = ctx;
+                t.context.lineWidth = 30;
+                t.context.globalAlpha = 1;
+                t.context.globalCompositeOperation = 'destination-out';
+                console.debug("resetEraser");
+            },
+            clear:function()
+            {
+                ppts = [];
+                this.context.globalAlpha = 0;
+                this.context.clearRect(0, 0, this.w, this.h);
+            }
+        };
+            
+        <!-- drawing -->
+        var brush = new Image();    
+        brush.src = "images/color_01.png";        //defalut red
+        brush.onload = function(){     
+            paint.init('tmp_canvas',tmp_canvas,tmp_ctx, brush); 
+        };
+        
+    
+        var style = 1;
+        var color = 1;     
+        $('.tool> li > a').click(function() {            
+            var idx = $('.tool> li > a').index(this);            
+            style = idx;
+            paint.changeColor(style, color);    
+            
+            if(idx == 2){
+                //paint.init('paint',paint,ctx, brush);
+            }
+        });
+
+        $('.brush > li > a').click(function() {            
+            var idx = $('.brush > li > a').index(this);                
+            var i = idx + 1;
+            
+            //brush.src = "images/color_0"+i+".png";                
+            color = idx;
+            paint.changeColor(style, color);    
+        });
+    
+    });
+    </script>
+</head>
+        
+
+<body>
+    
+    <div class="pencil">    
+        <ul class="tool">                                
+            <li><a class="btn_pen" href="javascript:void(0)"><img src="images/crayon-outline.png" alt=""></a></li>            
+            <li><a class="btn_mark" href="javascript:void(0)"><img src="images/marker-outline.png" alt=""></a></li>            
+            <li><a class="btn_eraser" href="javascript:void(0)"><img src="images/eraser-outline.png" alt=""></a></li>    
+            <li><a class="btn_mark" href="javascript:void(0)"><img src="images/image-outline.png" alt=""></a></li>            
+        </ul>
+        <ul class="brush">
+            <li><a href="javascript: void(0);"><img src="images/color_01.png" /></a></li>
+            <li><a href="javascript: void(0);"><img src="images/color_02.png" /></a></li>
+            <li><a href="javascript: void(0);"><img src="images/color_03.png" /></a></li>
+            <li><a href="javascript: void(0);"><img src="images/color_04.png" /></a></li>
+            <li><a href="javascript: void(0);"><img src="images/color_05.png" /></a></li>
+            <li><a href="javascript: void(0);"><img src="images/color_06.png" /></a></li>
+            <li><a href="javascript: void(0);"><img src="images/color_07.png" /></a></li>
+            <li><a href="javascript: void(0);"><img src="images/color_08.png" /></a></li>
+            <li><a href="javascript: void(0);"><img src="images/color_09.png" /></a></li>
+        </ul>            
+    </div>
+    <div id="sketch">
+        <canvas id="paint"></canvas>
+    </div>
+
+</body>
+</html>
