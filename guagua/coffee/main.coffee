@@ -152,6 +152,8 @@ firstStep = ->
 	img.onload = loadimg
 	img.src = src;
 
+$(window).resize ->
+	loadimg()
 $(document).ready -> 
 	
 	$(document).on 'touchstart',->

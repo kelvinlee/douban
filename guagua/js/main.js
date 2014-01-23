@@ -14,7 +14,7 @@ Fuzzy = 120;
 
 pshow = 65;
 
-rxl = 59;
+rxl = 50;
 
 r = 70;
 
@@ -207,6 +207,10 @@ firstStep = function() {
   img.onload = loadimg;
   return img.src = src;
 };
+
+$(window).resize(function() {
+  return loadimg();
+});
 
 $(document).ready(function() {
   $(document).on('touchstart', function() {
