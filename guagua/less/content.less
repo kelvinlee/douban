@@ -1,7 +1,7 @@
 // here is your style
 .main {
 	.mp();
-	.wh(640px,100%);
+	.wh(100%,100%);
 	overflow: hidden;
 	position: relative;
 }
@@ -26,35 +26,39 @@
 	}
 }
 .note {
-	.tl(-70px);
-	.wh(640px,70px);
+	.tl(-7%);
+	.wh(100%,7%);
 	.b("../img/note.png",no-repeat,center,center);
+	background-size: 50% 100%;
 	.tram();
 	.no-text();
 	margin-top:-40px;
 	z-index: 201;
 }
 #replay {
-	.bl(-65px,220px);
-	.wh(199px,65px);
+	.bl(-7%,35%);
+	.wh(30%,6%);
 	.b("../img/replay.png",no-repeat,center,center);
+	background-size: contain;
 	z-index: 102;
 	.tram();
 }
 #logo {
-	.tl(-100px,45px);
-	.wh(180px,60px);
+	.tl(-20%,2em);
+	.wh(30%,6%);
 	.b("../img/logo.png",no-repeat,bottom,center);
-	padding-top:40px;
+	background-size: contain;
+	padding-top:2em;
 	z-index: 102;
 	.tram();
 }
 #fly {
-	.bl(130px,-520px);
-	.wh(520px,140px);
+	.bl(15%,-100%);
+	.wh(82%,15%);
 	z-index: 102;
 	.b("../img/fly-1.png",no-repeat,top,left);
-	.tram();
+	background-size: cover;
+	.tram(@time:2s);
 	.pro {
 		.tr(-30px,30px);
 		.wh(190px,163px);

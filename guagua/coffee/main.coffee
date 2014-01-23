@@ -4,6 +4,8 @@ size =
 	h:960
 canvas = {}
 ctx = {}
+# 模糊度
+Fuzzy = 120
 # 完成百分比,显示 不能高于85
 pshow = 65
 # 概率基数
@@ -103,9 +105,11 @@ loadimg = ->
 	$('#img').width epsize.w
 	$('#img,#canvas').css 
 		'margin-left':'-'+$('#img').width()/2+'px'
-	if epsize.h>size.h
+	console.log epsize.h,$('#img').height()
+	if epsize.h>=$('#img').height()
 		obsize.h = epsize.h
-		$('#img').height obsize.h
+		$('#img').width 'auto'
+		$('#img').height epsize.h
 		$('#img,#canvas').css 
 			'margin-left':'-'+$('#img').width()/2+'px'
 	else
@@ -115,7 +119,7 @@ loadimg = ->
 				'margin-left':'-'+$('#img').width()/2+'px'
 	$("#canvas").attr 'width':$('#img').width()
 	$("#canvas").attr 'height':$('#img').height()
-	canvas = stackBlurImage "img", "canvas", 20, false
+	canvas = stackBlurImage "img", "canvas", Fuzzy, false
 	ctx = canvas.getContext '2d'
 	ctx.globalCompositeOperation = "destination-out"
 	ctx.lineWidth = r
@@ -130,7 +134,8 @@ loadimg = ->
 		"top":"50%"
 	$("#fly").addClass 'b'+model
 	# setTimeout movexx,2000
-	ss = new Snow 20, 60
+	ss = new Snow 20, 60 if model is 1
+	
 firstStep = ->
 	body = $ 'body'
 	if body.width() > size.w 
@@ -156,4 +161,4 @@ $(document).ready ->
 		document.removeEventListener "touchmove",mouseMove
 		checkCanvas()
 		r = 70
-firstStep()
+	firstStep()

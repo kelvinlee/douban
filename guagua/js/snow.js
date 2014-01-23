@@ -19,8 +19,8 @@ var Snow = (function () {
                 el._ztop = 2 + Math.random() * 5;  
                 el.zleft = Math.random() * snowWrapWidth;  
                 el._zleft = Math.random() < 0.5 ? Math.random() : Math.random() * (-1);  
-                el.style.fontSize = 30 * Math.random() + 'px';  
-                el.style.width = el.style.height = 60 * Math.random() + 'px';  
+                el.style.fontSize = 3 * Math.random() + 'em';  
+                el.style.width = el.style.height = 3 * Math.random() + 'em';  
                 el.style.opacity = 0.5 + Math.random() * 0.5;  
                 el.style.left = el.zleft + 'px';  
                 snowWrap.appendChild(el);  

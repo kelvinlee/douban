@@ -82,7 +82,7 @@ function stackBlurImage( imageID, canvasID, radius, blurAlphaChannel )
  	var img = document.getElementById( imageID );
 	var w = img.width;
   var h = img.height;
-  // console.log(w,h);
+  console.log(w,h);
 	var canvas = document.getElementById( canvasID );
       
     // canvas.style.width  = w + "px";

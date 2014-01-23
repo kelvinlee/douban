@@ -582,7 +582,7 @@ textarea {
 .main {
   margin: 0 auto;
   padding: 0px;
-  width: 640px;
+  width: 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
@@ -617,12 +617,13 @@ textarea {
 }
 .note {
   position: absolute;
-  top: -70px;
+  top: -7%;
   left: 0px;
-  width: 640px;
-  height: 70px;
+  width: 100%;
+  height: 7%;
   background: url("../img/note.png") no-repeat center center;
   background-color: transparent;
+  background-size: 50% 100%;
   -moz-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -633,12 +634,13 @@ textarea {
 }
 #replay {
   position: absolute;
-  bottom: -65px;
-  left: 220px;
-  width: 199px;
-  height: 65px;
+  bottom: -7%;
+  left: 35%;
+  width: 30%;
+  height: 6%;
   background: url("../img/replay.png") no-repeat center center;
   background-color: transparent;
+  background-size: contain;
   z-index: 102;
   -moz-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -647,13 +649,14 @@ textarea {
 }
 #logo {
   position: absolute;
-  top: -100px;
-  left: 45px;
-  width: 180px;
-  height: 60px;
+  top: -20%;
+  left: 2em;
+  width: 30%;
+  height: 6%;
   background: url("../img/logo.png") no-repeat bottom center;
   background-color: transparent;
-  padding-top: 40px;
+  background-size: contain;
+  padding-top: 2em;
   z-index: 102;
   -moz-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -662,17 +665,18 @@ textarea {
 }
 #fly {
   position: absolute;
-  bottom: 130px;
-  left: -520px;
-  width: 520px;
-  height: 140px;
+  bottom: 15%;
+  left: -100%;
+  width: 82%;
+  height: 15%;
   z-index: 102;
   background: url("../img/fly-1.png") no-repeat top left;
   background-color: transparent;
-  -moz-transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  background-size: cover;
+  -moz-transition: all 2s ease;
+  -webkit-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease;
 }
 #fly .pro {
   position: absolute;
