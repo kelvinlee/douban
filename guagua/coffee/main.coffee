@@ -117,8 +117,10 @@ loadimg = ->
 			$('#img').width epsize.w
 			$('#img,#canvas').css 
 				'margin-left':'-'+$('#img').width()/2+'px'
+
 	$("#canvas").attr 'width':$('#img').width()
 	$("#canvas").attr 'height':$('#img').height()
+	# alert $('#img').width()+","+$('#img').height()
 	canvas = stackBlurImage "img", "canvas", Fuzzy, false
 	ctx = canvas.getContext '2d'
 	ctx.globalCompositeOperation = "destination-out"
@@ -138,9 +140,9 @@ loadimg = ->
 	
 firstStep = ->
 	body = $ 'body'
-	if body.width() > size.w 
-		$("#loading span").text '请使用手机浏览,并刷新.'
-		return false
+	# if body.width() > size.w 
+	# 	$("#loading span").text '请使用手机浏览,并刷新.'
+	# 	return false
 	ran = parseInt Math.random()*100
 	src = "img/bg-1.jpg"
 	if ran > rxl

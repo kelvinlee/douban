@@ -197,10 +197,6 @@ loadimg = function() {
 firstStep = function() {
   var body, img, ran, src;
   body = $('body');
-  if (body.width() > size.w) {
-    $("#loading span").text('请使用手机浏览,并刷新.');
-    return false;
-  }
   ran = parseInt(Math.random() * 100);
   src = "img/bg-1.jpg";
   if (ran > rxl) {
