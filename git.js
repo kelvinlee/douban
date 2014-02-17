@@ -21,6 +21,7 @@ var req = http.createServer(function(req,res){
   routes(req,res);
   // exec("ls");
   console.log(req,res);
+  console.log("message");
   res.end(); 
 }).listen(port);
 console.log("Git Douban start.");
