@@ -23,8 +23,6 @@ function routes(req,res) {
 var req = http.createServer(function(req,res){
   res.writeHead(200, {'Content-Type': 'text/plain'}); 
   routes(req,res);
-  // exec("ls");
-  // console.log(req,res);
   console.log("someone coming");
   res.end(); 
 }).listen(port);
