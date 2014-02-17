@@ -4,7 +4,7 @@ var exec = require("child_process").exec;
 var port = 9998;
 
 function finished() {
-  console.log("finished");
+  console.log("finished this git");
 }
 function gitpull(pathname) { 
   console.log(pathname);
