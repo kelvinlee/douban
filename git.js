@@ -20,6 +20,7 @@ var req = http.createServer(function(req,res){
   res.writeHead(200, {'Content-Type': 'text/plain'}); 
   routes(req,res);
   // exec("ls");
+  console.log(req,res);
   res.end(); 
 }).listen(port);
 console.log("Git Douban start.");
