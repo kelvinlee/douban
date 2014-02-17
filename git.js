@@ -7,6 +7,7 @@ function finished() {
   console.log("finished");
 }
 function gitpull(pathname) { 
+  console.log(pathname);
   exec("cd "+pathname+" && git pull",finished);
   // exec("cd /my/demo/douban && git pull");
   return true;
