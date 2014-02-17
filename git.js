@@ -6,15 +6,15 @@ var port = 9998;
 function finished() {
   console.log("finished");
 }
-function gitpull(porject) { 
-  exec("git pull",finished);
+function gitpull(pathname) { 
+  exec("cd "+pathname+" && git pull",finished);
   // exec("cd /my/demo/douban && git pull");
   return true;
 }
 function routes(req,res) {
   var pathname = url.parse(req.url).pathname;
-  if (pathname==="/update" && req.method.toLowerCase()=="post") { 
-    gitpull();
+  if (req.method.toLowerCase()=="post") { 
+    gitpull(pathname);
     console.log("I need run git.");
   }else{
     return "404";
