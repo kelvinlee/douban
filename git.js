@@ -23,7 +23,7 @@ function routes(req,res) {
 var req = http.createServer(function(req,res){
   res.writeHead(200, {'Content-Type': 'text/plain'}); 
   routes(req,res);
-  console.log("someone coming");
+  console.log("someone coming here");
   res.end(); 
 }).listen(port);
 console.log("Git Douban start.");
