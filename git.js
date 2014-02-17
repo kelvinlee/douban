@@ -3,8 +3,12 @@ var url = require('url');
 var exec = require("child_process").exec;
 var port = 9998;
 
+function finished() {
+  console.log("finished");
+}
 function gitpull(porject) { 
-  exec("cd /my/demo/douban && git pull");
+  exec("git pull",finished);
+  // exec("cd /my/demo/douban && git pull");
   return true;
 }
 function routes(req,res) {
@@ -20,8 +24,8 @@ var req = http.createServer(function(req,res){
   res.writeHead(200, {'Content-Type': 'text/plain'}); 
   routes(req,res);
   // exec("ls");
-  console.log(req,res);
-  console.log("message");
+  // console.log(req,res);
+  console.log("someone coming");
   res.end(); 
 }).listen(port);
 console.log("Git Douban start.");
