@@ -4,6 +4,7 @@ var exec = require("child_process").exec;
 var port = 9998;
 
 function finished() {
+  exec("pm2 restart all");
   console.log("finished this git");
 }
 function gitpull(pathname) { 
