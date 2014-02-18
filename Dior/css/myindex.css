@@ -79,10 +79,10 @@ textarea{resize:vertical}
 .header{position:fixed;z-index:100;width:640px;height:123px;background:url("../img/header.jpg") no-repeat top center;background-color:transparent}
 .banner{position:relative;width:640px;height:623px;background:url("../img/banner.jpg") no-repeat bottom center;background-color:transparent}.banner .moreinfo{display:block;text-indent:-9999em;position:absolute;bottom:133px;right:70px;width:190px;height:30px}
 .list{margin:0 auto;padding:0}.list .title{text-indent:-9999em;width:auto;height:90px;margin:20px 0;padding:0}
-.list .cont{margin:0 auto;padding:20px 0}
+.list .contss{margin:0 auto;padding:20px 0}
 .list .image{width:50%;height:auto;float:left;text-align:center}.list .image img{width:226px;height:auto}
-.list .text{width:50%;height:auto;float:right}.list .text label{float:left;font-size:1.6em;line-height:26px;color:#7f3549;font-weight:bold}
-.list .text p{margin:0 20px 14px 80px;padding:0;font-size:1.6em;line-height:26px}
+.list .textshow{width:50%;float:right}.list .textshow label{color:#7f3549;font-weight:bold}
+.list .textshow p{margin:0 20px 14px 0;padding:0;font-size:1.4em;line-height:1.6em}
 .list li .title{text-align:center}
-.list li .lines,.list li .view{padding-top:44px;background:url("../img/lines.jpg") no-repeat top center;background-color:transparent}.list li .lines p,.list li .view p{margin:0;padding:10px 20px;font-size:.8em;line-height:26px;color:#7f3549}.list li .lines p:nth-child(odd),.list li .view p:nth-child(odd){background:#fffbfb}
+.list li .lines,.list li .view{padding-top:44px;background:url("../img/lines.jpg") no-repeat top center;background-color:transparent}.list li .lines p,.list li .view p{float:left;width:600px;margin:0;padding:10px 20px;font-size:1.4em;line-height:1.6em;color:#7f3549}.list li .lines p:nth-child(odd),.list li .view p:nth-child(odd){background:#fffbfb}
 .list li .view{background:url("../img/view.jpg") no-repeat top center;background-color:transparent}

@@ -14,22 +14,25 @@ block content_here
 				- for (var i=0;i<titles.length;i++)
 					li
 						div(class="title",style="background:url(img/title#{i+1}.png) no-repeat center center;") #{titles[i].title}
-						div.cont.clearfix
+						div.contss.clearfix
 							div.image
 								img(src="img/movie#{i+1}.png")
-							div.text
-								label 导演: 
-								p #{titles[i].dy}
-								label 编剧: 
-								p #{titles[i].bj}
-								label 主演: 
-								p #{titles[i].zy}
+							div.textshow
+								p
+									label 导演: 
+									| #{titles[i].dy}
+								p
+									label 编剧: 
+									| #{titles[i].bj}
+								p
+									label 主演: 
+									| #{titles[i].zy}
 
-						div.lines
+						div.lines.clearfix
 							-for(var j=0;j<titles[i].lines.length;j++)
 								p #{titles[i].lines[j]}
 							p &nbsp;
-						div.view
+						div.view.clearfix
 							-for(var k=0;k<titles[i].view.length;k++)
 								p #{titles[i].view[k]}
 

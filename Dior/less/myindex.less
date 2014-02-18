@@ -33,7 +33,7 @@
 		.wh(@h:90px);
 		.mp(20px 0px);
 	}
-	.cont {
+	.contss {
 		.mp(@p:20px 0px);
 	}
 	.image {
@@ -46,20 +46,18 @@
 			// border:solid 1px #ffa4c1;
 		}
 	}
-	.text {
-		.wh(50%);
+	.textshow {
+		width:50%;
 		float: right;
-		label {
-			float:left;
-			font-size: 1.6em;
-			line-height: 26px;
+		label { 
 			color: #7f3549;
 			font-weight: bold;
 		}
 		p {
-			.mp(0px 20px 14px 80px);
-			font-size: 1.6em;
-			line-height: 26px;
+			.mp(0px 20px 14px 0px);
+			// padding-left:320px;
+			font-size: 1.4em;
+			line-height: 1.6em;
 		}
 	}
 	li {
@@ -70,9 +68,11 @@
 			padding-top:44px;
 			.b("../img/lines.jpg",no-repeat,top,center);
 			p {
+				float: left;
+				width: 600px;
 				.mp(0px,10px 20px);
-				font-size: 0.8em;
-				line-height: 26px;
+				font-size: 1.4em;
+				line-height: 1.6em;
 				color: @cttc;
 				&:nth-child(odd) {
 					background: #fffbfb;
