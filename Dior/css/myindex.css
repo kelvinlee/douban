@@ -77,7 +77,7 @@ textarea{resize:vertical}
 .clearfix{*zoom:1}
 @media only screen and (min-width:35em){}@media print,(-o-min-device-pixel-ratio:5/4),(-webkit-min-device-pixel-ratio:1.25),(min-resolution:120dpi){}.main{position:relative;margin:0 auto;padding:0;width:640px;height:auto;background:#fff0f6;font-size:16px}
 .header{position:fixed;z-index:100;width:640px;height:123px;background:url("../img/header.jpg") no-repeat top center;background-color:transparent}
-.banner{position:relative;width:640px;height:623px;background:url("../img/banner.jpg") no-repeat bottom center;background-color:transparent}.banner .moreinfo{display:block;text-indent:-9999em;position:absolute;bottom:133px;right:70px;width:190px;height:30px}
+.banner{position:relative;width:640px;height:476px;background:url("../img/banner.jpg") no-repeat bottom center;background-color:transparent}.banner .moreinfo{display:block;text-indent:-9999em;position:absolute;bottom:3px;right:190px;width:250px;height:30px}
 .list{margin:0 auto;padding:0}.list .title{text-indent:-9999em;width:auto;height:90px;margin:20px 0;padding:0}
 .list .contss{margin:0 auto;padding:20px 0}
 .list .image{width:50%;height:auto;float:left;text-align:center}.list .image img{width:226px;height:auto}
