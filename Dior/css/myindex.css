@@ -80,7 +80,7 @@ textarea{resize:vertical}
 .banner{position:relative;width:640px;height:623px;background:url("../img/banner.jpg") no-repeat bottom center;background-color:transparent}.banner .moreinfo{display:block;text-indent:-9999em;position:absolute;bottom:133px;right:70px;width:190px;height:30px}
 .list{margin:0 auto;padding:0}.list .title{text-indent:-9999em;width:auto;height:90px;margin:20px 0;padding:0}
 .list .cont{margin:0 auto;padding:20px 0}
-.list .image{width:50%;height:auto;float:left;text-align:center}.list .image img{width:226px;height:auto;border-radius:5px;border:solid 1px #ffa4c1}
+.list .image{width:50%;height:auto;float:left;text-align:center}.list .image img{width:226px;height:auto}
 .list .text{width:50%;height:auto;float:right}.list .text label{float:left;font-size:1.6em;line-height:26px;color:#7f3549;font-weight:bold}
 .list .text p{margin:0 20px 14px 80px;padding:0;font-size:1.2em;line-height:26px}
 .list li .title{text-align:center}
