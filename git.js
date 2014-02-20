@@ -2,13 +2,14 @@ var http = require('http');
 var url = require('url');
 var exec = require("child_process").exec;
 var port = 9998;
-
+var Gpath = "";
 function finished() {
-  exec("pm2 restart all");
+  exec("pm2 restart "+Gpath+"app.js");
   console.log("finished this git");
 }
 function gitpull(pathname) { 
   console.log(pathname);
+  Gpath = pathname;
   exec("cd "+pathname+" && git pull",finished);
   // exec("cd /my/demo/douban && git pull");
   return true;

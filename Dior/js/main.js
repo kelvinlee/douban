@@ -69,6 +69,56 @@ Giccoo = (function() {
     return window.open(url, '_blank');
   };
 
+  Giccoo.prototype.fBindCheckBox = function(e) {
+    var $e;
+    $e = this;
+    return e.each(function(i) {
+      var $div, $i;
+      $div = $('<div>').addClass('checkbox-parent ' + $(this).attr('class'));
+      $i = $('<i>');
+      $(this).before($div);
+      $div.addClass($(this).attr('class')).append($(this));
+      $div.append($i);
+      return $(this).change(function() {
+        var $o;
+        $o = $(this);
+        return setTimeout(function() {
+          if ($o.is(':checked')) {
+            return $o.parent().addClass('on');
+          } else {
+            return $o.parent().removeClass('on');
+          }
+        }, 10);
+      });
+    });
+  };
+
+  Giccoo.prototype.fBindSelect = function(e) {
+    var $e;
+    $e = this;
+    return e.each(function(i) {
+      var $div, $i, $span;
+      $div = $('<div>').addClass('select-parent');
+      $span = $('<span>');
+      $i = $('<i>');
+      $(this).before($div);
+      $div.addClass($(this).attr('class')).append($(this));
+      $div.append($span.append($(this).find('option:checked').html()));
+      $div.append($i);
+      return $(this).change(function() {
+        var $o;
+        $o = $(this);
+        return setTimeout(function() {
+          return $e.fChangeSelectVal($o);
+        }, 10);
+      });
+    });
+  };
+
+  Giccoo.prototype.fChangeSelectVal = function(o) {
+    return $(o).next().html($(o).find('option:checked').html());
+  };
+
   return Giccoo;
 
 })();
