@@ -82,8 +82,11 @@ mouseOver = (ev1)->
 		jx = ($("#canvas").width() - body.width())/2
 	{x:ev1.x+jx,y:ev1.y}
 
+PlayMusic = ->
+	document.getElementById('player').play()
 GameEnd = ->
 	GameEndBool = true
+	PlayMusic()
 	# console.log "Game End"
 	$("#canvas").fadeOut 500
 	# console.log "Fade In"
@@ -145,23 +148,29 @@ firstStep = ->
 	# 	return false
 	ran = parseInt Math.random()*100
 	src = "img/bg-1.jpg"
-	if ran > rxl
+	if ran > 33 && ran < 65
 		model = 2
 		src = "img/bg-2.jpg"
+	else if ran > 66
+		model = 3
+		src = "img/bg-3.jpg"
+	console.log ran,model
 	img = document.getElementById 'img'
 	img.onload = loadimg
 	img.src = src;
-
+	# document.getElementById("gua").play()
 $(window).resize ->
 	loadimg()
 $(document).ready -> 
 	
 	$(document).on 'touchstart',->
 		return false if GameEndBool
+		document.getElementById("gua").play()
 		mouseMove()
 		document.addEventListener "touchmove",mouseMove
 	$(document).on 'touchend', ->
 		return false if GameEndBool
+		document.getElementById("gua").pause()
 		document.removeEventListener "touchmove",mouseMove
 		checkCanvas()
 		r = 70
