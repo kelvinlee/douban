@@ -6,7 +6,9 @@ block title
 block content_here 
 	div.main
 		div.header
+			img(src="img/header.jpg",onload="changed(this)")
 		div.banner
+			img(src="img/banner.jpg")
 			a.moreinfo(href="http://m.dior.com/chn/zh/minisite/th/miss_dior.html") Miss Dior
 		div.movie
 			ul.list
@@ -14,11 +16,12 @@ block content_here
 				- var links = ["http://movie.douban.com/subject/1295644/","http://movie.douban.com/subject/1978709/","http://movie.douban.com/subject/1863955/","http://movie.douban.com/subject/1309046/","http://movie.douban.com/subject/1294362/","http://movie.douban.com/subject/1866471/","http://movie.douban.com/subject/1499148/","http://movie.douban.com/subject/1308974/","http://movie.douban.com/subject/3652302/","http://movie.douban.com/subject/2277841/"]
 				- for (var i=0;i<titles.length;i++)
 					li
-						div(class="title",style="background:url(img/title#{i+1}.png) no-repeat center center;") #{titles[i].title}
+						div(class="title")
+							img(src="img/title#{i+1}.png")
 						div.contss.clearfix
 							div.image
 								a(href="#{links[i]}")
-									img(src="img/movie#{i+1}.png")
+									img(src="img/movie#{i+1}.jpg")
 							div.textshow
 								h2
 									label 导演: 
@@ -31,10 +34,14 @@ block content_here
 									| #{titles[i].zy}
 
 						div.lines.clearfix
+							div.titleimg
+								img(src="img/lines.jpg")
 							-for(var j=0;j<titles[i].lines.length;j++)
 								p #{titles[i].lines[j]}
 							p &nbsp;
 						div.views.clearfix
+							div.titleimg
+								img(src="img/view.jpg")
 							-for(var k=0;k<titles[i].view.length;k++)
 								p #{titles[i].view[k]}
 
