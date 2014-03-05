@@ -1,0 +1,13 @@
+extends canvas
+//- 标题
+block title
+
+//- 内容
+block content_here
+	canvas#canvas(width="640",height="920")
+	div.firstframe
+		input#firstface(type="file",name="firstface",accept="image/*")
+	div.secondframe
+		input#secondface(type="file",name="secondface",accept="image/*")
+	div.facehide
+	div#textinfo.textinfo

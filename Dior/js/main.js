@@ -118,6 +118,34 @@ Giccoo = (function() {
     return $(o).next().html($(o).find('option:checked').html());
   };
 
+  Giccoo.prototype.fBindOrientation = function() {
+    window.addEventListener('deviceorientation', this.orientationListener, false);
+    window.addEventListener('MozOrientation', this.orientationListener, false);
+    return window.addEventListener('devicemotion', this.orientationListener, false);
+  };
+
+  Giccoo.prototype.orientationListener = function(evt) {
+    var alpha, beta, gamma;
+    if (!evt.gamma && !evt.beta) {
+      evt.gamma = evt.x * (180 / Math.PI);
+      evt.beta = evt.y * (180 / Math.PI);
+      evt.alpha = evt.z * (180 / Math.PI);
+    }
+    gamma = evt.gamma;
+    beta = evt.beta;
+    alpha = evt.alpha;
+    if (evt.accelerationIncludingGravity) {
+      gamma = event.accelerationIncludingGravity.x * 10;
+      beta = -event.accelerationIncludingGravity.y * 10;
+      alpha = event.accelerationIncludingGravity.z * 10;
+    }
+    if (this._lastGamma !== gamma || this._lastBeta !== beta) {
+      oriencallback(beta.toFixed(2), gamma.toFixed(2), alpha !== (null ? alpha.toFixed(2) : 0), gamma, beta);
+      this._lastGamma = gamma;
+      return this._lastBeta = beta;
+    }
+  };
+
   return Giccoo;
 
 })();

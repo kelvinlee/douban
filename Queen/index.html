@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <script src="js/view.js"></script>
+    <title>
+    </title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/libs/jquery-1.10.2.min.js"></script>
+    <script src="js/libs/easeljs-0.7.1.min.js"></script>
+    <script src="js/libs/tweenjs-0.5.1.min.js"></script>
+    <script src="js/libs/movieclip-0.7.1.min.js"></script>
+    <script src="js/libs/preloadjs-0.4.1.min.js"></script>
+    <script src="js/libs/soundjs-0.5.2.min.js"></script>
+    <script src="js/libs/facedetection/ccv.js"></script>
+    <script src="js/libs/facedetection/face.js"></script>
+    <script src="js/libs/jquery.facedetection.js"></script>
+  </head>
+  <body> 
+    <canvas id="canvas" width="640" height="920"></canvas>
+    <div class="firstframe">
+      <input id="firstface" type="file" name="firstface" accept="image/*">
+    </div>
+    <div class="secondframe">
+      <input id="secondface" type="file" name="secondface" accept="image/*">
+    </div>
+    <div class="facehide"></div>
+    <div id="textinfo" class="textinfo"></div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
