@@ -74,6 +74,9 @@ Giccoo = (function() {
     return e.each(function(i) {
       var $div, $i;
       $div = $('<div>').addClass('checkbox-parent ' + $(this).attr('class'));
+      if ($(this).is(":checked")) {
+        $div.addClass('on');
+      }
       $i = $('<i>');
       $(this).before($div);
       $div.addClass($(this).attr('class')).append($(this));
