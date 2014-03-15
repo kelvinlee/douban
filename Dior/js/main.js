@@ -50,7 +50,9 @@ Giccoo = (function() {
       "qweibo": "http://v.t.qq.com/share/share.php?title={title}&url=",
       "renren": "http://share.renren.com/share/buttonshare.do?title={title}&link={url}",
       "weibo": "http://v.t.sina.com.cn/share/share.php?title={title}&url=",
-      "qzone": "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={url}&title={title}"
+      "qzone": "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={url}&title={title}",
+      "facebook": "http://www.facebook.com/sharer/sharer.php?s=100&p[url]={url}}&p[title]={title}&p[summary]={title}",
+      "twitter": "https://twitter.com/intent/tweet?text={title}"
     };
     return $('a[data-share]').click(function() {
       return $ep.fShare(list[$(this).data('share')], content, url);
@@ -68,15 +70,38 @@ Giccoo = (function() {
     return window.open(url, '_blank');
   };
 
+  Giccoo.prototype.fBindRadio = function(e) {
+    var $e;
+    $e = this;
+    return e.each(function(i) {
+      var $div, $i;
+      $div = $('<div>').addClass('radio-parent ' + $(this).attr('class'));
+      $i = $('<i>');
+      $(this).before($div);
+      $div.addClass($(this).attr('class')).append($(this));
+      $div.append($i);
+      return $(this).change(function() {
+        var $o;
+        $o = $(this);
+        $('[name=' + $o.attr('name') + ']').parent().removeClass('on');
+        console.log($('[name=' + $o.attr('name') + ']'));
+        return setTimeout(function() {
+          if ($o.is(':checked')) {
+            return $o.parent().addClass('on');
+          } else {
+            return $o.parent().removeClass('on');
+          }
+        }, 10);
+      });
+    });
+  };
+
   Giccoo.prototype.fBindCheckBox = function(e) {
     var $e;
     $e = this;
     return e.each(function(i) {
       var $div, $i;
       $div = $('<div>').addClass('checkbox-parent ' + $(this).attr('class'));
-      if ($(this).is(":checked")) {
-        $div.addClass('on');
-      }
       $i = $('<i>');
       $(this).before($div);
       $div.addClass($(this).attr('class')).append($(this));
