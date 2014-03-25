@@ -1,0 +1,123 @@
+extends canvas
+//- 标题
+block title
+	| 滴露 - 细菌别流传 快乐不间断
+
+//- 内容
+block content_here
+	div(style="position: absolute;opacity: 0;")
+		//- img(src="img/thumb.jpg")
+	div.loading
+		div.text
+			span 努力加载中...
+	div.da
+		div.da-box.box
+			div.close
+			div#list.list
+				img(src="img/pop-1.jpg")
+				img(src="img/pop-2.jpg")
+				img(src="img/pop-3.jpg")
+			div.point
+				span.on
+				span
+				span
+	div.main
+		div.logo
+			img(src="img/logo.png")
+		//- div.xiaohai
+			img(src="img/xiaohai.png")
+		div.clouds
+			img(src="img/clouds.png")
+		div.gameinfo
+			div.text
+				img(src="img/textbox.png")
+			div.gamebox
+				div.startgame
+			div.gameoverbox
+				span.score 0
+				div.startgame
+				div.gotoshare
+			div.sharebox
+				a.weibo(href="javascript:void(0)",data-share="weibo")
+				a.qweibo(href="javascript:void(0)",data-share="qweibo")
+		div.menu
+			div.startgame
+			div.proinfo
+				a(href="http://m.51buy.com/t/list/?keyword=滴露#detail(%7B%22pid%22%3A%22137813%22%2C%22_%22%3A1395653925947%7D)",target="_blank")
+			div.activeinfo
+	div#mubu.mubu
+		canvas#canvas(width="640",height="920")
+	div#acinfo.pop.hideda.hidez
+		div.activeinfo-box
+			div.close
+	div#proinfo.pop.hideda.hidez
+		div.proinfo-box
+			div.close
+			div#procontent.content
+				div.item.c1
+					div.img
+						img(src="img/pro-1.jpg")
+					div.infos
+						h2 滴露 薄荷冰爽系列<br/> <span>杀灭引起感冒、肠炎症、食物中毒、皮肤感染的细菌</span>
+						p 快速去除99%引起皮肤感染,异味和肠道感染的细菌。<br/>持续抑菌，全天保护，切断传播<br/>蕴含薄荷精华，冰爽提神
+
+						div.buy
+							a(href="http://www.yhd.com",target="_blank")
+								img(src="img/icon-yhd.jpg")
+								|<br/>前往一号店购买 >>
+							a(href="http://www.jd.com",target="_blank")
+								img(src="img/icon-jd.jpg")
+								|<br/>前往京东京东购买 >>
+							a(href="http://www.tmall.com",target="_blank")
+								img(src="img/icon-tmall.jpg")
+								|<br/>前往天猫京东购买 >>
+							a(href="http://www.amazon.cn",target="_blank")
+								img(src="img/icon-amazon.jpg")
+								|<br/>前往亚马逊购买 >>
+				div.item.c2
+					div.img
+						img(src="img/pro-2.jpg")
+					div.infos
+						h2 滴露 自然清新系列<br/> <span>含柑橘芬芳的自然清新香型，赶走夏日的无精打彩，让您和家人充满活动力！</span>
+						p 快速去除99%引起皮肤感染,异味和肠道感染的细菌。<br/>持续抑菌，全天保护，切断传播<br/>特含柑橘香氛，清新果香舒爽怡人
+
+						div.buy
+							a(href="http://www.yhd.com",target="_blank")
+								img(src="img/icon-yhd.jpg")
+								|<br/>前往一号店购买 >>
+							a(href="http://www.jd.com",target="_blank")
+								img(src="img/icon-jd.jpg")
+								|<br/>前往京东京东购买 >>
+							a(href="http://www.tmall.com",target="_blank")
+								img(src="img/icon-tmall.jpg")
+								|<br/>前往天猫京东购买 >>
+							a(href="http://www.amazon.cn",target="_blank")
+								img(src="img/icon-amazon.jpg")
+								|<br/>前往亚马逊购买 >>
+				div.item.c3
+					div.img
+						img(src="img/pro-3.jpg")
+					div.infos
+						h2 滴露健康抑菌洗手液经典松木<br/> <span>杀灭引起感冒、肠炎症、食物中毒、皮肤感染的细菌</span>
+						p 30秒内快速杀菌，杀菌率大于99.9%<br/>特有的松木清香，森林般的清新感受<br/>持续抑菌，切断细菌传播
+						div.buy
+							a(href="http://www.yhd.com",target="_blank")
+								img(src="img/icon-yhd.jpg")
+								|<br/>前往一号店购买 >>
+							a(href="http://www.jd.com",target="_blank")
+								img(src="img/icon-jd.jpg")
+								|<br/>前往京东京东购买 >>
+							a(href="http://www.tmall.com",target="_blank")
+								img(src="img/icon-tmall.jpg")
+								|<br/>前往天猫京东购买 >>
+							a(href="http://www.amazon.cn",target="_blank")
+								img(src="img/icon-amazon.jpg")
+								|<br/>前往亚马逊购买 >>
+			div.list
+				span.on
+				span
+				span
+
+	//- div.facehide
+	//- div#loading 正在努力加载中...
+	//- canvas#testcan(width="640",height="920",style="border:solid 1px red;")

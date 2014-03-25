@@ -1,0 +1,134 @@
+extends layout
+//- 内容
+block content_here
+	div#loading.loading
+		div.text
+			span.fa-li.fa.fa-spinner.fa-spin
+			span 加载中...
+	div#loading2.loading2
+		div.text
+			span.fa-li.fa.fa-spinner.fa-spin
+			span 玩的FUN 全城拾趣...
+	div.main
+		div.logo
+		div.welcome
+			div.car1
+				//- img(src="img/car1.png")
+			div.car2.hide2
+				//- img(src="img/car2.png")
+			div#point.point.shakeDom
+				img(src="img/PointBar.png")
+		div#shakeremind.shake-remind
+			div.handshake
+			div.point-s.point-small1
+				div.point
+				div.point-base
+			div.point-s.point-small2
+				div.point
+				div.point-base
+			div.point-s.point-small3
+				div.point
+				div.point-base
+		div#map
+		div.pop
+			div.gamevideo
+				div.close
+				h2 视频欣赏
+				div.videolist
+					div.item
+						p 宝来运动款及2014年型上市TVC
+						div.video-item
+							//- iframe(height=320,width=480,src="http://player.youku.com/embed/XNjg3NjcyMzQ0",frameborder=0,allowfullscreen)
+				//- div.videolist-point.point-list
+					span.on
+					span
+			div.carinfo
+				div.close
+				div#carinfo.carinfo-list
+					-for(var i=1;i<=8;i++)
+						div.item
+							img(src="img/yaoyiyao.png",data-src="img/carinfo-#{i}.jpg")
+				div.carinfo-point.point-list
+					-for(var i=1;i<=8;i++)
+						span
+			div.medal
+				img(src="img/medal.png")
+				div.showre
+			div.sharebox
+				div.close
+				h2 您的资料提交成功<br/>工作人员会尽快与您联系,感谢参与.
+				p
+					a(href="javascript:void(0)",data-share="weibo")
+						i.fa.fa-share-square-o
+						|  分享抽奖
+		div.reser
+			h1 保留我的资料
+			form.form(method="post",name="register",action="reservations.php")
+				//- h2.title 预约试驾
+				input#selcar(name="selcar",type="hidden",value="")
+				label 姓名:
+				div.input
+					input#name(name="name",type="text",maxlength="16")
+				//- div.shop
+					select#sex(name="sex")
+						option(value="") 性别
+						option(value="男") 先生
+						option(value="女") 女士
+				label 手机:
+				div.input
+					input#mobile(name="mobile",type="text",maxlength="11",pattern="[0-9]*")
+				//- div.input
+					input#email(name="email",type="text",placeholder="邮箱")
+				label 省份/城市/经销商:
+				div.city
+					select#province(name="province",role="province",data-default="省",target="#city")
+					select#city.l(name="city",role="city",data-default="市",callback="setDealer")
+				div.shop
+					select#dealer(name="dealer")
+						option(value="") 选择经销商
+				label 意向车系：
+				div.shop
+					select#hope(name="hope") 
+				label 意向车型：
+				div.shop
+					select#cartype(name="cartype") 
+				label 预计购车时间：
+				div.shop
+					select#buytime(name="buytime")
+						option(value="不确定")  不确定
+						option(value="一周内")  一周内
+						option(value="二周内")  二周内
+						option(value="一月内")  一月内
+						option(value="三月内")  三月内
+						option(value="六月内")  六月内
+				
+				
+				
+				div.btnlist
+					input(name="submit",type="button",value="确定")
+
+//- css
+block css_here
+//- js
+block js_here
+	//- script.
+		var _smq = _smq || [];
+		_smq.push(['_setAccount', 'c9930ed8', new Date()]);
+		_smq.push(['pageview']);
+		(function() {
+		var sm = document.createElement('script'); sm.type = 'text/javascript'; sm.async = true;
+		sm.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdnmaster.com/sitemaster/sm.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sm, s);
+		})();
+	//- script.
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-29156015-1']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();

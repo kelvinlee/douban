@@ -1,0 +1,59 @@
+extends layout
+//- 内容
+block content_here
+	div#loadingpage
+		div.text 
+			span 加载中... 
+	div.parent
+		div.main
+			div.model1
+			div.model2
+			div.model3
+				div.title
+					img(src="img/1px.gif",width="555",height="203",style="background:url(img/s-3-text.png) repeat center center;")
+				div.ctrl
+					div.left
+						img(src="img/lr.png")
+					div.right
+						img(src="img/lr.png")
+				div.pics
+					div.pics-list.clearfix(style="width:300%")
+						-for(var i=1;i<=3;i++)
+							div.item
+								img(src="img/1px.gif",width="450",height="620",style="background:url(img/p-#{i}.png) repeat center center;")
+				div.points
+					span.on
+					span
+					span
+				div.links
+					a(href="") 
+						img(src="img/p-3-more.png")
+			div.model4(scroll="400")
+				div.title
+					img(src="img/1px.gif",width="640",height="240",data-src="img/s-4-text.png")
+				div.ctrl
+					div.left
+						img(src="img/lr.png")
+					div.right
+						img(src="img/lr.png")
+				div.pics
+					div.pics-list.clearfix(style="width:300%")
+						-for(var i=1;i<=3;i++)
+							div.item
+								img(src="img/1px.gif",width="490",height="300",data-src="img/s-4-#{i}.jpg")
+				div.points
+					span.on
+					span
+					span
+				div.links
+					a(href="") 
+						img(src="img/p-4-more.png")
+			div.model5
+				
+
+
+//- css
+block css_here
+//- js
+block js_here
+	
