@@ -10,7 +10,7 @@ score = 0
 runscore = 0
 canaddBugs = true
 bugsNum = 2
-buglife = 4000
+buglife = 3000
 # game dom
 loadingTxt = {}
 
@@ -37,9 +37,9 @@ window.addEventListener 'load', ->
 backNormal = ->
 	_orien = 1
 	$('.zoom5').removeClass 'zoom5'
-	# $("#canvas").attr
-	# 	width:$("body").width()
-	# 	height:$("body").height()
+	$("#mubu").css
+		width:$("body").width()
+		height:$("body").height()
 GameH = ->
 	_orien = 0 
 	# alert $("body").height()
@@ -48,10 +48,10 @@ GameH = ->
 	# setTimeout ->
 	# 	alert $(".main").height()
 	# ,3000 
-	# $("#canvas").attr
-	# 	width:$(".main").width()
-	# 	height:$(".main").height()
-	$(".logo,.gamebox,.gameoverbox,.sharebox,.menu,.clouds,.da-box,.activeinfo-box,.proinfo-box").addClass 'zoom5'
+	$("#mubu").css
+		width:$("body").width()
+		height:$("body").height()
+	$(".logo,.gameinfo,.menu,.clouds,.da-box,.activeinfo-box,.proinfo-box").addClass 'zoom5'
 	# startGame()
 myGetId = (id)->
 	document.getElementById id
@@ -63,7 +63,7 @@ init = ->
 	# console.log publicH
 	canvas = myGetId 'canvas'
 	# $(canvas).attr 'width',640/document.body.clientWidth
-	# $(canvas).attr 'height',publicH
+	$(canvas).attr 'height',$("#mubu").height()
 	stage = new createjs.Stage canvas
 	# stage.autoClear = false
 	createjs.Touch.enable stage
@@ -237,6 +237,7 @@ randomBugs = (min,max)->
 	h = canvas.height
 	h2 = $(".main").height()
 	random = Math.random()*(max-min)+min
+	h2 = 600 if h2>600
 	for i in [0...random]
 		setTimeout ()->
 			obj = {}
@@ -246,8 +247,9 @@ randomBugs = (min,max)->
 			obj = _dom_bug2.clone() if whos >= 200 && whos <= 299
 			obj = _dom_bug3.clone() if whos >= 300
 			x1 = 110
-			y1 = 330
+			y1 = 260
 			y2 = 220
+			h = h-50
 			if not _orien
 				x1 = 110
 				y1 = 50

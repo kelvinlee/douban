@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta property="og:image" content="http://www.dettol.co.uk/img/logo.gif?date=030243">
     <script src="js/view.js"></script>
     <title>滴露 - 细菌别流传 快乐不间断</title>
     <link rel="stylesheet" href="css/main.css">
@@ -31,20 +32,20 @@
       <div class="logo"><img src="img/logo.png"></div>
       <div class="clouds"><img src="img/clouds.png"></div>
       <div class="gameinfo">
-        <div class="text"><img src="img/textbox.png"></div>
+        <div class="text"><a href="http://www.56.com/u46/v_MTA4NDk0OTcx.html" target="_blank"><img src="img/textbox.png"></a></div>
         <div class="gamebox">
-          <div class="startgame"></div>
+          <div onclick="_smq.push(['custom', '游戏页面', '游戏开始', '开始']);_gaq.push(['_trackEvent', '游戏页面', '游戏开始', '开始']);" class="startgame"></div>
         </div>
         <div class="gameoverbox"><span class="score">0</span>
-          <div class="startgame"></div>
-          <div class="gotoshare"></div>
+          <div onclick="_smq.push(['custom', '游戏页面', '游戏结束', '再玩一次']);_gaq.push(['_trackEvent', '游戏页面', '游戏结束', '再玩一次']);" class="startgame"></div>
+          <div onclick="_smq.push(['custom', '游戏页面', '游戏结束', '微博抽奖']);_gaq.push(['_trackEvent', '游戏页面', '游戏结束', '微博抽奖']);" class="gotoshare"></div>
         </div>
-        <div class="sharebox"><a href="javascript:void(0)" data-share="weibo" class="weibo"></a><a href="javascript:void(0)" data-share="qweibo" class="qweibo"></a></div>
+        <div class="sharebox"><a href="javascript:void(0)" onclick="_smq.push(['custom', '游戏页面', '游戏结束', '分享到新浪微博']);	_gaq.push(['_trackEvent', '游戏页面', '游戏结束', '分享到新浪微博']);" data-share="weibo" class="weibo"></a><a href="javascript:void(0)" onclick="_smq.push(['custom', '游戏页面', '游戏结束', '分享到腾讯微博']);	_gaq.push(['_trackEvent', '游戏页面', '游戏结束', '分享到腾讯微博']);" data-share="qweibo" class="qweibo"></a></div>
       </div>
       <div class="menu">
-        <div class="startgame"></div>
-        <div class="proinfo"><a href="http://m.51buy.com/t/list/?keyword=滴露#detail(%7B%22pid%22%3A%22137813%22%2C%22_%22%3A1395653925947%7D)" target="_blank"></a></div>
-        <div class="activeinfo"></div>
+        <div onclick="_smq.push(['custom', '游戏页面', '导航栏', '互动体验']);	_gaq.push(['_trackEvent', '游戏页面', '导航栏', '互动体验']);" class="startgame"></div>
+        <div class="proinfo"><a onclick="_smq.push(['custom', '游戏页面', '导航栏', '产品介绍']);	_gaq.push(['_trackEvent', '游戏页面', '导航栏', '产品介绍']);" href="http://m.51buy.com/t/list/?keyword=滴露#detail(%7B%22pid%22%3A%22137813%22%2C%22_%22%3A1395653925947%7D)" target="_blank"></a></div>
+        <div onclick="_smq.push(['custom', '游戏页面', '导航栏', '活动说明']);	_gaq.push(['_trackEvent', '游戏页面', '导航栏', '活动说明']);" class="activeinfo"></div>
       </div>
     </div>
     <div id="mubu" class="mubu">
@@ -88,5 +89,28 @@
       </div>
     </div>
     <script src="js/main.js"></script>
+    <script>
+      var _smq = _smq || [];
+      _smq.push(['_setAccount', 'dab924', new Date()]);
+      _smq.push(['pageview']); 
+      (function() {
+      var sm = document.createElement('script'); sm.type = 'text/javascript'; sm.async = true;
+      sm.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdnmaster.com/sitemaster/sm.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sm, s);
+      })();
+    </script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-31714301-1']);
+      _gaq.push(['_addOrganic', 'soso', 'w']);
+      _gaq.push(['_addOrganic', 'sogou', 'query']);
+      _gaq.push(['_addOrganic', 'yodao', 'q']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </body>
 </html>

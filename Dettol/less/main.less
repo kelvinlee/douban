@@ -106,12 +106,13 @@ html,body {
 		opacity: 1;
 		.bl(17%);
 		.wh(100%,430px+120px);
-		.gamebox,.gameoverbox,.sharebox {
 		-webkit-transform-origin: bottom center;
 	   -moz-transform-origin: bottom center;
 	    -ms-transform-origin: bottom center;
 	     -o-transform-origin: bottom center;
 	        transform-origin: bottom center;
+		.gamebox,.gameoverbox,.sharebox {
+		
 			display: none;
 			position: relative;
 			.wh(auto,430px);
@@ -123,8 +124,9 @@ html,body {
 		.gamebox {
 			display: block;
 			.startgame {
-				.tl(250px,180px);
-				.wh(230px,65px);
+				// .tl(250px,180px);
+				// .wh(230px,65px);
+				.wh(100%,80%);
 			}
 		}
 		.gameoverbox { 
@@ -324,11 +326,11 @@ html,body {
 	display: none;
 }
 .zoom5 {
-	-webkit-transform: scale(0.5);
-	   -moz-transform: scale(0.5);
-	    -ms-transform: scale(0.5);
-	     -o-transform: scale(0.5);
-	        transform: scale(0.5);
+	-webkit-transform: scale(0.5) !important;
+	   -moz-transform: scale(0.5) !important;
+	    -ms-transform: scale(0.5) !important;
+	     -o-transform: scale(0.5) !important;
+	        transform: scale(0.5) !important;
 }
 #mubu {
 	.wh(100%,100%);

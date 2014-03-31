@@ -43,6 +43,16 @@ Giccoo = (function() {
     return num;
   };
 
+  Giccoo.prototype.getParam = function(name) {
+    var r, reg;
+    reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    r = window.location.search.substr(1).match(reg);
+    if (r !== null) {
+      return unescape(r[2]);
+    }
+    return null;
+  };
+
   Giccoo.prototype.checkOrientation = function() {
     var orientationChange, reloadmeta;
     orientationChange = function() {
@@ -168,7 +178,11 @@ Giccoo = (function() {
       $i = $('<i>');
       $(this).before($div);
       $div.addClass($(this).attr('class')).append($(this));
-      $div.append($span.append($(this).find('option:checked').html()));
+      if ($(this).val()) {
+        $div.append($span.append($(this).find('option[value="' + $(this).val() + '"]').text()));
+      } else {
+        $div.append($span.append($(this).find('option').text()));
+      }
       $div.append($i);
       return $(this).change(function() {
         var $o;
@@ -181,7 +195,11 @@ Giccoo = (function() {
   };
 
   Giccoo.prototype.fChangeSelectVal = function(o) {
-    return $(o).next().html($(o).find('option:checked').html());
+    if ($(o).val()) {
+      return $(o).next().html($(o).find('option[value="' + $(o).val() + '"]').text());
+    } else {
+      return $(o).next().html($(o).find('option').text());
+    }
   };
 
   Giccoo.prototype.fBindOrientation = function() {
@@ -294,7 +312,7 @@ canaddBugs = true;
 
 bugsNum = 2;
 
-buglife = 4000;
+buglife = 3000;
 
 loadingTxt = {};
 
@@ -333,12 +351,20 @@ window.addEventListener('load', function() {
 
 backNormal = function() {
   _orien = 1;
-  return $('.zoom5').removeClass('zoom5');
+  $('.zoom5').removeClass('zoom5');
+  return $("#mubu").css({
+    width: $("body").width(),
+    height: $("body").height()
+  });
 };
 
 GameH = function() {
   _orien = 0;
-  return $(".logo,.gamebox,.gameoverbox,.sharebox,.menu,.clouds,.da-box,.activeinfo-box,.proinfo-box").addClass('zoom5');
+  $("#mubu").css({
+    width: $("body").width(),
+    height: $("body").height()
+  });
+  return $(".logo,.gameinfo,.menu,.clouds,.da-box,.activeinfo-box,.proinfo-box").addClass('zoom5');
 };
 
 myGetId = function(id) {
@@ -353,6 +379,7 @@ init = function() {
   var publicH;
   publicH = document.body.clientHeight * 640 / document.body.clientWidth;
   canvas = myGetId('canvas');
+  $(canvas).attr('height', $("#mubu").height());
   stage = new createjs.Stage(canvas);
   createjs.Touch.enable(stage);
   stage.enableMouseOver(10);
@@ -576,6 +603,9 @@ randomBugs = function(min, max) {
   h = canvas.height;
   h2 = $(".main").height();
   random = Math.random() * (max - min) + min;
+  if (h2 > 600) {
+    h2 = 600;
+  }
   _results = [];
   for (i = _i = 0; 0 <= random ? _i < random : _i > random; i = 0 <= random ? ++_i : --_i) {
     setTimeout(function() {
@@ -593,8 +623,9 @@ randomBugs = function(min, max) {
         obj = _dom_bug3.clone();
       }
       x1 = 110;
-      y1 = 330;
+      y1 = 260;
       y2 = 220;
+      h = h - 50;
       if (!_orien) {
         x1 = 110;
         y1 = 50;
@@ -714,11 +745,17 @@ GameOver = function() {
 $(document).ready(function() {
   var h;
   h = $("body").height();
+  $("#mubu").css({
+    width: $("body").width(),
+    height: $("body").height()
+  });
   if (h - 170 - 160 < 500) {
     $(".gameinfo").addClass('zoom');
   }
   $(".close").click(function() {
     $('.da,.pop').addClass('hideda');
+    _smq.push(['custom', '游戏页面', '弹窗', '关闭']);
+    _gaq.push(['_trackEvent', '游戏页面', '弹窗', '关闭']);
     return setTimeout(function() {
       return $('.da,.pop').addClass('hidez');
     }, 500);
@@ -727,6 +764,8 @@ $(document).ready(function() {
     return $("#acinfo").removeClass('hideda hidez');
   });
   $(".proinfo").click(function() {});
+  _smq.push(['custom', '游戏页面', '弹窗', '图片1']);
+  _gaq.push(['_trackEvent', 'DettolGame-LHW', '按钮', '开始按钮']);
   $("#list").swipeLeft(function() {
     var $e;
     $e = $("#list img:visible").next();
@@ -734,6 +773,8 @@ $(document).ready(function() {
       $("#list img").hide();
       $("#list").next().find("span").removeClass('on');
       $("#list").next().find("span").eq($e.index()).addClass('on');
+      _smq.push(['custom', '游戏页面', '弹窗', '图片' + $e.index()]);
+      _gaq.push(['_trackEvent', '游戏页面', '弹窗', '图片' + $e.index()]);
       return $e.show();
     }
   }).swipeRight(function() {
@@ -743,6 +784,8 @@ $(document).ready(function() {
       $("#list img").hide();
       $("#list").next().find("span").removeClass('on');
       $("#list").next().find("span").eq($e.index()).addClass('on');
+      _smq.push(['custom', '游戏页面', '弹窗', '图片' + $e.index()]);
+      _gaq.push(['_trackEvent', '游戏页面', '弹窗', '图片' + $e.index()]);
       return $e.show();
     }
   });
@@ -786,14 +829,12 @@ fBindMenuBtn = function() {
 };
 
 startGame = function() {
+  $(".clouds").hide();
   $("#mubu").css({
     "z-index": 10099
   });
   $(".gameinfo,.menu").addClass("hide hide-menu");
   $(".main").addClass('gamestart');
-  if (!_orien) {
-    $(".clouds").hide();
-  }
   return init();
 };
 

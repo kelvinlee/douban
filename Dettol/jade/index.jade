@@ -30,21 +30,22 @@ block content_here
 			img(src="img/clouds.png")
 		div.gameinfo
 			div.text
-				img(src="img/textbox.png")
+				a(href="http://www.56.com/u46/v_MTA4NDk0OTcx.html",target="_blank")
+					img(src="img/textbox.png")
 			div.gamebox
-				div.startgame
+				div.startgame(onclick="_smq.push(['custom', '游戏页面', '游戏开始', '开始']);_gaq.push(['_trackEvent', '游戏页面', '游戏开始', '开始']);")
 			div.gameoverbox
 				span.score 0
-				div.startgame
-				div.gotoshare
+				div.startgame(onclick="_smq.push(['custom', '游戏页面', '游戏结束', '再玩一次']);_gaq.push(['_trackEvent', '游戏页面', '游戏结束', '再玩一次']);")
+				div.gotoshare(onclick="_smq.push(['custom', '游戏页面', '游戏结束', '微博抽奖']);_gaq.push(['_trackEvent', '游戏页面', '游戏结束', '微博抽奖']);")
 			div.sharebox
-				a.weibo(href="javascript:void(0)",data-share="weibo")
-				a.qweibo(href="javascript:void(0)",data-share="qweibo")
+				a.weibo(href="javascript:void(0)",onclick="_smq.push(['custom', '游戏页面', '游戏结束', '分享到新浪微博']);	_gaq.push(['_trackEvent', '游戏页面', '游戏结束', '分享到新浪微博']);",data-share="weibo")
+				a.qweibo(href="javascript:void(0)",onclick="_smq.push(['custom', '游戏页面', '游戏结束', '分享到腾讯微博']);	_gaq.push(['_trackEvent', '游戏页面', '游戏结束', '分享到腾讯微博']);",data-share="qweibo")
 		div.menu
-			div.startgame
+			div.startgame(onclick="_smq.push(['custom', '游戏页面', '导航栏', '互动体验']);	_gaq.push(['_trackEvent', '游戏页面', '导航栏', '互动体验']);")
 			div.proinfo
-				a(href="http://m.51buy.com/t/list/?keyword=滴露#detail(%7B%22pid%22%3A%22137813%22%2C%22_%22%3A1395653925947%7D)",target="_blank")
-			div.activeinfo
+				a(onclick="_smq.push(['custom', '游戏页面', '导航栏', '产品介绍']);	_gaq.push(['_trackEvent', '游戏页面', '导航栏', '产品介绍']);",href="http://m.51buy.com/t/list/?keyword=滴露#detail(%7B%22pid%22%3A%22137813%22%2C%22_%22%3A1395653925947%7D)",target="_blank")
+			div.activeinfo(onclick="_smq.push(['custom', '游戏页面', '导航栏', '活动说明']);	_gaq.push(['_trackEvent', '游戏页面', '导航栏', '活动说明']);")
 	div#mubu.mubu
 		canvas#canvas(width="640",height="920")
 	div#acinfo.pop.hideda.hidez

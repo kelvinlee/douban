@@ -43,6 +43,16 @@ Giccoo = (function() {
     return num;
   };
 
+  Giccoo.prototype.getParam = function(name) {
+    var r, reg;
+    reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    r = window.location.search.substr(1).match(reg);
+    if (r !== null) {
+      return unescape(r[2]);
+    }
+    return null;
+  };
+
   Giccoo.prototype.checkOrientation = function() {
     var orientationChange, reloadmeta;
     orientationChange = function() {
@@ -168,7 +178,11 @@ Giccoo = (function() {
       $i = $('<i>');
       $(this).before($div);
       $div.addClass($(this).attr('class')).append($(this));
-      $div.append($span.append($(this).find('option:checked').html()));
+      if ($(this).val()) {
+        $div.append($span.append($(this).find('option[value="' + $(this).val() + '"]').text()));
+      } else {
+        $div.append($span.append($(this).find('option').text()));
+      }
       $div.append($i);
       return $(this).change(function() {
         var $o;
@@ -181,7 +195,11 @@ Giccoo = (function() {
   };
 
   Giccoo.prototype.fChangeSelectVal = function(o) {
-    return $(o).next().html($(o).find('option:checked').html());
+    if ($(o).val()) {
+      return $(o).next().html($(o).find('option[value="' + $(o).val() + '"]').text());
+    } else {
+      return $(o).next().html($(o).find('option').text());
+    }
   };
 
   Giccoo.prototype.fBindOrientation = function() {

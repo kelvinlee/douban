@@ -1,0 +1,15 @@
+<script>
+	try {
+		cont = new AudioContext()
+		alert("cans");
+	}catch(e) {
+		alert('No Audio API ');
+	}
+	try {
+	context = new webkitAudioContext();
+	alert('can');
+	}
+	catch(e) {
+	alert('您当前的浏览器不支持Web Audio API ');
+	}
+</script>

@@ -10,10 +10,140 @@ var Zepto=function(){function L(t){return null==t?String(t):j[T.call(t)]||"objec
 
 /*
 --------------------------------------------
+     Begin fx.js
+--------------------------------------------
+ */
+//     Zepto.js
+//     (c) 2010-2014 Thomas Fuchs
+//     Zepto.js may be freely distributed under the MIT license.
+
+;(function($, undefined){
+  var prefix = '', eventPrefix, endEventName, endAnimationName,
+    vendors = { Webkit: 'webkit', Moz: '', O: 'o' },
+    document = window.document, testEl = document.createElement('div'),
+    supportedTransforms = /^((translate|rotate|scale)(X|Y|Z|3d)?|matrix(3d)?|perspective|skew(X|Y)?)$/i,
+    transform,
+    transitionProperty, transitionDuration, transitionTiming, transitionDelay,
+    animationName, animationDuration, animationTiming, animationDelay,
+    cssReset = {}
+
+  function dasherize(str) { return str.replace(/([a-z])([A-Z])/, '$1-$2').toLowerCase() }
+  function normalizeEvent(name) { return eventPrefix ? eventPrefix + name : name.toLowerCase() }
+
+  $.each(vendors, function(vendor, event){
+    if (testEl.style[vendor + 'TransitionProperty'] !== undefined) {
+      prefix = '-' + vendor.toLowerCase() + '-'
+      eventPrefix = event
+      return false
+    }
+  })
+
+  transform = prefix + 'transform'
+  cssReset[transitionProperty = prefix + 'transition-property'] =
+  cssReset[transitionDuration = prefix + 'transition-duration'] =
+  cssReset[transitionDelay    = prefix + 'transition-delay'] =
+  cssReset[transitionTiming   = prefix + 'transition-timing-function'] =
+  cssReset[animationName      = prefix + 'animation-name'] =
+  cssReset[animationDuration  = prefix + 'animation-duration'] =
+  cssReset[animationDelay     = prefix + 'animation-delay'] =
+  cssReset[animationTiming    = prefix + 'animation-timing-function'] = ''
+
+  $.fx = {
+    off: (eventPrefix === undefined && testEl.style.transitionProperty === undefined),
+    speeds: { _default: 400, fast: 200, slow: 600 },
+    cssPrefix: prefix,
+    transitionEnd: normalizeEvent('TransitionEnd'),
+    animationEnd: normalizeEvent('AnimationEnd')
+  }
+
+  $.fn.animate = function(properties, duration, ease, callback, delay){
+    if ($.isFunction(duration))
+      callback = duration, ease = undefined, duration = undefined
+    if ($.isFunction(ease))
+      callback = ease, ease = undefined
+    if ($.isPlainObject(duration))
+      ease = duration.easing, callback = duration.complete, delay = duration.delay, duration = duration.duration
+    if (duration) duration = (typeof duration == 'number' ? duration :
+                    ($.fx.speeds[duration] || $.fx.speeds._default)) / 1000
+    if (delay) delay = parseFloat(delay) / 1000
+    return this.anim(properties, duration, ease, callback, delay)
+  }
+
+  $.fn.anim = function(properties, duration, ease, callback, delay){
+    var key, cssValues = {}, cssProperties, transforms = '',
+        that = this, wrappedCallback, endEvent = $.fx.transitionEnd,
+        fired = false
+
+    if (duration === undefined) duration = $.fx.speeds._default / 1000
+    if (delay === undefined) delay = 0
+    if ($.fx.off) duration = 0
+
+    if (typeof properties == 'string') {
+      // keyframe animation
+      cssValues[animationName] = properties
+      cssValues[animationDuration] = duration + 's'
+      cssValues[animationDelay] = delay + 's'
+      cssValues[animationTiming] = (ease || 'linear')
+      endEvent = $.fx.animationEnd
+    } else {
+      cssProperties = []
+      // CSS transitions
+      for (key in properties)
+        if (supportedTransforms.test(key)) transforms += key + '(' + properties[key] + ') '
+        else cssValues[key] = properties[key], cssProperties.push(dasherize(key))
+
+      if (transforms) cssValues[transform] = transforms, cssProperties.push(transform)
+      if (duration > 0 && typeof properties === 'object') {
+        cssValues[transitionProperty] = cssProperties.join(', ')
+        cssValues[transitionDuration] = duration + 's'
+        cssValues[transitionDelay] = delay + 's'
+        cssValues[transitionTiming] = (ease || 'linear')
+      }
+    }
+
+    wrappedCallback = function(event){
+      if (typeof event !== 'undefined') {
+        if (event.target !== event.currentTarget) return // makes sure the event didn't bubble from "below"
+        $(event.target).unbind(endEvent, wrappedCallback)
+      } else
+        $(this).unbind(endEvent, wrappedCallback) // triggered by setTimeout
+
+      fired = true
+      $(this).css(cssReset)
+      callback && callback.call(this)
+    }
+    if (duration > 0){
+      this.bind(endEvent, wrappedCallback)
+      // transitionEnd is not always firing on older Android phones
+      // so make sure it gets fired
+      setTimeout(function(){
+        if (fired) return
+        wrappedCallback.call(that)
+      }, (duration * 1000) + 25)
+    }
+
+    // trigger page reflow so new elements can animate
+    this.size() && this.get(0).clientLeft
+
+    this.css(cssValues)
+
+    if (duration <= 0) setTimeout(function() {
+      that.each(function(){ wrappedCallback.call(this) })
+    }, 0)
+
+    return this
+  }
+
+  testEl = null
+})(Zepto)
+;
+
+/*
+--------------------------------------------
      Begin main.coffee
 --------------------------------------------
  */
-var endTouch, moveTouch, moveTouchLeft, moveTouchRight, startTouch, _log, _move, _x;
+var ScrollTop, easing, endTouch, fBindCl, interpolate, moveTouch, moveTouchLeft, moveTouchRight, startTouch, _log, _move, _x, _y;
 
 _log = 0;
 
@@ -23,7 +153,7 @@ $(document).ready(function() {
     this.addEventListener('touchmove', moveTouch);
     return this.addEventListener('touchend', endTouch);
   });
-  return $(".ctrl").each(function() {
+  $(".ctrl").each(function() {
     var $ep;
     $ep = $(this);
     $(this).find(".left").click(function() {
@@ -34,9 +164,72 @@ $(document).ready(function() {
       return moveTouchLeft($ep.next());
     });
   });
+  $(".model1 a").click(function() {
+    var id;
+    id = $(this).attr('href');
+    console.log($(id).offset());
+    ScrollTop($(id).offset().top / 3, $(id).offset().top);
+    return false;
+  });
+  $(".gotop").click(function() {
+    return ScrollTop($(window).scrollTop() / 3, 0);
+  });
+  return fBindCl();
 });
 
+fBindCl = function() {
+  return $(".cltion").click(function() {
+    var box, clpop;
+    $(".clpop").remove();
+    clpop = $("<div>").addClass('clpop');
+    box = $("<div>").addClass('box');
+    box.append('<div class="close"></div><div class="img"><img src="' + $(this).data('img') + '"/></div>' + '<p>' + $(this).data('content') + '</p>');
+    clpop.append(box);
+    $("body").append(clpop);
+    setTimeout(function() {
+      return clpop.find(".box").addClass('show');
+    }, 100);
+    clpop.click(function() {
+      return $(".clpop").remove();
+    });
+    return clpop.on('touchmove', function(e) {
+      return e.preventDefault();
+    });
+  });
+};
+
+interpolate = function(source, target, pos) {
+  return source + (target - source) * pos;
+};
+
+easing = function(pos) {
+  return (-Math.cos(pos * Math.PI) / 2) + 0.5;
+};
+
+ScrollTop = function(duration, tt) {
+  var finish, interval, start, startY;
+  if (tt == null) {
+    tt = 0;
+  }
+  duration = duration || 1000;
+  start = Number(new Date());
+  startY = window.pageYOffset;
+  finish = start + duration;
+  interval = setInterval(function() {
+    var now, pos;
+    now = Number(new Date());
+    pos = now > finish ? 1 : (now - start) / duration;
+    window.scrollTo(0, interpolate(startY, tt, easing(pos)));
+    if (now > finish) {
+      clearInterval(interval);
+    }
+    return true;
+  }, 15);
+};
+
 _x = 0;
+
+_y = 0;
 
 _move = 0;
 
@@ -52,9 +245,11 @@ startTouch = function(e) {
 
 moveTouch = function(e) {
   var move, x;
-  e.preventDefault();
   x = e.touches[0].pageX;
   move = x - _x + parseInt(_move);
+  if (Math.abs(x - _x) > 10) {
+    e.preventDefault();
+  }
   $(e.target).parents(".pics-list").css("transform", "translate(" + move + "px,0)");
   $(e.target).parents(".pics-list").css("-webkit-transform", "translate(" + move + "px,0)");
   return $(e.target).parents(".pics-list").attr('move', move);
@@ -132,18 +327,34 @@ moveTouchRight = function(ep) {
 };
 
 window.onscroll = function(e) {
-  var top;
+  var h, top;
   top = $(window).scrollTop();
+  h = $(window).height();
+  if (top > 500) {
+    $(".gotop").show();
+  } else {
+    $(".gotop").hide();
+  }
   if (top > _log) {
     _log = top;
-    return $("[scroll]").each(function() {
+    $("[scroll]").each(function() {
       if (parseInt($(this).attr('scroll')) <= _log) {
         $(this).removeAttr('scroll');
         return $('[data-src]', this).each(function() {
           return $(this).css({
-            "background": "url(" + $(this).data("src") + ") no-repeat center center"
+            "background-image": "url(" + $(this).data("src") + ")"
           });
         });
+      }
+    });
+    return $("[scale]").each(function() {
+      var $ep;
+      if (($(this).offset().top) <= (top + h - 100)) {
+        $ep = $(this);
+        return setTimeout(function() {
+          $ep.removeAttr('scale');
+          return $ep.addClass('scale');
+        }, 20);
       }
     });
   }

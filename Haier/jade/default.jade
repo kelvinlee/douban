@@ -1,0 +1,131 @@
+extends layout
+//- 内容
+block content_here
+	div#loadingpage
+		div.text 
+			span 加载中... 
+	div.parent
+		div.main
+			div.model1
+				a.point-1(href="#music")
+				a.point-2(href="#book")
+				a.point-3(href="#cltion")
+				a.point-4(href="#yangtai")
+				a.point-5(href="#twoandone")
+			div.model2
+				a.more(href="http://8cc50a.c.admaster.com.cn/c/a17775,b200345705,c1479,i0,m101,h,uhttp%3A%2F%2Fp%2Dcn%2Eacxiom%2Donline%2Ecom%2Fpixel%2Ftrc%3Fpid%3D4008%26frm%3Dp%26uid%3D0%26adgid%3DHW2p1001%26redir%3Dhttp%253A%252F%252Fwww%252Ehaier%252Ecom%252Fcn%252Fyxhd%252F2014%252Flarge%255Fapp%252Fwasher0321%252Findex%252Eshtml%253Fadg%255Fid%253DHW2p1001") 
+			div#twoandone.model3
+				div.title
+					img.scalef(src="img/1px.gif",width="555",height="203",style="background:url(img/s-3-text.png) repeat center center;",scale)
+				div.ctrl
+					div.left
+						img(src="img/lr.png")
+					div.right
+						img(src="img/lr.png")
+				div.pics
+					div.pics-list.clearfix(style="width:300%")
+						-for(var i=1;i<=3;i++)
+							div.item
+								img(src="img/1px.gif",width="450",height="620",style="background:url(img/p-#{i}.png) repeat center center;")
+				div.points
+					span.on
+					span
+					span
+				div.links
+					a(href="http://8cc50a.c.admaster.com.cn/c/a17775,b200345705,c1479,i0,m101,h,uhttp%3A%2F%2Fp%2Dcn%2Eacxiom%2Donline%2Ecom%2Fpixel%2Ftrc%3Fpid%3D4008%26frm%3Dp%26uid%3D0%26adgid%3DHW2p1001%26redir%3Dhttp%253A%252F%252Fwww%252Ehaier%252Ecom%252Fcn%252Fyxhd%252F2014%252Flarge%255Fapp%252Fwasher0321%252Findex%252Eshtml%253Fadg%255Fid%253DHW2p1001") 
+						img(src="img/p-3-more.png")
+			div.model4(scroll="400")
+				div.title
+					img.scalef(src="img/1px.gif",width="640",height="240",data-src="img/s-4-text.png",scale)
+				div.ctrl
+					div.left
+						img(src="img/lr.png")
+					div.right
+						img(src="img/lr.png")
+				div.pics
+					div.pics-list.clearfix(style="width:300%")
+						-for(var i=1;i<=3;i++)
+							div.item
+								img(src="img/1px.gif",width="490",height="300",data-src="img/s-4-#{i}.jpg")
+				div.points
+					span.on
+					span
+					span
+				div.links
+					a(href="http://8cc50a.c.admaster.com.cn/c/a17775,b200345705,c1479,i0,m101,h,uhttp%3A%2F%2Fp%2Dcn%2Eacxiom%2Donline%2Ecom%2Fpixel%2Ftrc%3Fpid%3D4008%26frm%3Dp%26uid%3D0%26adgid%3DHW2p1001%26redir%3Dhttp%253A%252F%252Fwww%252Ehaier%252Ecom%252Fcn%252Fyxhd%252F2014%252Flarge%255Fapp%252Fwasher0321%252Findex%252Eshtml%253Fadg%255Fid%253DHW2p1001")
+						img(src="img/p-4-more.png")
+			div#yangtai.model5(scroll="600")
+				div.bg(width="640",height="1444",data-src="img/s-5.jpg")
+					div.pros
+						-var m5arr = ["http://dongxi.douban.com/show/1011938/","http://dongxi.douban.com/show/1159777/","http://dongxi.douban.com/show/1130336/","http://dongxi.douban.com/show/1476771/","http://dongxi.douban.com/show/1058167/","http://dongxi.douban.com/show/1008552/","http://dongxi.douban.com/show/1351513"]
+						-var m5arn = ["实木折叠躺椅 阳台靠背休闲椅 沙滩椅","吊蓝藤家具  藤艺秋千椅 阳台单人摇椅 ","新品陶瓷花盆花器仿真多肉植物盆栽花盆 阳台绿植","爱上花园|花园桌椅 做旧浅绿木质田园桌椅","精致耐用实用室外户外庭院阳台花园休闲沙滩床","原木手工 爱迪生台灯 阳台加分项","三层实木花架子多层落地式花盆景架仿古白色阶梯折叠阳台田园"]
+						-var m5arb = ["361.38","880.00","29.00","1,650.00","2,238.00","298.00","49.00"]
+						-for(var i=1;i<=7;i++)
+							div.item
+								a(href="#{m5arr[i-1]}")
+									div.img
+										img.scalef(width="278",height="248",data-src="img/p-5-#{i}.jpg",scale)
+										span ￥#{m5arb[i-1]}
+									div.text #{m5arn[i-1]}
+
+			div#book.model6(scroll="2200")
+				div.bg(width="640",data-src="img/s-6.jpg")
+					div.pros
+						-var m6arr = ["http://book.douban.com/subject/10785583/","http://book.douban.com/subject/25714740/","http://book.douban.com/subject/11542227/","http://book.douban.com/subject/5414391/","http://book.douban.com/subject/25747921/","http://book.douban.com/subject/25752592/","http://book.douban.com/subject/25717097/","http://book.douban.com/subject/3831788/"]
+						-var m6arn = ["思考，快与慢","起风了","几米袖珍本","寻路中国","从你的全世界路过","从黎明到衰落","囚徒健身","逃离"]
+						-var m6ars = [[4,0,1],[4,0,1],[4,0,1],[4,1,0],[4,0,1],[4,1,0],[4,1,0],[4,0,1]]
+						-var m6arx = ["8.3","7.4","8.7","9.0","7.9","9.3","9.1","8.1"]
+						-var m6ara = ["[美] 丹尼尔·卡尼曼 ","(日)堀辰雄 ","幾米"," [美] 彼得·海斯勒 ","张嘉佳","[美]雅克•巴尔赞","[美]保罗•威德","艾丽丝·门罗"]
+						-for(var i=1;i<=8;i++)
+							div.book
+								a(href="#{m6arr[i-1]}")
+									img.scalef(width="220",height="320",data-src="img/p-6-#{i}.jpg",scale)
+									div.text
+										p.star
+											-for(var fs=0;fs<m6ars[i-1][0];fs++)
+												i.on
+											-for(var fh=0;fh<m6ars[i-1][1];fh++)
+												i.half
+											-for(var fe=0;fe<m6ars[i-1][2];fe++)
+												i.empty
+											span #{m6arx[i-1]}
+										h3 #{m6arn[i-1]}
+										p.author 作者: #{m6ara[i-1]}
+
+			div#music.model7(scroll="3000")
+				div.bg(width="640",data-src="img/s-7.jpg")
+					div.pros
+						-var m6arr = ["http://music.douban.com/subject/25811077/","http://music.douban.com/subject/25802757/","http://music.douban.com/subject/3593009/","http://music.douban.com/subject/5351500/","http://music.douban.com/subject/25803988/","http://music.douban.com/subject/25784249/","http://music.douban.com/subject/1463565/","http://music.douban.com/subject/1926741/"]
+						-var m6arn = ["克卜勒","柔弱的角","唱游","21","Re:Workz","时间没能解决的问题","卡农绝赞","新しい私になって"]
+						-var m6ars = [[4,0,1],[4,0,1],[4,1,0],[4,1,0],[4,0,1],[4,0,1],[4,1,0],[4,1,0]]
+						-var m6arx = ["8.5","8.1","9.4","9.0","7.5","7.7","9.5","8.9"]
+						-var m6ara = ["孙燕姿","麦浚龙","王菲","Adele","林忆莲","梁晓雪","Various Artists","熊木杏里"]
+						-for(var i=1;i<=8;i++)
+							div.book
+								a(href="#{m6arr[i-1]}")
+									img.scalef(width="222",height="222",data-src="img/p-7-#{i}.jpg",scale)
+									div.text
+										p.star
+											-for(var fs=0;fs<m6ars[i-1][0];fs++)
+												i.on
+											-for(var fh=0;fh<m6ars[i-1][1];fh++)
+												i.half
+											-for(var fe=0;fe<m6ars[i-1][2];fe++)
+												i.empty
+											span #{m6arx[i-1]}
+										h3 #{m6arn[i-1]}
+										p.author #{m6ara[i-1]}
+			div#cltion.model8(scroll="5000")
+				div.bg(width="640",data-src="img/s-8.jpg")
+					div.pros.clearfix
+						-var clist = ["摩羯座崇尚脚踏实地和稳打稳扎，他们的阳台也体现出实用的特征。不论是田园风，还是都市风，摩羯座都会选择最简洁又不失大气的材质，充分展现自我风格。","水瓶座的人追求与众不同，他们在阳台装饰的选择上也展现了独到的眼光。舒适的座椅和充足的绿色植物，都将水瓶座的阳台装扮得独一无二。","白羊座的人爱冒险，敢做敢拼，在阳台的装饰上也力求与众不同。亲近自然的阳台环境和满满的运动元素，让白羊座的你能更好地享受生命中每一次冒险。","追求安稳，享受当下，这是金牛座的处事态度，也是他们装扮阳台的独家心得。简单的实用的家具和易打理的盆栽，搭配在一起就是金牛座理想中阳台该有的样子。","柔情和温暖是巨蟹座的内在品格，他们布置的阳台也能让人感受到满满的来自家的温馨。绿色植物搭配家族式圆桌，轻松营造出只属于巨蟹座的家的感觉。","热情、自信、大方，狮子座的这些特质让他们的阳台也格外充满活力。在繁忙都市中，还能独享这样一番自由天地，狮子座王者般的掌控能力不言自明。","精致、优雅、有格调，天秤座的你希望追求在工作之余，也能享受生活的乐趣。正如这个阳台，在自然元素的陪伴下，享受阳光下的一本好书，生活也能如此美好。","在阳光下，泡上一壶茶，安静地思考人生，这就是天蝎座崇尚的内涵生活。阳台装饰不在乎多华丽，简单、质朴又有深度，这就是天蝎座追求的人生态度。","双鱼座的人想象力丰富，极富创意，他们的阳台往往也充满了各种浪漫元素。一张舒适的躺椅、再伴着徐徐暖风，双鱼座用想象力在都市中打造了只属于自己的轻松天地。","双子座的人有极好的沟通能力，擅长与他人“走心”的交流。他们的阳台也一定要有能与人谈天说地的角落，聊聊爱情，聊聊理想，这才是双子座喜欢的生活方式。","他们挑剔，他们吹毛求疵，都是为了追求完美。无论是选择装修材料，还是选择阳台家具，甚至是选择一盆小小的鲜花，处女座都决不将就。他们用自己对于“什么是美”的独到见解，装扮出自己的一方天地。","射手座是天生的旅行好手，永远年轻的心态让他们在户外能尽情享受山水，而回到家中，也要将阳台打造成充满“户外风”的享乐天地，让他们的阳台永远充满惊喜。"]
+						-for (var i=0;i<12;i++)
+							div.cltion(data-img="img/cl-#{i+1}.jpg",data-content="#{clist[i]}")
+								img.scalef(width="260",height="160",data-src="img/p-8-#{i+1}.jpg",scale)
+
+		div.gotop 
+//- css
+block css_here
+//- js
+block js_here
+	

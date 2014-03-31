@@ -4,10 +4,15 @@
 $(document).ready ->
 	# init()
 	h = $("body").height()
+	$("#mubu").css
+		width:$("body").width()
+		height:$("body").height()
 	if h-170-160 < 500
 		$(".gameinfo").addClass 'zoom'
 	$(".close").click ->
 		$('.da,.pop').addClass 'hideda'
+		_smq.push(['custom', '游戏页面', '弹窗', '关闭'])
+		_gaq.push(['_trackEvent', '游戏页面', '弹窗', '关闭'])
 		setTimeout ()->
 			$('.da,.pop').addClass 'hidez'
 		, 500
@@ -15,12 +20,16 @@ $(document).ready ->
 		$("#acinfo").removeClass 'hideda hidez'
 	$(".proinfo").click ->
 		# $("#proinfo").removeClass 'hideda hidez'
+	_smq.push(['custom', '游戏页面', '弹窗', '图片1'])
+	_gaq.push(['_trackEvent', 'DettolGame-LHW', '按钮', '开始按钮'])
 	$("#list").swipeLeft -> 
 		$e = $("#list img:visible").next()
 		if $e.is "img"
 			$("#list img").hide()
 			$("#list").next().find("span").removeClass 'on'
 			$("#list").next().find("span").eq($e.index()).addClass 'on'
+			_smq.push(['custom', '游戏页面', '弹窗', '图片'+$e.index()])
+			_gaq.push(['_trackEvent', '游戏页面', '弹窗', '图片'+$e.index()])
 			$e.show()
 	.swipeRight ->
 		$e = $("#list img:visible").prev()
@@ -28,6 +37,8 @@ $(document).ready ->
 			$("#list img").hide()
 			$("#list").next().find("span").removeClass 'on'
 			$("#list").next().find("span").eq($e.index()).addClass 'on'
+			_smq.push(['custom', '游戏页面', '弹窗', '图片'+$e.index()])
+			_gaq.push(['_trackEvent', '游戏页面', '弹窗', '图片'+$e.index()])
 			$e.show()
 	$("#procontent").swipeLeft -> 
 		$e = $("#procontent .item:visible").next()
@@ -57,14 +68,13 @@ fBindMenuBtn = ->
 	$(".activeinfo").click ->
 
 startGame = ->
+	$(".clouds").hide()
 	$ "#mubu"
 	.css
-		"z-index":10099
+		"z-index":10099 
 	$ ".gameinfo,.menu"
 	.addClass "hide hide-menu"
-	$(".main").addClass 'gamestart'
-	if not _orien
-		$(".clouds").hide()
+	$(".main").addClass 'gamestart' 
 	init()
 endGame = (score)->
 	$(".clouds").show()
