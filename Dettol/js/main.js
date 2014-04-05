@@ -5,7 +5,7 @@
      Begin plugs.coffee
 --------------------------------------------
  */
-var DMHandler, GameH, GameOver, Giccoo, SHAKE_THRESHOLD, addSomeBugs, backNormal, bugclick, buglife, bugsNum, canaddBugs, canvas, changeBackgroud, checkBugsMove, checkRemoveBugs, checkScoreMove, count, createAllDom, deviceMotionHandler, endGame, fBindMenuBtn, firstFrame, gico, gotoTick, handleComplete, handleFileLoad, images, init, last_update, last_x, last_y, last_z, loadEnd, loadImg, loadingTxt, manifest, myGetId, orientationChange, overscore, playing, ranDom, randomBugs, runawayBug, runscore, score, showShare, stage, startGame, tick, _dom_bug1, _dom_bug2, _dom_bug3, _dom_bugs_box, _dom_score, _dom_score_box, _dom_score_img, _orien, _x, _y, _z;
+var DMHandler, GameH, GameOver, Giccoo, SHAKE_THRESHOLD, addSomeBugs, audio, backNormal, bugclick, buglife, bugsNum, canaddBugs, canvas, changeBackgroud, checkBugsMove, checkRemoveBugs, checkScoreMove, count, createAllDom, deviceMotionHandler, endGame, fBindMenuBtn, firstFrame, gico, gotoTick, handleComplete, handleFileLoad, images, init, last_update, last_x, last_y, last_z, loadEnd, loadImg, loadingTxt, manifest, myGetId, orientationChange, overscore, playing, ranDom, randomBugs, runawayBug, runscore, score, showShare, stage, startGame, tick, _dom_bug1, _dom_bug2, _dom_bug3, _dom_bugs_box, _dom_score, _dom_score_box, _dom_score_img, _orien, _x, _y, _z;
 
 Giccoo = (function() {
   function Giccoo(name) {
@@ -665,7 +665,7 @@ addSomeBugs = function() {
 };
 
 bugclick = function(evt) {
-  var dom_score, fsize, text;
+  var audio, dom_score, fsize, text;
   console.log(evt);
   clearTimeout(evt.target.runaway);
   evt.target.gotoAndStop(1);
@@ -697,6 +697,9 @@ bugclick = function(evt) {
   dom_score.x = evt.stageX;
   dom_score.y = evt.stageY;
   dom_score.Aa = 1;
+  audio = document.createElement("audio");
+  audio.src = "img/click.mp3";
+  audio.play();
   dom_score.addChild(_dom_score_img.clone(), text);
   return _dom_score_box.addChild(dom_score);
 };
@@ -741,6 +744,8 @@ GameOver = function() {
      Begin main.coffee
 --------------------------------------------
  */
+
+audio = {};
 
 $(document).ready(function() {
   var h;

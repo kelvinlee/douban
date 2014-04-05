@@ -310,7 +310,9 @@ bugclick = (evt)->
 	dom_score.x = evt.stageX
 	dom_score.y = evt.stageY
 	dom_score.Aa = 1
-
+	audio = document.createElement("audio")
+	audio.src= "img/click.mp3"
+	audio.play()
 	dom_score.addChild _dom_score_img.clone(),text
 	_dom_score_box.addChild dom_score
 

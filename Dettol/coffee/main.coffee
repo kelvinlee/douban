@@ -1,5 +1,6 @@
 # @codekit-prepend "coffee/plugs.coffee"
 # @codekit-prepend "game.coffee"
+audio = {}
 
 $(document).ready ->
 	# init()
@@ -59,6 +60,13 @@ $(document).ready ->
 	orientationChange()
 loadEnd = ->
 	$(".loading").hide()
+	
+	# audio.addEventListener 'ended', ->
+	# 	setTimeout ->
+	# 		# audio.play()
+	# 	,500
+	# , false
+	# audio.play()
 fBindMenuBtn = ->
 	$(".startgame").click ->
 		startGame()
