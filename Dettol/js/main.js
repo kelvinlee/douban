@@ -22,6 +22,37 @@ Giccoo = (function() {
     });
   };
 
+  Giccoo.prototype.cWeek = function(week, pre) {
+    if (pre == null) {
+      pre = "周";
+    }
+    if (week === 1) {
+      return pre + "一";
+    }
+    if (week === 2) {
+      return pre + "二";
+    }
+    if (week === 3) {
+      return pre + "三";
+    }
+    if (week === 4) {
+      return pre + "四";
+    }
+    if (week === 5) {
+      return pre + "五";
+    }
+    if (week === 6) {
+      return pre + "六";
+    }
+    if (week === 0) {
+      return pre + "日";
+    }
+  };
+
+  Giccoo.prototype.getRandom = function(max, min) {
+    return parseInt(Math.random() * (max - min + 1) + min);
+  };
+
   Giccoo.prototype.getRandoms = function(l, min, max) {
     var i, idx, isEqu, num, val, _i, _j, _ref;
     num = new Array();
@@ -91,7 +122,7 @@ Giccoo = (function() {
     $ep = this;
     list = {
       "qweibo": "http://v.t.qq.com/share/share.php?title={title}&url={url}&pic={pic}",
-      "renren": "http://share.renren.com/share/buttonshare.do?title={title}&link={url}&pic={pic}",
+      "renren": "http://share.renren.com/share/buttonshare?title={title}&link={url}&pic={pic}",
       "weibo": "http://v.t.sina.com.cn/share/share.php?title={title}&url={url}&pic={pic}",
       "qzone": "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={url}&title={title}&pic={pic}",
       "facebook": "http://www.facebook.com/sharer/sharer.php?s=100&p[url]={url}}&p[title]={title}&p[summary]={title}&pic={pic}",
@@ -780,7 +811,13 @@ $(document).ready(function() {
       $("#list").next().find("span").eq($e.index()).addClass('on');
       _smq.push(['custom', '游戏页面', '弹窗', '图片' + $e.index()]);
       _gaq.push(['_trackEvent', '游戏页面', '弹窗', '图片' + $e.index()]);
-      return $e.show();
+      $e.show();
+    }
+    if (!$e.is("img")) {
+      $('.da,.pop').addClass('hideda');
+      return setTimeout(function() {
+        return $('.da,.pop').addClass('hidez');
+      }, 500);
     }
   }).swipeRight(function() {
     var $e;

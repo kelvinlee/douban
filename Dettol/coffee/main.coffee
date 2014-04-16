@@ -32,6 +32,11 @@ $(document).ready ->
 			_smq.push(['custom', '游戏页面', '弹窗', '图片'+$e.index()])
 			_gaq.push(['_trackEvent', '游戏页面', '弹窗', '图片'+$e.index()])
 			$e.show()
+		if not $e.is "img"
+			$('.da,.pop').addClass 'hideda'
+			setTimeout ()->
+				$('.da,.pop').addClass 'hidez'
+			, 500
 	.swipeRight ->
 		$e = $("#list img:visible").prev()
 		if $e.is "img"

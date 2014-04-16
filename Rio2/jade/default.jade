@@ -1,0 +1,23 @@
+extends layout
+//- 内容
+block content_here
+	div#loadingpage
+		div.text 
+			span 加载中... 
+	div.parent
+		div.main
+			div.bird1(scale)
+			div.bird2(scale)
+			div.bird3(scale)
+			div.bird4(scale)
+			div.bird5(scale)
+			div.bird6(scale)
+			div.bird7(scale)
+			a.goto1(href="http://www.mnzcn.qq.com")
+			a.goto2(href="http://www.mnzcn.qq.com")
+			img(src="img/bg.jpg",width="640",onload="goshow()")
+//- css
+block css_here
+//- js
+block js_here
+	
