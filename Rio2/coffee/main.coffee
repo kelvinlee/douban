@@ -14,7 +14,7 @@ scrollWin = (e)->
 	if top > _log
 		_log = top 
 		$("[scale]").each ->
-			if ($(this).offset().top) <= (top+h-200)
+			if ($(this).offset().top) <= (top+h-100)
 				$ep = $(this)
 				setTimeout -> 
 					$ep.removeAttr 'scale'

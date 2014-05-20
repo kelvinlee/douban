@@ -1,0 +1,29 @@
+extends layout
+//- 标题
+block title
+	| 登录
+//- 内容
+block content_here 
+	+header("注册")
+	-var user = "active"
+	include nav
+	.content.gray
+		.content-padded
+			h4.form-title
+				span.point-s
+				| 注册
+			//默认error 没有内容, 只有提交的时候返回错误内容,或判断有错误内容.
+			.form.signin
+				form(action="signin.html")
+					div.input-line.clearfix
+						input.pull-left(type="text",name="mobile",placeholder="请输入手机号")
+						input.pull-right.btn(type="button",name="getcode",value="获取验证码")
+					p.error(for="mobile") 请输入正确的手机号.
+					input(type="text",name="code",placeholder="请输入验证码")
+					p.error(for="code")
+					input(type="password",name="password",placeholder="请输入密码")
+					p.error(for="password")
+					div.btn-list
+						button.btn.btn-block 注 册
+
+		

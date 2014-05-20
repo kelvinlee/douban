@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Lenovo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/ratchet.js"></script>
+    <script src="js/public.js"></script>
+  </head>
+  <body>
+    <!--带有logo的头.-->
+    <header class="bar bar-nav">
+      <div class="logo pull-left"><img src="img/logo.jpg" class="w100"></div>
+      <div class="search pull-right">
+        <!--js里控制了searchbtn会跳转到btn上的data-url属性的页面,并且附带参数search=%.-->
+        <div class="form-group">
+          <input name="search" type="search" placeholder="TinkPad E431" class="pull-left">
+          <button id="searchbtn" data-url="search.html" class="addon pull-right"><span class="icon icon-search"></span></button>
+        </div>
+      </div>
+    </header>
+    <!--一级菜单. 选中状态需要增加active.-->
+    <nav class="bar bar-tab">
+      <div class="bar-first"><a href="index.html" data-transition="slide-in" class="tab-item active"><span class="icon i-home"></span><span class="tab-label">在线选购</span></a><a href="prod.html" data-transition="slide-in" class="tab-item undefined"><span class="icon i-prod"></span><span class="tab-label">Think产品</span></a>
+        <!--个人中心里这里需要注意,如果没有登录,使用 href="#" onclick="signpop()" 如果登录了 使用 href="myinfo.html" data-transition="slide-in"--><a href="#" onclick="signpop()" class="tab-item undefined"><span class="icon i-user"></span><span class="tab-label">个人中心</span></a><a href="#" onclick="showsecondbar(this)" class="tab-item"><span class="icon i-more"></span><span class="tab-label">更多</span></a>
+      </div>
+      <!--这里是二级菜单.-->
+      <div id="secondbar" class="bar bar-tab bar-footer-secondary gray"><a href="chat.html" data-transition="slide-in" class="tab-item"><span class="icon i-chat"></span><span class="tab-label">在线客服</span></a><a href="shop.html" data-transition="slide-in" class="tab-item"><span class="icon i-shop"></span><span class="tab-label">店面查询</span></a><a href="active.html" data-transition="slide-in" class="tab-item"><span class="icon i-active"></span><span class="tab-label">品牌活动</span></a><a href="self.html" data-transition="slide-in" class="tab-item"><span class="icon i-self"></span><span class="tab-label">私人定制</span></a><a href="service.html" data-transition="slide-in" class="tab-item"><span class="icon i-service"></span><span class="tab-label">服务与支持</span></a></div>
+    </nav>
+    <div class="content gray">
+      <!--滑动页面需要使用特殊跳转,否则会和拖动事件重合.-->
+      <div id="mySlider" class="slider">
+        <div class="slide-group">
+          <div class="slide"><img src="img/banner.jpg" onclick="gotopage('index.html')" class="w100"></div>
+          <div class="slide"><img src="img/banner.jpg" onclick="gotopage('index.html')" class="w100"></div>
+        </div>
+        <div class="slide-point"><span class="on"></span><span></span></div>
+      </div>
+      <div class="card-k">
+        <ul class="table-view">
+          <li class="table-view-cell media"><a href="myinfo.html" data-transition="slide-in" class="navigate">
+              <div class="media-object pull-left">
+                <p class="subtitle"><span class="icon i-t-left"></span> 热卖Top10</p>
+                <h4>ThinkPad用户最热衷的产品</h4>
+              </div><img src="img/item-1.jpg" class="item media-body pull-right"></a></li>
+          <li class="table-view-cell media"><a href="myinfo.html" data-transition="slide-in" class="navigate">
+              <div class="media-object pull-left">
+                <p class="subtitle"><span class="icon i-t-left"></span> 热卖Top10</p>
+                <h4>ThinkPad用户最热衷的产品</h4>
+              </div><img src="img/item-2.jpg" class="item media-body pull-right"></a></li>
+          <li class="table-view-cell media"><a href="myinfo.html" data-transition="slide-in" class="navigate">
+              <div class="media-object pull-left">
+                <p class="subtitle"><span class="icon i-t-left"></span> 热卖Top10</p>
+                <h4>ThinkPad用户最热衷的产品</h4>
+              </div><img src="img/item-3.jpg" class="item media-body pull-right"></a></li>
+        </ul>
+      </div>
+    </div>
+    <!--如果没有登录,signpop 会弹出此层.-->
+    <div id="nologin" class="pop">
+      <div class="popbody">
+        <div class="content">
+          <div class="content-padded">
+            <h4>温馨提示</h4>
+            <p>您还没有登录，请立即登录享受更多会员服务!</p>
+            <div class="btn-list"><a href="signup.html" data-transition="slide-in" class="btn">注 册</a><a href="signin.html" data-transition="slide-in" class="btn">登 录</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

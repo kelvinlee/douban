@@ -998,6 +998,7 @@ img {
   position: absolute;
   top: 0px;
   left: 0px;
+  position: fixed;
   width: 100%;
   height: 100%;
   z-index: 3000;
@@ -1011,39 +1012,38 @@ img {
   height: 40px;
   margin: -20px 0px 0px -100px;
   text-align: center;
-  font-size: 1.6em;
+  font-size: 1.4em;
 }
 .parent {
-  width: 640px;
-  height: 2523px;
+  width: 100%;
+  height: auto;
   overflow: hidden;
 }
 .main {
-  width: 640px;
+  width: 100%;
   height: auto;
   position: relative;
 }
+.main img {
+  max-width: 100%;
+}
 .bird1 {
-  width: 99px;
-  height: 71px;
-  background: url("../img/bird-1.png") no-repeat top left;
-  background-color: transparent;
+  width: 15.46875%;
+  height: auto;
   position: absolute;
-  top: 90px;
-  left: 10px;
+  top: 3.56718193%;
+  left: 1.5625%;
 }
 .bird2 {
   -moz-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  width: 276px;
-  height: 197px;
-  background: url("../img/bird-2.png") no-repeat top left;
-  background-color: transparent;
+  width: 43.125%;
+  height: auto;
   position: absolute;
-  top: 440px;
-  right: 30px;
+  top: 17.4326466%;
+  right: 4.6875%;
   -webkit-transform: translate(300px, 0px);
   -moz-transform: translate(300px, 0px);
   -ms-transform: translate(300px, 0px);
@@ -1056,13 +1056,11 @@ img {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  width: 307px;
-  height: 223px;
-  background: url("../img/bird-3.png") no-repeat top left;
-  background-color: transparent;
+  width: 47.96875%;
+  height: auto;
   position: absolute;
-  top: 820px;
-  left: 30px;
+  top: 32.5009909%;
+  left: 4.6875%;
   -webkit-transform: translate(-310px, 0px);
   -moz-transform: translate(-310px, 0px);
   -ms-transform: translate(-310px, 0px);
@@ -1075,13 +1073,11 @@ img {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  width: 276px;
-  height: 197px;
-  background: url("../img/bird-4.png") no-repeat top left;
-  background-color: transparent;
+  width: 43.125%;
+  height: auto;
   position: absolute;
-  top: 1140px;
-  right: 60px;
+  top: 45.1843044%;
+  right: 9.375%;
   -webkit-transform: translate(300px, 0px);
   -moz-transform: translate(300px, 0px);
   -ms-transform: translate(300px, 0px);
@@ -1094,13 +1090,11 @@ img {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  width: 326px;
-  height: 223px;
-  background: url("../img/bird-5.png") no-repeat top left;
-  background-color: transparent;
+  width: 50.9375%;
+  height: auto;
   position: absolute;
-  top: 1520px;
-  left: 30px;
+  top: 60.2457392%;
+  left: 4.6875%;
   -webkit-transform: translate(-330px, 0px);
   -moz-transform: translate(-330px, 0px);
   -ms-transform: translate(-330px, 0px);
@@ -1113,13 +1107,11 @@ img {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  width: 309px;
-  height: 239px;
-  background: url("../img/bird-6.png") no-repeat top left;
-  background-color: transparent;
+  width: 48.28125%;
+  height: auto;
   position: absolute;
-  top: 1852px;
-  right: 90px;
+  top: 73.40467697%;
+  right: 14.0625%;
   -webkit-transform: translate(300px, 0px);
   -moz-transform: translate(300px, 0px);
   -ms-transform: translate(300px, 0px);
@@ -1132,13 +1124,11 @@ img {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  width: 100px;
-  height: 223px;
-  background: url("../img/bird-7.png") no-repeat top left;
-  background-color: transparent;
+  width: 15.625%;
+  height: auto;
   position: absolute;
-  top: 2170px;
-  left: 80px;
+  top: 86.00871978%;
+  left: 12.5%;
   -webkit-transform: translate(-330px, 0px);
   -moz-transform: translate(-330px, 0px);
   -ms-transform: translate(-330px, 0px);
@@ -1148,17 +1138,17 @@ img {
 }
 .goto1 {
   position: absolute;
-  top: 120px;
-  right: 20px;
-  width: 200px;
-  height: 120px;
+  top: 4.75624257%;
+  right: 3.125%;
+  width: 31.25%;
+  height: 4.75624257%;
 }
 .goto2 {
   position: absolute;
-  bottom: 20px;
-  right: 0px;
-  width: 260px;
-  height: 200px;
+  bottom: 0.79270709%;
+  right: 0%;
+  width: 40.625%;
+  height: 7.92707095%;
 }
 .on {
   -webkit-transform: translate(0px, 0px);

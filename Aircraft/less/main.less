@@ -1,0 +1,61 @@
+@import "less/kelvin.less";
+
+@h : 2523;
+html,body {
+	.wh(100%); 
+}
+img {
+	border:none;
+  width:100%;
+}
+#loadingpage {
+	// display: none;
+	.tl();
+  position: fixed;
+	.wh(100%,100%);
+	z-index: 3000;
+	background-color: @cw;
+	.text {
+		.pcenter(200px);
+		text-align: center;
+		font-size: 1.4em;
+	}
+} 
+.parent {
+	.wh(100%);
+	overflow: hidden;
+}
+.main {
+	.wh(100%);
+	position: relative;
+  img {
+    max-width: 100%;
+  }
+  .list {
+    .tl();
+    .wh(100%);
+    padding-top: 44%;
+    >a {
+      display: block;
+      .wh(100%);
+      padding-top:45%;
+    }
+    .banner {
+      display: block;
+      position: relative;
+      .wh(100%);
+      padding-top:45%;
+      a {
+        .wh(50%,100%);
+        &:first-child {
+          .tl();
+          .wh(55%,100%);
+        }
+        &:last-child {
+          .tr();
+          .wh(45%,100%);
+        }
+      }
+    }
+  }
+}

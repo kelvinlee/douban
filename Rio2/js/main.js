@@ -164,7 +164,7 @@ scrollWin = function(e) {
     _log = top;
     return $("[scale]").each(function() {
       var $ep;
-      if (($(this).offset().top) <= (top + h - 200)) {
+      if (($(this).offset().top) <= (top + h - 100)) {
         $ep = $(this);
         return setTimeout(function() {
           $ep.removeAttr('scale');

@@ -1,0 +1,26 @@
+extends layout
+//- 标题
+block title
+	| 登录
+//- 内容
+block content_here 
+	+header("会员登录")
+	-var user = "active"
+	include nav
+	.content.gray
+		.content-padded
+			h4.form-title
+				span.point-s
+				| 会员登录
+			//默认error 没有内容, 只有提交的时候返回错误内容,或判断有错误内容.
+			.form.signin
+				form(action="myinfo.html")
+					input.pull-left(type="text",name="mobile",placeholder="请输入手机号") 
+					p.error(for="mobile") 请输入正确的手机号. 
+					input(type="password",name="password",placeholder="请输入密码")
+					p.error(for="password")
+					div.btn-list
+						button.btn.btn-block 登 录
+						a.btn.btn-block(href="signup.html",data-transition="slide-in") 注 册
+
+		

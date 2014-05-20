@@ -21,6 +21,8 @@ _dom_score_img = {}
 _dom_bug1 = {}
 _dom_bug2 = {}
 _dom_bug3 = {}
+
+audio = {}
 # $(document).ready ->
 # 	# init()
 # 	loadImg()
@@ -167,6 +169,11 @@ handleComplete = (evt)->
 	loadEnd()
 # 创建所有的游戏Dom
 createAllDom = ->
+	audio = document.createElement("audio")
+	audio.src= "img/click.mp3"
+	$(audio).bind 'pause', ->
+		this.currentTime = 0.1
+		console.log "pause"
 	w = canvas.width
 	h = canvas.height
 	# console.log w,h
@@ -310,9 +317,8 @@ bugclick = (evt)->
 	dom_score.x = evt.stageX
 	dom_score.y = evt.stageY
 	dom_score.Aa = 1
-	audio = document.createElement("audio")
-	audio.src= "img/click.mp3"
-	audio.play()
+	audio.pause()
+	audio.play(0,1)
 	dom_score.addChild _dom_score_img.clone(),text
 	_dom_score_box.addChild dom_score
 

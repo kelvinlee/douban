@@ -1,0 +1,167 @@
+extends layout
+//- 标题
+block title
+	| 寻
+//- 内容
+block content_here 
+	+header("个人中心")
+	-var user = "active"
+	include nav
+	.content.gray
+		.userinfo.clearfix
+			.avatar.pull-left
+				img(src="img/avatar.jpg")
+			.textinfo.pull-left
+				h3.name Alicia 您好!
+				h4.description 黑币: 10099
+				p 已消费黑币: 724  剩余黑币: 9375
+		.prodinfo.clearfix
+			.segmented-control
+				a.control-item.active(href="#item1mobile") 我的订单
+				a.control-item(href="#item2mobile") 我关注的商品
+				a.control-item(href="#item3mobile") 地址管理
+			//active表示默认激活显示的层.
+			div.card
+				div#item1mobile.control-content.active.card-k
+					ul.table-view.clearfix
+						li.table-view-cell.media
+							div.navigate.clearfix
+								div.media-object.pull-left
+									img(src="img/prod-1.jpg")
+									span 已发货
+								div.media-body.pull-left
+									h3 ThinkPad New X1 Carbon
+									p.description
+										span (20A7S00E00) 
+										span 订单编号：102235
+									p.info
+										em ￥5800
+										|  数量  
+										span.badge 2
+									a.btn.btn-default(href="myinfo.html",data-transition="slide-in") 查看
+
+						li.table-view-cell.media
+							div.navigate.clearfix
+								div.media-object.pull-left
+									img(src="img/prod-1.jpg")
+									span.no 未发货
+								div.media-body.pull-right
+									h3 ThinkPad New X1 Carbon
+									p.description
+										span (20A7S00E00)
+										span 订单编号:102235
+									p.info
+										em ￥6800
+										|  数量  
+										span.badge 6
+									a.btn.btn-default(href="myinfo.html",data-transition="slide-in") 查看
+						li.table-view-cell.media
+							div.navigate.clearfix
+								div.media-object.pull-left
+									img(src="img/prod-1.jpg")
+									span.no 未发货
+								div.media-body.pull-right
+									h3 ThinkPad New X1 Carbon
+									p.description
+										span (20A7S00E00) 
+										span 订单编号：102235
+									p.info
+										em ￥7800
+										|  数量  
+										span.badge 2
+									a.btn.btn-default(href="myinfo.html",data-transition="slide-in") 查看
+				div#item2mobile.control-content.card-k
+					ul.table-view.clearfix
+						li.table-view-cell.media
+							div.navigate.clearfix
+								div.media-object.pull-left
+									img(src="img/prod-1.jpg")
+									//- span 已发货
+								div.media-body.pull-left
+									h3 ThinkPad New X1 Carbon
+									p.description
+										span (20A7S00E00)
+									p.info.focus
+										em ￥5800 
+										a.btn.btn-default.pull-right(href="myinfo.html",data-transition="slide-in") 立即购买
+
+						li.table-view-cell.media
+							div.navigate.clearfix
+								div.media-object.pull-left
+									img(src="img/prod-1.jpg")
+									//- span 已发货
+								div.media-body.pull-left
+									h3 ThinkPad New X1 Carbon
+									p.description
+										span (20A7S00E00)
+									p.info.focus
+										em ￥5800 
+										a.btn.btn-default.pull-right(href="myinfo.html",data-transition="slide-in") 立即购买
+						li.table-view-cell.media
+							div.navigate.clearfix
+								div.media-object.pull-left
+									img(src="img/prod-1.jpg")
+									//- span 已发货
+								div.media-body.pull-left
+									h3 ThinkPad New X1 Carbon
+									p.description
+										span (20A7S00E00)
+									p.info.focus
+										em ￥5800 
+										a.btn.btn-default.pull-right(href="myinfo.html",data-transition="slide-in") 立即购买
+				div#item3mobile.control-content.card-k
+					ul.adr-list
+						li.adr-item
+							.banner
+								p 焦炒肝二环到三环
+							.username.item-group.clearfix
+								span.pull-left 收货人:
+								p 我是测试
+							.adr.item-group.clearfix
+								span.pull-left 地&nbsp;&nbsp;&nbsp;&nbsp;址:
+								p 北京市西城区北三环中路甲2号换尊大厦B座1102室 
+							.mobile.item-group.clearfix
+								span.pull-left 电&nbsp;&nbsp;&nbsp;&nbsp;话:
+								p 13800138000
+							.ctrl
+								a.icon.setdefault(href="",onclick="return confirm('确定要使用此地址作为默认地址吗?');")
+								a.icon.edit(href="#") 
+								a.icon.del(href="#") 
+						li.adr-item
+							.banner
+								p 焦炒肝二环到三环
+							.username.item-group.clearfix
+								span.pull-left 收货人:
+								p 我是测试
+							.adr.item-group.clearfix
+								span.pull-left 地&nbsp;&nbsp;&nbsp;&nbsp;址:
+								p 北京市西城区北三环中路甲2号换尊大厦B座1102室 
+							.mobile.item-group.clearfix
+								span.pull-left 电&nbsp;&nbsp;&nbsp;&nbsp;话:
+								p 13800138000
+							.ctrl
+								a.icon.setdefault(href="",onclick="return confirm('确定要使用此地址作为默认地址吗?');")
+								a.icon.edit(href="#") 
+								a.icon.del(href="#") 
+						li.adr-item
+							.banner
+								p 焦炒肝二环到三环
+							.username.item-group.clearfix
+								span.pull-left 收货人:
+								p 我是测试
+							.adr.item-group.clearfix
+								span.pull-left 地&nbsp;&nbsp;&nbsp;&nbsp;址:
+								p 北京市西城区北三环中路甲2号换尊大厦B座1102室 
+							.mobile.item-group.clearfix
+								span.pull-left 电&nbsp;&nbsp;&nbsp;&nbsp;话:
+								p 13800138000
+							.ctrl
+								a.icon.setdefault(href="",onclick="return confirm('确定要使用此地址作为默认地址吗?');")
+								a.icon.edit(href="#") 
+								a.icon.del(href="#") 
+
+
+
+
+
+		

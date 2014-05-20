@@ -127,9 +127,15 @@ Giccoo = (function() {
       "qzone": "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={url}&title={title}&pic={pic}",
       "facebook": "http://www.facebook.com/sharer/sharer.php?s=100&p[url]={url}}&p[title]={title}&p[summary]={title}&pic={pic}",
       "twitter": "https://twitter.com/intent/tweet?text={title}&pic={pic}",
-      "kaixin": "http://www.kaixin001.com/rest/records.php?content={title}&url={url}&pic={pic}"
+      "kaixin": "http://www.kaixin001.com/rest/records.php?content={title}&url={url}&pic={pic}",
+      "douban": "http://www.douban.com/share/service?bm=&image={pic}&href={url}&updated=&name={title}"
     };
-    return $("a[data-share]").unbind('click').bind('click', function() {
+    return $("[data-share]").unbind('click').bind('click', function() {
+      var rep;
+      if ($(this).attr('content')) {
+        rep = $(this).attr('content');
+        content = content.replace('{content}', rep);
+      }
       return $ep.fShare(list[$(this).data('share')], content, url, pic);
     });
   };
@@ -159,11 +165,13 @@ Giccoo = (function() {
       $(this).before($div);
       $div.addClass($(this).attr('class')).append($(this));
       $div.append($i);
+      if ($(this).is(':checked')) {
+        $div.addClass('on');
+      }
       return $(this).change(function() {
         var $o;
         $o = $(this);
         $('[name=' + $o.attr('name') + ']').parent().removeClass('on');
-        console.log($('[name=' + $o.attr('name') + ']'));
         return setTimeout(function() {
           if ($o.is(':checked')) {
             return $o.parent().addClass('on');
@@ -231,6 +239,13 @@ Giccoo = (function() {
     } else {
       return $(o).next().html($(o).find('option').text());
     }
+  };
+
+  Giccoo.prototype.mobilecheck = function() {
+    if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
+      return true;
+    }
+    return false;
   };
 
   Giccoo.prototype.fBindOrientation = function() {

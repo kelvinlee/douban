@@ -1,0 +1,39 @@
+//- div#secondbar.bar.bar-tab.bar-footer-secondary
+	a(class="tab-item",href="index.html",data-transition="slide-in")
+		span.icon.i-home
+		span.tab-label 在线
+//一级菜单. 选中状态需要增加active.
+nav.bar.bar-tab
+	div.bar-first
+		a(class="tab-item #{home}",href="index.html",data-transition="slide-in")
+			span.icon.i-home
+			span.tab-label 在线选购
+		a(class="tab-item #{prod}",href="prod.html",data-transition="slide-in")
+			span.icon.i-prod
+			span.tab-label Think产品
+		//个人中心里这里需要注意,如果没有登录,使用 href="#" onclick="signpop()" 如果登录了 使用 href="myinfo.html" data-transition="slide-in"
+		//- ,href="myinfo.html",data-transition="slide-in"
+		//- ,href="#",onclick="signpop()"
+		a(class="tab-item #{user}",href="#",onclick="signpop()")
+			span.icon.i-user
+			span.tab-label 个人中心
+		a(class="tab-item",href="#",onclick="showsecondbar(this)")
+			span.icon.i-more
+			span.tab-label 更多
+	//这里是二级菜单.
+	div#secondbar.bar.bar-tab.bar-footer-secondary.gray
+		a(class="tab-item",href="chat.html",data-transition="slide-in")
+			span.icon.i-chat
+			span.tab-label 在线客服
+		a(class="tab-item",href="shop.html",data-transition="slide-in")
+			span.icon.i-shop
+			span.tab-label 店面查询
+		a(class="tab-item",href="active.html",data-transition="slide-in")
+			span.icon.i-active
+			span.tab-label 品牌活动
+		a(class="tab-item",href="self.html",data-transition="slide-in")
+			span.icon.i-self
+			span.tab-label 私人定制
+		a(class="tab-item",href="service.html",data-transition="slide-in")
+			span.icon.i-service
+			span.tab-label 服务与支持

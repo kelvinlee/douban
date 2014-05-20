@@ -89,7 +89,7 @@
 } 
 .animation_top(".bird1",30%, pms, 8s, 140px, 130px); 
 
-
+@h : 2523;
 html,body {
 	.wh(100%); 
 }
@@ -99,83 +99,81 @@ img {
 #loadingpage {
 	// display: none;
 	.tl();
+  position: fixed;
 	.wh(100%,100%);
 	z-index: 3000;
 	background-color: @cw;
 	.text {
 		.pcenter(200px);
 		text-align: center;
-		font-size: 1.6em;
+		font-size: 1.4em;
 	}
 } 
 .parent {
-	.wh(640px,2523px);
+	.wh(100%);
 	overflow: hidden;
 }
 .main {
-	.wh(640px);
+	.wh(100%);
 	position: relative;
+  img {
+    max-width: 100%;
+  }
 }
 .bird1 {
-	.wh(99px,71px);
-	.b("../img/bird-1.png");
-	.tl(90px,10px);
+	.wh(99/640*100%);
+	// .b("../img/bird-1.png");
+	.tl(90/@h*100%,10/640*100%);
 }
 .bird2 {
 	.tram();
-	.wh(276px,197px);
-	.b("../img/bird-2.png");
-	.tr(440px,30px);
+	.wh(43.125%);
+	.tr(17.4326466%,04.6875%);
 	.tran(translate(300px,0px));
 	opacity: 0;
 }
 .bird3 {
 	.tram();
-	.wh(307px,223px);
-	.b("../img/bird-3.png");
-	.tl(820px,30px);
+	.wh(47.96875%);  
+	.tl(32.5009909%,04.6875%);
 	.tran(translate(-310px,0px));
 	opacity: 0;
 }
 .bird4 {
 	.tram();
-	.wh(276px,197px);
-	.b("../img/bird-4.png");
-	.tr(1140px,60px);
+	.wh(43.125%); 
+	.tr(45.1843044%,09.375%);
 	.tran(translate(300px,0px));
 	opacity: 0;
 }
 .bird5 {
 	.tram();
-	.wh(326px,223px);
-	.b("../img/bird-5.png");
-	.tl(1520px,30px);
+	.wh(50.9375%); 
+	.tl(60.2457392%,04.6875%);
 	.tran(translate(-330px,0px));
 	opacity: 0;
 }
 .bird6 {
 	.tram();
-	.wh(309px,239px);
-	.b("../img/bird-6.png");
-	.tr(1852px,90px);
+	.wh(309/640*100%); 
+	.tr(1852/2523*100%,90/640*100%);
 	.tran(translate(300px,0px));
 	opacity: 0;
 }
 .bird7 {
 	.tram();
-	.wh(100px,223px);
-	.b("../img/bird-7.png");
-	.tl(2170px,80px);
+	.wh(100/640*100%); 
+	.tl(2170/2523*100%,80/640*100%);
 	.tran(translate(-330px,0px));
 	opacity: 0;
 }
 .goto1 {
-	.tr(120px,20px);
-	.wh(200px,120px);
+	.tr(120/@h*100%,20/640*100%);
+	.wh(200/640*100%,120/@h*100%);
 }
 .goto2 {
-	.br(20px,0px); 
-	.wh(260px,200px);
+	.br(20/@h*100%,0/640*100%); 
+	.wh(260/640*100%,200/@h*100%);
 }
 .on {
 	.tran(translate(0px,0px));

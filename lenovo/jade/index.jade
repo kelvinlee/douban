@@ -1,0 +1,40 @@
+extends layout
+//- 标题
+block title
+	| Lenovo
+//- 内容
+block content_here 
+	//带有logo的头.
+	header.bar.bar-nav
+		.logo.pull-left
+			img.w100(src="img/logo.jpg")
+		.search.pull-right
+			//js里控制了searchbtn会跳转到btn上的data-url属性的页面,并且附带参数search=%.
+			div.form-group
+				input.pull-left(name="search",type="search",placeholder="TinkPad E431")
+				button#searchbtn.addon.pull-right(data-url="search.html")
+					span.icon.icon-search
+	-var home = "active"
+	include nav
+	.content.gray
+		//滑动页面需要使用特殊跳转,否则会和拖动事件重合.
+		.slider#mySlider
+			.slide-group
+				.slide
+					img.w100(src="img/banner.jpg",onclick="gotopage('index.html')")
+				.slide
+					img.w100(src="img/banner.jpg",onclick="gotopage('index.html')")
+			.slide-point
+				span.on
+				span
+		div.card-k
+			ul.table-view
+				-for (var i=1;i<=3;i++)
+					li.table-view-cell.media
+						a.navigate(href="myinfo.html",data-transition="slide-in")
+							div.media-object.pull-left 
+								p.subtitle 
+									span.icon.i-t-left 
+									|  热卖Top10
+								h4 ThinkPad用户最热衷的产品
+							img.item(class="media-body pull-right",src="img/item-#{i}.jpg")
