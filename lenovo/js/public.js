@@ -13,17 +13,16 @@ var Zepto=function(){function L(t){return null==t?String(t):j[T.call(t)]||"objec
      Begin public.coffee
 --------------------------------------------
  */
-var closeAll, gotopage, isScrolling_move, myFunction, readygo, showsecondbar, signpop;
+var checkForm, closeAll, editadr, gotopage, hideAll, hidecancel, isScrolling_move, myFunction, readygo, showcancel, showsecondbar, signpop;
 
 isScrolling_move = false;
 
 readygo = function(evt) {
   closeAll();
-  $("#goback").attr('href', document.referrer);
-  console.log(document.referrer);
   if ($("#mySlider").length > 0) {
-    return document.querySelector('#mySlider').addEventListener('slide', myFunction);
+    document.querySelector('#mySlider').addEventListener('slide', myFunction);
   }
+  return checkForm();
 };
 
 $(document).ready(function() {
@@ -37,13 +36,19 @@ window.addEventListener("load", function() {
   });
 });
 
+document.addEventListener('WeixinJSBridgeReady', function() {
+  return WeixinJSBridge.call('hideToolbar');
+});
+
 showsecondbar = function(o) {
   if ($("#secondbar").is(".showthis")) {
     $("#secondbar").removeClass('showthis');
-    return $(o).removeClass('active');
+    $(o).removeClass('active');
+    return $(".tab-label", o).text('更多');
   } else {
     $("#secondbar").addClass('showthis');
-    return $(o).addClass('active');
+    $(o).addClass('active');
+    return $(".tab-label", o).text('收起');
   }
 };
 
@@ -86,4 +91,57 @@ gotopage = function(url, animate, anit) {
   } else {
     return window.location.href = url;
   }
+};
+
+checkForm = function() {
+  if ($("form input").length > 0) {
+    return $("input[type=checkbox]").each(function(i) {
+      var $div, $i;
+      $div = $('<div>').addClass('checkbox-parent ' + $(this).attr('class'));
+      $i = $('<i>');
+      $(this).before($div);
+      $div.addClass($(this).attr('class')).append($(this));
+      if ($(this).is(':checked')) {
+        $div.addClass('on');
+      }
+      $div.append($i);
+      return $(this).change(function() {
+        var $o;
+        $o = $(this);
+        return setTimeout(function() {
+          if ($o.is(':checked')) {
+            return $o.parent().addClass('on');
+          } else {
+            return $o.parent().removeClass('on');
+          }
+        }, 10);
+      });
+    });
+  }
+};
+
+hidecancel = function() {
+  return $("#cancel").removeClass('active');
+};
+
+showcancel = function(o, id) {
+  $("#cancel").addClass('active');
+  return $("#cancel").click(function(e) {
+    if (!($(e.target).is(".popbody") || $(e.target).parents(".popbody").length > 0)) {
+      return $("#cancel").removeClass('active');
+    }
+  });
+};
+
+editadr = function(id) {
+  $("#adrctrl").addClass('active');
+  return $("#adrctrl").click(function(e) {
+    if (!($(e.target).is(".popbody") || $(e.target).parents(".popbody").length > 0)) {
+      return $("#adrctrl").removeClass('active');
+    }
+  });
+};
+
+hideAll = function() {
+  return $(".pop").removeClass('active');
 };

@@ -7,11 +7,13 @@
     <title>Lenovo</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/ratchet.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/ratchet.js"></script>
     <script src="js/public.js"></script>
   </head>
   <body>
+    <!--如果觉得页面切换效果不好,想取消掉用给所有的a标记加 data-ignore="push" 删除原来的 data-transition="slide-in"-->
     <!--带有logo的头.-->
     <header class="bar bar-nav">
       <div class="logo pull-left"><img src="img/logo.jpg" class="w100"></div>
@@ -19,7 +21,7 @@
         <!--js里控制了searchbtn会跳转到btn上的data-url属性的页面,并且附带参数search=%.-->
         <div class="form-group">
           <input name="search" type="search" placeholder="TinkPad E431" class="pull-left">
-          <button id="searchbtn" data-url="search.html" class="addon pull-right"><span class="icon icon-search"></span></button>
+          <button id="searchbtn" data-url="search.html" class="addon pull-right"><span class="icon i-search"></span></button>
         </div>
       </div>
     </header>
@@ -68,6 +70,36 @@
             <h4>温馨提示</h4>
             <p>您还没有登录，请立即登录享受更多会员服务!</p>
             <div class="btn-list"><a href="signup.html" data-transition="slide-in" class="btn">注 册</a><a href="signin.html" data-transition="slide-in" class="btn">登 录</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="cancel" class="pop">
+      <div class="popbody">
+        <div class="content">
+          <div class="content-padded">
+            <h4>温馨提示</h4>
+            <p>您确定要取消订单<span class="orderid">123321</span></p>
+            <div class="btn-list"><a href="myinfo.html" class="btn">确 定</a>
+              <div onclick="hidecancel()" class="btn">取 消</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="adrctrl" class="pop">
+      <div class="popbody">
+        <div class="content">
+          <div class="content-padded">
+            <h4>编辑地址</h4>
+            <div>
+              <form src="userinfo.html">
+                <input type="text" name="username" placeholder="收货人">
+                <input type="text" name="adr" placeholder="地址">
+                <input type="text" name="mobile" placeholder="电话">
+                <input type="submit" value="提交" class="btn btn-default">
+              </form>
+            </div>
           </div>
         </div>
       </div>

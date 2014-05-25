@@ -8,3 +8,24 @@ div#nologin.pop
 				div.btn-list
 					a.btn(href="signup.html",data-transition="slide-in") 注 册
 					a.btn(href="signin.html",data-transition="slide-in") 登 录
+div#cancel.pop
+	div.popbody
+		div.content
+			div.content-padded
+				h4 温馨提示
+				p 您确定要取消订单
+					span.orderid 123321
+				div.btn-list
+					a.btn(href="myinfo.html") 确 定
+					div.btn(onclick="hidecancel()") 取 消
+div#adrctrl.pop
+	div.popbody
+		div.content
+			div.content-padded
+				h4 编辑地址
+				div
+					form(src="userinfo.html")
+						input(type="text",name="username",placeholder="收货人")
+						input(type="text",name="adr",placeholder="地址")
+						input(type="text",name="mobile",placeholder="电话")
+						input.btn.btn-default(type="submit",value="提交") 

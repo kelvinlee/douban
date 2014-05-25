@@ -1,9 +1,9 @@
 //- for heard
 mixin header(title)
-	header.bar.bar-nav
+	header.bar.bar-nav.header
 		//这里需要后端获取前一个页的地址放到goback的href里.
-		a#goback.icon.icon-left-nav.pull-left(href="#",data-transition="slide-out")
-		a.icon.icon-home.pull-right(href="index.html",data-transition="slide-out")
+		a#goback.icon.i-left-nav.pull-left(href="#",data-transition="slide-out")
+		a.icon.i-backhome.pull-right(href="index.html",data-transition="slide-out")
 		h1.title #{title}
 doctype
 html(lang="en").no-js
@@ -16,12 +16,14 @@ html(lang="en").no-js
 			block title
 		meta(name="apple-mobile-web-app-capable",content="yes")
 		meta(name="apple-mobile-web-app-status-bar-style",content="black")
+		link(rel="stylesheet",href="css/ratchet.css")
 		link(rel="stylesheet",href="css/main.css")
 		script(src="js/ratchet.js")
 		script(src="js/public.js")
 
 		block css_here
-	body 
+	body
+		//如果觉得页面切换效果不好,想取消掉用给所有的a标记加 data-ignore="push" 删除原来的 data-transition="slide-in"
 		block content_here
 		include public
 		block js_here

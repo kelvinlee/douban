@@ -1,0 +1,59 @@
+extends layout
+//- 标题
+block title
+	| 寻
+//- 内容
+block content_here 
+	+header("购物车")
+	-var user = "active"
+	include nav
+	.content.gray 
+		.prodinfo.prodpage.clearfix
+			div.card
+				div.card-k
+					form(action="sett.html")
+						ul.table-view.clearfix 
+							li.table-view-cell.media
+								div.navigate.clearfix
+									div.media-object.pull-left
+										img(src="img/prod-1.jpg")
+										//- span 已发货
+									div.media-body.pull-left
+										h3.normal ThinkPad New X1 Carbon
+										p.description
+											em ￥5800
+										p.info
+											span.badge 2
+										input(type="hidden",name="prodname",value="uid788")
+										input(type="checkbox",name="uid788",checked)
+							li.table-view-cell.media
+								div.navigate.clearfix
+									div.media-object.pull-left
+										img(src="img/prod-1.jpg")
+										//- span 已发货
+									div.media-body.pull-left
+										h3.normal ThinkPad New X1 Carbon
+										p.description
+											em ￥5800
+										p.info
+											span.badge 2
+										input(type="hidden",name="prodname",value="uid788")
+										input(type="checkbox",name="uid788")
+							li.table-view-cell.media
+								div.navigate.clearfix
+									div.media-object.pull-left
+										img(src="img/prod-1.jpg")
+										//- span 已发货
+									div.media-body.pull-left
+										h3.normal ThinkPad New X1 Carbon
+										p.description
+											em ￥5800
+										p.info
+											span.badge 2
+										input(type="hidden",name="prodname",value="uid788")
+										input(type="checkbox",name="uid788")
+						div.ctrl
+							button.btn.btn-default.btn-block 结算
+
+
+		

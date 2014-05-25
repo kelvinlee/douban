@@ -1,4 +1,3 @@
-@import url(ratchet.min.css);
 .dis-box {
   display: box;
   display: -moz-box;
@@ -91,6 +90,13 @@
 .clearfix {
   *zoom: 1;
 }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
+}
 .slider {
   background: transparent;
 }
@@ -105,7 +111,7 @@
 }
 .logo {
   padding-top: 8px;
-  width: 40%;
+  width: 120px;
 }
 .search {
   width: 50%;
@@ -131,6 +137,9 @@
   font-size: 14px;
   padding: 0;
   line-height: 29px;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
 }
 .slide-point {
   width: 100%;
@@ -188,6 +197,12 @@
   font-size: 12px;
   color: #ff9999;
 }
+.header .icon {
+  width: 24px;
+  height: 44px;
+  display: inline-block;
+  background-size: contain;
+}
 .bar .tab-label {
   color: #595757;
 }
@@ -197,6 +212,12 @@
 }
 .bar a {
   color: #a9a9a9;
+}
+.bar-nav {
+  border-bottom: 0;
+}
+.bar-tab {
+  border-top: 0;
 }
 .bar-first {
   position: relative;
@@ -250,8 +271,24 @@
   background: url("../img/icon-s5.png") no-repeat center center;
   background-size: cover;
 }
+.i-search {
+  background: url("../img/icon-search.png") no-repeat center center;
+  background-size: cover;
+}
+.i-left-nav {
+  background: url("../img/icon-left.png") no-repeat center center;
+  background-size: cover;
+}
 .i-t-left {
   background: url("../img/icon-t-left.png") no-repeat center center;
+  background-size: cover;
+}
+.i-backhome {
+  background: url("../img/icon-backhome.png") no-repeat center center;
+  background-size: cover;
+}
+.i-sj {
+  background: url("../img/icon-sj.png") no-repeat center center;
   background-size: cover;
 }
 .active .i-home {
@@ -460,6 +497,9 @@
 .prodinfo .card-k {
   margin: 0px;
 }
+.prodinfo .card-k .ctrl {
+  padding: 10px;
+}
 .prodinfo .card-k .table-view-cell {
   padding: 10px;
   margin: 0px;
@@ -490,6 +530,7 @@
   color: #666;
 }
 .prodinfo .card-k .table-view-cell .media-body {
+  position: relative;
   width: 65%;
 }
 .prodinfo .card-k .table-view-cell .media-body h3 {
@@ -497,6 +538,9 @@
   color: #eb504c;
   font-weight: normal;
   margin-bottom: 2px;
+}
+.prodinfo .card-k .table-view-cell .media-body .normal {
+  color: #282828;
 }
 .prodinfo .card-k .table-view-cell .media-body .description {
   font-size: 12px;
@@ -507,6 +551,11 @@
 .prodinfo .card-k .table-view-cell .media-body .description span:first-child {
   /* style */
   margin-right: 4px;
+}
+.prodinfo .card-k .table-view-cell .media-body .description em {
+  font-size: 16px;
+  color: #eb504c;
+  font-style: normal;
 }
 .prodinfo .card-k .table-view-cell .media-body .info {
   margin-bottom: 10px;
@@ -520,9 +569,17 @@
   color: #eb504c;
   background: transparent;
   border: solid 1px #c2c2c2;
+  font-size: 16px;
+  padding: 6px 16px 7px;
 }
 .prodinfo .card-k .table-view-cell .media-body .focus {
   line-height: 30px;
+}
+.prodinfo .card-k .table-view-cell .media-body .checkbox-parent {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -10px;
 }
 .prodinfo .card-k .adr-list {
   list-style: none;
@@ -602,10 +659,156 @@
 .prodinfo .card-k .adr-list .adr-item .ctrl .del {
   background-image: url(../img/icon-close.png);
 }
+.prodinfo .card-k .adr-list .linknext {
+  padding: 0;
+  border: none;
+}
+.prodinfo .card-k .adr-list .linknext .cont {
+  padding: 10px;
+}
+.prodinfo .card-k .adr-list .linknext .cont-list .cont-item {
+  border-bottom: solid 1px #eaeaea;
+  padding: 10px;
+}
+.prodinfo .card-k .adr-list .linknext .cont-list .cont-item .media-object {
+  width: 40%;
+  margin-right: 10px;
+}
+.prodinfo .card-k .adr-list .linknext .cont-list .cont-item .media-body {
+  width: 55%;
+}
+.prodinfo .card-k .adr-list .linknext .cont-list .cont-item .media-body h3 {
+  font-size: 14px;
+  color: #eb504c;
+  font-weight: normal;
+  margin-bottom: 2px;
+}
+.prodinfo .card-k .adr-list .linknext .cont-list .cont-item .media-body .normal {
+  color: #282828;
+}
+.prodinfo .card-k .adr-list .linknext .cont-list .cont-item .media-body .description {
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+.prodinfo .card-k .adr-list .linknext .cont-list .cont-item .media-body .description span {
+  display: inline-block;
+}
+.prodinfo .card-k .adr-list .linknext .cont-list .cont-item .media-body .description span:first-child {
+  /* style */
+  margin-right: 4px;
+}
+.prodinfo .card-k .adr-list .linknext .cont-list .cont-item .media-body .description em {
+  font-size: 16px;
+  color: #eb504c;
+  font-style: normal;
+}
+.prodinfo .card-k .adr-list .linknext .cont-list .cont-item .media-body .info {
+  margin-bottom: 0px;
+}
+.prodinfo .card-k .adr-list .linknext .cont-list .cont-item .media-body .info em {
+  font-size: 16px;
+  color: #eb504c;
+  font-style: normal;
+}
+.prodinfo .card-k .adr-list .linknext .cont-list .cont-item .media-body .info .badge {
+  color: #eb504c;
+  background: transparent;
+  border: solid 1px #c2c2c2;
+  font-size: 16px;
+  padding: 6px 16px 7px;
+}
+.prodinfo .card-k .adr-list .linknext .cont-list .cont-item:last-child {
+  border: none;
+}
+.prodpage .card-k .table-view-cell .media-object {
+  width: 40%;
+}
+.prodpage .card-k .table-view-cell .media-body {
+  width: 55%;
+}
+.active-item {
+  display: inline-block;
+  margin: 10px;
+  margin-bottom: 5px;
+  background: #fff;
+}
+.active-item .media-body {
+  padding: 10px;
+}
+.active-item .media-body h1 {
+  font-size: 16px;
+  color: #282828;
+}
+.active-item .media-body p {
+  font-size: 10px;
+  line-height: 16px;
+}
+.checkbox-parent {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  border: solid 1px #d6d6d6;
+  border-radius: 50%;
+}
+.checkbox-parent input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  font-size: 40px;
+  z-index: 10;
+  opacity: 0;
+}
+.checkbox-parent i {
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border-radius: 50%;
+  background: url("../img/icon-ok.png") no-repeat center center;
+  background-size: cover;
+  background-size: 70%;
+  background-color: #eb504c;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}
+.checkbox-parent.on i {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
 .btn-default {
   color: #fff;
-  background: #eb504c;
+  background-color: #eb504c;
   padding: 8px 12px 9px;
   border-radius: 25px;
   border: 0px;
+}
+.btn {
+  font-size: 16px;
+}
+.btn .icon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin-bottom: -1px;
+}
+.textarea {
+  font-size: 14px;
+}
+.popbody input {
+  font-size: 14px;
 }

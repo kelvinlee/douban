@@ -1,0 +1,65 @@
+extends layout
+//- 标题
+block title
+	| 订单详情
+//- 内容
+block content_here 
+	+header("订单详情")
+	-var user = "active"
+	include nav
+	.content.gray 
+		.prodinfo.clearfix 
+			.card-k
+				ul.adr-list
+					li.adr-item.linknext
+						.banner
+							p 订单信息
+						.cont
+							p 订单编号: 1215955615
+							p 订单状态: 已处理
+					li.adr-item.linknext
+						.banner
+							p 收货人信息
+						.cont
+							p 北京市西城区北三环中路换尊大厦B座1102室 1352152378912345@qq.com
+					li.adr-item.linknext
+						.banner
+							p 商品信息
+								span.pull-right 合计: 40黑币
+						.cont-list
+							.cont-item.clearfix
+								.media-object.pull-left
+									img.w100(src="img/prod-1.jpg") 
+								.media-body.pull-left
+									h3.normal ThinkPad New X1 Carbon
+									p.description
+										em ￥5800
+									p.info
+										span.badge 2
+							.cont-item.clearfix
+								.media-object.pull-left
+									img.w100(src="img/prod-1.jpg") 
+								.media-body.pull-left
+									h3.normal ThinkPad New X1 Carbon
+									p.description
+										em ￥5800
+									p.info
+										span.badge 2
+							.cont-item.clearfix
+								.media-object.pull-left
+									img.w100(src="img/prod-1.jpg") 
+								.media-body.pull-left
+									h3.normal ThinkPad New X1 Carbon
+									p.description
+										em ￥5800
+									p.info
+										span.badge 2
+					li.adr-item.linknext
+						.banner
+							p 订单备注 
+						.cont
+							p 发票单位: 联想科技有限公司
+							div.btn.btn-block.btn-default(onclick="showcancel(this,'1215955615')") 取消订单
+
+
+	

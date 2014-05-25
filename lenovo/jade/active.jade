@@ -1,0 +1,22 @@
+extends layout
+//- 标题
+block title
+	| 寻
+//- 内容
+block content_here 
+	+header("品牌活动")
+	-var user = "active"
+	include nav
+	.content.gray 
+		a.active-item(href="index.html",data-transition="slide-in")
+			.media-object
+				img.w100(src="img/active1.jpg")
+			.media-body
+				h1 ThinkPad 8 随时，趣创造
+				p 都市生活重压之下，我们似乎只能小心翼翼的喘息，甚至几乎忘记自由呼吸的感觉。是时候任性一把了，勇敢挣脱束缚......
+		a.active-item(href="index.html",data-transition="slide-in")
+			.media-object
+				img.w100(src="img/active2.jpg")
+			.media-body
+				h1 ThinkPad 8 随时，趣创造
+				p 都市生活重压之下，我们似乎只能小心翼翼的喘息，甚至几乎忘记自由呼吸的感觉。是时候任性一把了，勇敢挣脱束缚......

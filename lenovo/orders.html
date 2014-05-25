@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-    <title>登录</title>
+    <title>订单详情</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="stylesheet" href="css/ratchet.css">
@@ -16,7 +16,7 @@
     <!--如果觉得页面切换效果不好,想取消掉用给所有的a标记加 data-ignore="push" 删除原来的 data-transition="slide-in"-->
     <header class="bar bar-nav header">
       <!--这里需要后端获取前一个页的地址放到goback的href里.--><a id="goback" href="#" data-transition="slide-out" class="icon i-left-nav pull-left"></a><a href="index.html" data-transition="slide-out" class="icon i-backhome pull-right"></a>
-      <h1 class="title">注册</h1>
+      <h1 class="title">订单详情</h1>
     </header>
     <!--一级菜单. 选中状态需要增加active.-->
     <nav class="bar bar-tab">
@@ -27,24 +27,67 @@
       <div id="secondbar" class="bar bar-tab bar-footer-secondary gray"><a href="chat.html" data-transition="slide-in" class="tab-item"><span class="icon i-chat"></span><span class="tab-label">在线客服</span></a><a href="shop.html" data-transition="slide-in" class="tab-item"><span class="icon i-shop"></span><span class="tab-label">店面查询</span></a><a href="active.html" data-transition="slide-in" class="tab-item"><span class="icon i-active"></span><span class="tab-label">品牌活动</span></a><a href="self.html" data-transition="slide-in" class="tab-item"><span class="icon i-self"></span><span class="tab-label">私人定制</span></a><a href="service.html" data-transition="slide-in" class="tab-item"><span class="icon i-service"></span><span class="tab-label">服务与支持</span></a></div>
     </nav>
     <div class="content gray">
-      <div class="content-padded">
-        <h4 class="form-title"><span class="point-s"></span>注册</h4>
-        <!--默认error 没有内容, 只有提交的时候返回错误内容,或判断有错误内容.-->
-        <div class="form signin">
-          <form action="signin.html">
-            <div class="input-line clearfix">
-              <input type="text" name="mobile" placeholder="请输入手机号" class="pull-left">
-              <input type="button" name="getcode" value="获取验证码" class="pull-right btn">
-            </div>
-            <p for="mobile" class="error">请输入正确的手机号.</p>
-            <input type="text" name="code" placeholder="请输入验证码">
-            <p for="code" class="error"></p>
-            <input type="password" name="password" placeholder="请输入密码">
-            <p for="password" class="error"></p>
-            <div class="btn-list">
-              <button class="btn btn-block">注 册</button>
-            </div>
-          </form>
+      <div class="prodinfo clearfix">
+        <div class="card-k">
+          <ul class="adr-list">
+            <li class="adr-item linknext">
+              <div class="banner">
+                <p>订单信息</p>
+              </div>
+              <div class="cont">
+                <p>订单编号: 1215955615</p>
+                <p>订单状态: 已处理</p>
+              </div>
+            </li>
+            <li class="adr-item linknext">
+              <div class="banner">
+                <p>收货人信息</p>
+              </div>
+              <div class="cont">
+                <p>北京市西城区北三环中路换尊大厦B座1102室 1352152378912345@qq.com</p>
+              </div>
+            </li>
+            <li class="adr-item linknext">
+              <div class="banner">
+                <p>商品信息<span class="pull-right">合计: 40黑币</span></p>
+              </div>
+              <div class="cont-list">
+                <div class="cont-item clearfix">
+                  <div class="media-object pull-left"><img src="img/prod-1.jpg" class="w100"></div>
+                  <div class="media-body pull-left">
+                    <h3 class="normal">ThinkPad New X1 Carbon</h3>
+                    <p class="description"><em>￥5800</em></p>
+                    <p class="info"><span class="badge">2</span></p>
+                  </div>
+                </div>
+                <div class="cont-item clearfix">
+                  <div class="media-object pull-left"><img src="img/prod-1.jpg" class="w100"></div>
+                  <div class="media-body pull-left">
+                    <h3 class="normal">ThinkPad New X1 Carbon</h3>
+                    <p class="description"><em>￥5800</em></p>
+                    <p class="info"><span class="badge">2</span></p>
+                  </div>
+                </div>
+                <div class="cont-item clearfix">
+                  <div class="media-object pull-left"><img src="img/prod-1.jpg" class="w100"></div>
+                  <div class="media-body pull-left">
+                    <h3 class="normal">ThinkPad New X1 Carbon</h3>
+                    <p class="description"><em>￥5800</em></p>
+                    <p class="info"><span class="badge">2</span></p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="adr-item linknext">
+              <div class="banner">
+                <p>订单备注 </p>
+              </div>
+              <div class="cont">
+                <p>发票单位: 联想科技有限公司</p>
+                <div onclick="showcancel(this,'1215955615')" class="btn btn-block btn-default">取消订单</div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
