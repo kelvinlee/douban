@@ -1,0 +1,22 @@
+extends layout
+//- 内容
+block content_here
+	.main5
+		img.bg(src="img/bg5.jpg")
+		h4#qqname QQ: 
+		h4#lot 加载中请稍后.
+		a.back4(href="index.html")
+//- css
+block css_here
+//- js
+block js_here
+	script.
+		window.onload = function(){
+			var loca=location.hash.split("#", 2)[1];
+			console.log(loca);
+			var qqname = document.getElementById("qqname");
+			qqname.innerHTML = "QQ: "+loca
+			var lot = document.getElementById("lot");
+			lot.innerHTML = "恭喜您获得300Q币"
+		}
+	

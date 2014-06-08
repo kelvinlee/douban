@@ -1,0 +1,93 @@
+extends layout
+//- 标题
+block title
+	| 那些话隐秘而伟大
+
+//- 内容
+block content_here
+	div(style="position: absolute;opacity: 0; z-index:-1;")
+		img(src="img/thumb.jpg")
+	//- div(style="position:absolute; width:200px; height:567px; background: #fff;")
+	
+	//- div#loading 
+	div.logo
+		img(src="img/logo.png")
+	div.message
+		div.selectde.hidethis
+			div
+				span
+					img(src="img/icon-happyface.png")
+				p 你生于哪个年代？<br/>又对哪种风格的浴室情有独钟？<br/>选择即可获取年代专属浴室！
+		div.gamestar.hidethis
+			div
+				span
+					img(src="img/icon-message.png")
+				p 已经打开热水器，<br/>雾气腾腾，你感受到了嘛？
+		div.gameend.hidethis
+			div
+				span
+					img#uploadsuccess(src="img/uploading.gif")
+				p#uploadsuccesstext  请稍后...<br/>正在努力上传.
+			div.ctrlbar
+				div#reload.btn-group
+					span
+						img(src="img/restart.png")
+					label 再玩一次
+				div#sharebtns.btn-group
+					span
+						img(src="img/sharebtn.png")
+					label 分享给好友
+			div.sharebox
+				div(data-weixin="weixin")
+					img(src="img/icon-s-weixin.png")
+				div(data-share="weibo")
+					img(src="img/icon-s-weibo.png")
+				div(data-share="douban")
+					img(src="img/icon-s-douban.png")
+				div(data-share="renren")
+					img(src="img/icon-s-renren.png")
+				div(data-share="qweibo")
+					img(src="img/icon-s-qweibo.png")
+
+
+
+
+	div.homepage
+		div.decade
+			img(src="img/pop.png")
+			div.prev
+				img(src="img/next.jpg")
+			div.box
+				span 年代
+				div.boxlist
+					div.item
+					div.item.on 70
+					div.item 80
+					div.item 90
+					div.item 00
+			div.next
+				img(src="img/next.jpg")
+		div.ctrlbar
+			div#homenext.nextstep
+				img(src="img/nextstep.png")
+	div.selectres
+		div.rxqlist
+			p.title 选择您青睐的一款热水器！
+			#mySlider.slider
+				div.slide-group
+			div.prev
+				img(src="img/next.png")
+			div.next
+				img(src="img/next.png")
+			
+	div.gamestarpage
+		div.ctrlbar
+			div#gameend.nextstep
+				img(src="img/nextstep.png")
+			div#reset.reset
+				img(src="img/reset.png")
+	//- div.gameendpage
+	div.weixinshare
+		img(src="img/wexin-share.png")
+	div#mubu.mubu
+		//- canvas#canvas(width="640",height="960")

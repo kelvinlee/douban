@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="main5"><img src="img/bg5.jpg" class="bg">
+      <h4 id="qqname">QQ: </h4>
+      <h4 id="lot">加载中请稍后.</h4><a href="index.html" class="back4"></a>
+    </div>
+    <script>
+      window.onload = function(){
+       var loca=location.hash.split("#", 2)[1];
+       console.log(loca);
+       var qqname = document.getElementById("qqname");
+       qqname.innerHTML = "QQ: "+loca
+       var lot = document.getElementById("lot");
+       lot.innerHTML = "恭喜您获得300Q币"
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,203 @@
+extends layout
+//- 内容
+block content_here
+	div(style="position: absolute;opacity: 0;")
+		img(src="img/share-weixin.jpg")
+	div.loading
+		div.text  努力加载中...
+	div.logo
+		img(src="img/logo.png")
+	div.backhome
+		img(src="img/gohome.png")
+	//- div.homepage
+	div.weixinshare
+		img(src="img/weixinshare.png")
+	div.homepage
+		div.text(data-animate="animated bounceIn")
+			img(src="img/index-text.png")
+		div.chance
+			img(src="img/index-chance.png")
+		div.car
+			div.car-1(data-animate="animated fadeInLeftBig")
+				img(src="img/car-1.png")
+			div.car-2(data-animate="animated fadeInRightBig")
+				img(src="img/car-2.png")
+		div.sound
+			img(src="img/index-sound.png")
+
+	div.car360
+		div.carlist
+			div.box-none
+			div#list360.list
+				div.imglist
+					img(src="img/a33/4.png")
+				div#point.point(style="display:none;")
+					img.p(src="img/point.png")
+					div.line
+					div.header
+						img#human(src="")
+					div.name
+						h4
+						p
+					div.sound
+						img(src="img/icon-sound.png")
+						img.play(src="img/sound-r.gif")
+						span#times 20''
+			div.car-pt
+
+			div.car-back
+				img#back-image(src="img/a3s-back.png")
+		div.car-btns
+			img(src="img/btns-1.jpg")
+			div.interior
+			a.drive.openresert(href="resert.html")
+	
+	div.carsideinfo
+		div#img-list.banner
+			div.img-list(model="center")
+				img.bn(src="img/title-1.jpg")
+				//- img.bn(src="img/title-2.jpg")
+			div.movectrl
+				div.left
+					img(src="img/info-left.png")
+				div.right
+					img(src="img/info-left.png")
+				div.bottom
+					img(src="img/info-left.png")
+
+				div#pointinside.point.point3
+					img.p(src="img/point2.png")
+					div.line
+					div.header
+						img#human(src="")
+					div.name
+						h4
+						p
+					div.sound
+						img(src="img/icon-sound.png")
+						img.play(src="img/sound-r.gif")
+						span#times 20''
+
+
+		div.car-back
+			img#changed-image(src="img/a3s-back.png")
+		div.car-btns
+			img(src="img/btns-2.jpg")
+			div.exterior
+			a.drive.openresert(href="resert.html")
+
+	div.car360inside
+		div.hide
+			audio#audio(src="",controls)
+		div.carinside-back
+			div.backbtn(onclick="backCarInside()")
+				img(src="img/back-btn.png")
+		div.carinfo.clearfix
+			div.user
+				div.avatar
+					img(src="")
+				div.userinfo
+					h3 胡玲
+					p 凤凰卫视北京站首席记者
+			div.radioinfo
+				div.radio
+					img.play(src="img/sound-w.gif")
+					img.stop(src="img/sound-w.png")
+					span 25''
+				h4 
+				p
+
+		div.qatitle
+			img#qafs(src="img/qa1.png")
+		div.qa
+			h2 全新奥迪A3 Sportback使用的ultra轻量化车身技术，有什么作用？
+			div#question.question.clearfix
+				div.item 
+					p 全部使用碳纤维材质，大幅降低车身重量
+				div.item 
+					p 提升车身的钢性，减少不必要的能量损耗
+		div.register.clearfix
+			a.regbtn.openresert(href="resert.html")
+				img(src="img/register.png")
+
+	//- (data-rel="resertpage",style="display:block;")
+	div.resertpage
+		div.head
+			img(src="img/reg-top.jpg")
+			div.backbtn(onclick="hideResertPage()")
+				img(src="img/back-btn.png")
+		div.nr
+			form.form(name="register")
+				div.input-group
+					span.addon
+						img.icon-user(src="img/icon-user.jpg")
+					input(type="text",name="username",placeholder="姓名")
+				div.radio-group
+					input.man(type="radio",name="sex",value="先生",checked)
+					input.woman(type="radio",name="sex",value="女士")
+				div.input-group
+					span.addon
+						img.icon-phone(src="img/icon-phone.jpg")
+					input(type="text",name="mobile",placeholder="电话")
+				div.input-group
+					span.addon
+						img.icon-email(src="img/icon-email.jpg")
+					input(type="text",name="email",placeholder="电子邮箱")
+				div.brith-group.clearfix
+					label 生日
+					select.y(name="year")
+						-for (var i=100;i>0;i--)
+							-var checked = ""
+							-if (100/2 == i)
+								option(value="#{new Date().getFullYear()-i}",selected) #{new Date().getFullYear()-i}
+							-else
+								option(value="#{new Date().getFullYear()-i}") #{new Date().getFullYear()-i}
+					select.m(name="month")
+						-for (var i=1;i<=12;i++)
+							option(value="#{i}") #{i}
+					select.d(name="day")
+						-for (var i=1;i<=31;i++)
+							option(value="#{i}") #{i}
+				div.select-group
+					select(name="cartype")
+						option(value="选择车型") 选择车型
+						option(value="A3 Limousine") A3 Limousine
+						option(value="A3 Sportback") A3 Sportback
+				div.city-group.clearfix
+					select#province(name="province",role="province",data-default="省",target="#city")
+						option(value="选择省份") 选择省份
+					select#city(name="city",role="city",data-default="市",callback="setDealer")
+						option(value="选择省份") 选择省份
+				div.select-group
+					select#dealer(name="dealer")
+						option(value="选择经销商") 选择经销商
+				div.radio-l-group.passport.clearfix
+					label 拥有护照: 
+					input(type="radio",name="passport",value="是",checked)
+					input(type="radio",name="passport",value="否")
+				div.radio-l-group.hascar.clearfix
+					label 拥有车辆:
+					input(type="radio",name="hascar",value="无",checked)
+					input(type="radio",name="hascar",value="有")
+				div.select-group.clearfix
+					//- label 计划购车:
+					select(name="buytime")
+						option(value="计划购车") 计划购车
+						option(value="3个月内") 3个月内
+						option(value="4至6个月内") 4至6个月内
+						option(value="7个月到1年内") 7个月到1年内
+						option(value="1年以上") 1年以上
+						option(value="不确定") 不确定
+						
+					//- select
+				div.copy
+					h2
+						div.check
+							input(type="checkbox",name="private",checked)
+						|  隐私条款
+					p 我特此授权一汽-大众奥迪保留我的数据以便解答我的问题；我所提供的信息将按照数据保护规定进行保留。我也同意一汽-大众奥迪把我的数据用于其它营销、调查和统计目的，并允许一汽-大众奥迪根据我所提供的信息与我联系。
+				div.btn-ctrl
+					input.submit(type="button",name="submit",value="提交")
+
+
+

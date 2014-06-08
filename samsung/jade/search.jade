@@ -1,0 +1,19 @@
+extends layout
+//- 内容
+block content_here
+	.main4
+		img.bg(src="img/bg4.jpg")
+		input#qq.inputqq(type="text",name="qq",value="")
+		a.submit(onclick="gotoanswer()")
+//- css
+block css_here
+//- js
+block js_here
+	script.
+		function gotoanswer() {
+			qq = document.getElementById("qq").value;
+			if (qq == "") {alert("QQ号码不能为空.");return false;}
+			var reg = /^[0-9]+$/
+			if(!reg.test(qq)){ alert("QQ号码只能是数字"); return false; }
+			window.location.href = "answer.html#"+qq;
+		}

@@ -1,0 +1,29 @@
+@import "less/kelvin.less";
+
+canvas {
+  .wh(100%,100%);
+}
+.mubu{
+	.wh(100%,100%);
+	background: #23378B;
+	// min-height: 830px/2;
+	height: 100%;
+}
+#loading {
+  display:none;
+  .tl();
+  .wh(100%,100%);
+  .text {
+    .pcenter(200px,40px);
+    text-align:center;
+  }
+}
+
+
+@media (min-width: 1024px) {
+    /* Style adjustments for viewports that meet the condition */
+    .mubu {
+      .wh(640px);
+      .mp();
+    }
+}

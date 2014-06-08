@@ -713,3 +713,54 @@ img {
   width: 39.53125%;
   height: 80px;
 }
+.main4 {
+  padding-top: 80%;
+}
+.main4 .inputqq {
+  display: block;
+  width: 58%;
+  height: 2em;
+  margin: 0px auto;
+  padding: 0px;
+  position: relative;
+  z-index: 4;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+.main4 .submit {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 44%;
+  height: 3em;
+  position: relative;
+  z-index: 4;
+}
+.main5 {
+  padding-top: 53%;
+}
+.main5 h4 {
+  margin: 0 auto;
+  font-style: 1.4em;
+  color: #000;
+  display: block;
+  width: 80%;
+  height: 2.4em;
+  line-height: 2.4em;
+  text-align: center;
+  position: relative;
+  z-index: 4;
+}
+.main5 #lot {
+  margin-top: 10%;
+}
+.main5 .back4 {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 44%;
+  height: 3em;
+  position: relative;
+  z-index: 4;
+}

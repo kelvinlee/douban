@@ -13,7 +13,7 @@ var Zepto=function(){function L(t){return null==t?String(t):j[T.call(t)]||"objec
      Begin public.coffee
 --------------------------------------------
  */
-var checkForm, closeAll, editadr, gotopage, hideAll, hidecancel, isScrolling_move, myFunction, readygo, showcancel, showsecondbar, signpop;
+var checkForm, closeAll, editadr, gotopage, hideAll, hidecancel, isScrolling_move, myFunction, readygo, showactivetable, showcancel, showsecondbar, signpop;
 
 isScrolling_move = false;
 
@@ -144,4 +144,13 @@ editadr = function(id) {
 
 hideAll = function() {
   return $(".pop").removeClass('active');
+};
+
+showactivetable = function() {
+  $("#activetable").addClass('active');
+  return $("#activetable").click(function(e) {
+    if (!($(e.target).is(".popbody") || $(e.target).parents(".popbody").length > 0)) {
+      return $("#activetable").removeClass('active');
+    }
+  });
 };

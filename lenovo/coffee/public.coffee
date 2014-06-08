@@ -93,3 +93,10 @@ editadr = (id)->
 
 hideAll = ->
 	$(".pop").removeClass 'active'
+
+
+showactivetable = ()->
+	$("#activetable").addClass 'active'
+	$("#activetable").click (e)->
+		if not ($(e.target).is(".popbody") || $(e.target).parents(".popbody").length>0)
+			$("#activetable").removeClass 'active'

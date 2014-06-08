@@ -28,4 +28,19 @@ div#adrctrl.pop
 						input(type="text",name="username",placeholder="收货人")
 						input(type="text",name="adr",placeholder="地址")
 						input(type="text",name="mobile",placeholder="电话")
-						input.btn.btn-default(type="submit",value="提交") 
+						input.btn.btn-default(type="submit",value="提交")
+
+div#activetable.pop
+	div.popbody
+		div.content
+			div.content-padded
+				p.ft13 为了保证领取的定制券能够正常消费，<br/>请输入正确的京东账号和京东订单号
+
+				div
+					form(src="userinfo.html")
+						input(type="text",name="account",placeholder="京东账号:")
+						input(type="text",name="orders",placeholder="京东订单号:") 
+						label.checklabel
+							input(type="checkbox",name="agree")
+							|  同意《Thinkworld 618定制协议》
+						input.btn.btn-default(type="submit",value="提交")

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="main4"><img src="img/bg4.jpg" class="bg">
+      <input id="qq" type="text" name="qq" value="" class="inputqq"><a onclick="gotoanswer()" class="submit"></a>
+    </div>
+    <script>
+      function gotoanswer() {
+       qq = document.getElementById("qq").value;
+       if (qq == "") {alert("QQ号码不能为空.");return false;}
+       var reg = /^[0-9]+$/
+       if(!reg.test(qq)){ alert("QQ号码只能是数字"); return false; }
+       window.location.href = "answer.html#"+qq;
+      }
+    </script>
+  </body>
+</html>

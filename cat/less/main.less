@@ -1,0 +1,221 @@
+@import "less/kelvin.less";
+
+body {
+  background: #cfccab;
+}
+img {
+  width: 100%;
+}
+.homepage {
+  // display: none;
+  .text {
+    .wh(510/640*100%);
+    .mp();
+  }
+  .star {
+    .wh(300/640*100%);
+    .mp();
+    margin-top: 1em;
+  }
+}
+.secondpage {
+  display: none;
+  .text {
+    .wh(510/640*100%);
+    .mp();
+  }
+  .list {
+    .wh(310px);
+    .mp();
+    margin-top:1em;
+    text-align: center;
+    .box-item {
+      position: relative;
+      .b("../img/box-bg.jpg",no-repeat,center,top);
+      .wh(90px,120px);
+      background-size: contain;
+      padding:4px;
+      text-align: center;
+      // float: left;
+      display: inline-block;
+      margin-right: 2px;
+      &:last-child {
+        margin:0px;
+      }
+      &:after {
+        content:" ";
+        .wh(40%,1em);
+        .b("../img/box-t.png",no-repeat,center,center);
+        background-size: contain;
+        position: absolute;
+        top:0px;
+        left:50%;
+        margin-left: -20%;
+        margin-top:-0.5em;
+      }
+      img {
+        display: inline-block;
+        .wh(95%);
+        .mp();
+        // margin-top:5px;
+      }
+    }
+  }
+  .mini {
+    float:right;
+    margin-right: 15px;
+    .wh(65/640*100%);
+  }
+}
+.thirdpage {
+  display: none;
+  .text {
+    .wh(510/640*100%);
+    .mp();
+  }
+  .box-item {
+    position: relative;
+    .b("../img/box-bg.jpg",no-repeat,center,top);
+    .wh(88%);
+    .mp();
+    padding-bottom: 60px;
+    background-size: contain; 
+    text-align: center;
+    margin-top: 13px;
+    // overflow: hidden;
+    // white-space: nowrap;
+    padding-top: 3%;
+    &:after {
+      content:" ";
+      .wh(40%,2em);
+      .b("../img/box-t.png",no-repeat,center,center);
+      background-size: contain;
+      position: absolute;
+      top:0px;
+      left:50%;
+      margin-left: -20%;
+      margin-top:-1em;
+    }
+    img { 
+      display: inline-block;
+      .wh(90%);
+      .mp();
+      // margin-top:5px;
+    }
+    .slider {
+      .wh(100%);
+      overflow: hidden;
+      .mp();
+    }
+    .slide-group {
+      white-space: nowrap;
+      .mp();
+    }
+    .slide {
+      display: inline-block;
+      .wh(100%);
+      .mp();
+    }
+  }
+  .mini {
+    float:right;
+    margin-right: 6%;
+    .wh(1.8em);
+    line-height: .6em;
+    span {
+      .tram();
+      display: inline-block;
+      .wh(.4em,.4em);
+      margin-right: 2px;
+      border-radius: 1px;
+      background: #c4a373;
+    }
+    .on {
+      background: #a98556;
+    }
+  }
+}
+.fourthpage {
+  display: none;
+  .text {
+    .wh(510/640*100%);
+    .mp();
+  }
+  .box-item {
+    position: relative;
+    .b("../img/box-bg.jpg",no-repeat,center,top);
+    .wh(88%);
+    .mp();
+    padding-bottom: 60px;
+    background-size: contain; 
+    text-align: center;
+    margin-top: 13px;
+    // overflow: hidden;
+    // white-space: nowrap;
+    padding-top: 3%;
+    &:after {
+      content:" ";
+      .wh(40%,2em);
+      .b("../img/box-t.png",no-repeat,center,center);
+      background-size: contain;
+      position: absolute;
+      top:0px;
+      left:50%;
+      margin-left: -20%;
+      margin-top:-1em;
+    }
+    img,canvas { 
+      display: inline-block;
+      .wh(90%);
+      .mp();
+      // margin-top:5px;
+    }
+    .slide {
+      position: relative;
+    }
+    textarea {
+      .bl(0px,6%);
+      .wh(86%,60px);
+      line-height: 20px;
+      font-size: 14px;
+      .mp(@p:2%);
+      border:none;
+      outline: none;
+      background: rgba(0, 0, 0, 0.3);
+      color: #ffd200;
+      resize:none;
+      border-radius: 0px;
+      &::-webkit-input-placeholder { 
+        color:#ffd200;
+      }
+    }
+  }
+  .submit {
+    .wh(300/640*100%);
+    .mp();
+    padding:10px 0px;
+  }
+}
+
+.fifth {
+
+  position: relative;
+  .pet {
+    .tl(29%,16%);
+    .wh(69%);
+    .tran(rotate(-5deg));
+  }
+  .sharebtn {
+    .tr(0px,5px);
+    .wh(139/640*100%);
+    padding:10px;
+    padding-top: 0px;
+  }
+}
+
+.share-weixin {
+  position: absolute;
+  top:-1000px;
+  opacity: 0;
+  z-index: -1;
+}

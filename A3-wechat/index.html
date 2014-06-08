@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>与大咖一同聊聊关于A3的那些事儿</title>
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div style="position: absolute;opacity: 0;"><img src="img/share-weixin.jpg"></div>
+    <div class="loading">
+      <div class="text"> 努力加载中...</div>
+    </div>
+    <div class="logo"><img src="img/logo.png"></div>
+    <div class="backhome"><img src="img/gohome.png"></div>
+    <div class="weixinshare"><img src="img/weixinshare.png"></div>
+    <div class="homepage">
+      <div data-animate="animated bounceIn" class="text"><img src="img/index-text.png"></div>
+      <div class="chance"><img src="img/index-chance.png"></div>
+      <div class="car">
+        <div data-animate="animated fadeInLeftBig" class="car-1"><img src="img/car-1.png"></div>
+        <div data-animate="animated fadeInRightBig" class="car-2"><img src="img/car-2.png"></div>
+      </div>
+      <div class="sound"><img src="img/index-sound.png"></div>
+    </div>
+    <div class="car360">
+      <div class="carlist">
+        <div class="box-none"></div>
+        <div id="list360" class="list">
+          <div class="imglist"><img src="img/a33/4.png"></div>
+          <div id="point" style="display:none;" class="point"><img src="img/point.png" class="p">
+            <div class="line"></div>
+            <div class="header"><img id="human" src=""></div>
+            <div class="name">
+              <h4></h4>
+              <p></p>
+            </div>
+            <div class="sound"><img src="img/icon-sound.png"><img src="img/sound-r.gif" class="play"><span id="times">20''</span></div>
+          </div>
+        </div>
+        <div class="car-pt"></div>
+        <div class="car-back"><img id="back-image" src="img/a3s-back.png"></div>
+      </div>
+      <div class="car-btns"><img src="img/btns-1.jpg">
+        <div class="interior"></div><a href="resert.html" class="drive openresert"></a>
+      </div>
+    </div>
+    <div class="carsideinfo">
+      <div id="img-list" class="banner">
+        <div model="center" class="img-list"><img src="img/title-1.jpg" class="bn">
+        </div>
+        <div class="movectrl">
+          <div class="left"><img src="img/info-left.png"></div>
+          <div class="right"><img src="img/info-left.png"></div>
+          <div class="bottom"><img src="img/info-left.png"></div>
+          <div id="pointinside" class="point point3"><img src="img/point2.png" class="p">
+            <div class="line"></div>
+            <div class="header"><img id="human" src=""></div>
+            <div class="name">
+              <h4></h4>
+              <p></p>
+            </div>
+            <div class="sound"><img src="img/icon-sound.png"><img src="img/sound-r.gif" class="play"><span id="times">20''</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="car-back"><img id="changed-image" src="img/a3s-back.png"></div>
+      <div class="car-btns"><img src="img/btns-2.jpg">
+        <div class="exterior"></div><a href="resert.html" class="drive openresert"></a>
+      </div>
+    </div>
+    <div class="car360inside">
+      <div class="hide">
+        <audio id="audio" src="" controls></audio>
+      </div>
+      <div class="carinside-back">
+        <div onclick="backCarInside()" class="backbtn"><img src="img/back-btn.png"></div>
+      </div>
+      <div class="carinfo clearfix">
+        <div class="user">
+          <div class="avatar"><img src=""></div>
+          <div class="userinfo">
+            <h3>胡玲</h3>
+            <p>凤凰卫视北京站首席记者</p>
+          </div>
+        </div>
+        <div class="radioinfo">
+          <div class="radio"><img src="img/sound-w.gif" class="play"><img src="img/sound-w.png" class="stop"><span>25''</span></div>
+          <h4></h4>
+          <p></p>
+        </div>
+      </div>
+      <div class="qatitle"><img id="qafs" src="img/qa1.png"></div>
+      <div class="qa">
+        <h2>全新奥迪A3 Sportback使用的ultra轻量化车身技术，有什么作用？</h2>
+        <div id="question" class="question clearfix">
+          <div class="item">
+            <p>全部使用碳纤维材质，大幅降低车身重量</p>
+          </div>
+          <div class="item">
+            <p>提升车身的钢性，减少不必要的能量损耗</p>
+          </div>
+        </div>
+      </div>
+      <div class="register clearfix"><a href="resert.html" class="regbtn openresert"><img src="img/register.png"></a></div>
+    </div>
+    <div class="resertpage">
+      <div class="head"><img src="img/reg-top.jpg">
+        <div onclick="hideResertPage()" class="backbtn"><img src="img/back-btn.png"></div>
+      </div>
+      <div class="nr">
+        <form name="register" class="form">
+          <div class="input-group"><span class="addon"><img src="img/icon-user.jpg" class="icon-user"></span>
+            <input type="text" name="username" placeholder="姓名">
+          </div>
+          <div class="radio-group">
+            <input type="radio" name="sex" value="先生" checked class="man">
+            <input type="radio" name="sex" value="女士" class="woman">
+          </div>
+          <div class="input-group"><span class="addon"><img src="img/icon-phone.jpg" class="icon-phone"></span>
+            <input type="text" name="mobile" placeholder="电话">
+          </div>
+          <div class="input-group"><span class="addon"><img src="img/icon-email.jpg" class="icon-email"></span>
+            <input type="text" name="email" placeholder="电子邮箱">
+          </div>
+          <div class="brith-group clearfix">
+            <label>生日</label>
+            <select name="year" class="y">
+              <option value="1914">1914</option>
+              <option value="1915">1915</option>
+              <option value="1916">1916</option>
+              <option value="1917">1917</option>
+              <option value="1918">1918</option>
+              <option value="1919">1919</option>
+              <option value="1920">1920</option>
+              <option value="1921">1921</option>
+              <option value="1922">1922</option>
+              <option value="1923">1923</option>
+              <option value="1924">1924</option>
+              <option value="1925">1925</option>
+              <option value="1926">1926</option>
+              <option value="1927">1927</option>
+              <option value="1928">1928</option>
+              <option value="1929">1929</option>
+              <option value="1930">1930</option>
+              <option value="1931">1931</option>
+              <option value="1932">1932</option>
+              <option value="1933">1933</option>
+              <option value="1934">1934</option>
+              <option value="1935">1935</option>
+              <option value="1936">1936</option>
+              <option value="1937">1937</option>
+              <option value="1938">1938</option>
+              <option value="1939">1939</option>
+              <option value="1940">1940</option>
+              <option value="1941">1941</option>
+              <option value="1942">1942</option>
+              <option value="1943">1943</option>
+              <option value="1944">1944</option>
+              <option value="1945">1945</option>
+              <option value="1946">1946</option>
+              <option value="1947">1947</option>
+              <option value="1948">1948</option>
+              <option value="1949">1949</option>
+              <option value="1950">1950</option>
+              <option value="1951">1951</option>
+              <option value="1952">1952</option>
+              <option value="1953">1953</option>
+              <option value="1954">1954</option>
+              <option value="1955">1955</option>
+              <option value="1956">1956</option>
+              <option value="1957">1957</option>
+              <option value="1958">1958</option>
+              <option value="1959">1959</option>
+              <option value="1960">1960</option>
+              <option value="1961">1961</option>
+              <option value="1962">1962</option>
+              <option value="1963">1963</option>
+              <option value="1964" selected>1964</option>
+              <option value="1965">1965</option>
+              <option value="1966">1966</option>
+              <option value="1967">1967</option>
+              <option value="1968">1968</option>
+              <option value="1969">1969</option>
+              <option value="1970">1970</option>
+              <option value="1971">1971</option>
+              <option value="1972">1972</option>
+              <option value="1973">1973</option>
+              <option value="1974">1974</option>
+              <option value="1975">1975</option>
+              <option value="1976">1976</option>
+              <option value="1977">1977</option>
+              <option value="1978">1978</option>
+              <option value="1979">1979</option>
+              <option value="1980">1980</option>
+              <option value="1981">1981</option>
+              <option value="1982">1982</option>
+              <option value="1983">1983</option>
+              <option value="1984">1984</option>
+              <option value="1985">1985</option>
+              <option value="1986">1986</option>
+              <option value="1987">1987</option>
+              <option value="1988">1988</option>
+              <option value="1989">1989</option>
+              <option value="1990">1990</option>
+              <option value="1991">1991</option>
+              <option value="1992">1992</option>
+              <option value="1993">1993</option>
+              <option value="1994">1994</option>
+              <option value="1995">1995</option>
+              <option value="1996">1996</option>
+              <option value="1997">1997</option>
+              <option value="1998">1998</option>
+              <option value="1999">1999</option>
+              <option value="2000">2000</option>
+              <option value="2001">2001</option>
+              <option value="2002">2002</option>
+              <option value="2003">2003</option>
+              <option value="2004">2004</option>
+              <option value="2005">2005</option>
+              <option value="2006">2006</option>
+              <option value="2007">2007</option>
+              <option value="2008">2008</option>
+              <option value="2009">2009</option>
+              <option value="2010">2010</option>
+              <option value="2011">2011</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+            </select>
+            <select name="month" class="m">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <select name="day" class="d">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+          </div>
+          <div class="select-group">
+            <select name="cartype">
+              <option value="选择车型">选择车型</option>
+              <option value="A3 Limousine">A3 Limousine</option>
+              <option value="A3 Sportback">A3 Sportback</option>
+            </select>
+          </div>
+          <div class="city-group clearfix">
+            <select id="province" name="province" role="province" data-default="省" target="#city">
+              <option value="选择省份">选择省份</option>
+            </select>
+            <select id="city" name="city" role="city" data-default="市" callback="setDealer">
+              <option value="选择省份">选择省份</option>
+            </select>
+          </div>
+          <div class="select-group">
+            <select id="dealer" name="dealer">
+              <option value="选择经销商">选择经销商</option>
+            </select>
+          </div>
+          <div class="radio-l-group passport clearfix">
+            <label>拥有护照: </label>
+            <input type="radio" name="passport" value="是" checked>
+            <input type="radio" name="passport" value="否">
+          </div>
+          <div class="radio-l-group hascar clearfix">
+            <label>拥有车辆:</label>
+            <input type="radio" name="hascar" value="无" checked>
+            <input type="radio" name="hascar" value="有">
+          </div>
+          <div class="select-group clearfix">
+            <select name="buytime">
+              <option value="计划购车">计划购车</option>
+              <option value="3个月内">3个月内</option>
+              <option value="4至6个月内">4至6个月内</option>
+              <option value="7个月到1年内">7个月到1年内</option>
+              <option value="1年以上">1年以上</option>
+              <option value="不确定">不确定</option>
+            </select>
+          </div>
+          <div class="copy">
+            <h2>
+              <div class="check">
+                <input type="checkbox" name="private" checked>
+              </div> 隐私条款
+            </h2>
+            <p>我特此授权一汽-大众奥迪保留我的数据以便解答我的问题；我所提供的信息将按照数据保护规定进行保留。我也同意一汽-大众奥迪把我的数据用于其它营销、调查和统计目的，并允许一汽-大众奥迪根据我所提供的信息与我联系。</p>
+          </div>
+          <div class="btn-ctrl">
+            <input type="button" name="submit" value="提交" class="submit">
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="js/vendor/Zepto.min.js" type="text/javascript"></script>
+    <script src="js/vendor/selector.js" type="text/javascript"></script>
+    <script src="js/pc.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+    <script>
+      var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+      document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fbec37c720d5298282805f58d452b7f22' type='text/javascript'%3E%3C/script%3E"));
+      
+    </script>
+  </body>
+</html>

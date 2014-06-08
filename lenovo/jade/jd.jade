@@ -1,0 +1,51 @@
+extends layout
+//- 标题
+block title
+	| 登录
+//- 内容
+block content_here 
+	+header("定制券信息")
+	-var user = "active"
+	include nav
+	.content.gray
+		.content-padded
+			h4.form-title
+				span.point-s
+				| 定制券信息
+			//默认error 没有内容, 只有提交的时候返回错误内容,或判断有错误内容.
+			div.active-body
+				div.table-group
+					div.tr-row.clearfix
+						label.pull-left 您的定制劵码:
+						p.td 123QWER
+					div.tr-row.clearfix
+						label.pull-left 申请状态：
+						p.td 通过
+				div.btn-ctrl
+					a.btn.btn-default(href="#",onclick="showactivetable()") 领取定制券
+					a.btn.btn-default.pull-right(href="#") 使用定制券
+				div.active-pro
+					h4 定制券使用流程
+					div.box
+						p 领取定制券
+					div.box
+						p 使用定制券
+					div.box
+						p 审核通过
+					div.box
+						p 
+							a(href="http://ss.thinkworld.com.cn/PicList.aspx") http://ss.thinkworld.com.cn/PicList.aspx 
+							br
+							| 选择图片
+					div.box
+						p 将必要信息随机一并寄至联想指定喷绘点
+					div.box
+						p 机器喷绘
+					.box
+						p
+							span 7-15
+							|个工作日喷绘完寄回给用户
+
+
+
+			

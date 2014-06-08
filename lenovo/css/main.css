@@ -812,3 +812,80 @@ h5 {
 .popbody input {
   font-size: 14px;
 }
+.active-body {
+  padding: 10px;
+  background: #fff;
+}
+.active-body .table-group {
+  border: solid 1px #e1e1e1;
+  border-bottom: 0px;
+}
+.active-body .table-group .tr-row {
+  border-bottom: solid 1px #e1e1e1;
+  color: #3a3a3a;
+}
+.active-body .table-group .tr-row label {
+  width: 45%;
+  padding: 5px;
+  font-size: 14px;
+}
+.active-body .table-group .tr-row p {
+  font-size: 14px;
+  padding: 5px;
+  margin: 0px;
+}
+.active-body .btn-ctrl {
+  margin: 0px 20px;
+  margin-top: 20px;
+}
+.active-body .active-pro {
+  margin-top: 20px;
+}
+.active-body .active-pro h4 {
+  font-size: 14px;
+}
+.active-body .active-pro .box {
+  margin: 10px 5px;
+  margin-bottom: 30px;
+  padding: 10px;
+  text-align: center;
+  background-color: #f2f2f2;
+  border: solid 1px #a7a7a7;
+  border-radius: 5px;
+  position: relative;
+}
+.active-body .active-pro .box:after {
+  content: " ";
+  position: absolute;
+  bottom: -31px;
+  left: 50%;
+  width: 30px;
+  height: 32px;
+  margin-left: -15px;
+  background: url("../img/icon-next.png") no-repeat center center;
+  background-color: transparent;
+  background-size: 50%;
+}
+.active-body .active-pro .box:last-child:after {
+  display: none;
+}
+.active-body .active-pro .box p {
+  margin: 0px;
+  font-size: 12px;
+}
+.active-body .active-pro .box p span,
+.active-body .active-pro .box p a {
+  color: #eb504c;
+}
+.ft13 {
+  font-size: 13px;
+}
+.checklabel {
+  font-size: 13px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  color: #2a2da0;
+}
+.checklabel .checkbox-parent {
+  margin-bottom: -5px;
+}

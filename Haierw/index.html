@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="img/thumb.jpg">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>那些话隐秘而伟大</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/libs/easeljs-0.7.1.min.js"></script>
+    <script src="js/libs/tweenjs-0.5.1.min.js"></script>
+    <script src="js/libs/movieclip-0.7.1.min.js"></script>
+    <script src="js/libs/preloadjs-0.4.1.min.js"></script>
+    <script src="js/libs/soundjs-0.5.2.min.js"></script>
+  </head>
+  <body onload="init()">
+    <div style="position: absolute;opacity: 0; z-index:-1;"><img src="img/thumb.jpg"></div>
+    <div class="logo"><img src="img/logo.png"></div>
+    <div class="message">
+      <div class="selectde hidethis">
+        <div><span><img src="img/icon-happyface.png"></span>
+          <p>你生于哪个年代？<br/>又对哪种风格的浴室情有独钟？<br/>选择即可获取年代专属浴室！</p>
+        </div>
+      </div>
+      <div class="gamestar hidethis">
+        <div><span><img src="img/icon-message.png"></span>
+          <p>已经打开热水器，<br/>雾气腾腾，你感受到了嘛？</p>
+        </div>
+      </div>
+      <div class="gameend hidethis">
+        <div><span><img id="uploadsuccess" src="img/uploading.gif"></span>
+          <p id="uploadsuccesstext"> 请稍后...<br/>正在努力上传.</p>
+        </div>
+        <div class="ctrlbar">
+          <div id="reload" class="btn-group"><span><img src="img/restart.png"></span>
+            <label>再玩一次</label>
+          </div>
+          <div id="sharebtns" class="btn-group"><span><img src="img/sharebtn.png"></span>
+            <label>分享给好友</label>
+          </div>
+        </div>
+        <div class="sharebox">
+          <div data-weixin="weixin"><img src="img/icon-s-weixin.png"></div>
+          <div data-share="weibo"><img src="img/icon-s-weibo.png"></div>
+          <div data-share="douban"><img src="img/icon-s-douban.png"></div>
+          <div data-share="renren"><img src="img/icon-s-renren.png"></div>
+          <div data-share="qweibo"><img src="img/icon-s-qweibo.png"></div>
+        </div>
+      </div>
+    </div>
+    <div class="homepage">
+      <div class="decade"><img src="img/pop.png">
+        <div class="prev"><img src="img/next.jpg"></div>
+        <div class="box"><span>年代</span>
+          <div class="boxlist">
+            <div class="item"></div>
+            <div class="item on">70</div>
+            <div class="item">80</div>
+            <div class="item">90</div>
+            <div class="item">00</div>
+          </div>
+        </div>
+        <div class="next"><img src="img/next.jpg"></div>
+      </div>
+      <div class="ctrlbar">
+        <div id="homenext" class="nextstep"><img src="img/nextstep.png"></div>
+      </div>
+    </div>
+    <div class="selectres">
+      <div class="rxqlist">
+        <p class="title">选择您青睐的一款热水器！</p>
+        <div id="mySlider" class="slider">
+          <div class="slide-group"></div>
+        </div>
+        <div class="prev"><img src="img/next.png"></div>
+        <div class="next"><img src="img/next.png"></div>
+      </div>
+    </div>
+    <div class="gamestarpage">
+      <div class="ctrlbar">
+        <div id="gameend" class="nextstep"><img src="img/nextstep.png"></div>
+        <div id="reset" class="reset"><img src="img/reset.png"></div>
+      </div>
+    </div>
+    <div class="weixinshare"><img src="img/wexin-share.png"></div>
+    <div id="mubu" class="mubu">
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
