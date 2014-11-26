@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="target-densitydpi=device-dpi ,width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>安全大搜捕-代号NOCO</title>
+    <script src="js/libs/easeljs-0.7.1.min.js"></script>
+    <script src="js/libs/preloadjs-0.4.1.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body class="page">
+    <div class="warrper">
+      <div class="note-pc"></div>
+      <div class="logo"></div>
+      <div class="page-loading ready">
+        <div class="content">
+          <div id="topheight" class="topheight"></div>
+          <div class="icon-co tran"></div>
+          <div class="loadimg"></div>
+          <h4>一氧化碳已经是当今突出的安全隐患，</h4>
+          <h3>消灭CO，从我做起！</h3>
+          <p class="load"> <span>Loading..</span><em id="loadnum">0%</em></p>
+        </div>
+      </div>
+      <div class="page page-init">
+        <div class="swipeBox">
+          <div class="ProD"></div>
+          <div class="icon-co"></div>
+        </div><span class="note"><i></i><i class="op"></i></span>
+        <p>向上滑动气泡, <br />CO充分燃烧,转化为CO2!</p>
+      </div>
+      <div class="page page-process">
+        <div class="star">
+          <div data-img="code" class="code"></div>
+          <div id="mySlider" class="slider">
+            <div class="slide-group">
+              <div data-img="pro-1" class="slide"></div>
+              <div data-img="pro-2" class="slide"></div>
+              <div data-img="pro-3" class="slide"></div>
+            </div>
+            <div class="slide-left"></div>
+            <div class="slide-right"></div>
+          </div>
+          <div class="pro-name">
+            <div data-img="text-bg" class="bg"></div>
+            <p class="black">卡萨帝传奇系列燃气热水器</p>
+            <div class="name-list"><span data-img="name-1" class="gold"></span><span data-img="name-2" class="silver"></span><span data-img="name-3" class="white"></span></div>
+          </div>
+          <div class="text-note">
+            <p>卡萨帝NOCO燃气热水器携手豆瓣</p>
+            <p>开启代号NOCO的安全隐患大搜捕！</p>
+            <p>对CO说NO一样，</p>
+            <p>搜捕出安全隐患对他们说<em id="icon-no" data-img="no" class="no"></em></p><span class="note"><i></i><i class="op"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="page page-step on">
+        <div class="step-bar"><span class="item i1 on">1</span><em class="point"><i></i><i></i><i></i><i></i></em><span class="item i2">2</span><em class="point"><i></i><i></i><i></i><i></i></em><span class="item i3">3</span><em class="point"><i></i><i></i><i></i><i></i></em><span class="item i4">4</span></div>
+        <div class="step-1">
+          <h2 class="title">【选择模板进行创作】</h2>
+          <div id="selecttemp" class="slider">
+            <div class="slide-group">
+              <div data-img="temp-1" class="slide on"></div>
+              <div data-img="temp-2" class="slide"></div>
+              <div data-img="temp-3" class="slide"></div>
+              <div data-img="temp-4" class="slide"></div>
+              <div data-img="temp-5" class="slide"></div>
+              <div data-img="temp-6" class="slide"></div>
+            </div>
+          </div>
+          <div class="btn-list">
+            <div data-bg="btn-bg" rel="0" class="btn select-temp">选择模板</div>
+          </div>
+        </div>
+        <div class="step-2 none">
+          <h2 class="title">【写下安全宣言，晒出安全隐患】</h2>
+          <div data-bg="input-bg" class="text-input">
+            <div class="input-group">
+              <label id="text1"></label>
+              <input type="text" name="first" value="CO">
+            </div>
+            <div class="input-group">
+              <label id="text2"></label>
+              <input type="text" name="second" value="NOCO">
+            </div>
+          </div>
+          <div data-img="upload-bg" class="upload">
+            <input id="uploadimg" type="file" name="uploadimg" accept="image/*" capture="camera">
+          </div>
+          <div class="btn-list">
+            <div data-bg="btn-bg" class="btn select-img">下一步</div>
+          </div>
+        </div>
+        <div class="step-3 none">
+          <h2 class="title">【发布作品，完成任务】</h2>
+          <canvas id="ps" width="360" height="450"></canvas>
+          <div class="btn-list">
+            <div data-bg="btn-bg" class="btn reset">重新制作</div>
+            <div data-bg="btn-bg" class="btn uploadbtn">下一步</div>
+          </div>
+        </div>
+        <div class="step-4 none">
+          <div data-img="goodjob" class="uploading"></div>
+          <div class="form-reg">
+            <div data-img="reg-info"></div>
+            <form name="reg">
+              <div class="input-group">
+                <label>姓名</label>
+                <input type="text" name="username" maxlength="10">
+              </div>
+              <div class="input-group">
+                <label>手机</label>
+                <input type="number" name="mobile" maxlength="11">
+              </div>
+              <p>【您的个人信息仅用于此活动抽奖】</p>
+            </form>
+          </div>
+          <div class="btn-list">
+            <div data-bg="btn-bg" class="btn submit">提交信息</div>
+          </div>
+        </div>
+      </div>
+      <div class="page page-share">
+        <div class="zw"></div>
+        <div data-img="code" class="code"></div>
+        <h2>您的信息提交成功!</h2>
+        <p>活动结束后一个月内将会有专人联系获奖用户兑奖事宜。您也可以前往豆瓣卡萨帝小站关注获奖情况！</p>
+        <div data-img="pro-3" class="pro-show">
+          <div class="left"></div>
+          <div class="right"></div>
+        </div>
+        <div class="pro-name">
+          <div data-img="text-bg" class="bg"></div>
+          <p class="black">卡萨帝传奇系列燃气热水器</p>
+          <div class="name-list"><span data-img="name-3" class="gold"></span></div>
+        </div>
+        <div class="share-btn">
+          <p>把作品分享给朋友：</p>
+          <div class="share-list"><a href="#" data-img="icon-wechat" class="wechat-share"></a><a href="#" data-img="icon-weibo" data-share="weibo" class="weibo"></a><a href="#" data-img="icon-qweibo" data-share="qweibo" class="qweibo"></a><a href="#" data-img="icon-douban" data-share="douban" class="douban"></a><a href="#" data-img="icon-qzone" data-share="qzone" class="qzone"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/coll.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+  </body>
+</html>

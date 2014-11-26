@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="target-densitydpi=device-dpi ,width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>安全大搜捕-代号NOCO</title>
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body class="callback">
+    <div class="warrper">
+      <div class="note-pc"></div>
+      <div class="logo"></div>
+      <div class="page page-callback">
+        <div class="zw"></div>
+        <div class="code"><img src="img/code.png"></div>
+        <h2>隐患搜捕作品如下：</h2>
+        <div id="pro" class="show-pro"></div>
+        <p class="notetext">长按图片可以保存</p><a href="index.html" class="btnto"><img src="img/btn-join.png"></a>
+        <p>赢取 Kindle Paperwhite！</p>
+      </div>
+    </div>
+    <script>
+      var url = window.location.hash.replace("#","");
+      document.getElementById("pro").innerHTML = "<img src='"+url+"'  />";
+    </script>
+  </body>
+</html>

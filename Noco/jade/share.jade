@@ -1,0 +1,39 @@
+doctype
+html(lang="en").no-js
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible",content="IE=edge,chrome=1")
+		meta(name="viewport",content="target-densitydpi=device-dpi ,width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0")
+		title
+			|安全大搜捕-代号NOCO
+		//- css
+		//- if bootstrap
+		//- link(rel="stylesheet",href="css/bootstrap.min.css")
+		//- link(rel="stylesheet",href="css/bootstrap-theme.min.css")
+		//- my 
+		//- script(src="js/libs/Zepto.min.js")
+		//- script(src="js/libs/tweenjs-0.5.1.min.js")
+		//- script(src="js/libs/movieclip-0.7.1.min.js")
+		//- script(src="js/libs/preloadjs-0.4.1.min.js")
+		//- script(src="js/libs/soundjs-0.5.2.min.js")
+		link(rel="stylesheet",href="css/index.css")
+	body.callback
+		div.warrper
+			div.note-pc
+				
+			div.logo
+
+			div.page.page-callback
+				div.zw
+				div.code
+					img(src="img/code.png")
+				h2 隐患搜捕作品如下：
+				div.show-pro#pro
+				p.notetext 长按图片可以保存
+				a.btnto(href="index.html")
+					img(src="img/btn-join.png")
+				p 赢取 Kindle Paperwhite！
+
+		script.
+			var url = window.location.hash.replace("#","");
+			document.getElementById("pro").innerHTML = "<img src='"+url+"'  />";

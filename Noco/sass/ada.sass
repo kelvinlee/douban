@@ -1,0 +1,18 @@
+=large-phone
+  @content
+  @media print, only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-resolution: 144dpi), screen and (min-resolution: 144dppx)
+    @content
+  @media only screen and (max-width: 320px) and (max-device-width: 768px)
+    @content
+
+=medium-phone
+  @media only screen and (max-width: 399px)
+    @content
+  @media only screen and (max-width: 320px) and (max-device-width: 375px) and (max-width: 399px)
+    @content
+
+=small-phone
+  @media only screen and (max-width: 320px) and (max-device-width: 375px)
+    @content
+  @media only screen and (max-width: 320px) and (max-device-width: 375px) and (max-width: 320px) and (max-device-width: 375px)
+    @content

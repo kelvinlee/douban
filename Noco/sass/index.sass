@@ -1,0 +1,622 @@
+// @import url(http://fonts.googleapis.com/css?family=Ubuntu)
+@import sass/base
+@import ada
+
++keyframes(CotoCo2)
+	0%
+		+ada(filter,blur(0px))
+		top: 100%
+		margin-top: -5em
+		background-image: url("../img/co.png")
+	50%
+		+ada(filter,blur(3px))
+		background-image: url("../img/co2.png")
+	100%
+		+ada(filter,blur(0px))
+		top: 0%
+		margin-top: 0em
+		background-image: url("../img/co2.png")
+
+.fadeOut
+	+animation(fadeOut,.2s)		
+.fadeIn
+	+animation(fadeIn,.2s)
+
+.background
+	background-size: contain
+	background-repeat: no-repeat
+
+// Stamp
+img
+	max-width: 100%
+
+body,html
+	height: 100%
+
+body
+	font-family: Helvetica, sans-serif
+
++large-phone
+	body
+		font-size: 1.2em
+		color: #fff
++medium-phone
+	body
+		font-size: 1.1em
++small-phone
+	body
+		font-size: 1em
+
+.warrper
+	// min-height: 700px
+
+.tran
+	+tran
+
+.icon-co
+	// width: (163px/600px)*100%
+	+wh(5em,5em)
+	+mcenter
+	background: url(../img/co.png) no-repeat center center
+	background-size: contain
+
+
+.page-loading
+	// +hide
+	+posf
+	+tl
+	+br
+	+gradient($star: #000000 ,$end: #2b2b2b)
+	z-index: 5000
+	&.out
+		opacity: 0
+		+animation(fadeOut)
+	.content
+		+animation(fadeInDown,.5s)
+	h3,h4
+		+text-center
+	h3
+		font-size: 1.1em
+	h4
+		font-size: 0.9em
+		line-height: 1.4
+		margin-top: 1em
+	.topheight
+		+large-phone
+			+h(6em)
+		+medium-phone
+			+h(5em)
+		+small-phone
+			+h(3em)
+	.loadimg
+		+wh(6.5em,5em)
+		background: url(../img/loading-2.png) no-repeat center center
+		background-size: contain
+		+mcenter
+		margin-top: -1em
+	.load
+		font-family: 'Ubuntu', sans-serif
+		+text-center
+		margin-top: 4em
+		em
+			+text-left
+			display: inline-block
+			width: 1.8em
+			margin-left: 0.2em
+.logo
+	+posa
+	+tl
+	z-index: 4500
+	width: 100%
+	height: 5em
+
+span.note
+	display: block
+	+w(1em)
+	i
+		display: block
+		+wh(1em,.5em)
+		+posr
+		&:after
+			+transform(rotate(45deg))
+			content: " "
+			+posa
+			+wh(.7em,.7em)
+			left: .2em
+			border-left: 2px solid #fff
+			border-top: 2px solid #fff
+			+animation(Flash,1s)
+			-webkit-animation-iteration-count: infinite
+		&.op
+			&:after
+				-webkit-animation-delay: 1.5s
+
+
+.page
+	+posa
+	+tl
+	+br
+	min-height: 441px
+
+.page-init
+	// +hide
+	+posa
+	+tl
+	+br
+	// +gradient($star: #333 ,$end: #777)
+	opacity: 1
+	+ada(transform, scale(1))
+	z-index: 4000
+	&.fadeOutBig
+		+tran
+		opacity: 0
+		+ada(transform, scale(1.3))
+	.note
+		+hide
+		+animation(fadeIn)
+		+posa
+		+tl(67%,50%)
+		margin-left: -1em/2
+			
+	p
+		+hide
+		+posa
+		+bl(1em)
+		+text-center
+		+w(100%)
+		+animation(fadeInUp,1s)
+		font-size: 0.7em
+		line-height: 1.2em
+	.swipeBox
+		+posa
+		+tbl(3em,3em,50%)
+		+w(5em)
+		+large-phone
+			top: 6em
+		+medium-phone
+			top: 5em
+		+small-phone
+			top: 3em
+		+border-radius(5em)
+		border: dotted 1px #ddd
+		margin-left: -5em/2
+
+		.icon-co
+			opacity: 0
+			+posa
+			+tl(100%)
+			z-index: 1
+			margin-top: -5em
+			&.toco2
+				+animation(CotoCo2,2s)
+				top: 0%
+				margin-top: -0em
+				background-image: url("../img/co2.png")
+		.ProD
+			+posr
+			z-index: 2
+			opacity: 0
+			+tran
+			+wh(100%,100%)
+				
+
+.page-process
+	// +gradient($star: #333 ,$end: #777)
+	// +hide
+
+	+tran
+	opacity: 0
+	+ada(transform, scale(0.6))
+	+wh(100%,100%)
+	overflow: hidden
+	z-index: 3000
+	&.on
+		opacity: 1
+		+ada(transform, scale(1))
+	&.moveUp
+		.star
+			// margin-top: -100%
+			opacity: 0
+	.star
+		// opacity: 1
+		// +transform(scale3d(0.6,0.6,0.6))
+		+tran
+		+posr
+		top: 3em
+		.slider
+			+w(100%)
+			+mcenter
+			.slide
+				+text-center
+				img
+					+w(30%)
+			.slide-left
+				// +hide
+				+posa
+				+tl(35%,15%)
+				+wh(3em,3em)
+				z-index: 1
+				&:before
+					+posa
+					+tl(1em,1em)
+					content: " "
+					+transform(rotate(-45deg))
+					+show
+					+wh(1em,1em)
+					opacity: 0.6
+					border-left: 2px solid #fff
+					border-top: 2px solid #fff
+			.slide-right
+				+hide
+				+posa
+				+tr(35%,15%)
+				+wh(3em,3em)
+				z-index: 1
+				&:before
+					+posa
+					+tr(1em,1em)
+					content: " "
+					+transform(rotate(45deg))
+					+show
+					+wh(1em,1em)
+					opacity: 0.6
+					border-right: 2px solid #fff
+					border-top: 2px solid #fff
+		.pro-name
+			+posr
+			+w(100%)
+			+text-center
+			+large-phone
+				font-size: 0.8em
+			+medium-phone
+				font-size: 0.6em
+			+small-phone
+				font-size: 0.4em
+			line-height: 1.4em
+			margin-top: -.5em
+			.black
+				color: black
+			span
+				+hide
+				+w(30%)
+				+posa
+				+animation(fadeIn,2s)
+				bottom: 1em
+				left: 50%
+				margin-left: -15%
+				&.gold
+					+show
+					color: #9d7f64
+				&.silver
+					color: #6a6c70
+					
+			p
+				+posa
+				+tl(1em)
+				+w(100%)
+
+		.text-note
+			p
+				+large-phone
+					font-size: 0.8em
+				+small-phone
+					font-size: 0.7em
+
+				line-height: 1.4em
+				+text-center
+			em.no
+				display: inline-block
+				margin-left: 0.7em
+				vertical-align: middle
+				opacity: 0
+				+w(4em)
+				&.stamp
+					opacity: 1
+					+animation(Stamp,.2s,ease-in)
+		.note
+			+mcenter
+
+.page-step
+	+hide
+	+tran
+	opacity: 0
+	+ada(transform, scale(0.6))
+	+wh(100%,100%)
+	overflow: hidden
+	z-index: 3000
+	
+	&.on
+		+ada(transform, scale(1))
+		opacity: 1
+	.step-bar
+		padding-top: 3em
+		padding-bottom: 1em
+		+text-center
+		.item
+			$size: 2.4em
+			+wh($size,$size)
+			line-height: $size
+			+tran
+			+border-radius(50em)
+			+text-center
+			+posr
+			display: inline-block
+			background: #747474
+			color: #fff
+			text-shadow: 1px 1px 1px rgba(0,0,0,0.5)
+			overflow: hidden
+
+			&:after
+				content: ""
+				display: block
+				+tran
+				+posa
+				+tl(50%,150%)
+				+wh(40%,20%)
+				margin-top: -23%
+				margin-left: -25%
+				border-bottom: solid 0.3em #fff
+				border-left: solid 0.3em #fff
+				box-shadow: -1px 1px 1px rgba(0,0,0,0.5)
+				+transform(rotateZ(-45deg) rotateX(1deg))
+				background: #56b956
+			&.on
+				background: #349fd6
+				& + .point
+					i
+						background: #349fd6	
+				&.over
+					text-indent: -10em
+					background: #56b956
+					&:after
+						left: 50%
+					& + .point
+						i
+							background: #56b956	
+		.point
+			+wh(2.4em,2.4em)
+			line-height: 2em
+
+			display: inline-block
+			+text-center
+			vertical-align: top
+			i
+				+wh(0.26em,0.26em)
+				+tran
+				overflow: hidden
+				display: inline-block
+				background: #747474
+				+border-radius(1em)
+				margin: 0px 0.1em
+		
+	.title
+		color: #349fd6
+		+text-center
+		font-size: 0.9em
+		padding-bottom: 1em
+	.btn-list
+		+text-center
+		padding-top: 1em
+		.btn
+			display: inline-block
+			+wh(10em,3.5em)
+			font-size: 0.8em
+			line-height: 2.6em
+			background-size: contain
+			background-repeat: no-repeat
+			margin-right: 0.4em
+			text-shadow: -1px 1px 1px rgba(0,0,0,0.5)
+	.step-1,.step-2,.step-3,.step-4
+		&.over,&.none
+			+hide
+	.step-1
+		+show
+		.slider
+			+w(100%)
+			.slide-group
+				+mcenter
+				+w(65%)
+				.slide
+					+text-center
+					&.on
+						img
+							+transform(scale(1))	
+					img
+						+tran($time:.2s)
+						+transform(scale(0.9))
+						+w(90%)
+	.step-2
+		.upload
+			+posr
+			input
+				+posa
+				+tl
+				+br
+				+wh(100%,100%)
+				+show
+				opacity: 0
+		.text-input
+			@extend .background
+			background-position: left center
+			padding-top: 0.8em
+			padding-bottom: 0.8em
+			+w(100%)
+			.input-group
+				line-height: 2.4em
+				margin-left: 30%
+			label
+				font-size: 2em
+				font-weight: bold
+			input
+				background: transparent
+				border: none
+				box-shadow: none
+				outline: none
+				border-bottom: dotted 1px #fff
+				+wh(45%,1em)
+				font-size: 1.4em
+				color: #fff
+				vertical-align: top
+				+border-radius(0px)
+	.step-3
+		+text-center
+		canvas
+			width: 60%
+			+mcenter
+	.step-4
+		.input-group
+			+w(80%)
+			+mcenter
+			border-bottom: solid 1px #fff
+			margin-bottom: 0.2em
+			padding: 0.4em 0.5em
+			input
+				+border-radius(0)
+				background: transparent
+				border: none
+				color: #fff
+				outline: none
+				font-size: 1em
+		p
+			font-size: 0.6em
+			line-height: 2em
+			+text-center
+			text-shadow: -1px 1px 1px rgba(0,0,0,0.5)
+			color: #f2470b
+
+.page-share
+	+hide
+	z-index: 3001
+	.zw
+		padding-top: 3em
+	.pro-show
+		+posr
+		padding-top: 0.4em
+		+w(18%)
+		+mcenter
+		.left
+			+posa
+			+tl(40%,-100%)
+			+wh(1.6em,1.6em)
+			border-top: solid 1px #fff
+			border-right: solid 1px #fff
+			+transform(rotate(45deg))
+		.right
+			+posa
+			+tr(40%,-100%)
+			+wh(1.6em,1.6em)
+			border-top: solid 1px #fff
+			border-left: solid 1px #fff
+			+transform(rotate(-45deg))
+	.pro-name
+		+posr
+		+w(100%)
+		+text-center
+		+large-phone
+			font-size: 0.8em
+		+medium-phone
+			font-size: 0.6em
+		+small-phone
+			font-size: 0.4em
+		line-height: 1.4em
+		margin-top: -.5em
+		.black
+			color: black
+		span
+			+hide
+			+w(30%)
+			+posa
+			+animation(fadeIn,2s)
+			bottom: 1em
+			left: 50%
+			margin-left: -15%
+			&.gold
+				+show
+				color: #9d7f64
+			&.silver
+				color: #6a6c70
+				
+		p
+			+posa
+			+tl(1em)
+			+w(100%)
+			+text-center
+
+	h2,p
+		+w(70%)
+		+mcenter
+		+text-center
+	p
+		font-size: 0.8em
+		line-height: 1.6em
+		+text-left
+	h2
+		margin: 0.5em auto
+	.share-btn
+		p
+			+text-center
+		.share-list
+			padding-top: 0.2em
+			+w(80%)
+			+mcenter
+			+text-center
+			a
+				display: inline-block
+				margin: 0 0.2em
+				+w(2.3em)
+
+.pop 
+	+posa
+	+tl
+	z-index: 9001
+	+wh(100%,100%)
+	background: url("../img/pop.png") no-repeat center top
+	background-size: cover
+	+animation(fadeInDown)
+	.pop-text
+		+posa
+		+bl(0.2em)
+		+w(100%)
+.wechat
+	+posa
+	+tl
+	z-index: 9001
+	+wh(100%,100%)
+	background: url("../img/wechat.png") no-repeat center top
+	background-size: contain
+	background-color: rgba(0,0,0,0.8)
+	+animation(fadeInDown)
+
+// debug
+// .page
+// 	+hide
+// .page-loading
+// 	+show
+
+
+.callback
+	background: url(../img/bg.jpg) 50% 50% / cover no-repeat
+	.logo
+		background: url(../img/logo.png) 0% 0% / contain no-repeat
+
+.page-callback
+	.zw
+		padding-top: 3em	
+	h2
+		color: #94c51b
+		+text-center
+		margin-bottom: 0.2em
+	p
+		font-size: 0.8em
+		+text-center
+		&.notetext
+			font-size: 0.7em
+	.show-pro
+		+wh(70%)
+		+mcenter
+		+text-center
+	.btnto
+		+show
+		padding-top: 0.4em
+		+w(328/640*100%)
+		+mcenter
