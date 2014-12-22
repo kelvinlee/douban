@@ -1,24 +1,32 @@
 // @import url(http://fonts.googleapis.com/css?family=Ubuntu)
 @import sass/base
+@import sass/animation
+@import sass/slider
 @import ada
+@import ../css/slider.css
+@import ../css/slider.default.css
 
 +keyframes(CotoCo2)
 	0%
 		+ada(filter,blur(0px))
 		top: 100%
 		margin-top: -5em
-		background-image: url("../img/co.png")
 	50%
 		+ada(filter,blur(3px))
-		background-image: url("../img/co2.png")
 	100%
 		+ada(filter,blur(0px))
 		top: 0%
 		margin-top: 0em
-		background-image: url("../img/co2.png")
+
+p 
+	margin: 0
+
+.ui-slider
+	a,button,input
+		+ada(tap-highlight-color,rgba(0,0,0,0))
 
 .fadeOut
-	+animation(fadeOut,.2s)		
+	+animation(fadeOut,.2s)
 .fadeIn
 	+animation(fadeIn,.2s)
 
@@ -52,6 +60,10 @@ body
 
 .tran
 	+tran
+
+
+$s-icon: 5em
+$b-icon: 6em
 
 .icon-co
 	// width: (163px/600px)*100%
@@ -89,11 +101,12 @@ body
 		+small-phone
 			+h(3em)
 	.loadimg
-		+wh(6.5em,5em)
+		+wh(8em,8em)
 		background: url(../img/loading-2.png) no-repeat center center
 		background-size: contain
 		+mcenter
-		margin-top: -1em
+		margin-top: -6.5em
+		margin-bottom: 4.5em
 	.load
 		font-family: 'Ubuntu', sans-serif
 		+text-center
@@ -162,6 +175,12 @@ span.note
 		+hide
 		+posa
 		+bl(1em)
+		+large-phone
+			bottom: 2em
+		+medium-phone
+			bottom: 1em
+		+small-phone
+			bottom: 1em
 		+text-center
 		+w(100%)
 		+animation(fadeInUp,1s)
@@ -170,13 +189,16 @@ span.note
 	.swipeBox
 		+posa
 		+tbl(3em,3em,50%)
-		+w(5em)
+		+w($s-icon)
 		+large-phone
 			top: 6em
+			bottom: 4em
 		+medium-phone
 			top: 5em
+			bottom: 3em
 		+small-phone
 			top: 3em
+			bottom: 3em
 		+border-radius(5em)
 		border: dotted 1px #ddd
 		margin-left: -5em/2
@@ -185,31 +207,49 @@ span.note
 			opacity: 0
 			+posa
 			+tl(100%)
-			z-index: 1
+			z-index: -1
 			margin-top: -5em
 			&.toco2
 				+animation(CotoCo2,2s)
 				top: 0%
 				margin-top: -0em
+				// background-image: url("../img/co2.png")
+			&.toco2img
 				background-image: url("../img/co2.png")
 		.ProD
-			+posr
-			z-index: 2
+			+posa
+			z-index: 20000
 			opacity: 0
 			+tran
 			+wh(100%,100%)
+		.note-warring
+			+hide
+			+posa
+			+bl()
+			+wh(100%,3em)
+			background: url("../img/note-warring.png") no-repeat center center
+			background-size: contain
+			+animation(fadeInOut,2s,$count:infinite)
+		.note-success
+			+hide
+			+posa
+			+tl()
+			+wh(100%,3em)
+			background: url("../img/note-success.png") no-repeat center center
+			background-size: contain
+			+animation(StampTop,0.4s)
 				
 
 .page-process
 	// +gradient($star: #333 ,$end: #777)
 	// +hide
-
 	+tran
 	opacity: 0
-	+ada(transform, scale(0.6))
 	+wh(100%,100%)
-	overflow: hidden
+	overflow: auto
 	z-index: 3000
+	&.off
+		+ada(transform, scale(0.6))
 	&.on
 		opacity: 1
 		+ada(transform, scale(1))
@@ -223,45 +263,73 @@ span.note
 		+tran
 		+posr
 		top: 3em
-		.slider
-			+w(100%)
-			+mcenter
-			.slide
-				+text-center
-				img
-					+w(30%)
-			.slide-left
-				// +hide
+		.ui-slider-pre, .ui-slider-next
+			+posa
+			+wh(3em,3em)
+			z-index: 1
+		.ui-slider-pre
+			+tl(35%,15%)
+			&:before
 				+posa
-				+tl(35%,15%)
-				+wh(3em,3em)
-				z-index: 1
-				&:before
-					+posa
-					+tl(1em,1em)
-					content: " "
-					+transform(rotate(-45deg))
-					+show
-					+wh(1em,1em)
-					opacity: 0.6
-					border-left: 2px solid #fff
-					border-top: 2px solid #fff
-			.slide-right
-				+hide
+				+tl(1em,1em)
+				content: " "
+				+transform(rotate(-45deg))
+				+show
+				+wh(1em,1em)
+				opacity: 0.6
+				border-left: 2px solid #fff
+				border-top: 2px solid #fff
+		.ui-slider-next
+			+tr(35%,15%)
+			&:before
 				+posa
-				+tr(35%,15%)
-				+wh(3em,3em)
-				z-index: 1
-				&:before
-					+posa
-					+tr(1em,1em)
-					content: " "
-					+transform(rotate(45deg))
-					+show
-					+wh(1em,1em)
-					opacity: 0.6
-					border-right: 2px solid #fff
-					border-top: 2px solid #fff
+				+tr(1em,1em)
+				content: " "
+				+transform(rotate(45deg))
+				+show
+				+wh(1em,1em)
+				opacity: 0.6
+				border-right: 2px solid #fff
+				border-top: 2px solid #fff
+		// .slider
+		// 	+w(100%)
+		// 	+mcenter
+		// 	.slide
+		// 		+text-center
+		// 		img
+		// 			+w(30%)
+		// 	.slide-left
+		// 		// +hide
+		// 		+posa
+		// 		+tl(35%,15%)
+		// 		+wh(3em,3em)
+		// 		z-index: 1
+		// 		&:before
+		// 			+posa
+		// 			+tl(1em,1em)
+		// 			content: " "
+		// 			+transform(rotate(-45deg))
+		// 			+show
+		// 			+wh(1em,1em)
+		// 			opacity: 0.6
+		// 			border-left: 2px solid #fff
+		// 			border-top: 2px solid #fff
+		// 	.slide-right
+		// 		// +hide
+		// 		+posa
+		// 		+tr(35%,15%)
+		// 		+wh(3em,3em)
+		// 		z-index: 1
+		// 		&:before
+		// 			+posa
+		// 			+tr(1em,1em)
+		// 			content: " "
+		// 			+transform(rotate(45deg))
+		// 			+show
+		// 			+wh(1em,1em)
+		// 			opacity: 0.6
+		// 			border-right: 2px solid #fff
+		// 			border-top: 2px solid #fff
 		.pro-name
 			+posr
 			+w(100%)
@@ -411,12 +479,12 @@ span.note
 			+hide
 	.step-1
 		+show
-		.slider
+		.slider-normal
 			+w(100%)
-			.slide-group
+			.slide-normal-group
 				+mcenter
 				+w(65%)
-				.slide
+				.slide-normal
 					+text-center
 					&.on
 						img
@@ -428,13 +496,17 @@ span.note
 	.step-2
 		.upload
 			+posr
+			overflow: hidden
 			input
 				+posa
 				+tl
 				+br
 				+wh(100%,100%)
 				+show
+				padding: 200px
+				background: #000
 				opacity: 0
+				display: block
 		.text-input
 			@extend .background
 			background-position: left center
@@ -487,6 +559,13 @@ span.note
 .page-share
 	+hide
 	z-index: 3001
+	.ui-slider-item img
+		+large-phone
+			width: 30%
+		+medium-phone
+			width: 26%
+		+small-phone
+			width: 20%
 	.zw
 		padding-top: 3em
 	.pro-show
@@ -494,20 +573,34 @@ span.note
 		padding-top: 0.4em
 		+w(18%)
 		+mcenter
-		.left
+	#mySlider2
+		+posr
+	.ui-slider-pre,.ui-slider-next
+		+posa
+	.ui-slider-pre
+		+tl(35%,15%)
+		&:before
 			+posa
-			+tl(40%,-100%)
-			+wh(1.6em,1.6em)
-			border-top: solid 1px #fff
-			border-right: solid 1px #fff
-			+transform(rotate(45deg))
-		.right
-			+posa
-			+tr(40%,-100%)
-			+wh(1.6em,1.6em)
-			border-top: solid 1px #fff
-			border-left: solid 1px #fff
+			+tl(1em,1em)
+			content: " "
 			+transform(rotate(-45deg))
+			+show
+			+wh(1.4em,1.4em)
+			opacity: 0.6
+			border-left: 2px solid #fff
+			border-top: 2px solid #fff
+	.ui-slider-next
+		+tr(35%,15%)
+		&:before
+			+posa
+			+tr(1em,1em)
+			content: " "
+			+transform(rotate(45deg))
+			+show
+			+wh(1.4em,1.4em)
+			opacity: 0.6
+			border-right: 2px solid #fff
+			border-top: 2px solid #fff
 	.pro-name
 		+posr
 		+w(100%)
@@ -566,26 +659,103 @@ span.note
 				+w(2.3em)
 
 .pop 
-	+posa
+	+posf
 	+tl
 	z-index: 9001
 	+wh(100%,100%)
-	background: url("../img/pop.png") no-repeat center top
-	background-size: cover
+	overflow: auto
+	// background: url("../img/pop.png") no-repeat center top
+	// background-size: cover
+	background-color: rgba(0,0,0,0.8)
 	+animation(fadeInDown)
+	
 	.pop-text
 		+posa
 		+bl(0.2em)
 		+w(100%)
-.wechat
+	.close
+		+posa
+		+tr
+		+wh(50%,6em)
+		z-index: 1000
+	.ui-slider-pre, .ui-slider-next
+		+posa
+		+wh(3em,3em)
+		z-index: 1
+	.ui-slider-pre
+		+tl(35%,15%)
+		&:before
+			+posa
+			+tl(1em,1em)
+			content: " "
+			+transform(rotate(-45deg))
+			+show
+			+wh(1em,1em)
+			opacity: 0.6
+			border-left: 2px solid #fff
+			border-top: 2px solid #fff
+	.ui-slider-next
+		+tr(35%,15%)
+		&:before
+			+posa
+			+tr(1em,1em)
+			content: " "
+			+transform(rotate(45deg))
+			+show
+			+wh(1em,1em)
+			opacity: 0.6
+			border-right: 2px solid #fff
+			border-top: 2px solid #fff
+	.pro-name
+		+posr
+		+wh(100%,4em)
+		+text-center
+		+large-phone
+			font-size: 0.8em
+		+medium-phone
+			font-size: 0.6em
+		+small-phone
+			font-size: 0.4em
+		line-height: 1.4em
+		.black
+			color: black
+		span
+			+hide
+			+w(30%)
+			+posa
+			+animation(fadeIn,2s)
+			bottom: 1em
+			left: 50%
+			margin-left: -15%
+			&.gold
+				+show
+				color: #9d7f64
+			&.silver
+				color: #6a6c70
+				
+		p
+			+posa
+			+tl(1em)
+			+w(100%)
+
+=pop($url)
 	+posa
 	+tl
 	z-index: 9001
 	+wh(100%,100%)
-	background: url("../img/wechat.png") no-repeat center top
+	background: url($url) no-repeat center top
 	background-size: contain
 	background-color: rgba(0,0,0,0.8)
 	+animation(fadeInDown)
+
+.wechat
+	+pop("../img/wechat.png")
+.wechat-note
+	+pop("../img/note-wechat.png")
+.android-note
+	+pop("../img/android-note.png")
+.waiting
+	+pop("../img/waiting.png")
 
 // debug
 // .page
@@ -620,3 +790,9 @@ span.note
 		padding-top: 0.4em
 		+w(328/640*100%)
 		+mcenter
+
+
+.page-init
+	// +hide
+.page-share
+	// display: block !important

@@ -11,29 +11,26 @@ html(lang="en").no-js
 		//- link(rel="stylesheet",href="css/bootstrap.min.css")
 		//- link(rel="stylesheet",href="css/bootstrap-theme.min.css")
 		//- my 
-		//- script(src="js/libs/Zepto.min.js")
+		script(src="js/libs/Zepto.min.js")
 		//- script(src="js/libs/tweenjs-0.5.1.min.js")
 		//- script(src="js/libs/movieclip-0.7.1.min.js")
 		//- script(src="js/libs/preloadjs-0.4.1.min.js")
 		//- script(src="js/libs/soundjs-0.5.2.min.js")
-		link(rel="stylesheet",href="css/index.css")
-	body.callback
-		div.warrper
-			div.note-pc
-				
-			div.logo
-
-			div.page.page-callback
-				div.zw
-				div.code
-					img(src="img/code.png")
-				h2 隐患搜捕作品如下：
-				div.show-pro#pro
-				p.notetext 长按图片可以保存
-				a.btnto(href="http://campaign.douban.com/app/casarte_NOCO/")
-					img(src="img/btn-join.png")
-				p 赢取 Kindle Paperwhite！
-
+		//- link(rel="stylesheet",href="css/index.css")
+	body.page
+		div#test
+			input(type="file",name="testfile")
+		br
+		div#browe
 		script.
-			var url = window.location.hash.replace("#","");
-			document.getElementById("pro").innerHTML = "<img src='"+url+"'  />";
+			var ios = Math.abs(navigator.userAgent.toLowerCase().split("iphone os ")[1].split(" ")[0].replace(/_/gi,""))
+			//- console.log arr
+			if(ios<100) ios = ios*10;
+			$("#test").append("<br/>ios:"+ios);
+
+			$("#browe").html(navigator.userAgent.toLowerCase());
+			var arr = Math.abs(navigator.userAgent.toLowerCase().split("android")[1].split(";")[0].replace(".",""));
+			arr = arr<100 ? arr*10 : arr;
+			$("#browe").html(navigator.userAgent.toLowerCase()+"<br/><br/>"+arr);
+
+			
