@@ -1,0 +1,649 @@
+@import sass/base
+@import animation
+/* custom */
+
+// .iphone4
+=nw($n,$x: 640,$i4: 80%)
+	$w: $n/$x
+	+w($w*100%)
+	margin: 0 auto
+	.iphone4 &
+		+w($w*$i4)
+section
+	+posr
+	background-size: 100% 100%
+	background-position: center center
+	.nextpoint
+		+posa
+		+bl(5%,50%)
+		z-index: 100
+		.text
+			+posa
+			+tl
+			+text-center
+			+w(5rem)
+			+transform(translate3d(-50%,-150%,0))
+			font-size: 0.8rem
+			color: #fff
+		&:before,&:after
+			content: " "
+			+posa
+			+tl(-10%)
+			+wh(1rem,0.5rem)
+			background: url(../img/nextpoint.png) no-repeat center center
+			background-size: cover
+			+transform(translate3d(-50%,0,0))
+			+animation(nextpoint,1s,ease,infinite)
+		&:after
+			+transform(translate3d(-50%,-100%,0))
+		&:before
+			+delay(0.5s)
+		&.black
+			.text
+				color: #000
+			&:before,&:after
+				background-image: url(../img/nextpoint-black.png)
+	.other
+		+posa
+		+tl
+		+wh(100%,100%)
+	.step-list
+		min-height: 44px
+		ul
+			margin: 0 auto
+			padding: 2% 2% 0% 2%
+			list-style: none
+			white-space: nowrap
+			background-image: url("../img/bgrepeat.jpg")
+			background-size: cover
+			li 
+				+w(33%)
+				display: inline-block
+	.page-content
+		+posa
+		+tl(44px)
+		+br
+		background-image: url(../img/bg2.jpg)
+		background-size: 100% 100%
+		background-position: center center
+	&[data-id="1"]
+		background-image: url(../img/cover.jpg)
+		.pageanimation
+			+tran
+			+posa
+			+tl
+			+wh(100%,100%)
+			background-image: url(../img/cover-animate.jpg)
+			background-size: 100% 100%
+			background-position: center center
+			opacity: 0.5
+			+animation(lineflick,2s,ease-out,infinite)
+		.content
+			+posa
+			+tl(18%)
+			+w(100%)
+			+text-center
+			.star
+				$w: 300/640
+				+w($w*100%)
+				@at-root
+					.iphone4 &
+						+w($w*80%)
+				margin: 0 auto
+			.text
+				$w: 400/640
+				+w($w*100%)
+				@at-root
+					.iphone4 &
+						+w($w*80%)
+				margin: 0 auto
+			.Sheep
+				+posa
+				+tl(56%,18%)
+				$w: 57/640
+				+w($w*100%)
+				+animation(sheep,4s,ease-out,infinite)
+				@at-root
+					.iphone4 &
+						+w($w*80%)
+						left: 24%
+			.Stairs
+				+posa
+				+tr(36%,20%)
+				$w: 78/640
+				+w($w*100%)
+				+animation(stairs,2s,ease-out,infinite)
+				transform-origin: bottom center
+				@at-root
+					.iphone4 &
+						+w($w*80%)
+						right: 27%
+	&[data-id="2"]
+		background-image: url(../img/bg2.jpg)
+		.text
+			$w: 445/640
+			+w($w*100%)
+			margin: 0 auto
+			margin-top: 8%
+			transform-origin: bottom center
+			@at-root
+				.iphone4 &
+					+w($w*80%)
+		.box-list
+			$w: 500/640
+			+w($w*100%)
+			+posa
+			+bl(15%,(100%-$w*100%)/2)
+			@at-root
+				.iphone4 &
+					+w($w*80%)
+					+bl(12%,(100%-$w*80%)/2)
+			.point
+				+posa
+				+tl
+				+w(110/500*100%)
+				+transform(translate3d(-50%,-50%,0))
+				.pro
+					+posa
+					+w(100%)
+				&.point1
+					+tl(50%,49.5%)
+					.pro
+						+tl(60%,-120%)
+				&.point2
+					+tl(36%,16%)
+					.pro
+						+tl(-110%,-2%)
+				&.point3
+					+tl(14.5%,49.5%)
+					.pro
+						+tl(-110%,-2%)
+						@at-root
+							.iphone4 &
+								top: -84%
+				&.point4
+					+tl(36%,83%)
+					.pro
+						+tl(-110%,-2%)
+				&.point5
+					+tl(85%,49.5%)
+					.pro
+						+tl(100%,-2%)
+				&.point6
+					+tl(84%,13%)
+					.pro
+						+tl(100%,-2%)
+				&.point7
+					+tl(84%,86%)
+					.pro
+						+tl(100%,-2%)
+	&[data-id="3"]
+		background-image: url(../img/bg2.jpg)
+		.title
+			$w: 482/640
+			+w($w*100%)
+			margin: 0 auto
+			margin-top: 8%
+			.iphone4 &
+				+w($w*80%)
+		.president
+			$w: 265/640
+			+w($w*100%)
+			border: solid 1px #ba0100
+			margin: 0 auto
+			padding: 2%
+			margin-top: 3%
+			.iphone4 &
+				+w($w*80%)
+			.pcontent
+				+posr
+				overflow: hidden
+				.president-bg
+					background-image: url(../img/page-3-light.jpg)
+					background-size: cover
+					background-position: center center
+					+posa
+					+tl(-50%,-50%)
+					+wh(200%,200%)
+					z-index: -1
+					+animation(rotate360,10s,linear,infinite)
+		.star
+			margin: 0 auto
+			$w: 38/640
+			+w($w*100%)
+			margin-top: 3%
+			.iphone4 &
+				+w($w*80%)
+				margin-top: 2%
+		.text1
+			margin: 0 auto
+			$w: 456/640
+			+w($w*100%)
+			margin-top: 10%
+			.iphone4 &
+				+w($w*80%)
+				margin-top: 3%
+		.text2
+			margin: 0 auto
+			$w: 402/640
+			+w($w*100%)
+			.iphone4 &
+				+w($w*80%)
+		.text3
+			margin: 0 auto
+			$w: 522/640
+			+w($w*100%)
+			.iphone4 &
+				+w($w*80%)
+	&[data-id="4"]
+		background-image: url(../img/bg2.jpg)
+		.box
+			$w: 528/640
+			+w($w*100%)
+			margin: 0 auto
+			background-image: url(../img/page-4-box.png)
+			background-size: 100% 100%
+			padding: 5% 0%
+			margin-top: 8%
+			.iphone4 &
+				+w($w*80%)
+			.text1
+				$w: 407/528
+				+w($w*100%)
+				margin: 0 auto
+			.text2
+				$w: 407/528
+				+w($w*100%)
+				margin: 0 auto
+			.text3
+				$w: 406/528
+				+w($w*100%)
+				margin: 0 auto
+			.text4
+				$w: 333/528
+				+w($w*100%)
+				margin: 0 auto
+			.text5
+				$w: 408/528
+				+w($w*100%)
+				margin: 0 auto
+
+		.lang
+			+w(100%)
+			+posa
+			bottom: 1.6%
+			z-index: -1
+			.langcontent
+				$w: 590/640
+				+w($w*100%)
+				margin: 0 auto
+				// +animation(lang,4s,ease,infinite)
+	&[data-id="5"]
+		background-image: url(../img/bg2.jpg)
+		.title
+			$w: 566/640
+			+w($w*100%)
+			+posr
+			margin: 0 auto
+			margin-top: 5%
+			overflow: hidden
+			.iphone4 &
+				+w($w*80%)
+			.flash
+				+posa
+				+tl
+				bottom: 30%
+				+w(100%)
+				border-radius: 50%
+				background: #fff
+				// margin-left: -50%
+				opacity: 0
+				+animation(flash,0.8s,ease,infinite)
+				z-index: -1
+				transform-origin: bottom center
+		.btns
+			$w: 428/640
+			+w($w*100%)
+			margin: 0 auto
+			margin-top: 5%
+			.iphone4 &
+				+w($w*80%)
+				margin-top: 0%
+	&[data-id="6"]
+		.title
+			$w: 573/640
+			+w($w*100%)
+			+posr
+			margin: 0 auto
+			margin-top: 5%
+			overflow: hidden
+			img
+				+posr
+				z-index: 2
+			.iphone4 &
+				+w($w*70%)
+			.flash
+				+posa
+				+tl
+				bottom: 30%
+				+w(100%)
+				border-radius: 50%
+				background: #fff
+				// margin-left: -50%
+				opacity: 0
+				+animation(flash,0.8s,ease,infinite)
+				z-index: 1
+				transform-origin: bottom center
+		.text1
+			$w: 280/640
+			+w($w*100%)
+			margin: 0 auto
+			.iphone4 &
+				+w($w*70%)
+		.text2
+			$w: 340/640
+			+w($w*100%)
+			margin: 0 auto
+			.iphone4 &
+				+w($w*70%)
+	&[data-id="7"]
+		.title
+			$w: 447/640
+			+w($w*100%)
+			+posr
+			margin: 0 auto
+			margin-top: 5%
+			.iphone4 &
+				+w($w*80%)
+				margin-top: 5%
+		.box
+			$w: 460/640
+			+w($w*100%)
+			margin: 0 auto
+			+posr
+			margin-top: 5%
+			.iphone4 &
+				+w($w*80%)
+				margin-top: 5%
+			&.fireon
+				.iphone4 &
+					+w($w*60%)
+			.point
+				+posa
+				$w: 150/460
+				+w($w*100%)
+				margin-left: -16%
+				+tran
+				.arrow
+					+posa
+					+w(50%)
+				&.point1
+					+tl(0,50%)
+					.arrow
+						+tl(25%,97%)
+				&.point2
+					+tl(20%,89%)
+					.arrow
+						+tl(85%,25%)
+						+transform(rotate(70deg))
+				&.point3
+					+tl(64%,79%)
+					.arrow
+						+tl(30%,-58%)
+						+transform(rotate(140deg))
+				&.point4
+					+tl(64%,23%)
+					.arrow
+						+tl(-35%,-5%)
+						+transform(rotate(-130deg))
+				&.point5
+					+tl(20%,11%)
+					.arrow
+						+tl(-30%,72%)
+						+transform(rotate(-70deg))
+	&[data-id="8"]
+		.title
+			$w: 520/640
+			+w($w*100%)
+			+posr
+			margin: 0 auto
+			margin-top: 5%
+			.iphone4 &
+				+w($w*80%)
+		.box
+			$w: 445/640
+			+w($w*100%)
+			margin: 0 auto
+			.iphone4 &
+				+w($w*80%)
+	&[data-id="9"]
+		.title
+			+nw(460)
+			+posr
+			margin-top: 5%
+			.iphone4 &
+				font-size: 0
+				margin-top: 3%
+
+		.tabs
+			@for $i from 1 through 5
+				&.on#{$i}
+					.point#{$i}
+						.star
+							opacity: 1
+						.note
+							opacity: 1
+					.icons
+						.icon#{$i}
+							&:before
+								opacity: 1
+							.ico
+								+w(80%)
+								border: solid 2px #f9ead9
+								background: #00b5f0
+								img
+									filter: grayscale(0)
+							.name
+								font-size: 0.6rem
+								color: #fff
+					.papers
+						.paper#{$i}
+							+show
+
+		.progress-line
+			+nw(530)
+			height: 6px
+			border-radius: 6px
+			background: #000
+			white-space: nowrap
+			margin-top: 12%
+			.iphone4 &
+				margin-top: 7%
+			.point-box
+				+w(19%)
+				+text-center
+				display: inline-block
+			.point
+				display: inline-block
+				+wh(10px,10px)
+				+posr
+				border-radius: 10px
+				background: #ef5344
+				border: solid 2px #f9ead9
+				top: -6px
+				.star
+					+tran
+					opacity: 0
+					+posa
+					+tl(-6px)
+				.note
+					+tran
+					opacity: 0
+					+posa
+					+tl(-240%)
+					+w(60px)
+					+transform(translate3d(-43%,0,0))
+		.progress-box
+			+nw(530)
+			border-radius: 10px
+			background: #ef5344
+			margin-top: 10%
+			.icons
+				white-space: nowrap
+				+transform(translate3d(0%,-40%,0))
+				+text-center
+				.icon
+					display: inline-block
+					+w(19%)
+					+posr
+					&:before
+						+tran
+						content: " "
+						+posa
+						+tl(-5px,50%)
+						+wh(0,0)
+						border-left: 5px solid transparent
+						border-right: 5px solid transparent
+						border-bottom: 10px solid #00b5f0
+						+transform(translate3d(-50%,0,0))
+						opacity: 0
+					.ico
+						+tran
+						+w(60%)
+						margin: 0 auto
+						padding: 5%
+						border-radius: 50%
+						border: solid 2px #d0483b
+						background: #d0483b
+						font-size: 0
+						img
+							+tran
+							filter: grayscale(1)
+					.name
+						+tran
+						+posa
+						+tl(110%)
+						+text-center
+						+w(100%)
+						font-size: 0.4rem
+						color: #b33428
+			.papers
+				.paper
+					+hide
+	&[data-id="10"]
+		.line
+			$w: 420/640
+			+w($w*100%)
+			margin: 0 auto
+			margin-top: 5%
+			.iphone4 &
+				+w($w*80%)
+		@each $i,$wi in (1,455),(2,503),(3,460),(4,441),(5,439)
+			.text#{$i}
+				$w: $wi/640
+				+w($w*100%)
+				margin: 0 auto
+				.iphone4 &
+					+w($w*80%)
+		.people
+			$w: 480/640
+			+w($w*100%)
+			margin: 0 auto
+			margin-top: -8%
+			.iphone4 &
+				+w($w*80%)
+	&[data-id="11"]
+		.title
+			+nw(530)
+			margin-top: 5%
+			.iphone4 &
+				margin-top: 3%
+		.pcmobile
+			+nw(500)
+			+posr
+			.pc
+				+posr
+				.gear
+					+posa
+					+tl(34%,19%)
+					+nw(105,500,100%)
+					font-size: 0
+					+animation(rotate360,5s,linear,infinite)
+			.mobile,.plus
+				+posa
+				+tl
+				+w(100%)
+			.mobile
+				.screen
+					+posa
+					+tl(8%,74%)
+					+wh(22%,43%)
+					overflow: hidden
+					background: #fabe2a
+					.screen-box
+						+animation(screen,3s,linear,infinite)
+						+wh(100%,100%)
+					.bgcolor1,.bgcolor2,.bgcolor3
+						+wh(100%,100%)
+					.bgcolor1
+						background-color: #eb6946
+					.bgcolor2
+						background-color: #f98a82
+					.bgcolor3
+						background-color: #82b4df
+		.text1,.text2
+			+nw(461,640,70%)
+		.text1
+			.fish
+				+posa
+				+nw(75,461)
+				z-index: -1
+				&.fish1
+					+tl(0,76%)
+					+animation(sheep,3s,ease-out,infinite)
+					+delay(1.5s)
+				&.fish2
+					+tl(50%,76%)
+					+animation(sheep,3s,ease-out,infinite)
+	&[data-id="12"]
+		.title
+			+nw(500)
+			margin-top: 5%
+			font-size: 0
+			.iphone4 &
+				margin-top: 3%
+		.logo-box
+			.logo
+				+nw(200)
+				font-size: 0
+			.logo-note
+				+nw(450)
+		.title2
+			+nw(360)
+		.points
+			.point
+				+nw(480)
+				font-size: 0
+		.index
+			+nw(400)
+			+posr
+			margin-top: 2%
+			.stars
+				+posa
+				+tl(15%,45%)
+				+h(100%)
+				.iphone4 &
+					top: 0%
+				.star
+					+w(13%)
+					// display: inline-block
+					float: left
+
+
+
+
+
+.gray
+	filter: grayscale(1)
+	
+	

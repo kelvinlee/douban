@@ -1,0 +1,124 @@
++keyframes(lineflick)
+	0%,100%
+		background-size: 100% 100%
+	50%
+		background-size: 105% 105%
++keyframes(sheep)
+	0%
+		margin-left: -0%
+		+transform(rotateY(0deg))
+	49%
+		margin-left: 8%
+		+transform(rotateY(0deg))
+	51%
+		margin-left: 8%
+		+transform(rotateY(180deg))
+	100%
+		margin-left: -0%
+		+transform(rotateY(180deg))
++keyframes(stairs)
+	0%,100%
+		+transform(rotate(0deg))
+	60%
+		+transform(rotate(0deg))
+	70%
+		+transform(rotate(5deg))
+	80%
+		+transform(rotate(-5deg))
+	90%
+		+transform(rotate(5deg))
++keyframes(nextpoint)
+	0%,100%
+		opacity: 1
+	50%
+		opacity: 0.5
+
+
++keyframes(standup)
+	0%
+		+transform(rotateX(90deg))
+	70%
+		+transform(rotateX(-30deg))
+	90%
+		+transform(rotateX(30deg))
+	100%
+		+transform(rotateX(0deg))
+
+
++keyframes(rotate360)
+	0%
+		+transform(rotate(0deg))
+	100%
+		+transform(rotate(360deg))
+
++keyframes(lang)
+	0%,100%
+		+transform(translate3d(0,0,0) scale(1,1))
+	20%
+		+transform(translate3d(5px,5px,0) scale(1.05,1.05))
+	40%
+		+transform(translate3d(10px,-5px,0) scale(1.05,1.05))
+	60%
+		+transform(translate3d(5px,5px,0) scale(1.05,1.05))
+	90%
+		+transform(translate3d(-5px,0,0) scale(1.1,1.1))
+
++keyframes(flash)
+	0%
+		+transform(scale(0,0))
+		opacity: 0
+	50%
+		opacity: 0
+		+transform(scale(0,0))
+	100%
+		opacity: 0.4
+		+transform(scale(2,2))
+
++keyframes(page7point1)
+	0%
+		opacity: 0
+		+transform(translate3d(0,100%,0) scale(0.5,0.5))
+	100%
+		opacity: 1
+		+transform(translate3d(0,0,0) scale(1,1))
+
++keyframes(page7point2)
+	0%
+		opacity: 0
+		+transform(translate3d(-100%,60%,0) scale(0.5,0.5))
+	100%
+		opacity: 1
+		+transform(translate3d(0,0,0) scale(1,1))
+
++keyframes(page7point3)
+	0%
+		opacity: 0
+		+transform(translate3d(-60%,-60%,0) scale(0.5,0.5))
+	100%
+		opacity: 1
+		+transform(translate3d(0,0,0) scale(1,1))
+
++keyframes(page7point4)
+	0%
+		opacity: 0
+		+transform(translate3d(60%,-60%,0) scale(0.5,0.5))
+	100%
+		opacity: 1
+		+transform(translate3d(0,0,0) scale(1,1))
+
++keyframes(page7point5)
+	0%
+		opacity: 0
+		+transform(translate3d(100%,40%,0) scale(0.5,0.5))
+	100%
+		opacity: 1
+		+transform(translate3d(0,0,0) scale(1,1))
+
++keyframes(screen)
+	0%
+		+transform(translate3d(0,100%,0))
+	50%
+		+transform(translate3d(0,-300%,0))
+	100%
+		+transform(translate3d(0,-300%,0))
+		
