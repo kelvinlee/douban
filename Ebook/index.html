@@ -4,22 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title></title>
+    <title>2015 创业红宝书</title>
     <link rel="stylesheet" href="css/parallax.css">
     <link rel="stylesheet" href="css/parallax-animation.css">
     <link rel="stylesheet" href="css/base.css">
   </head>
   <body>
+    <div class="wechat-share"><img src="img/ico.jpg"></div>
+    <div class="loading">
+      <div class="text">努力加载中...</div>
+    </div>
+    <div onclick="musicIcon()" class="audios">
+      <div class="icon on"><img src="img/icon-muisc.png"></div>
+      <div class="text">打开声音听星爷总结></div>
+      <audio id="audiobg" src="mp3/audio1.mp3" loop="loop" autoplay="autoplay"></audio>
+      <audio id="audioss" src="mp3/audio2.mp3"></audio>
+    </div>
     <div class="wrapper">
       <div class="pages">
         <section class="page">
           <div data-animation="fadeIn" data-timing-function="ease-in" class="other">
             <div class="pageanimation"></div>
           </div>
-          <div class="content"><img src="img/cover-star.png" data-animation="slideToBottom" data-timing-function="ease-in" class="star"><img src="img/cover-text-1.png" data-animation="slideToBottom" data-delay="600" data-timing-function="ease-in" class="text">
+          <div class="content"><img lz-src="img/cover-star.png" data-animation="slideToBottom" data-timing-function="ease-in" class="star"><img lz-src="img/cover-text-1.png" data-animation="slideToBottom" data-delay="600" data-timing-function="ease-in" class="text">
             <div data-animation="slideToBottom" data-delay="800" data-timing-function="ease-in" class="other">
-              <div class="Sheep"><img src="img/cover-sheep.png"></div>
-              <div class="Stairs"><img src="img/cover-stairs.png"></div>
+              <div class="Sheep"><img lz-src="img/cover-sheep.png"></div>
+              <div class="Stairs"><img lz-src="img/cover-stairs.png"></div>
             </div>
           </div>
           <div class="nextpoint">
@@ -27,55 +37,59 @@
           </div>
         </section>
         <section class="page">
-          <div data-animation="standup" data-duration="1000" class="text"><img src="img/page-2-text.png"></div>
-          <div class="box-list"><img src="img/page-2-points.png">
-            <div data-animation="fadeIn" data-delay="0" class="point point1"><img src="img/page-2-point-1.png">
-              <div data-animation="slideToRight" data-delay="100" class="pro"><img src="img/page-2-point-1-t.png"></div>
+          <div data-animation="standup" data-duration="1000" class="text"><img lz-src="img/page-2-text.png"></div>
+          <div id="boxlist" class="box-list"><img lz-src="img/page-2-points.png">
+            <div class="point point1"><img lz-src="img/page-2-point-1.png">
+              <div class="pro"><img lz-src="img/page-2-point-1-t.png"></div>
             </div>
-            <div data-animation="fadeIn" data-delay="600" class="point point2"><img src="img/page-2-point-2.png">
-              <div data-animation="slideToBottom" data-delay="700" class="pro"><img src="img/page-2-point-2-t.png"></div>
+            <div class="point point2"><img lz-src="img/page-2-point-2.png">
+              <div class="pro"><img lz-src="img/page-2-point-2-t.png"></div>
             </div>
-            <div data-animation="fadeIn" data-delay="1200" class="point point3"><img src="img/page-2-point-3.png">
-              <div data-animation="slideToBottom" data-delay="1300" class="pro"><img src="img/page-2-point-3-t.png"></div>
+            <div class="point point3"><img lz-src="img/page-2-point-3.png">
+              <div class="pro"><img lz-src="img/page-2-point-3-t.png"></div>
             </div>
-            <div data-animation="fadeIn" data-delay="1800" class="point point4"><img src="img/page-2-point-4.png">
-              <div data-animation="slideToBottom" data-delay="1900" class="pro"><img src="img/page-2-point-4-t.png"></div>
+            <div class="point point4"><img lz-src="img/page-2-point-4.png">
+              <div class="pro"><img lz-src="img/page-2-point-4-t.png"></div>
             </div>
-            <div data-animation="fadeIn" data-delay="2400" class="point point5"><img src="img/page-2-point-5.png">
-              <div data-animation="slideToTop" data-delay="2500" class="pro"><img src="img/page-2-point-5-t.png"></div>
+            <div class="point point5"><img lz-src="img/page-2-point-5.png">
+              <div class="pro"><img lz-src="img/page-2-point-5-t.png"></div>
             </div>
-            <div data-animation="fadeIn" data-delay="3000" class="point point6"><img src="img/page-2-point-6.png">
-              <div data-animation="slideToTop" data-delay="3100" class="pro"><img src="img/page-2-point-6-t.png"></div>
+            <div class="point point6"><img lz-src="img/page-2-point-6.png">
+              <div class="pro"><img lz-src="img/page-2-point-6-t.png"></div>
             </div>
-            <div data-animation="fadeIn" data-delay="3600" class="point point7"><img src="img/page-2-point-7.png">
-              <div data-animation="slideToTop" data-delay="3700" class="pro"><img src="img/page-2-point-7-t.png"></div>
+            <div class="point point7"><img lz-src="img/page-2-point-7.png">
+              <div class="pro"><img lz-src="img/page-2-point-7-t.png"></div>
             </div>
           </div>
           <div class="nextpoint black"></div>
         </section>
         <section class="page">
-          <div data-animation="slideToBottom" class="title"><img src="img/page-3-title.png"></div>
+          <div data-animation="slideToBottom" class="title"><img lz-src="img/page-3-title.png"></div>
           <div data-animation="fadeIn" data-delay="600" class="president">
             <div class="pcontent">
-              <div class="president-bg"></div><img src="img/page-3-president.png">
+              <div class="president-bg"><img lz-src="img/page-3-light.jpg"></div><img lz-src="img/page-3-president.png">
             </div>
           </div>
-          <div data-animation="slideToBottom" data-delay="1000" class="star"><img src="img/page-3-redstar.png"></div>
-          <div data-animation="slideToTop" data-delay="1600" class="text1"><img src="img/page-3-text1.png"></div>
-          <div data-animation="slideToTop" data-delay="2200" class="text2"><img src="img/page-3-text2.png"></div>
-          <div data-animation="slideToTop" data-delay="2800" class="text3"><img src="img/page-3-text3.png"></div>
+          <div data-animation="slideToBottom" data-delay="1000" class="star"><img lz-src="img/page-3-redstar.png"></div>
+          <div data-animation="slideToTop" data-delay="1600" class="text1"><img lz-src="img/page-3-text1.png"></div>
+          <div data-animation="slideToTop" data-delay="2200" class="text2"><img lz-src="img/page-3-text2.png"></div>
+          <div data-animation="slideToTop" data-delay="2800" class="text3"><img lz-src="img/page-3-text3.png"></div>
           <div class="nextpoint black"></div>
         </section>
         <section class="page">
           <div data-animation="slideToBottom" class="box">
-            <div data-animation="slideToLeft" data-delay="1*600" data-duration="1000" class="text1"><img lz-src="img/page-4-text1.png"></div>
-            <div data-animation="slideToRight" data-delay="2*600" data-duration="1500" class="text2"><img lz-src="img/page-4-text2.png"></div>
-            <div data-animation="slideToLeft" data-delay="3*600" data-duration="2000" class="text3"><img lz-src="img/page-4-text3.png"></div>
-            <div data-animation="slideToRight" data-delay="4*600" data-duration="2500" class="text4"><img lz-src="img/page-4-text4.png"></div>
-            <div data-animation="slideToBottom" data-delay="5*600" data-duration="3000" class="text5"><img lz-src="img/page-4-text5.png"></div>
+            <div data-animation="fadeIn" data-delay="1*400" data-duration="800" class="text1"><img lz-src="img/page-4-text1.png"></div>
+            <div data-animation="fadeIn" data-delay="2*400" data-duration="1100" class="text2"><img lz-src="img/page-4-text2.png"></div>
+            <div data-animation="fadeIn" data-delay="3*400" data-duration="1400" class="text3"><img lz-src="img/page-4-text3.png"></div>
+            <div data-animation="fadeIn" data-delay="4*400" data-duration="1700" class="text4"><img lz-src="img/page-4-text4.png"></div>
+            <div id="text5" data-animation="Stamp" data-delay="1200" data-duration="500" class="text5"><img lz-src="img/page-4-text5.png"></div>
           </div>
           <div class="lang">
-            <div class="langcontent"><img lz-src="img/page-4-lang.png"></div>
+            <div data-animation="slideToRight" data-delay="400" class="langcontent">
+              <div class="lang"><img lz-src="img/page-4-lang-2.png"></div>
+              <div class="coin"><img lz-src="img/page-4-lang-coin.png"></div>
+              <div class="bg"><img lz-src="img/page-4-lang-1.png"></div>
+            </div>
           </div>
           <div class="nextpoint black"></div>
         </section>
@@ -90,9 +104,9 @@
         <section class="page">
               <div class="step-list">
                 <ul>
-                  <li><a data-page="5"><img src="img/step-1-on.png" onload="stopHeight()"></a></li>
-                  <li><a data-page="7"><img src="img/step-2.png" onload="stopHeight()"></a></li>
-                  <li><a data-page="9"><img src="img/step-3.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="5"><img lazy-src="img/step-1-on.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="7"><img lazy-src="img/step-2.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="9"><img lazy-src="img/step-3.png" onload="stopHeight()"></a></li>
                 </ul>
               </div>
           <div class="page-content">
@@ -109,9 +123,9 @@
         <section class="page">
               <div class="step-list">
                 <ul>
-                  <li><a data-page="5"><img src="img/step-1-on.png" onload="stopHeight()"></a></li>
-                  <li><a data-page="7"><img src="img/step-2.png" onload="stopHeight()"></a></li>
-                  <li><a data-page="9"><img src="img/step-3.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="5"><img lazy-src="img/step-1-on.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="7"><img lazy-src="img/step-2.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="9"><img lazy-src="img/step-3.png" onload="stopHeight()"></a></li>
                 </ul>
               </div>
           <div class="page-content">
@@ -120,7 +134,7 @@
               <div data-animation="slideToBottom" data-delay="400" class="line"><img lz-src="img/redstarline.png"></div>
               <div data-animation="slideToBottom" data-delay="600" class="text2"><img lz-src="img/page-7-text2.png"></div>
             </div>
-            <div id="firebox" data-animation="slideToTop" data-delay="800" class="box"><img lz-src="img/page-7-mark.png">
+            <div id="firebox" data-animation="slideToTop" data-delay="800" class="box"><img lz-src="img/page-7-mark.png"><img lz-src="img/page-7-fire.png" style="display:none">
               <div data-animation="page7point1" data-delay="1400" onclick="selectPoint(this)" class="point gray point1"><img lz-src="img/page-7-point-1.png">
                 <div class="arrow"><img lz-src="img/point-arrow.png"></div>
               </div>
@@ -136,6 +150,7 @@
               <div data-animation="page7point5" data-delay="3800" onclick="selectPoint(this)" class="point gray point5"><img lz-src="img/page-7-point-5.png">
                 <div class="arrow"><img lz-src="img/point-arrow.png"></div>
               </div>
+              <div data-animation="slideToTop" data-delay="3000" class="note">将它们依次点击点亮</div>
             </div>
           </div>
           <div class="nextpoint black"></div>
@@ -143,9 +158,9 @@
         <section class="page">
               <div class="step-list">
                 <ul>
-                  <li><a data-page="5"><img src="img/step-1.png" onload="stopHeight()"></a></li>
-                  <li><a data-page="7"><img src="img/step-2-on.png" onload="stopHeight()"></a></li>
-                  <li><a data-page="9"><img src="img/step-3.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="5"><img lazy-src="img/step-1.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="7"><img lazy-src="img/step-2-on.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="9"><img lazy-src="img/step-3.png" onload="stopHeight()"></a></li>
                 </ul>
               </div>
           <div class="page-content">
@@ -165,9 +180,9 @@
         <section class="page">
               <div class="step-list">
                 <ul>
-                  <li><a data-page="5"><img src="img/step-1.png" onload="stopHeight()"></a></li>
-                  <li><a data-page="7"><img src="img/step-2-on.png" onload="stopHeight()"></a></li>
-                  <li><a data-page="9"><img src="img/step-3.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="5"><img lazy-src="img/step-1.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="7"><img lazy-src="img/step-2-on.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="9"><img lazy-src="img/step-3.png" onload="stopHeight()"></a></li>
                 </ul>
               </div>
           <div class="page-content">
@@ -176,7 +191,7 @@
               <div data-animation="fadeIn" data-delay="200" class="text"><img lz-src="img/page-9-title.png"></div>
               <div data-animation="slideToRight" class="line"><img lz-src="img/redstarline.png"></div>
             </div>
-            <div class="tabs on1">
+            <div now="1" class="tabs on1">
               <div data-animation="fadeIn" data-delay="600" class="progress-line">
                 <div class="point-box">
                   <div class="point point1">
@@ -247,9 +262,9 @@
         <section class="page">
               <div class="step-list">
                 <ul>
-                  <li><a data-page="5"><img src="img/step-1.png" onload="stopHeight()"></a></li>
-                  <li><a data-page="7"><img src="img/step-2.png" onload="stopHeight()"></a></li>
-                  <li><a data-page="9"><img src="img/step-3-on.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="5"><img lazy-src="img/step-1.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="7"><img lazy-src="img/step-2.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="9"><img lazy-src="img/step-3-on.png" onload="stopHeight()"></a></li>
                 </ul>
               </div>
           <div class="page-content">
@@ -268,16 +283,16 @@
         <section class="page">
               <div class="step-list">
                 <ul>
-                  <li><a data-page="5"><img src="img/step-1.png" onload="stopHeight()"></a></li>
-                  <li><a data-page="7"><img src="img/step-2.png" onload="stopHeight()"></a></li>
-                  <li><a data-page="9"><img src="img/step-3-on.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="5"><img lazy-src="img/step-1.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="7"><img lazy-src="img/step-2.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="9"><img lazy-src="img/step-3-on.png" onload="stopHeight()"></a></li>
                 </ul>
               </div>
           <div class="page-content">
             <div data-animation="slideToBottom" class="title"><img lz-src="img/page-11-title.png"></div>
             <div class="pcmobile">
               <div data-animation="slideToRight" data-delay="800" class="pc">
-                <div class="gear"><img src="img/page-11-gear.png"></div><img lz-src="img/page-11-pc.png">
+                <div class="gear"><img lz-src="img/page-11-gear.png"></div><img lz-src="img/page-11-pc.png">
               </div>
               <div data-animation="slideToLeft" data-delay="800" class="mobile">
                 <div class="screen">
@@ -291,8 +306,8 @@
               <div data-animation="fadeIn" data-delay="600" class="plus"><img lz-src="img/page-11-plus.png"></div>
             </div>
             <div data-animation="slideToTop" data-delay="1200" class="text1"><img lz-src="img/page-11-text1.png">
-              <div class="fish fish1"><img src="img/page-11-fish.png"></div>
-              <div class="fish fish2"><img src="img/page-11-fish.png"></div>
+              <div class="fish fish1"><img lz-src="img/page-11-fish.png"></div>
+              <div class="fish fish2"><img lz-src="img/page-11-fish.png"></div>
             </div>
             <div data-animation="slideToTop" data-delay="1600" class="text2"><img lz-src="img/page-11-text2.png"></div>
           </div>
@@ -303,9 +318,9 @@
         <section class="page">
               <div class="step-list">
                 <ul>
-                  <li><a data-page="5"><img src="img/step-1.png" onload="stopHeight()"></a></li>
-                  <li><a data-page="7"><img src="img/step-2.png" onload="stopHeight()"></a></li>
-                  <li><a data-page="9"><img src="img/step-3-on.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="5"><img lazy-src="img/step-1.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="7"><img lazy-src="img/step-2.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="9"><img lazy-src="img/step-3-on.png" onload="stopHeight()"></a></li>
                 </ul>
               </div>
           <div class="page-content">
@@ -333,10 +348,206 @@
           </div>
           <div class="nextpoint black"></div>
         </section>
+        <section class="page">
+              <div class="step-list">
+                <ul>
+                  <li><a data-page="5"><img lazy-src="img/step-1.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="7"><img lazy-src="img/step-2.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="9"><img lazy-src="img/step-3-on.png" onload="stopHeight()"></a></li>
+                </ul>
+              </div>
+          <div class="page-content">
+            <div data-animation="slideToBottom" class="title"><img lz-src="img/page-13-title.png"></div>
+            <div class="logo-box">
+              <div data-animation="slideToBottom" data-delay="400" class="logo"><img lz-src="img/page-13-logos.png"></div>
+              <div data-animation="slideToBottom" data-delay="800" class="text">在微信、微博、豆瓣、人人、qq空间、陌陌、秘密等社交平台上建立账号，通过实时的内容与用户进行互动</div>
+            </div>
+            <div data-animation="slideToBottom" data-delay="1200" class="advantage"><img lz-src="img/page-13-advantage.png"></div>
+            <div class="advantage-list clearfix">
+              <ul>
+                <li data-animation="slideToTop" data-duration="500" data-delay="1600">
+                  <div class="icon"><img lz-src="img/page-13-icon-advantage1.png"></div>
+                </li>
+                <li data-animation="slideToTop" data-duration="1000" data-delay="1600">
+                  <div class="icon"><img lz-src="img/page-13-icon-advantage2.png"></div>
+                </li>
+                <li data-animation="slideToTop" data-duration="1500" data-delay="1600">
+                  <div class="icon"><img lz-src="img/page-13-icon-advantage3.png"></div>
+                </li>
+              </ul>
+            </div>
+            <div data-animation="slideToTop" data-delay="2400" class="shortcoming"><img lz-src="img/page-13-shortcoming.png"></div>
+            <div class="shortcoming-list clearfix">
+              <ul>
+                <li data-animation="slideToTop" data-duration="500" data-delay="2800">
+                  <div class="icon"><img lz-src="img/page-13-icon-shortcoming1.png"></div>
+                </li>
+                <li data-animation="slideToTop" data-duration="1000" data-delay="2800">
+                  <div class="icon"><img lz-src="img/page-13-icon-shortcoming2.png"></div>
+                </li>
+              </ul>
+            </div>
+            <div data-animation="slideToTop" data-duration="1000" data-delay="3200" class="index"><img lz-src="img/page-12-index.png">
+              <div class="stars">
+                <div data-animation="standup" data-duration="1300" data-delay="4000" class="star"><img lz-src="img/star-full.png"></div>
+                <div data-animation="standup" data-duration="1600" data-delay="4000" class="star"><img lz-src="img/star-full.png"></div>
+                <div data-animation="standup" data-duration="1900" data-delay="4000" class="star"><img lz-src="img/star-full.png"></div>
+                <div data-animation="standup" data-duration="2200" data-delay="4000" class="star"><img lz-src="img/star-half.png"></div>
+              </div>
+            </div>
+          </div>
+          <div class="nextpoint black"></div>
+        </section>
+        <section class="page">
+              <div class="step-list">
+                <ul>
+                  <li><a data-page="5"><img lazy-src="img/step-1.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="7"><img lazy-src="img/step-2.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="9"><img lazy-src="img/step-3-on.png" onload="stopHeight()"></a></li>
+                </ul>
+              </div>
+          <div class="page-content">
+            <div data-animation="slideToBottom" class="title"><img lz-src="img/page-14-title.png"></div>
+            <div data-animation="slideToBottom" data-delay="400" class="note"><img lz-src="img/page-14-note.jpg"></div>
+            <div data-animation="slideToBottom" data-delay="800" class="text1">各种门户、垂直网站上，文字或者图片广告投放。</div>
+            <div data-animation="slideToBottom" data-delay="1200" class="advantage"><img lz-src="img/page-13-advantage.png"></div>
+            <div class="advantage-list clearfix">
+              <ul>
+                <li data-animation="slideToTop" data-duration="500" data-delay="1600">
+                  <div class="icon"><img lz-src="img/page-14-icon-advantage1.png"></div>
+                </li>
+                <li data-animation="slideToTop" data-duration="1000" data-delay="1600">
+                  <div class="icon"><img lz-src="img/page-14-icon-advantage2.png"></div>
+                </li>
+              </ul>
+            </div>
+            <div data-animation="slideToTop" data-delay="2000" class="shortcoming"><img lz-src="img/page-13-shortcoming.png"></div>
+            <div data-animation="slideToRight" data-delay="2400" class="shortcoming-list"><img lz-src="img/page-14-icon-shortcoming.png"></div>
+            <div data-animation="slideToTop" data-duration="1000" data-delay="2700" class="index"><img lz-src="img/page-12-index.png">
+              <div class="stars">
+                <div data-animation="standup" data-duration="1300" data-delay="4000" class="star"><img lz-src="img/star-full.png"></div>
+                <div data-animation="standup" data-duration="1600" data-delay="4000" class="star"><img lz-src="img/star-full.png"></div>
+              </div>
+            </div>
+          </div>
+          <div class="nextpoint black"></div>
+        </section>
+        <section class="page">
+              <div class="step-list">
+                <ul>
+                  <li><a data-page="5"><img lazy-src="img/step-1.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="7"><img lazy-src="img/step-2.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="9"><img lazy-src="img/step-3-on.png" onload="stopHeight()"></a></li>
+                </ul>
+              </div>
+          <div class="page-content">
+            <div data-animation="slideToBottom" class="title"><img lz-src="img/page-15-title.png"></div>
+            <div data-animation="slideToBottom" data-delay="400" class="note"><img lz-src="img/page-15-note.png">
+              <div class="text"><img lz-src="img/page-15-text.gif"></div>
+            </div>
+            <div data-animation="slideToBottom" data-delay="800" class="text1">移动互联网营销黑马冲出——百度直达号</div>
+            <div data-animation="slideToBottom" data-delay="1200" class="advantage"><img lz-src="img/page-13-advantage.png"></div>
+            <div class="advantage-list clearfix">
+              <ul>
+                <li data-animation="slideToRight" data-duration="500" data-delay="1600">
+                  <div class="icon"><img lz-src="img/page-15-icon-advantage1.png"></div>
+                </li>
+                <li data-animation="slideToRight" data-duration="1000" data-delay="1600">
+                  <div class="icon"><img lz-src="img/page-15-icon-advantage2.png"></div>
+                </li>
+                <li data-animation="slideToRight" data-duration="1500" data-delay="1600">
+                  <div class="icon"><img lz-src="img/page-15-icon-advantage3.png"></div>
+                </li>
+              </ul>
+            </div>
+            <div data-animation="slideToTop" data-duration="1000" data-delay="2000" class="index"><img lz-src="img/page-12-index.png">
+              <div class="stars">
+                <div data-animation="standup" data-duration="1300" data-delay="3000" class="star"><img lz-src="img/star-full.png"></div>
+                <div data-animation="standup" data-duration="1600" data-delay="3000" class="star"><img lz-src="img/star-full.png"></div>
+                <div data-animation="standup" data-duration="1900" data-delay="3000" class="star"><img lz-src="img/star-full.png"></div>
+                <div data-animation="standup" data-duration="2200" data-delay="3000" class="star"><img lz-src="img/star-full.png"></div>
+                <div data-animation="standup" data-duration="2500" data-delay="3000" class="star"><img lz-src="img/star-full.png"></div>
+              </div>
+            </div>
+          </div>
+          <div class="nextpoint black"></div>
+        </section>
+        <section class="page">
+              <div class="step-list">
+                <ul>
+                  <li><a data-page="5"><img lazy-src="img/step-1.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="7"><img lazy-src="img/step-2.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="9"><img lazy-src="img/step-3-on.png" onload="stopHeight()"></a></li>
+                </ul>
+              </div>
+          <div class="page-content">
+            <div class="box">
+              <div data-animation="slideToRight" data-duration="1000" class="project"><img lz-src="img/page-16-project.png"></div>
+              <div data-animation="slideToLeft" data-duration="1000" class="spread"><img lz-src="img/page-16-spread.png">
+                <div class="search"><img lz-src="img/page-16-search.png"></div>
+              </div>
+              <div data-animation="fadeIn" class="plus"><img lz-src="img/page-16-plus.png"></div>
+            </div>
+            <div data-animation="slideToRight" data-delay="900" class="money"><img lz-src="img/page-16-money.png">
+              <div class="pig"><img lz-src="img/page-16-pig.png">
+                <div class="coin"><img lz-src="img/coin.png"></div>
+              </div>
+            </div>
+            <div class="nexts">
+              <div data-animation="slideToRight" data-delay="1400" class="line"><img lz-src="img/redstarline.png"></div>
+              <div data-animation="Stamp" data-duration="300" data-delay="1800" class="text"><img lz-src="img/page-16-text.png"></div>
+              <div data-animation="slideToLeft" data-delay="1400" class="line"><img lz-src="img/redstarline.png"></div>
+            </div>
+          </div>
+          <div class="nextpoint black"></div>
+        </section>
+        <section class="page">
+              <div class="step-list">
+                <ul>
+                  <li><a data-page="5"><img lazy-src="img/step-1.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="7"><img lazy-src="img/step-2.png" onload="stopHeight()"></a></li>
+                  <li><a data-page="9"><img lazy-src="img/step-3-on.png" onload="stopHeight()"></a></li>
+                </ul>
+              </div>
+          <div class="page-content">
+            <div class="line"><img lz-src="img/redstarline.png"></div>
+            <div data-animation="slideToBottom" data-delay="600" class="text text1"><img lz-src="img/page-17-text1.png"></div>
+            <div data-animation="Stamp" data-delay="1200" class="text text2"><img lz-src="img/page-17-text2.png"></div>
+            <div data-animation="slideToRight" data-delay="1800" class="text text3"><img lz-src="img/page-17-text3.png"></div>
+            <div data-animation="slideToLeft" data-delay="2400" class="text text4"><img lz-src="img/page-17-text4.png"></div>
+            <div data-animation="Stamp" data-delay="3000" class="text text5"><img lz-src="img/page-17-text5.png"></div>
+            <div data-animation="slideToTop" data-delay="3600" class="text text6"><img lz-src="img/page-17-text6.png"></div>
+            <div data-animation="slideToTop" data-delay="4200" class="text text7"><img lz-src="img/page-17-text7.png"></div>
+            <div data-animation="slideToTop" data-delay="4800" class="text text8"><img lz-src="img/page-17-text8.png"></div>
+            <div data-animation="Stamp" data-delay="5400" class="text text9"><img lz-src="img/page-17-text9.png"></div>
+          </div>
+          <div class="nextpoint black"></div>
+        </section>
+        <section class="page">
+          <div data-animation="fadeIn" class="redstar"><img lz-src="img/redstar.png"></div>
+          <div data-animation="slideToBottom" data-delay="400" class="box"><img lz-src="img/page-18-box-bg.png">
+            <div class="box-content">
+              <div data-animation="slideToBottom" data-delay="1000" class="text1"><img lz-src="img/page-18-text1.png"></div>
+              <div data-animation="slideToRight" data-delay="1400" class="text2"><img lz-src="img/page-18-text2.png"></div>
+              <div data-animation="slideToLeft" data-delay="1800" class="text3"><img lz-src="img/page-18-text3.png"></div>
+              <div data-animation="slideToRight" data-delay="2200" class="text4"><img lz-src="img/page-18-text4.png"></div>
+              <div data-animation="slideToLeft" data-delay="2600" class="num-box">
+                <div class="num-1"><img lz-src="img/page-18-num-1.png"></div>
+                <div id="nums" class="nums"><span n="0" class="num"><img lz-src="img/num-place.png"></span><span n="0" class="num"><img lz-src="img/num-place.png"></span><span n="0" class="num"><img lz-src="img/num-place.png"></span><span n="0" class="num"><img lz-src="img/num-place.png"></span><span n="1" class="num"><img lz-src="img/num-place.png"></span></div>
+                <div class="num-2"><img lz-src="img/page-18-num-2.png"></div>
+              </div>
+              <div data-animation="slideToRight" data-delay="3000" class="text5"><img lz-src="img/page-18-text5.png"></div>
+            </div>
+          </div>
+          <div data-animation="fadeIn" class="redstar2"><img lz-src="img/redstar.png"></div>
+          <div onclick="sharewechat()" data-animation="slideToTop" data-delay="3000" class="invite"><img lz-src="img/page-18-invite.png"></div>
+        </section>
       </div>
     </div>
+    <div onclick="sharewechat(false)" class="wechat hide"></div>
     <script src="js/zepto.min.js"></script>
     <script src="js/parallax.js"></script>
     <script src="js/base.js"></script>
+    <script>getNUMs = 1293</script>
   </body>
 </html>

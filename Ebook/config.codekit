@@ -49,6 +49,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/bg-end.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 26452,
+		"inputAbbreviatedPath": "\/img\/bg-end.jpg",
+		"outputAbbreviatedPath": "\/img\/bg-end.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/bg2.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -67,6 +78,17 @@
 		"initialSize": 16117,
 		"inputAbbreviatedPath": "\/img\/bgrepeat.jpg",
 		"outputAbbreviatedPath": "\/img\/bgrepeat.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/coin.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1915,
+		"inputAbbreviatedPath": "\/img\/coin.png",
+		"outputAbbreviatedPath": "\/img\/coin.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -137,6 +159,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/ico.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 29976,
+		"inputAbbreviatedPath": "\/img\/ico.jpg",
+		"outputAbbreviatedPath": "\/img\/ico.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icon-muisc.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 19034,
+		"inputAbbreviatedPath": "\/img\/icon-muisc.png",
+		"outputAbbreviatedPath": "\/img\/icon-muisc.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/loading_sprite_white.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -166,6 +210,28 @@
 		"initialSize": 1154,
 		"inputAbbreviatedPath": "\/img\/nextpoint.png",
 		"outputAbbreviatedPath": "\/img\/nextpoint.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/num-place.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 997,
+		"inputAbbreviatedPath": "\/img\/num-place.png",
+		"outputAbbreviatedPath": "\/img\/num-place.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/nums-bg.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2689,
+		"inputAbbreviatedPath": "\/img\/nums-bg.png",
+		"outputAbbreviatedPath": "\/img\/nums-bg.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -419,6 +485,490 @@
 		"initialSize": 13904,
 		"inputAbbreviatedPath": "\/img\/page-12-title2.png",
 		"outputAbbreviatedPath": "\/img\/page-12-title2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-13-advantage.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4111,
+		"inputAbbreviatedPath": "\/img\/page-13-advantage.png",
+		"outputAbbreviatedPath": "\/img\/page-13-advantage.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-13-icon-advantage1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10895,
+		"inputAbbreviatedPath": "\/img\/page-13-icon-advantage1.png",
+		"outputAbbreviatedPath": "\/img\/page-13-icon-advantage1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-13-icon-advantage2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7303,
+		"inputAbbreviatedPath": "\/img\/page-13-icon-advantage2.png",
+		"outputAbbreviatedPath": "\/img\/page-13-icon-advantage2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-13-icon-advantage3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8031,
+		"inputAbbreviatedPath": "\/img\/page-13-icon-advantage3.png",
+		"outputAbbreviatedPath": "\/img\/page-13-icon-advantage3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-13-icon-shortcoming1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9837,
+		"inputAbbreviatedPath": "\/img\/page-13-icon-shortcoming1.png",
+		"outputAbbreviatedPath": "\/img\/page-13-icon-shortcoming1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-13-icon-shortcoming2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7998,
+		"inputAbbreviatedPath": "\/img\/page-13-icon-shortcoming2.png",
+		"outputAbbreviatedPath": "\/img\/page-13-icon-shortcoming2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-13-logos.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 20787,
+		"inputAbbreviatedPath": "\/img\/page-13-logos.png",
+		"outputAbbreviatedPath": "\/img\/page-13-logos.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-13-shortcoming.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3965,
+		"inputAbbreviatedPath": "\/img\/page-13-shortcoming.png",
+		"outputAbbreviatedPath": "\/img\/page-13-shortcoming.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-13-title.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 48701,
+		"inputAbbreviatedPath": "\/img\/page-13-title.png",
+		"outputAbbreviatedPath": "\/img\/page-13-title.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-14-icon-advantage1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6412,
+		"inputAbbreviatedPath": "\/img\/page-14-icon-advantage1.png",
+		"outputAbbreviatedPath": "\/img\/page-14-icon-advantage1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-14-icon-advantage2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6897,
+		"inputAbbreviatedPath": "\/img\/page-14-icon-advantage2.png",
+		"outputAbbreviatedPath": "\/img\/page-14-icon-advantage2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-14-icon-shortcoming.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 15583,
+		"inputAbbreviatedPath": "\/img\/page-14-icon-shortcoming.png",
+		"outputAbbreviatedPath": "\/img\/page-14-icon-shortcoming.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-14-note.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 31153,
+		"inputAbbreviatedPath": "\/img\/page-14-note.jpg",
+		"outputAbbreviatedPath": "\/img\/page-14-note.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-14-title.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 48003,
+		"inputAbbreviatedPath": "\/img\/page-14-title.png",
+		"outputAbbreviatedPath": "\/img\/page-14-title.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-15-icon-advantage1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 19848,
+		"inputAbbreviatedPath": "\/img\/page-15-icon-advantage1.png",
+		"outputAbbreviatedPath": "\/img\/page-15-icon-advantage1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-15-icon-advantage2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 15399,
+		"inputAbbreviatedPath": "\/img\/page-15-icon-advantage2.png",
+		"outputAbbreviatedPath": "\/img\/page-15-icon-advantage2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-15-icon-advantage3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8331,
+		"inputAbbreviatedPath": "\/img\/page-15-icon-advantage3.png",
+		"outputAbbreviatedPath": "\/img\/page-15-icon-advantage3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-15-note.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 97094,
+		"inputAbbreviatedPath": "\/img\/page-15-note.png",
+		"outputAbbreviatedPath": "\/img\/page-15-note.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-15-title.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 50564,
+		"inputAbbreviatedPath": "\/img\/page-15-title.png",
+		"outputAbbreviatedPath": "\/img\/page-15-title.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-16-money.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4087,
+		"inputAbbreviatedPath": "\/img\/page-16-money.png",
+		"outputAbbreviatedPath": "\/img\/page-16-money.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-16-pig.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2423,
+		"inputAbbreviatedPath": "\/img\/page-16-pig.png",
+		"outputAbbreviatedPath": "\/img\/page-16-pig.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-16-plus.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2452,
+		"inputAbbreviatedPath": "\/img\/page-16-plus.png",
+		"outputAbbreviatedPath": "\/img\/page-16-plus.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-16-project.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 26020,
+		"inputAbbreviatedPath": "\/img\/page-16-project.png",
+		"outputAbbreviatedPath": "\/img\/page-16-project.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-16-search.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6110,
+		"inputAbbreviatedPath": "\/img\/page-16-search.png",
+		"outputAbbreviatedPath": "\/img\/page-16-search.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-16-spread.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8227,
+		"inputAbbreviatedPath": "\/img\/page-16-spread.png",
+		"outputAbbreviatedPath": "\/img\/page-16-spread.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-16-text.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4298,
+		"inputAbbreviatedPath": "\/img\/page-16-text.png",
+		"outputAbbreviatedPath": "\/img\/page-16-text.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-17-text1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4129,
+		"inputAbbreviatedPath": "\/img\/page-17-text1.png",
+		"outputAbbreviatedPath": "\/img\/page-17-text1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-17-text2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3033,
+		"inputAbbreviatedPath": "\/img\/page-17-text2.png",
+		"outputAbbreviatedPath": "\/img\/page-17-text2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-17-text3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2661,
+		"inputAbbreviatedPath": "\/img\/page-17-text3.png",
+		"outputAbbreviatedPath": "\/img\/page-17-text3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-17-text4.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3664,
+		"inputAbbreviatedPath": "\/img\/page-17-text4.png",
+		"outputAbbreviatedPath": "\/img\/page-17-text4.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-17-text5.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3285,
+		"inputAbbreviatedPath": "\/img\/page-17-text5.png",
+		"outputAbbreviatedPath": "\/img\/page-17-text5.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-17-text6.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3219,
+		"inputAbbreviatedPath": "\/img\/page-17-text6.png",
+		"outputAbbreviatedPath": "\/img\/page-17-text6.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-17-text7.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2550,
+		"inputAbbreviatedPath": "\/img\/page-17-text7.png",
+		"outputAbbreviatedPath": "\/img\/page-17-text7.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-17-text8.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5205,
+		"inputAbbreviatedPath": "\/img\/page-17-text8.png",
+		"outputAbbreviatedPath": "\/img\/page-17-text8.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-17-text9.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3608,
+		"inputAbbreviatedPath": "\/img\/page-17-text9.png",
+		"outputAbbreviatedPath": "\/img\/page-17-text9.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-18-box-bg.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6006,
+		"inputAbbreviatedPath": "\/img\/page-18-box-bg.png",
+		"outputAbbreviatedPath": "\/img\/page-18-box-bg.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-18-invite.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 64102,
+		"inputAbbreviatedPath": "\/img\/page-18-invite.png",
+		"outputAbbreviatedPath": "\/img\/page-18-invite.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-18-num-1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1538,
+		"inputAbbreviatedPath": "\/img\/page-18-num-1.png",
+		"outputAbbreviatedPath": "\/img\/page-18-num-1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-18-num-2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1387,
+		"inputAbbreviatedPath": "\/img\/page-18-num-2.png",
+		"outputAbbreviatedPath": "\/img\/page-18-num-2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-18-text1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3193,
+		"inputAbbreviatedPath": "\/img\/page-18-text1.png",
+		"outputAbbreviatedPath": "\/img\/page-18-text1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-18-text2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3038,
+		"inputAbbreviatedPath": "\/img\/page-18-text2.png",
+		"outputAbbreviatedPath": "\/img\/page-18-text2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-18-text3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3794,
+		"inputAbbreviatedPath": "\/img\/page-18-text3.png",
+		"outputAbbreviatedPath": "\/img\/page-18-text3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-18-text4.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2493,
+		"inputAbbreviatedPath": "\/img\/page-18-text4.png",
+		"outputAbbreviatedPath": "\/img\/page-18-text4.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-18-text5.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3558,
+		"inputAbbreviatedPath": "\/img\/page-18-text5.png",
+		"outputAbbreviatedPath": "\/img\/page-18-text5.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -687,6 +1237,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/page-4-lang-1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 27599,
+		"inputAbbreviatedPath": "\/img\/page-4-lang-1.png",
+		"outputAbbreviatedPath": "\/img\/page-4-lang-1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-4-lang-2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 89478,
+		"inputAbbreviatedPath": "\/img\/page-4-lang-2.png",
+		"outputAbbreviatedPath": "\/img\/page-4-lang-2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-4-lang-coin.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 25038,
+		"inputAbbreviatedPath": "\/img\/page-4-lang-coin.png",
+		"outputAbbreviatedPath": "\/img\/page-4-lang-coin.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/page-4-lang.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -837,6 +1420,17 @@
 		"initialSize": 85343,
 		"inputAbbreviatedPath": "\/img\/page-7-fire.png",
 		"outputAbbreviatedPath": "\/img\/page-7-fire.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/page-7-fire2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 109162,
+		"inputAbbreviatedPath": "\/img\/page-7-fire2.png",
+		"outputAbbreviatedPath": "\/img\/page-7-fire2.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1171,6 +1765,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/redstar.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4491,
+		"inputAbbreviatedPath": "\/img\/redstar.png",
+		"outputAbbreviatedPath": "\/img\/redstar.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/redstarline.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -1270,14 +1875,16 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/index.html": {
-		"fileType": 8192,
-		"ignore": 1,
+	"\/img\/wechat.png": {
+		"fileType": 32768,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/index.html",
-		"outputAbbreviatedPath": "No Output Path",
+		"initialSize": 34577,
+		"inputAbbreviatedPath": "\/img\/wechat.png",
+		"outputAbbreviatedPath": "\/img\/wechat.png",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/index.jade": {
 		"compileDebug": 1,
@@ -1296,22 +1903,33 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/base.coffee",
-		"minifyOutput": 0,
+		"minifyOutput": 1,
 		"outputAbbreviatedPath": "\/js\/base.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
+	"\/js\/base.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/base.js",
+		"outputAbbreviatedPath": "\/js\/min\/base-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/js\/parallax.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/parallax.js",
-		"outputAbbreviatedPath": "\/js\/min\/parallax-min.js",
+		"outputAbbreviatedPath": "\/js\/parallax-min.js",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
+		"outputPathIsSetByUser": 1,
+		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
 	"\/js\/zepto.min.js": {
@@ -1384,8 +2002,8 @@
 		"outputAbbreviatedPath": "\/css\/parallax.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"shouldRunAutoprefixer": 0,
+		"outputStyle": 3,
+		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		}

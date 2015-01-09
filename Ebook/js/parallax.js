@@ -324,6 +324,11 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
 
     function animatePage(newPage, action) {
         // console.log("asdf",newPage,action);
+        if (typeof _stopParallax != "undefined" && _stopParallax && newPage > 8 && parseInt($(".tabs").attr("now"))<5) {
+            checkPageNine()
+            return false
+        }
+
         curPage = newPage;
 
         if (options.swipeAnim === 'default') {
@@ -337,7 +342,7 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
                 $pages.css({'-webkit-transform': 'matrix(1, 0, 0, 1, ' + newOffset + ', 0)'}) :
                 $pages.css({'-webkit-transform': 'matrix(1, 0, 0, 1, 0, ' + newOffset + ')'});
 
-            console.log("asdf",newPage,options.direction);
+            // console.log("asdf",newPage,action,options);
         }
 
 

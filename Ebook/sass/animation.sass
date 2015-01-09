@@ -51,18 +51,6 @@
 	100%
 		+transform(rotate(360deg))
 
-+keyframes(lang)
-	0%,100%
-		+transform(translate3d(0,0,0) scale(1,1))
-	20%
-		+transform(translate3d(5px,5px,0) scale(1.05,1.05))
-	40%
-		+transform(translate3d(10px,-5px,0) scale(1.05,1.05))
-	60%
-		+transform(translate3d(5px,5px,0) scale(1.05,1.05))
-	90%
-		+transform(translate3d(-5px,0,0) scale(1.1,1.1))
-
 +keyframes(flash)
 	0%
 		+transform(scale(0,0))
@@ -122,3 +110,127 @@
 	100%
 		+transform(translate3d(0,-300%,0))
 		
+
++keyframes(downcoin)
+	0%
+		opacity: 0
+		+transform(translate3d(0,-200%,0) scale(1,1))
+	20%
+		opacity: 1
+	50%
+		+transform(translate3d(0,-100%,0) scale(1,1))
+	100%
+		opacity: 1
+		+transform(translate3d(0,0%,0) scale(0.2,0.2))
+
++keyframes(search)
+	from
+		+transform(rotate(0deg) translate3d(-20%,0,0) rotate(0deg))
+	to
+		+transform(rotate(360deg) translate3d(-20%,0,0) rotate(-360deg))
+
++keyframes(Stamp)
+	0%
+		opacity: 0
+		+transform(scale3d(2.5, 2.5, 2.5))
+	20%
+		opacity: 1
+	70%
+		+transform(scale3d(0.7, 0.7, 0.7) )
+	100%
+		+transform(scale3d(1, 1, 1))
++keyframes(lang)
+	0%
+		+transform(rotate(0deg) translate3d(0%,0,0) rotate(0deg))
+	25%
+		+transform(rotate(2deg) translate3d(0%,0,0) rotate(2deg))
+	50%
+		+transform(rotate(-2deg) translate3d(0%,0,0) rotate(-2deg))
+	100%
+		+transform(rotate(0deg) translate3d(0%,0,0) rotate(0deg))
+
++keyframes(downstuff)
+	0%
+		+transform(translate3d(0,-1000px,0) rotate(30deg))
+	90%
+		+transform(translate3d(0,-100px,0) rotate(20deg))
+	100%
+		+transform(translate3d(0,-0px,0) rotate(0deg))
+
++keyframes(firemove)
+	0%
+		+transform(rotateY(0deg) scale(1,1))
+	25%
+		+transform(rotateY(-20deg) scale(1.1,0.9))
+	50%
+		+transform(rotateY(0deg) scale(1,1))
+	75%
+		+transform(rotateY(20deg) scale(1.1,0.9))
+	100%
+		+transform(rotateY(0deg) scale(1,1))
+
++keyframes(bigbig)
+	0%
+		+transform(scale(3,3))
+		opacity: 0
+	10%
+		opacity: 1
+	20%
+		+transform(scale(0.9,0.9))
+	40%
+		+transform(scale(1.1,1.1))
+	60%
+		+transform(scale(0.95,0.95))
+	80%
+		+transform(scale(1.05,1.05))
+	100%
+		+transform(scale(1,1))
+		opacity: 1
+
++keyframes(covertext)
+	0%
+		+transform(scale(1,1))
+	5%
+		+transform(scale(1,1))
+	6%
+		+transform(scale(0.86,1))
+	10%
+		+transform(scale(0.86,1))
+	11%
+		+transform(scale(0.77,1))
+	15%
+		+transform(scale(0.77,1))
+	16%
+		+transform(scale(0.68,1))
+	20%
+		+transform(scale(0.68,1))
+	21%
+		+transform(scale(0.58,1))
+	25%
+		+transform(scale(0.58,1))
+	26%
+		+transform(scale(0.48,1))
+	30%
+		+transform(scale(0.48,1))
+	31%
+		+transform(scale(0.39,1))
+	35%
+		+transform(scale(0.39,1))
+	36%
+		+transform(scale(0.32,1))
+	40%
+		+transform(scale(0.32,1))
+	41%
+		+transform(scale(0.22,1))
+	45%
+		+transform(scale(0.22,1))
+	46%
+		+transform(scale(0.12,1))
+	50%
+		+transform(scale(0.12,1))
+	51%
+		+transform(scale(0.12,1))
+	55%
+		+transform(scale(0,1))
+	100%
+		+transform(scale(0,1))

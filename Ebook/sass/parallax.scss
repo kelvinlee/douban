@@ -46,7 +46,7 @@ body {
 	box-orient: horizontal;
 	box-pack: center;
 	box-align: center;
-	background: rgba(0,0,0,.8);
+	background: rgba(0,0,0,1);
 	color: #000;
 }
 .ui-loading-white {
@@ -56,6 +56,10 @@ body {
 	background-image: url(../img/loading_sprite_white.png);
 	background-size: auto 37px;
 	animation: rotate 1s steps(12) infinite;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0);
 }
 @keyframes rotate {
     from { background-position: 0 0; }
