@@ -1,3 +1,4 @@
+
 doctype
 html(lang="en").no-js
 	head
@@ -377,7 +378,7 @@ html(lang="en").no-js
 							img(lz-src="img/redstarline.png")
 						-var alist = ["slideToBottom","Stamp","slideToRight","slideToLeft","Stamp","slideToTop","slideToTop","slideToTop","Stamp"]
 						-for(var i=1;i<=9;i++)
-							.text(class="text#{i}",data-animation="#{alist[i-1]}",data-delay="#{600*i}")
+							.text(class="text#{i}",data-animation="#{alist[i-1]}",data-duration="10",data-delay="#{10*i}")
 								img(lz-src="img/page-17-text#{i}.png")
 
 					.nextpoint.black
@@ -424,4 +425,4 @@ html(lang="en").no-js
 		script(src="js/parallax.js")
 		script(src="js/base.js")
 		script.
-			getNUMs = 1293
+			getNUMs = 1293;
