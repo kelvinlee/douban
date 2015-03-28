@@ -10,6 +10,7 @@
 	.iphone4 &
 		+w($w*$i4)
 
+
 .loading
 	+posf
 	+tl
@@ -199,11 +200,27 @@ section
 			@at-root
 				.iphone4 &
 					+w($w*80%)
+		.textbox
+			+nw(441)
+			+posr
+			.text2
+				+w(100%)
+				transform-origin: 15% center
+			.text3,.text4,.text5
+				+posa
+				+tl
+			.text4
+				transform-origin: 65% center
+			
+
 		.box-list
-			$w: 500/640
+			$w: 580/640
 			+w($w*100%)
-			+posa
-			+bl(15%,(100%-$w*100%)/2)
+			// +posa
+			// +bl(15%,(100%-$w*100%)/2)
+			margin: 0 auto
+			+text-center
+			padding-top: 5%
 			@at-root
 				.iphone4 &
 					+w($w*80%)
@@ -211,109 +228,116 @@ section
 			&.boxlist
 				+tran
 				transition-delay: 400ms
-			.point
-				+posa
-				+tl
-				+w(110/500*100%)
-				+transform(translate3d(-50%,-50%,0))
+			.point 
+				+w(26%)
+				padding: 0 2%
+				display: inline-block
+				vertical-align: top
+				.pmo
+					transform-origin: bottom center
 				.pro
-					+posa
 					+w(100%)
-				&.point1
-					+tl(50%,49.5%)
-					.pro
-						+tl(60%,-120%)
-				&.point2
-					+tl(36%,16%)
-					.pro
-						+tl(-110%,-2%)
-				&.point3
-					+tl(14.5%,49.5%)
-					.pro
-						+tl(-110%,-2%)
-						@at-root
-							.iphone4 &
-								top: -84%
-				&.point4
-					+tl(36%,83%)
-					.pro
-						+tl(-110%,-2%)
-				&.point5
-					+tl(85%,49.5%)
-					.pro
-						+tl(100%,-2%)
-				&.point6
-					+tl(84%,13%)
-					.pro
-						+tl(100%,-2%)
-				&.point7
-					+tl(84%,86%)
-					.pro
-						+tl(100%,-2%)
+				&.point1,&.point3,&.point4,&.point6
+					padding-top: 15%
+				&.point4,&.point5,&.point6
+					margin-top: -15%
+				// &.point1
+				// 	+tl(50%,49.5%)
+				// 	.pro
+				// 		+tl(60%,-120%)
+				// &.point2
+				// 	+tl(36%,16%)
+				// 	.pro
+				// 		+tl(-110%,-2%)
+				// &.point3
+				// 	+tl(14.5%,49.5%)
+				// 	.pro
+				// 		+tl(-110%,-2%)
+				// 		@at-root
+				// 			.iphone4 &
+				// 				top: -84%
+				// &.point4
+				// 	+tl(36%,83%)
+				// 	.pro
+				// 		+tl(-110%,-2%)
+				// &.point5
+				// 	+tl(85%,49.5%)
+				// 	.pro
+				// 		+tl(100%,-2%)
+				// &.point6
+				// 	+tl(84%,13%)
+				// 	.pro
+				// 		+tl(100%,-2%)
+				// &.point7
+				// 	+tl(84%,86%)
+				// 	.pro
+				// 		+tl(100%,-2%)
+	// old 3
+	// &[data-id="3"]
+	// 	background-image: url(../img/bg2.jpg)
+	// 	.title
+	// 		$w: 482/640
+	// 		+w($w*100%)
+	// 		margin: 0 auto
+	// 		margin-top: 8%
+	// 		.iphone4 &
+	// 			+w($w*80%)
+	// 	.president
+	// 		$w: 265/640
+	// 		+w($w*100%)
+	// 		border: solid 1px #ba0100
+	// 		margin: 0 auto
+	// 		padding: 2%
+	// 		margin-top: 3%
+	// 		.iphone4 &
+	// 			+w($w*80%)
+	// 		.pcontent
+	// 			+posr
+	// 			overflow: hidden
+	// 			.president-bg
+	// 				// background-image: url(../img/page-3-light.jpg)
+	// 				// background-size: cover
+	// 				// background-position: center center
+	// 				+posa
+	// 				+tl(-50%,-100%)
+	// 				+w(300%)
+	// 				z-index: -1
+	// 				+animation(rotate360,10s,linear,infinite)
+	// 				font-size: 0
+	// 				transform-origin: center center
+	// 				img
+	// 					max-width: none
+	// 					+w(100%)
+	// 	.star
+	// 		margin: 0 auto
+	// 		$w: 38/640
+	// 		+w($w*100%)
+	// 		margin-top: 3%
+	// 		.iphone4 &
+	// 			+w($w*80%)
+	// 			margin-top: 2%
+	// 	.text1
+	// 		margin: 0 auto
+	// 		$w: 456/640
+	// 		+w($w*100%)
+	// 		margin-top: 10%
+	// 		.iphone4 &
+	// 			+w($w*80%)
+	// 			margin-top: 3%
+	// 	.text2
+	// 		margin: 0 auto
+	// 		$w: 402/640
+	// 		+w($w*100%)
+	// 		.iphone4 &
+	// 			+w($w*80%)
+	// 	.text3
+	// 		margin: 0 auto
+	// 		$w: 522/640
+	// 		+w($w*100%)
+	// 		.iphone4 &
+	// 			// +w($w*80%)
+	// old 4, now 3
 	&[data-id="3"]
-		background-image: url(../img/bg2.jpg)
-		.title
-			$w: 482/640
-			+w($w*100%)
-			margin: 0 auto
-			margin-top: 8%
-			.iphone4 &
-				+w($w*80%)
-		.president
-			$w: 265/640
-			+w($w*100%)
-			border: solid 1px #ba0100
-			margin: 0 auto
-			padding: 2%
-			margin-top: 3%
-			.iphone4 &
-				+w($w*80%)
-			.pcontent
-				+posr
-				overflow: hidden
-				.president-bg
-					// background-image: url(../img/page-3-light.jpg)
-					// background-size: cover
-					// background-position: center center
-					+posa
-					+tl(-50%,-100%)
-					+w(300%)
-					z-index: -1
-					+animation(rotate360,10s,linear,infinite)
-					font-size: 0
-					transform-origin: center center
-					img
-						max-width: none
-						+w(100%)
-		.star
-			margin: 0 auto
-			$w: 38/640
-			+w($w*100%)
-			margin-top: 3%
-			.iphone4 &
-				+w($w*80%)
-				margin-top: 2%
-		.text1
-			margin: 0 auto
-			$w: 456/640
-			+w($w*100%)
-			margin-top: 10%
-			.iphone4 &
-				+w($w*80%)
-				margin-top: 3%
-		.text2
-			margin: 0 auto
-			$w: 402/640
-			+w($w*100%)
-			.iphone4 &
-				+w($w*80%)
-		.text3
-			margin: 0 auto
-			$w: 522/640
-			+w($w*100%)
-			.iphone4 &
-				+w($w*80%)
-	&[data-id="4"]
 		background-image: url(../img/bg2.jpg)
 		.box
 			$w: 528/640
@@ -338,9 +362,14 @@ section
 				+w($w*100%)
 				margin: 0 auto
 			.text4
-				$w: 333/528
+				$w: 410/528
 				+w($w*100%)
 				margin: 0 auto
+				+posr
+				.wmd
+					+posa
+					top: 0
+					transform-origin: bottom center
 			.text5
 				$w: 408/528
 				+w($w*100%)
@@ -371,7 +400,7 @@ section
 					+animation(lang,2.5s,linear,infinite)
 					transform-origin: center center
 				// +animation(lang,4s,ease,infinite)
-	&[data-id="5"]
+	&[data-id="4"]
 		background-image: url(../img/bg2.jpg)
 		.title
 			$w: 566/640
@@ -402,44 +431,45 @@ section
 			.iphone4 &
 				+w($w*80%)
 				margin-top: 0%
-	&[data-id="6"]
-		.title
-			$w: 573/640
-			+w($w*100%)
-			+posr
-			margin: 0 auto
-			margin-top: 5%
-			overflow: hidden
-			img
-				+posr
-				z-index: 2
-			.iphone4 &
-				+w($w*70%)
-			.flash
-				+posa
-				+tl
-				bottom: 30%
-				+w(100%)
-				border-radius: 50%
-				background: #fff
-				// margin-left: -50%
-				opacity: 0
-				+animation(flash,0.8s,ease,infinite)
-				z-index: 1
-				transform-origin: bottom center
-		.text1
-			$w: 280/640
-			+w($w*100%)
-			margin: 0 auto
-			.iphone4 &
-				+w($w*70%)
-		.text2
-			$w: 340/640
-			+w($w*100%)
-			margin: 0 auto
-			.iphone4 &
-				+w($w*70%)
-	&[data-id="7"]
+	// old 6
+	// &[data-id="6"]
+	// 	.title
+	// 		$w: 573/640
+	// 		+w($w*100%)
+	// 		+posr
+	// 		margin: 0 auto
+	// 		margin-top: 5%
+	// 		overflow: hidden
+	// 		img
+	// 			+posr
+	// 			z-index: 2
+	// 		.iphone4 &
+	// 			+w($w*70%)
+	// 		.flash
+	// 			+posa
+	// 			+tl
+	// 			bottom: 30%
+	// 			+w(100%)
+	// 			border-radius: 50%
+	// 			background: #fff
+	// 			// margin-left: -50%
+	// 			opacity: 0
+	// 			+animation(flash,0.8s,ease,infinite)
+	// 			z-index: 1
+	// 			transform-origin: bottom center
+	// 	.text1
+	// 		$w: 280/640
+	// 		+w($w*100%)
+	// 		margin: 0 auto
+	// 		.iphone4 &
+	// 			+w($w*70%)
+	// 	.text2
+	// 		$w: 340/640
+	// 		+w($w*100%)
+	// 		margin: 0 auto
+	// 		.iphone4 &
+	// 			+w($w*70%)
+	&[data-id="5"]
 		.title
 			$w: 447/640
 			+w($w*100%)
@@ -461,6 +491,11 @@ section
 			&.fireon
 				.iphone4 &
 					+w($w*60%)
+			.point-fire
+				+posa
+				+tl(50%,50%)
+				+w(40%)
+				+transform(translate3d(-50%,-50%,0))
 			.point
 				+posa
 				$w: 150/460
@@ -500,22 +535,23 @@ section
 		.firemove
 			// +animation(firemove,1s,ease,infinite)
 			// transform-origin: bottom center
-	&[data-id="8"]
-		.title
-			$w: 520/640
-			+w($w*100%)
-			+posr
-			margin: 0 auto
-			margin-top: 5%
-			.iphone4 &
-				+w($w*80%)
-		.box
-			$w: 445/640
-			+w($w*100%)
-			margin: 0 auto
-			.iphone4 &
-				+w($w*80%)
-	&[data-id="9"]
+	// old 8
+	// &[data-id="8"]
+	// 	.title
+	// 		$w: 520/640
+	// 		+w($w*100%)
+	// 		+posr
+	// 		margin: 0 auto
+	// 		margin-top: 5%
+	// 		.iphone4 &
+	// 			+w($w*80%)
+	// 	.box
+	// 		$w: 445/640
+	// 		+w($w*100%)
+	// 		margin: 0 auto
+	// 		.iphone4 &
+	// 			+w($w*80%)
+	&[data-id="6"]
 		.title
 			+nw(460)
 			+posr
@@ -543,7 +579,7 @@ section
 								img
 									filter: grayscale(0)
 							.name
-								font-size: 0.6rem
+								font-size: 0.8rem
 								color: #fff
 					.papers
 						.paper#{$i}
@@ -556,6 +592,15 @@ section
 			background: #000
 			white-space: nowrap
 			margin-top: 12%
+			+posr
+			&:after
+				content: " "
+				+posa
+				+tr(50%,-0.5rem)
+				+wh(1rem,1rem)
+				+transform(translate3d(0,-50%,0))
+				background: url(../img/page-9-arrow.png) no-repeat top center
+				background-size: cover
 			.iphone4 &
 				margin-top: 7%
 			.point-box
@@ -630,34 +675,37 @@ section
 			.papers
 				.paper
 					+hide
-	&[data-id="10"]
-		.line
-			$w: 420/640
-			+w($w*100%)
-			margin: 0 auto
-			margin-top: 5%
-			.iphone4 &
-				+w($w*80%)
-		@each $i,$wi in (1,455),(2,503),(3,460),(4,441),(5,439)
-			.text#{$i}
-				$w: $wi/640
-				+w($w*100%)
-				margin: 0 auto
-				.iphone4 &
-					+w($w*80%)
-		.people
-			$w: 480/640
-			+w($w*100%)
-			margin: 0 auto
-			margin-top: -8%
-			.iphone4 &
-				+w($w*80%)
-	&[data-id="11"]
+	// old 10
+	// &[data-id="10"]
+	// 	.line
+	// 		$w: 420/640
+	// 		+w($w*100%)
+	// 		margin: 0 auto
+	// 		margin-top: 5%
+	// 		.iphone4 &
+	// 			+w($w*80%)
+	// 	@each $i,$wi in (1,455),(2,503),(3,460),(4,441),(5,439)
+	// 		.text#{$i}
+	// 			$w: $wi/640
+	// 			+w($w*100%)
+	// 			margin: 0 auto
+	// 			.iphone4 &
+	// 				+w($w*80%)
+	// 	.people
+	// 		$w: 480/640
+	// 		+w($w*100%)
+	// 		margin: 0 auto
+	// 		margin-top: -8%
+	// 		.iphone4 &
+	// 			+w($w*80%)
+	&[data-id="7"]
 		.title
-			+nw(530)
+			+nw(379)
 			margin-top: 5%
+			margin-bottom: 5%
 			.iphone4 &
 				margin-top: 3%
+				margin-bottom: 3%
 		.pcmobile
 			+nw(500)
 			+posr
@@ -669,15 +717,18 @@ section
 					+nw(105,500,100%)
 					font-size: 0
 					+animation(rotate360,5s,linear,infinite)
-			.mobile,.plus
+			.mobile
+				+w(100%)
+			.plus
+				+hide
 				+posa
 				+tl
 				+w(100%)
 			.mobile
 				.screen
 					+posa
-					+tl(8%,74%)
-					+wh(22%,43%)
+					+tl(11%,70.5%)
+					+wh(21.5%,63%)
 					overflow: hidden
 					background: #fabe2a
 					.screen-box
@@ -692,7 +743,8 @@ section
 					.bgcolor3
 						background-color: #82b4df
 		.text1,.text2
-			+nw(461,640,70%)
+			+nw(319)
+			margin-top: 3%
 		.text1
 			.fish
 				+posa
@@ -705,7 +757,7 @@ section
 				&.fish2
 					+tl(50%,76%)
 					+animation(sheep,3s,ease-out,infinite)
-	&[data-id="12"]
+	&[data-id="8"]
 		.title
 			+nw(500)
 			margin-top: 5%
@@ -720,11 +772,12 @@ section
 				+nw(450)
 		.title2
 			+nw(360)
+			margin-top: 3%
 		.points
 			.point
 				+nw(480)
 				font-size: 0	
-	&[data-id="13"]
+	&[data-id="9"]
 		.title
 			+nw(500,640,70%)
 			margin-top: 5%
@@ -761,7 +814,7 @@ section
 					display: inline-block
 					+w(50%)
 					float: left
-	&[data-id="14"]
+	&[data-id="10"]
 		.title
 			+nw(500)
 			margin-top: 5%
@@ -775,6 +828,7 @@ section
 			font-size: 0.6rem
 		.advantage
 			+nw(310)
+			margin-top: 3%
 		.advantage-list
 			+nw(480,640,70%)
 			ul
@@ -787,21 +841,22 @@ section
 			+nw(336)
 		.shortcoming-list
 			+nw(440,640,70%)
-	&[data-id="15"]
+	&[data-id="11"]
 		.title
 			+nw(500)
 			margin-top: 5%
 			.iphone4 &
 				margin-top: 3%
-		.note
-			+nw(450)
 			.text
 				+posa
-				+tl(31%,10%)
-				+wh(33%,10%)
+				+tl(44%,17%)
+				+wh(27%,6%)
 				background: #fff
 				+animation(covertext,3s,linear,infinite)
 				transform-origin: right center
+		.note
+			+nw(450)
+			
 		.text1
 			+nw(500,640,100%)
 			+text-center
@@ -813,12 +868,12 @@ section
 			ul
 				li
 					+w(100%)
-	&[data-id="16"]
+	&[data-id="12"]
 		.box
 			+posr
 			+nw(550)
 			margin-top: 8%
-			.project
+			// .project
 			.spread
 				+posa
 				+tl
@@ -846,9 +901,9 @@ section
 					+animation(downcoin,0.5s,linear,infinite)
 		.nexts
 			+nw(475)
-			.line
-			.text
-	&[data-id="17"]
+			// .line
+			// .text
+	&[data-id="13"]
 		.line
 			+nw(520)
 			margin-top: 5%
@@ -856,7 +911,7 @@ section
 			.text#{$i}
 				+nw($wi)
 				margin-top: $mt
-	&[data-id="18"]
+	&[data-id="14"]
 		background-image: url(../img/bg-end.jpg)
 		.redstar
 			+nw(62)

@@ -1,0 +1,1663 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+* {
+  -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  font-family: Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+img {
+  max-width: 100%; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-webkit-keyframes fadeInOut {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+@keyframes fadeInOut {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); } }
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); } }
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); } }
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); } }
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1); }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+            transform: scale3d(1.05, 1.05, 1.05); }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1); } }
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1); }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+            transform: scale3d(1.05, 1.05, 1.05); }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1); } }
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-8%, 0, 0);
+            transform: translate3d(-8%, 0, 0); }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(8%, 0, 0);
+            transform: translate3d(8%, 0, 0); } }
+@keyframes shake {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-8%, 0, 0);
+            transform: translate3d(-8%, 0, 0); }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(8%, 0, 0);
+            transform: translate3d(8%, 0, 0); } }
+@-webkit-keyframes Flash {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0.6; }
+  100% {
+    opacity: 1; } }
+@keyframes Flash {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0.6; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes Stamp {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(2, 2, 2);
+            transform: scale3d(2, 2, 2); }
+  20% {
+    opacity: 1; }
+  70% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+            transform: scale3d(0.9, 0.9, 0.9); }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1); } }
+@keyframes Stamp {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(2, 2, 2);
+            transform: scale3d(2, 2, 2); }
+  20% {
+    opacity: 1; }
+  70% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+            transform: scale3d(0.9, 0.9, 0.9); }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1); } }
+@-webkit-keyframes StampSmall {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1); }
+  20% {
+    opacity: 0.6; }
+  70% {
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+            transform: scale3d(0.8, 0.8, 0.8);
+    opacity: 0.8; }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+    opacity: 1; } }
+@keyframes StampSmall {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1); }
+  20% {
+    opacity: 0.6; }
+  70% {
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+            transform: scale3d(0.8, 0.8, 0.8);
+    opacity: 0.8; }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+    opacity: 1; } }
+@-webkit-keyframes StampTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(2, 2, 2) translate3d(8%, -8%, 0);
+            transform: scale3d(2, 2, 2) translate3d(8%, -8%, 0); }
+  20% {
+    opacity: 1; }
+  70% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+            transform: scale3d(0.9, 0.9, 0.9); }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+            transform: scale3d(1, 1, 1) translate3d(0, 0, 0); } }
+@keyframes StampTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(2, 2, 2) translate3d(8%, -8%, 0);
+            transform: scale3d(2, 2, 2) translate3d(8%, -8%, 0); }
+  20% {
+    opacity: 1; }
+  70% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+            transform: scale3d(0.9, 0.9, 0.9); }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+            transform: scale3d(1, 1, 1) translate3d(0, 0, 0); } }
+@-webkit-keyframes second {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+@keyframes second {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+@-webkit-keyframes Flicker {
+  0% {
+    opacity: 1; }
+  20% {
+    opacity: 0.5; }
+  30%,100% {
+    opacity: 1; } }
+@keyframes Flicker {
+  0% {
+    opacity: 1; }
+  20% {
+    opacity: 0.5; }
+  30%,100% {
+    opacity: 1; } }
+@-webkit-keyframes slideToTop {
+  from {
+    -webkit-transform: translate3d(0, 1000px, 0);
+            transform: translate3d(0, 1000px, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@keyframes slideToTop {
+  from {
+    -webkit-transform: translate3d(0, 1000px, 0);
+            transform: translate3d(0, 1000px, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes slideToBottom {
+  from {
+    -webkit-transform: translate3d(0, -1000px, 0);
+            transform: translate3d(0, -1000px, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@keyframes slideToBottom {
+  from {
+    -webkit-transform: translate3d(0, -1000px, 0);
+            transform: translate3d(0, -1000px, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes slideToLeft {
+  from {
+    -webkit-transform: translate3d(700px, 0, 0);
+            transform: translate3d(700px, 0, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@keyframes slideToLeft {
+  from {
+    -webkit-transform: translate3d(700px, 0, 0);
+            transform: translate3d(700px, 0, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes slideToRight {
+  from {
+    -webkit-transform: translate3d(-700px, 0, 0);
+            transform: translate3d(-700px, 0, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@keyframes slideToRight {
+  from {
+    -webkit-transform: translate3d(-700px, 0, 0);
+            transform: translate3d(-700px, 0, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+img {
+  max-width: 100%; }
+
+.wechat-share-hide {
+  position: absolute;
+  top: -1000px;
+  left: 0px;
+  width: 1px; }
+
+.qrcode {
+  margin: 0 auto;
+  padding-top: 100px;
+  width: 640px;
+  text-align: center;
+  display: none; }
+  @media only screen and (min-width: 735px) and (min-device-width: 768px) {
+    .qrcode {
+      display: block; } }
+  @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+    .qrcode {
+      display: none; } }
+  @media only screen and (max-width: 768px) {
+    .qrcode {
+      display: none; } }
+
+.loading {
+  -webkit-transition: all 0.5s linear;
+          transition: all 0.5s linear;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  opacity: 0;
+  background-color: #fff;
+  z-index: -1; }
+  .loading .ng-hide {
+    opacity: 0; }
+  .loading.loaded {
+    -webkit-transition: all 0s linear;
+            transition: all 0s linear;
+    opacity: 1;
+    z-index: 99999; }
+  .loading.finished .loading-logo {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  .loading.finished span {
+    -webkit-transform: scale(0.2, 0.2);
+        -ms-transform: scale(0.2, 0.2);
+            transform: scale(0.2, 0.2);
+    opacity: 0; }
+  .loading .loading-logo, .loading .loading-normal {
+    -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    display: block;
+    width: 5em;
+    height: 5em;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    overflow: hidden; }
+  .loading .loading-normal {
+    width: 3rem;
+    height: 3rem;
+    margin-top: -1.5rem;
+    margin-left: -1.5rem;
+    -webkit-animation: second 1.5s linear;
+            animation: second 1.5s linear;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
+  .loading .loading-logo-bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    background-image: -webkit-linear-gradient(269deg, #06503C 0%, #1EC08E 50%, #A9F4A1 100%);
+    background-image: linear-gradient(-179deg, #06503C 0%, #1EC08E 50%, #A9F4A1 100%);
+    -webkit-animation: second 1s linear;
+            animation: second 1s linear;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
+  .loading .loading-logo img {
+    position: relative;
+    z-index: 2; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+.view-animate {
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
+  .view-animate.ng-leave {
+    -webkit-animation: fadeOut 1s ease;
+            animation: fadeOut 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial; }
+  .view-animate.ng-enter {
+    -webkit-animation: fadeIn 1s ease;
+            animation: fadeIn 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial; }
+
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 10px; }
+  @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+    .logo {
+      width: 33.59375%;
+      margin: 0 auto; }
+      .iphone4 .logo {
+        width: 33.59375%; } }
+  @media only screen and (max-width: 768px) {
+    .logo {
+      width: 33.59375%;
+      margin: 0 auto; }
+      .iphone4 .logo {
+        width: 33.59375%; } }
+
+.soundCtrl {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 70px;
+  height: 50px;
+  background: url("../img/icon-sound-close.png") no-repeat top left;
+  background-size: initial;
+  background-color: transparent; }
+  .soundCtrl.on {
+    background: url("../img/icon-sound-open.png") no-repeat top left;
+    background-size: initial;
+    background-color: transparent; }
+  .soundCtrl.off {
+    background: url("../img/icon-sound-close.png") no-repeat top left;
+    background-size: initial;
+    background-color: transparent; }
+  @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+    .soundCtrl {
+      width: 10.9375%;
+      margin: 0 auto;
+      top: 10px;
+      right: 10px;
+      background-size: contain; }
+      .iphone4 .soundCtrl {
+        width: 10.9375%; }
+      .soundCtrl.on, .soundCtrl.off {
+        background-size: contain; } }
+  @media only screen and (max-width: 768px) {
+    .soundCtrl {
+      width: 10.9375%;
+      margin: 0 auto;
+      top: 10px;
+      right: 10px;
+      background-size: contain; }
+      .iphone4 .soundCtrl {
+        width: 10.9375%; }
+      .soundCtrl.on, .soundCtrl.off {
+        background-size: contain; } }
+
+.ctrlBar {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 50px; }
+  @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+    .ctrlBar {
+      width: 2.5rem; } }
+  @media only screen and (max-width: 768px) {
+    .ctrlBar {
+      width: 2.5rem; } }
+  .ctrlBar .menu {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: url("../img/icon-open.png") no-repeat center center;
+    background-size: initial;
+    background-color: transparent;
+    z-index: 20; }
+    .ctrlBar .menu.open {
+      background: url("../img/icon-close.png") no-repeat center center;
+      background-size: initial;
+      background-color: transparent; }
+    @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+      .ctrlBar .menu {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-size: contain; }
+        .ctrlBar .menu.open {
+          background-size: contain; } }
+    @media only screen and (max-width: 768px) {
+      .ctrlBar .menu {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-size: contain; }
+        .ctrlBar .menu.open {
+          background-size: contain; } }
+  .ctrlBar .shop {
+    position: relative;
+    z-index: 20;
+    -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url("../img/icon-tmall.png") no-repeat center center;
+    background-size: initial;
+    background-color: transparent;
+    margin-bottom: 10px; }
+    .ctrlBar .shop.ng-enter {
+      -webkit-animation: fadeInUp 1s ease;
+              animation: fadeInUp 1s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial; }
+    .ctrlBar .shop.ng-leave {
+      -webkit-animation: fadeOutDown 1s ease;
+              animation: fadeOutDown 1s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial;
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+    @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+      .ctrlBar .shop {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-size: contain; }
+        .ctrlBar .shop.open {
+          background-size: contain; } }
+    @media only screen and (max-width: 768px) {
+      .ctrlBar .shop {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-size: contain; }
+        .ctrlBar .shop.open {
+          background-size: contain; } }
+  .ctrlBar .web {
+    position: relative;
+    z-index: 20;
+    -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url("../img/icon-web.png") no-repeat center center;
+    background-size: initial;
+    background-color: transparent;
+    margin-bottom: 10px; }
+    .ctrlBar .web.ng-enter {
+      -webkit-animation: fadeInUp 1s ease;
+              animation: fadeInUp 1s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial;
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+    .ctrlBar .web.ng-leave {
+      -webkit-animation: fadeOutDown 1s ease;
+              animation: fadeOutDown 1s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial; }
+    @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+      .ctrlBar .web {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-size: contain; }
+        .ctrlBar .web.open {
+          background-size: contain; } }
+    @media only screen and (max-width: 768px) {
+      .ctrlBar .web {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-size: contain; }
+        .ctrlBar .web.open {
+          background-size: contain; } }
+
+.pop {
+  -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.84);
+  z-index: 99; }
+  @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+    .pop {
+      overflow: hidden; } }
+  @media only screen and (max-width: 768px) {
+    .pop {
+      overflow: hidden; } }
+  .pop.ng-hide-remove {
+    -webkit-animation: fadeIn 1s ease;
+            animation: fadeIn 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial; }
+  .pop.ng-hide-add {
+    -webkit-animation: fadeOut 1s ease;
+            animation: fadeOut 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial; }
+  .pop .frontcover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0);
+    z-index: 20;
+    -webkit-animation: fadeIn 1s ease;
+            animation: fadeIn 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial;
+    -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s; }
+    @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+      .pop .frontcover {
+        width: 57.96875%;
+        margin: 0 auto;
+        left: 40%; }
+        .iphone4 .pop .frontcover {
+          width: 57.96875%; } }
+    @media only screen and (max-width: 768px) {
+      .pop .frontcover {
+        width: 57.96875%;
+        margin: 0 auto;
+        left: 40%; }
+        .iphone4 .pop .frontcover {
+          width: 57.96875%; } }
+    .pop .frontcover .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 101; }
+      @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+        .pop .frontcover .close {
+          top: 7%;
+          right: 7%;
+          width: 1.5rem;
+          height: 1.5rem; } }
+      @media only screen and (max-width: 768px) {
+        .pop .frontcover .close {
+          top: 7%;
+          right: 7%;
+          width: 1.5rem;
+          height: 1.5rem; } }
+    .pop .frontcover .pop-content {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 80%;
+      height: 80%;
+      text-align: center;
+      z-index: 88; }
+      .pop .frontcover .pop-content p {
+        font-size: 1.4rem;
+        color: #000; }
+        @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+          .pop .frontcover .pop-content p {
+            font-size: 0.8rem; } }
+        @media only screen and (max-width: 768px) {
+          .pop .frontcover .pop-content p {
+            font-size: 0.8rem; } }
+      .pop .frontcover .pop-content p.red {
+        color: #a30735; }
+  .pop .vinyl {
+    position: absolute;
+    top: 0%;
+    left: 46%;
+    width: 100%;
+    z-index: -1;
+    -webkit-animation: rollIn 1s ease;
+            animation: rollIn 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial;
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+    max-width: 366px; }
+    .pop .vinyl .vinyl-body {
+      -webkit-animation: second 4s linear;
+              animation: second 4s linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+  .pop .on {
+    -webkit-animation: fadeIn 1s ease;
+            animation: fadeIn 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial; }
+
+.note-1 {
+  -webkit-animation: fadeInUp 1s ease;
+          animation: fadeInUp 1s ease;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s; }
+  .note-1 p {
+    margin: 36px 0px; }
+    @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+      .note-1 p {
+        margin: 1.1rem 0; } }
+    @media only screen and (max-width: 768px) {
+      .note-1 p {
+        margin: 1.1rem 0; } }
+  .note-1 .btn-shop {
+    display: inline-block;
+    width: 53.9083557951%;
+    margin: 0 auto; }
+    .iphone4 .note-1 .btn-shop {
+      width: 53.9083557951%; }
+
+.note-share h4 {
+  font-size: 1.4rem;
+  margin-top: 4em; }
+  @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+    .note-share h4 {
+      font-size: 1rem;
+      margin-top: 2em; } }
+  @media only screen and (max-width: 768px) {
+    .note-share h4 {
+      font-size: 1rem;
+      margin-top: 2em; } }
+.note-share .qr {
+  width: 53.9083557951%;
+  margin: 0 auto; }
+  .iphone4 .note-share .qr {
+    width: 53.9083557951%; }
+@media only screen and (max-width: 735px) and (max-device-width: 768px) {
+  .note-share .share-list a {
+    display: inline-block;
+    width: 18.9189189189%;
+    margin: 0 auto;
+    margin: 0 3%; }
+    .iphone4 .note-share .share-list a {
+      width: 18.9189189189%; } }
+@media only screen and (max-width: 768px) {
+  .note-share .share-list a {
+    display: inline-block;
+    width: 18.9189189189%;
+    margin: 0 auto;
+    margin: 0 3%; }
+    .iphone4 .note-share .share-list a {
+      width: 18.9189189189%; } }
+
+.wechatnote {
+  background: url("../img/wechat-note.png") no-repeat top right;
+  background-size: contain;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9991;
+  -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
+  .wechatnote.ng-hide-add {
+    -webkit-animation: fadeOut 1s ease;
+            animation: fadeOut 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial; }
+  .wechatnote.ng-hide-remove {
+    -webkit-animation: fadeIn 1s ease;
+            animation: fadeIn 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial; }
+
+.share-list {
+  text-align: center; }
+  .share-list a {
+    display: inline-block;
+    margin: 0 3%; }
+
+.page {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%; }
+  .page.homepage {
+    background: url("../img/pc-bg.jpg") no-repeat center center;
+    background-size: cover;
+    background-color: transparent; }
+    @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+      .page.homepage {
+        background: url("../img/mobile-bg-1.jpg") no-repeat center center;
+        background-size: cover;
+        background-color: transparent; } }
+    @media only screen and (max-width: 768px) {
+      .page.homepage {
+        background: url("../img/mobile-bg-1.jpg") no-repeat center center;
+        background-size: cover;
+        background-color: transparent; } }
+  .page.question {
+    background: url("../img/question-bg.jpg") no-repeat center center;
+    background-size: cover;
+    background-color: transparent; }
+    @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+      .page.question {
+        background: url("../img/mobile-bg-2.jpg") no-repeat center center;
+        background-size: cover;
+        background-color: transparent; } }
+    @media only screen and (max-width: 768px) {
+      .page.question {
+        background: url("../img/mobile-bg-2.jpg") no-repeat center center;
+        background-size: cover;
+        background-color: transparent; } }
+
+.content {
+  max-width: 640px;
+  margin: 0 auto;
+  height: 100%;
+  position: relative; }
+  @media only screen and (min-width: 735px) and (min-device-width: 768px) {
+    .homepage .content {
+      position: absolute;
+      top: 0;
+      right: 5%;
+      min-width: 640px; }
+      .homepage .content .note {
+        top: 30%;
+        left: 0px; } }
+  .content p {
+    color: #fff;
+    margin: 0 auto; }
+  .content .note {
+    position: absolute;
+    bottom: 12%;
+    left: 0px;
+    width: 100%; }
+    .content .note p {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      text-align: center; }
+      @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+        .content .note p {
+          font-size: 1.2rem; } }
+      @media only screen and (max-width: 768px) {
+        .content .note p {
+          font-size: 1.2rem; } }
+    .content .note .btn {
+      margin: 0 auto;
+      padding-top: 10px;
+      text-align: center; }
+      @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+        .content .note .btn {
+          width: 39.84375%;
+          margin: 0 auto; }
+          .iphone4 .content .note .btn {
+            width: 31.875%; } }
+      @media only screen and (max-width: 768px) {
+        .content .note .btn {
+          width: 39.84375%;
+          margin: 0 auto; }
+          .iphone4 .content .note .btn {
+            width: 31.875%; } }
+
+.question-item {
+  -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+  position: absolute;
+  top: 15%;
+  left: 0px; }
+  .question-item.ng-hide-add {
+    -webkit-animation: fadeOutUp 1s ease;
+            animation: fadeOutUp 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial; }
+  .question-item.ng-enter {
+    -webkit-animation: fadeInUp 1s ease;
+            animation: fadeInUp 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial; }
+  .question-item .box {
+    width: 54.6875%;
+    margin: 0 auto;
+    border: solid 4px #fff;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 3px #fff, -1px -1px 3px #fff; }
+    .iphone4 .question-item .box {
+      width: 43.75%; }
+  .question-item .text {
+    width: 54.6875%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: solid 4px #fff;
+    padding: 1rem 0; }
+    .iphone4 .question-item .text {
+      width: 43.75%; }
+    @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+      .question-item .text {
+        padding: 0.6rem 0; } }
+    @media only screen and (max-width: 768px) {
+      .question-item .text {
+        padding: 0.6rem 0; } }
+    .question-item .text p {
+      font-size: 1rem;
+      color: #000;
+      width: 90%;
+      margin: 0 auto; }
+      @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+        .question-item .text p {
+          font-size: 0.8rem; } }
+      @media only screen and (max-width: 768px) {
+        .question-item .text p {
+          font-size: 0.8rem; } }
+  .question-item .btns {
+    text-align: center; }
+    .question-item .btns .btn-wrong, .question-item .btns .btn-right {
+      display: inline-block;
+      margin: 0 5%; }
+      @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+        .question-item .btns .btn-wrong, .question-item .btns .btn-right {
+          width: 31.25%;
+          margin: 0 auto;
+          margin: 0 5%; }
+          .iphone4 .question-item .btns .btn-wrong, .iphone4 .question-item .btns .btn-right {
+            width: 25%; } }
+      @media only screen and (max-width: 768px) {
+        .question-item .btns .btn-wrong, .question-item .btns .btn-right {
+          width: 31.25%;
+          margin: 0 auto;
+          margin: 0 5%; }
+          .iphone4 .question-item .btns .btn-wrong, .iphone4 .question-item .btns .btn-right {
+            width: 25%; } }
+
+.overplane {
+  -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+  position: absolute;
+  top: 15%;
+  left: 0px;
+  width: 100%; }
+  @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+    .overplane {
+      top: 22%; } }
+  @media only screen and (max-width: 768px) {
+    .overplane {
+      top: 22%; } }
+  .overplane.ng-hide-remove {
+    -webkit-animation: tada 1s ease;
+            animation: tada 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial; }
+  .overplane .frontcover {
+    position: relative;
+    left: 130px;
+    z-index: 20;
+    display: inline-block; }
+    @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+      .overplane .frontcover {
+        width: 70%;
+        left: 2%; } }
+    @media only screen and (max-width: 768px) {
+      .overplane .frontcover {
+        width: 70%;
+        left: 2%; } }
+    .overplane .frontcover .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 101; }
+    .overplane .frontcover .pop-content {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 80%;
+      height: 80%;
+      text-align: center;
+      z-index: 88; }
+      .overplane .frontcover .pop-content p {
+        font-size: 1.4rem;
+        color: #000;
+        margin: 20px 0px; }
+        .overplane .frontcover .pop-content p.smallText {
+          font-size: 1rem; }
+          @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+            .overplane .frontcover .pop-content p.smallText {
+              font-size: 0.6rem; } }
+          @media only screen and (max-width: 768px) {
+            .overplane .frontcover .pop-content p.smallText {
+              font-size: 0.6rem; } }
+        @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+          .overplane .frontcover .pop-content p {
+            font-size: 0.8rem;
+            margin: 0.6rem 0; } }
+        @media only screen and (max-width: 768px) {
+          .overplane .frontcover .pop-content p {
+            font-size: 0.8rem;
+            margin: 0.6rem 0; } }
+      .overplane .frontcover .pop-content p.red {
+        color: #a30735;
+        font-size: 1.2rem; }
+        @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+          .overplane .frontcover .pop-content p.red {
+            font-size: 0.6rem; } }
+        @media only screen and (max-width: 768px) {
+          .overplane .frontcover .pop-content p.red {
+            font-size: 0.6rem; } }
+  .overplane .vinyl {
+    position: absolute;
+    top: 0%;
+    left: 46%;
+    width: 100%;
+    z-index: -1;
+    -webkit-animation: rollIn 1s ease;
+            animation: rollIn 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial;
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+    max-width: 366px; }
+    .overplane .vinyl .vinyl-body {
+      -webkit-animation: second 4s linear;
+              animation: second 4s linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+  .overplane .btns {
+    text-align: center;
+    margin-top: 20px; }
+    .overplane .btns .btn-requestion, .overplane .btns .btn-over {
+      display: inline-block;
+      margin: 0 5%; }
+      @media only screen and (max-width: 735px) and (max-device-width: 768px) {
+        .overplane .btns .btn-requestion, .overplane .btns .btn-over {
+          width: 31.25%;
+          margin: 0 auto;
+          margin: 0 5%; }
+          .iphone4 .overplane .btns .btn-requestion, .iphone4 .overplane .btns .btn-over {
+            width: 31.25%; } }
+      @media only screen and (max-width: 768px) {
+        .overplane .btns .btn-requestion, .overplane .btns .btn-over {
+          width: 31.25%;
+          margin: 0 auto;
+          margin: 0 5%; }
+          .iphone4 .overplane .btns .btn-requestion, .iphone4 .overplane .btns .btn-over {
+            width: 31.25%; } }
+
+.box.item-1 {
+  background: url("../list/1.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-2 {
+  background: url("../list/2.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-3 {
+  background: url("../list/3.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-4 {
+  background: url("../list/4.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-5 {
+  background: url("../list/5.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-6 {
+  background: url("../list/6.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-7 {
+  background: url("../list/7.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-8 {
+  background: url("../list/8.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-9 {
+  background: url("../list/9.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-10 {
+  background: url("../list/10.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-11 {
+  background: url("../list/11.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-12 {
+  background: url("../list/12.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-13 {
+  background: url("../list/13.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-14 {
+  background: url("../list/14.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-15 {
+  background: url("../list/15.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-16 {
+  background: url("../list/16.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-17 {
+  background: url("../list/17.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-18 {
+  background: url("../list/18.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-19 {
+  background: url("../list/19.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-20 {
+  background: url("../list/20.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-21 {
+  background: url("../list/21.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-22 {
+  background: url("../list/22.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-23 {
+  background: url("../list/23.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-24 {
+  background: url("../list/24.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-25 {
+  background: url("../list/25.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-26 {
+  background: url("../list/26.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-27 {
+  background: url("../list/27.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-28 {
+  background: url("../list/28.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-29 {
+  background: url("../list/29.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-30 {
+  background: url("../list/30.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-31 {
+  background: url("../list/31.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-32 {
+  background: url("../list/32.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-33 {
+  background: url("../list/33.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-34 {
+  background: url("../list/34.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-35 {
+  background: url("../list/35.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-36 {
+  background: url("../list/36.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-37 {
+  background: url("../list/37.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-38 {
+  background: url("../list/38.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-39 {
+  background: url("../list/39.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-40 {
+  background: url("../list/40.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-41 {
+  background: url("../list/41.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-42 {
+  background: url("../list/42.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-43 {
+  background: url("../list/43.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-44 {
+  background: url("../list/44.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-45 {
+  background: url("../list/45.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-46 {
+  background: url("../list/46.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-47 {
+  background: url("../list/47.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-48 {
+  background: url("../list/48.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-49 {
+  background: url("../list/49.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+.box.item-50 {
+  background: url("../list/50.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }

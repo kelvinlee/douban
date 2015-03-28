@@ -37,12 +37,16 @@
 +keyframes(standup)
 	0%
 		+transform(rotateX(90deg))
+		opacity: 0
+	5%
+		opacity: 1
 	70%
 		+transform(rotateX(-30deg))
 	90%
 		+transform(rotateX(30deg))
 	100%
 		+transform(rotateX(0deg))
+		opacity: 1
 
 
 +keyframes(rotate360)
@@ -66,41 +70,60 @@
 	0%
 		opacity: 0
 		+transform(translate3d(0,100%,0) scale(0.5,0.5))
-	100%
+	16%
 		opacity: 1
 		+transform(translate3d(0,0,0) scale(1,1))
+	80%
+		filter: grayscale(1)
+	100%
+		filter: grayscale(0)
 
 +keyframes(page7point2)
-	0%
+	0%,16%
 		opacity: 0
 		+transform(translate3d(-100%,60%,0) scale(0.5,0.5))
-	100%
+	32%
 		opacity: 1
 		+transform(translate3d(0,0,0) scale(1,1))
+	80%
+		filter: grayscale(1)
+	100%
+		filter: grayscale(0)
 
 +keyframes(page7point3)
-	0%
+	0%,32%
 		opacity: 0
 		+transform(translate3d(-60%,-60%,0) scale(0.5,0.5))
-	100%
+	48%
 		opacity: 1
 		+transform(translate3d(0,0,0) scale(1,1))
+	80%
+		filter: grayscale(1)
+	100%
+		filter: grayscale(0)
 
 +keyframes(page7point4)
-	0%
+	0%,48%
 		opacity: 0
 		+transform(translate3d(60%,-60%,0) scale(0.5,0.5))
-	100%
+	64%
 		opacity: 1
 		+transform(translate3d(0,0,0) scale(1,1))
+	80%
+		filter: grayscale(1)
+	100%
+		filter: grayscale(0)
 
 +keyframes(page7point5)
-	0%
+	0%,64%
 		opacity: 0
 		+transform(translate3d(100%,40%,0) scale(0.5,0.5))
-	100%
+	80%
 		opacity: 1
 		+transform(translate3d(0,0,0) scale(1,1))
+		filter: grayscale(1)
+	100%	
+		filter: grayscale(0)
 
 +keyframes(screen)
 	0%
@@ -234,3 +257,34 @@
 		+transform(scale(0,1))
 	100%
 		+transform(scale(0,1))
+
++keyframes(bigtosmall)
+	0%
+		+transform(scale(1.25,1.25))
+		opacity: 0
+	5%
+		opacity: 1
+	100%
+		+transform(scale(0.75,0.75))
+
++keyframes(smalltobig)
+	0%
+		+transform(scale(0.75,0.75))
+		opacity: 0
+	5%
+		opacity: 1
+	100%
+		+transform(scale(1.25,1.25))
+
++keyframes(downWallet)
+	0%
+		+transform(translate3d(0,-2000px,0) scale(1,1))
+	60%
+		+transform(translate3d(0,0,0) scale(0.9,1.1))
+	75%
+		+transform(translate3d(0,0,0) scale(0.9,1.1))
+	90%
+		+transform(translate3d(0,0,0) scale(1.1,0.9))
+	100%
+		+transform(translate3d(0,0,0) scale(1,1))
+		

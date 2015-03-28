@@ -14,7 +14,7 @@ html(lang="en").no-js
 		mixin step(t)
 			.step-list
 				ul
-					-var pages = [5,7,9]
+					-var pages = [4,5,6]
 					-var on = ""
 					-for (var i=1;i<=3;i++)
 						-if (i==t) { on = "-on" }else{ on = "" }
@@ -32,6 +32,7 @@ html(lang="en").no-js
 			.text 打开声音听星爷总结>
 			audio#audiobg(src="mp3/audio1.mp3",loop="loop",autoplay="autoplay")
 			audio#audioss(src="mp3/audio2.mp3")
+			audio#audiola(src="mp3/audio3.mp3")
 		.wrapper
 			.pages
 				section.page
@@ -48,41 +49,51 @@ html(lang="en").no-js
 					.nextpoint
 						.text 开始朗读
 				section.page
-					.text(data-animation="standup",data-duration="1000")
+					.text(data-animation="fadeIn",data-duration="1000")
 						img(lz-src="img/page-2-text.png")
+					.textbox
+						.text2(data-animation="bigtosmall",data-duration="200",data-delay="2200")
+							img(lz-src="img/page-2-text2.png")
+						.text3(data-animation="fadeIn",data-delay="2400")
+							img(lz-src="img/page-2-text3.png")
+						.text4(data-animation="smalltobig",data-duration="200",data-delay="3000")
+							img(lz-src="img/page-2-text4.png")
+						.text5(data-animation="fadeIn",data-delay="3200")
+							img(lz-src="img/page-2-text5.png")
 					.box-list#boxlist
-						img(lz-src="img/page-2-points.png")
-						-var mlist = ["","slideToRight","slideToBottom","slideToBottom","slideToBottom","slideToTop","slideToTop","slideToTop"]
-						-for(var i = 1;i<=7;i++)
-							//- ,data-animation="fadeIn",data-delay="#{(i-1)*200}"
+						-for(var i = 1;i<=6;i++)
 							.point(class="point#{i}")
-								img(lz-src="img/page-2-point-#{i}.png")
-								//- data-animation="#{mlist[i]}",data-delay="#{(i-1)*200}"
-								.pro
+								.pmo(data-animation="downWallet",data-duration="1000",data-delay="#{300+100*i}")
+									img(lz-src="img/page-2-point-#{i}.png")
+								.pro(data-animation="fadeIn",data-delay="#{100+100*i}")
 									img(lz-src="img/page-2-point-#{i}-t.png")
 					.nextpoint.black
-				section.page
-					.title(data-animation="slideToBottom")
-						img(lz-src="img/page-3-title.png")
-					.president(data-animation="fadeIn",data-delay="600")
-						.pcontent
-							.president-bg
-								img(lz-src="img/page-3-light.jpg")
-							img(lz-src="img/page-3-president.png")
-					.star(data-animation="slideToBottom",data-delay="1000")
-						img(lz-src="img/page-3-redstar.png")
-					-for (var i=1;i<=3;i++)
-						div(class="text#{i}",data-animation="slideToTop",data-delay="#{i*600+1000}")
-							img(lz-src="img/page-3-text#{i}.png")
-					.nextpoint.black
+				//- section.page
+				//- 	.title(data-animation="slideToBottom")
+				//- 		img(lz-src="img/page-3-title.png")
+				//- 	.president(data-animation="fadeIn",data-delay="600")
+				//- 		.pcontent
+				//- 			.president-bg
+				//- 				img(lz-src="img/page-3-light.jpg")
+				//- 			img(lz-src="img/page-3-president.png")
+				//- 	.star(data-animation="slideToBottom",data-delay="1000")
+				//- 		img(lz-src="img/page-3-redstar.png")
+				//- 	-for (var i=1;i<=3;i++)
+				//- 		div(class="text#{i}",data-animation="slideToTop",data-delay="#{i*600+1000}")
+				//- 			img(lz-src="img/page-3-text#{i}.png")
+				//- 	.nextpoint.black
 				section.page
 					.box(data-animation="slideToBottom")
 						//- -var mlist= ["slideToLeft","slideToRight","slideToLeft","slideToRight"]
 						-var mlist= ["fadeIn","fadeIn","fadeIn","fadeIn"]
-						-for(var i=1;i<=4;i++)
-							div(class="text#{i}",data-animation="#{mlist[i-1]}",data-delay="#{i}*400",data-duration="#{300*i+500}")
+						-for(var i=1;i<=3;i++)
+							div(class="text#{i}",data-animation="#{mlist[i-1]}",data-delay="#{i*400}",data-duration="#{100*i+300}")
 								img(lz-src="img/page-4-text#{i}.png")
-						.text5#text5(data-animation="Stamp",data-delay="1200",data-duration="#{500}")
+						.text4(data-animation="fadeIn",data-delay="1500")
+							img(lz-src="img/page-4-text#{i}.png")
+							.wmd(data-animation="standup",data-delay="1800")
+								img(lz-src="img/page-4-text#{i}-1.png")
+						.text5#text5(data-animation="Stamp",data-delay="2100",data-duration="500")
 							img(lz-src="img/page-4-text5.png")
 					.lang
 						.langcontent(data-animation="slideToRight",data-delay="400")
@@ -99,24 +110,24 @@ html(lang="en").no-js
 						img(lz-src="img/page-5-title.png")
 						.flash
 					.btns
-						-var pages = [5,7,9]
+						-var pages = [4,5,6]
 						-var animates = ["slideToLeft","slideToRight","slideToTop"]
 						-for(var i=1;i<=3;i++)
 							a(data-page="#{pages[i-1]}")
 								img(lz-src="img/page-5-btn#{i}.png",data-animation="#{animates[i-1]}",data-delay="800")
 					.nextpoint.black
-				section.page
-					+step(1)
-					.page-content
-						.title(data-animation="slideToBottom")
-							img(lz-src="img/page-6-title.png")
-							.flash
-						.text1(data-animation="slideToBottom",data-delay="600")
-							img(lz-src="img/page-6-text1.png")
-						.text2(data-animation="slideToTop",data-delay="600")
-							img(lz-src="img/page-6-text2.png")
-					.nextpoint.black
-						.text 准备篇
+				//- section.page
+				//- 	+step(1)
+				//- 	.page-content
+				//- 		.title(data-animation="slideToBottom")
+				//- 			img(lz-src="img/page-6-title.png")
+				//- 			.flash
+				//- 		.text1(data-animation="slideToBottom",data-delay="600")
+				//- 			img(lz-src="img/page-6-text1.png")
+				//- 		.text2(data-animation="slideToTop",data-delay="600")
+				//- 			img(lz-src="img/page-6-text2.png")
+				//- 	.nextpoint.black
+				//- 		.text 准备篇
 				section.page
 					+step(1)
 					.page-content
@@ -127,31 +138,35 @@ html(lang="en").no-js
 								img(lz-src="img/redstarline.png")
 							.text2(data-animation="slideToBottom",data-delay="600")
 								img(lz-src="img/page-7-text2.png")
-						.box#firebox(data-animation="slideToTop",data-delay="800")
-							img(lz-src="img/page-7-mark.png")
+						.box(data-animation="slideToTop",data-delay="800")
+							div.point-mark(data-animation="fadeOut",data-delay="2800")
+								img(lz-src="img/page-7-mark.png")
+							div.point-fire#firebox(data-animation="fadeIn",data-delay="3100")
+								img.firemove(lz-src="img/page-7-fire.png")
+								//- img(lz-src="img/page-7-fire2.png")
 							img(lz-src="img/page-7-fire.png",style="display:none")
 							-for(var i=1;i<=5;i++)
-								.point.gray(class="point#{i}",data-animation="page7point#{i}",data-delay="#{800+i*600}",onclick="selectPoint(this)")
+								.point.gray(class="point#{i}",data-animation="page7point#{i}",data-duration="2000",data-delay="1200")
 									img(lz-src="img/page-7-point-#{i}.png")
 									.arrow
 										img(lz-src="img/point-arrow.png")
-							.note(data-animation="slideToTop",data-delay="3000") 将它们依次点击点亮
+							//- .note(data-animation="slideToTop",data-delay="3000") 将它们依次点击点亮
 					.nextpoint.black
-				section.page
-					+step(2)
-					.page-content
-						.title(data-animation="slideToBottom")
-							img(lz-src="img/page-8-title.png")
-						.box
-							.line(data-animation="slideToBottom",data-delay="600")
-								img(lz-src="img/redstarline.png")
-							-for(var i=1;i<=3;i++)
-								div(class="text#{i}",data-animation="slideToLeft",data-delay="#{i*200+800}")
-									img(lz-src="img/page-8-text#{i}.png")
-							.line(data-animation="slideToTop",data-delay="600")
-								img(lz-src="img/redstarline.png")
-					.nextpoint.black
-						.text 公司注册篇
+				//- section.page
+				//- 	+step(2)
+				//- 	.page-content
+				//- 		.title(data-animation="slideToBottom")
+				//- 			img(lz-src="img/page-8-title.png")
+				//- 		.box
+				//- 			.line(data-animation="slideToBottom",data-delay="600")
+				//- 				img(lz-src="img/redstarline.png")
+				//- 			-for(var i=1;i<=3;i++)
+				//- 				div(class="text#{i}",data-animation="slideToLeft",data-delay="#{i*200+800}")
+				//- 					img(lz-src="img/page-8-text#{i}.png")
+				//- 			.line(data-animation="slideToTop",data-delay="600")
+				//- 				img(lz-src="img/redstarline.png")
+				//- 	.nextpoint.black
+				//- 		.text 公司注册篇
 				section.page
 					+step(2)
 					.page-content
@@ -162,7 +177,7 @@ html(lang="en").no-js
 								img(lz-src="img/page-9-title.png")
 							.line(data-animation="slideToRight")
 								img(lz-src="img/redstarline.png")
-						-var points = ["核名、刻章","办理三证","领照登记","税务刻章","企业基本账户"]
+						-var points = ["核名、刻章","办理三证","领照登记","税务刻章","企业<br/>基本账户"]
 						.tabs.on1(now="1")
 							.progress-line(data-animation="fadeIn",data-delay="600")
 								-for(var i=1;i<=points.length;i++)
@@ -178,31 +193,31 @@ html(lang="en").no-js
 										.icon(class="icon#{i}",onclick="selectPaper(#{i})")
 											.ico
 												img(lz-src="img/page-9-icon-#{i}.png")
-											.name #{points[i-1]}
+											.name !{points[i-1]}
 								.papers
 									-for(var i=1;i<=points.length;i++)
 										.paper(class="paper#{i}")
 											img(lz-src="img/page-9-paper-#{i}.png")
 					.nextpoint.black
-				section.page
-					+step(3)
-					.page-content
-						.line
-							img(lz-src="img/redstarline.png")
-						.text1(data-animation="slideToRight",data-delay="800")
-							img(lz-src="img/page-10-text1.png")
-						.text2(data-animation="slideToLeft",data-delay="800",data-duration="700")
-							img(lz-src="img/page-10-text2.png")
-						.text3(data-animation="slideToRight",data-delay="800",data-duration="900")
-							img(lz-src="img/page-10-text3.png")
-						.people(data-animation="standup")
-							img(lz-src="img/page-10-people.png")
-						.text4(data-animation="slideToLeft",data-delay="800",data-duration="1100")
-							img(lz-src="img/page-10-text4.png")
-						.text5(data-animation="slideToRight",data-delay="800",data-duration="1300")
-							img(lz-src="img/page-10-text5.png")
-					.nextpoint.black
-						.text 推广篇
+				//- section.page
+				//- 	+step(3)
+				//- 	.page-content
+				//- 		.line
+				//- 			img(lz-src="img/redstarline.png")
+				//- 		.text1(data-animation="slideToRight",data-delay="800")
+				//- 			img(lz-src="img/page-10-text1.png")
+				//- 		.text2(data-animation="slideToLeft",data-delay="800",data-duration="700")
+				//- 			img(lz-src="img/page-10-text2.png")
+				//- 		.text3(data-animation="slideToRight",data-delay="800",data-duration="900")
+				//- 			img(lz-src="img/page-10-text3.png")
+				//- 		.people(data-animation="standup")
+				//- 			img(lz-src="img/page-10-people.png")
+				//- 		.text4(data-animation="slideToLeft",data-delay="800",data-duration="1100")
+				//- 			img(lz-src="img/page-10-text4.png")
+				//- 		.text5(data-animation="slideToRight",data-delay="800",data-duration="1300")
+				//- 			img(lz-src="img/page-10-text5.png")
+				//- 	.nextpoint.black
+				//- 		.text 推广篇
 				section.page
 					+step(3)
 					.page-content
@@ -220,15 +235,15 @@ html(lang="en").no-js
 										.bgcolor2
 										.bgcolor3
 								img(lz-src="img/page-11-mobile.png")
-							.plus(data-animation="fadeIn",data-delay="600")
+							//- .plus(data-animation="fadeIn",data-delay="600")
 								img(lz-src="img/page-11-plus.png")
 						.text1(data-animation="slideToTop",data-delay="1200")
 							img(lz-src="img/page-11-text1.png")
-							.fish.fish1
+							//- .fish.fish1
 								img(lz-src="img/page-11-fish.png")
-							.fish.fish2
+							//- .fish.fish2
 								img(lz-src="img/page-11-fish.png")
-						.text2(data-animation="slideToTop",data-delay="1600")
+						//- .text2(data-animation="slideToTop",data-delay="1600")
 							img(lz-src="img/page-11-text2.png")
 					.nextpoint.black
 						.text 开始撒网
@@ -237,22 +252,22 @@ html(lang="en").no-js
 					.page-content
 						.title(data-animation="slideToBottom")
 							img(lz-src="img/page-12-title.png")
-						.logo-box
+						//- .logo-box
 							.logo(data-animation="slideToBottom",data-delay="400")
 								img(lz-src="img/page-12-logo.png")
 							.logo-note(data-animation="fadeIn",data-delay="800")
 								img(lz-src="img/page-12-logo-note.png")
-						.title2(data-animation="slideToBottom",data-delay="1200")
+						.title2(data-animation="slideToBottom",data-delay="500")
 							img(lz-src="img/page-12-title2.png")
 						.points
 							-for(var i=1;i<=4;i++)
-								.point(class="point#{i}",data-animation="slideToRight",data-duration="#{1000+i*300}",data-delay="1500")
+								.point(class="point#{i}",data-animation="slideToRight",data-duration="#{1000+i*300}",data-delay="700")
 									img(lz-src="img/page-12-point#{i}.png")
-						.index(data-animation="slideToTop",data-duration="1000",data-delay="2000")
+						.index(data-animation="slideToTop",data-duration="1000",data-delay="1000")
 							img(lz-src="img/page-12-index.png")
 							.stars
 								-for(var i=1;i<=5;i++)
-									.star(data-animation="standup",data-duration="#{1000+i*300}",data-delay="3500")
+									.star(data-animation="standup",data-duration="#{1300+i*300}",data-delay="1200")
 										img(lz-src="img/star-full.png")
 
 					.nextpoint.black
@@ -261,33 +276,33 @@ html(lang="en").no-js
 					.page-content
 						.title(data-animation="slideToBottom")
 							img(lz-src="img/page-13-title.png")
-						.logo-box
+						//- .logo-box
 							.logo(data-animation="slideToBottom",data-delay="400")
 								img(lz-src="img/page-13-logos.png")
 							.text(data-animation="slideToBottom",data-delay="800") 在微信、微博、豆瓣、人人、qq空间、陌陌、秘密等社交平台上建立账号，通过实时的内容与用户进行互动
-						.advantage(data-animation="slideToBottom",data-delay="1200")
+						.advantage(data-animation="slideToBottom",data-delay="500")
 							img(lz-src="img/page-13-advantage.png")
 						.advantage-list.clearfix
 							ul
 								-for(var i=1;i<=3;i++)
-									li(data-animation="slideToTop",data-duration="#{500*i}",data-delay="1600")
+									li(data-animation="slideToTop",data-duration="#{500*i}",data-delay="600")
 										.icon
 											img(lz-src="img/page-13-icon-advantage#{i}.png")
-						.shortcoming(data-animation="slideToTop",data-delay="2400")
+						.shortcoming(data-animation="slideToTop",data-delay="1500")
 							img(lz-src="img/page-13-shortcoming.png")
 						.shortcoming-list.clearfix
 							ul
 								-for(var i=1;i<=2;i++)
-									li(data-animation="slideToTop",data-duration="#{500*i}",data-delay="2800")
+									li(data-animation="slideToTop",data-duration="#{500*i}",data-delay="1600")
 										.icon
 											img(lz-src="img/page-13-icon-shortcoming#{i}.png")
-						.index(data-animation="slideToTop",data-duration="1000",data-delay="3200")
+						.index(data-animation="slideToTop",data-duration="1000",data-delay="2000")
 							img(lz-src="img/page-12-index.png")
 							.stars
 								-for(var i=1;i<=3;i++)
-									.star(data-animation="standup",data-duration="#{1000+i*300}",data-delay="4000")
+									.star(data-animation="standup",data-duration="#{1000+i*300}",data-delay="2000")
 										img(lz-src="img/star-full.png")
-								.star(data-animation="standup",data-duration="#{1000+4*300}",data-delay="4000")
+								.star(data-animation="standup",data-duration="#{1000+4*300}",data-delay="2000")
 									img(lz-src="img/star-half.png")
 
 					.nextpoint.black
@@ -296,26 +311,26 @@ html(lang="en").no-js
 					.page-content
 						.title(data-animation="slideToBottom")
 							img(lz-src="img/page-14-title.png")
-						.note(data-animation="slideToBottom",data-delay="400")
+						//- .note(data-animation="slideToBottom",data-delay="400")
 							img(lz-src="img/page-14-note.jpg")
-						.text1(data-animation="slideToBottom",data-delay="800") 各种门户、垂直网站上，文字或者图片广告投放。
-						.advantage(data-animation="slideToBottom",data-delay="1200")
+						//- .text1(data-animation="slideToBottom",data-delay="800") 各种门户、垂直网站上，文字或者图片广告投放。
+						.advantage(data-animation="slideToBottom",data-delay="300")
 							img(lz-src="img/page-13-advantage.png")
 						.advantage-list.clearfix
 							ul
 								-for(var i=1;i<=2;i++)
-									li(data-animation="slideToTop",data-duration="#{500*i}",data-delay="1600")
+									li(data-animation="slideToTop",data-duration="#{500*i}",data-delay="500")
 										.icon
 											img(lz-src="img/page-14-icon-advantage#{i}.png")
-						.shortcoming(data-animation="slideToTop",data-delay="2000")
+						.shortcoming(data-animation="slideToTop",data-delay="800")
 							img(lz-src="img/page-13-shortcoming.png")
-						.shortcoming-list(data-animation="slideToRight",data-delay="2400")
+						.shortcoming-list(data-animation="slideToRight",data-delay="1000")
 							img(lz-src="img/page-14-icon-shortcoming.png")
-						.index(data-animation="slideToTop",data-duration="1000",data-delay="2700")
+						.index(data-animation="slideToTop",data-duration="1000",data-delay="1200")
 							img(lz-src="img/page-12-index.png")
 							.stars
 								-for(var i=1;i<=2;i++)
-									.star(data-animation="standup",data-duration="#{1000+i*300}",data-delay="4000")
+									.star(data-animation="standup",data-duration="#{1000+i*300}",data-delay="1500")
 										img(lz-src="img/star-full.png")
 
 					.nextpoint.black
@@ -324,24 +339,25 @@ html(lang="en").no-js
 					.page-content
 						.title(data-animation="slideToBottom")
 							img(lz-src="img/page-15-title.png")
-						.note(data-animation="slideToBottom",data-delay="400")
-							img(lz-src="img/page-15-note.png")
 							.text
+						//- .note(data-animation="slideToBottom",data-delay="400")
+							img(lz-src="img/page-15-note.png")
+							//- .text
 								img(lz-src="img/page-15-text.gif")
-						.text1(data-animation="slideToBottom",data-delay="800") 移动互联网营销黑马冲出——百度直达号
-						.advantage(data-animation="slideToBottom",data-delay="1200")
+						//- .text1(data-animation="slideToBottom",data-delay="800") 移动互联网营销黑马冲出——百度直达号
+						.advantage(data-animation="slideToBottom",data-delay="300")
 							img(lz-src="img/page-13-advantage.png")
 						.advantage-list.clearfix
 							ul
 								-for(var i=1;i<=3;i++)
-									li(data-animation="slideToRight",data-duration="#{500*i}",data-delay="1600")
+									li(data-animation="slideToRight",data-duration="#{500*i}",data-delay="500")
 										.icon
 											img(lz-src="img/page-15-icon-advantage#{i}.png")
-						.index(data-animation="slideToTop",data-duration="1000",data-delay="2000")
+						.index(data-animation="slideToTop",data-duration="1000",data-delay="800")
 							img(lz-src="img/page-12-index.png")
 							.stars
 								-for(var i=1;i<=5;i++)
-									.star(data-animation="standup",data-duration="#{1000+i*300}",data-delay="3000")
+									.star(data-animation="standup",data-duration="#{1000+i*300}",data-delay="1000")
 										img(lz-src="img/star-full.png")
 
 					.nextpoint.black

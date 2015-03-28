@@ -1,0 +1,431 @@
+@import sass/base
+@import sass/animation
+
+img
+	max-width: 100%
+
+.wechat-share-hide
+	+posa
+	+tl(-1000px)
+	// +hide
+	+w(1px)
+.qrcode
+	margin: 0 auto
+	padding-top: 100px
+	+w(640px)
+	+text-center
+	+hide
+	+large
+		+show
+	+small
+		+hide
+.loading
+	+tran(all,0.5s,linear)
+	+posf
+	+tl
+	bottom: 0px
+	+w(100%)
+	opacity: 0
+	background-color: #fff
+	z-index: -1
+	.ng-hide
+		opacity: 0
+	&.loaded
+		+tran(all,0s,linear)
+		opacity: 1
+		z-index: 99999
+	&.finished
+		.loading-logo
+			opacity: 1	
+			+transform(scale(1,1))
+		span
+			+transform(scale(0.2,0.2))
+			opacity: 0
+	.loading-logo,.loading-normal
+		+tran
+		+posa
+		+tl(50%,50%)
+		+text-center
+		+show
+		+wh(5em,5em)
+		+transform(translate(-50%,-50%))
+		overflow: hidden
+	.loading-normal
+		+wh(3rem,3rem)
+		margin-top: -1.5rem
+		margin-left: -1.5rem
+		+animation(second,1.5s,linear,infinite)
+	.loading-logo-bg
+		+posa
+		+tl()
+		bottom: 0
+		+w(100%)
+		z-index: -1
+		background-image: linear-gradient(-179deg, #06503C 0%, #1EC08E 50%, #A9F4A1 100%)
+		+animation(second,1s,linear,infinite)
+	.loading-logo
+		img
+			+posr
+			z-index: 2
+
+html,body
+	+wh(100%,100%)
+
+.wrap
+	+wh(100%,100%)
+	+posr
+.view-animate
+	+wh(100%,100%)
+	font-size: 0
+	+posa
+	+tl
+	+tran
+	//  view-animate ng-scope ng-animate ng-leave ng-leave-active
+	// view-animate ng-scope ng-animate ng-enter ng-enter-active
+	&.ng-leave
+		+animation(fadeOut)
+	&.ng-enter
+		+animation(fadeIn)
+.logo
+	+posa
+	+tl(10px,10px)
+	+small
+		+iw(215,640,100%)
+
+.soundCtrl
+	+posa
+	+tr(20px,20px)
+	+wh(70px,50px)
+	+b("../img/icon-sound-close.png")
+	&.on
+		+b("../img/icon-sound-open.png")
+	&.off
+		+b("../img/icon-sound-close.png")
+	+small
+		+iw(70,640,100%)
+		+tr(10px,10px)
+		background-size: contain
+		&.on,&.off
+			background-size: contain
+
+.ctrlBar
+	$boxSize: 2.5rem
+	+posa
+	+br(20px,20px)
+	+w(50px)
+	+small
+		+w($boxSize)
+	.menu
+		+posr
+		+wh(50px,50px)
+		+b("../img/icon-open.png",no-repeat,center,center)
+		z-index: 20
+		&.open
+			+b("../img/icon-close.png",no-repeat,center,center)
+		+small
+			+wh($boxSize,$boxSize)
+			background-size: contain
+			&.open
+				background-size: contain
+	.shop
+		+posr
+		z-index: 20
+		+tran
+		+show
+		+wh(50px,50px)
+		+b("../img/icon-tmall.png",no-repeat,center,center)
+		margin-bottom: 10px
+		// tmall ng-scope ng-animate ng-enter ng-enter-active
+		&.ng-enter
+			+animation(fadeInUp)
+		&.ng-leave
+			+animation(fadeOutDown)
+			+delay(0.2s)
+		+small
+			+wh($boxSize,$boxSize)
+			background-size: contain
+			&.open
+				background-size: contain
+	.web
+		+posr
+		z-index: 20
+		+tran
+		+show
+		+wh(50px,50px)
+		+b("../img/icon-web.png",no-repeat,center,center)
+		margin-bottom: 10px
+		&.ng-enter
+			+animation(fadeInUp)
+			+delay(0.2s)
+		&.ng-leave
+			+animation(fadeOutDown)
+		+small
+			+wh($boxSize,$boxSize)
+			background-size: contain
+			&.open
+				background-size: contain
+
+.pop
+	+tran
+	+posa
+	+tl
+	+wh(100%,100%)
+	background-color: rgba(0,0,0,0.84)
+	z-index: 99
+	+small
+		overflow: hidden
+	// pop ng-animate ng-hide-animate ng-hide-remove ng-hide-remove-active
+	// pop ng-animate ng-hide-animate ng-hide-add ng-hide ng-hide-add-active
+	&.ng-hide-remove
+		+animation(fadeIn)
+	&.ng-hide-add
+		+animation(fadeOut)
+	.frontcover
+		+posa
+		+tl(50%,50%)
+		+transform(translate3d(-50%,-50%,0))
+		z-index: 20
+		+animation(fadeIn)
+		+delay(0.5s)
+		+small
+			+iw(371,640,100%)
+			left: 40%
+		.close
+			+posa
+			+tr(20px,20px)
+			z-index: 101
+			+small
+				+tr(7%,7%)
+				+wh(1.5rem,1.5rem)
+		.pop-content
+			+posa
+			+tl(10%,10%)
+			+wh(80%,80%)
+			+text-center
+			z-index: 88
+			p
+				font-size: 1.4rem
+				color: #000
+				+small
+					font-size: 0.8rem
+			p.red
+				color: #a30735
+	.vinyl
+		+posa
+		+tl(0%,46%)
+		// +transform(translate3d(-50%,-50%,0))
+		// margin-left: -366px/2
+		// margin-top: -366px/2
+		+w(100%)
+		z-index: -1
+		+animation(rollIn,1s)
+		+delay(1s)
+		max-width: 366px
+		.vinyl-body
+			+animation(second,4s,linear,infinite)
+	.on
+		+animation(fadeIn)
+	
+.note-1
+	+animation(fadeInUp)
+	+delay(1s)
+	p
+		margin: 36px 0px
+		+small
+			margin: 1.1rem 0
+	.btn-shop
+		display: inline-block
+		+iw(200,371,100%)
+.note-share
+	h4
+		font-size: 1.4rem
+		margin-top: 4em
+		+small
+			font-size: 1rem
+			margin-top: 2em
+	.qr
+		+iw(200,371,100%)
+	.share-list
+		+small
+			a
+				display: inline-block
+				+iw(70,370,100%)
+				margin: 0 3%
+.wechatnote
+	+b("../img/wechat-note.png",no-repeat,top,right,contain)
+	background-color: rgba(0,0,0,0.8)
+	+posa
+	+tl
+	+wh(100%,100%)
+	z-index: 9991
+	+tran
+	// wechatnote ng-animate ng-hide-animate ng-hide-add ng-hide ng-hide-add-active
+	// wechatnote ng-animate ng-hide-animate ng-hide-remove ng-hide-remove-active
+	&.ng-hide-add
+		+animation(fadeOut)
+	&.ng-hide-remove
+		+animation(fadeIn)
+.share-list
+	+text-center
+	a
+		display: inline-block
+		margin: 0 3%
+
+.page
+	+posa
+	+tl
+	+wh(100%,100%)
+	&.homepage
+		+b("../img/pc-bg.jpg",no-repeat,center,center,cover)
+		+small
+			+b("../img/mobile-bg-1.jpg",no-repeat,center,center,cover)
+	&.question
+		+b("../img/question-bg.jpg",no-repeat,center,center,cover)
+		+small
+			+b("../img/mobile-bg-2.jpg",no-repeat,center,center,cover)
+
+.content
+	max-width: 640px
+	margin: 0 auto
+	+h(100%)
+	+posr
+	+large
+		.homepage &
+			+posa
+			+tr(0,5%)
+			min-width: 640px
+			.note
+				+tl(30%)
+	p
+		color: #fff
+		margin: 0 auto
+	.note
+		+posa
+		+bl(12%)
+		// +transform(translate3d(0,-50%,0))
+		+w(100%)
+		p
+			font-size: 2.4rem
+			margin-bottom: 16px
+			+text-center
+			+small
+				font-size: 1.2rem
+		.btn
+			margin: 0 auto
+			padding-top: 10px
+			+text-center
+			+small
+				+iw(255)
+
+
+.question-item
+	+tran
+	+posa
+	+tl(15%)
+	// question-item ng-scope ng-animate ng-hide-animate ng-hide-add ng-hide ng-hide-add-active
+	// question-item ng-scope ng-animate ng-enter ng-enter-active
+	&.ng-hide-add
+		+animation(fadeOutUp)
+	&.ng-enter
+		+animation(fadeInUp)
+	.box
+		+iw(350)
+		border: solid 4px #fff
+		margin-bottom: 20px
+		box-shadow: 1px 1px 3px #fff ,-1px -1px 3px #fff
+	.text
+		+iw(350)
+		margin-bottom: 20px
+		background-color: #fff
+		border: solid 4px #fff
+		padding: 1rem 0
+		+small
+			padding: 0.6rem 0
+		p
+			font-size: 1rem
+			color: #000
+			+w(90%)
+			margin: 0 auto
+			+small
+				font-size: 0.8rem
+	.btns
+		+text-center
+		.btn-wrong,.btn-right
+			display: inline-block
+			margin: 0 5%
+			+small
+				+iw(200)
+				margin: 0 5%
+
+.overplane
+	+tran
+	+posa
+	+tl(15%)
+	+w(100%)
+	+small
+		top: 22%
+	// overplane ng-animate ng-hide-animate ng-hide-remove ng-hide-remove-active
+	&.ng-hide-remove
+		+animation(tada)
+	.frontcover
+		+posr
+		left: 130px
+		z-index: 20
+		display: inline-block
+		+small
+			+w(70%)
+			left: 2%
+		.close
+			+posa
+			+tr(20px,20px)
+			z-index: 101
+		.pop-content
+			+posa
+			+tl(10%,10%)
+			+wh(80%,80%)
+			+text-center
+			z-index: 88
+			p
+				font-size: 1.4rem
+				color: #000
+				margin: 20px 0px
+				&.smallText
+					font-size: 1rem
+					+small
+						font-size: 0.6rem
+				+small
+					font-size: 0.8rem
+					margin: 0.6rem 0
+
+			p.red
+				color: #a30735
+				font-size: 1.2rem
+				+small
+					font-size: 0.6rem
+	.vinyl
+		+posa
+		+tl(0%,46%)
+		// +transform(translate3d(-50%,-50%,0))
+		// margin-left: -366px/2
+		// margin-top: -366px/2
+		+w(100%)
+		z-index: -1
+		+animation(rollIn,1s)
+		+delay(1s)
+		max-width: 366px
+		.vinyl-body
+			+animation(second,4s,linear,infinite)
+	.btns
+		+text-center
+		margin-top: 20px
+		.btn-requestion,.btn-over
+			display: inline-block
+			margin: 0 5%
+			+small
+				+iw(200,640,100%)
+				margin: 0 5%
+.box
+	@for $i from 1 through 50
+		&.item-#{$i}
+			+b("../list/#{$i}.jpg",no-repeat,center,center,cover)
+

@@ -1,0 +1,139 @@
+extends layout-ng
+
+block title
+	| 史上最经典摇滚唱片封面你认识多少？
+block css
+	link(rel="stylesheet",href="css/animate.css")
+	link(rel="stylesheet",href="css/base.css")
+	script.
+		function showLoad() {
+			 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
+		}
+	script.
+		var _hmt = _hmt || [];
+		(function() {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?268cbe36fa529db59361860643fc5b77";
+		var s = document.getElementsByTagName("script")[0]; 
+		s.parentNode.insertBefore(hm, s);
+		})();
+
+block content
+	div.wechat-share-hide
+		img(src="http://campaign.douban.com/files/campaign/vs_rockalbumcover/img/share.jpg")
+	div.wrap(ng-controller="MainController")
+		div.hideView
+		div.view-animate(ng-view)
+		div#loading.loading.loaded
+			div.loading-logo
+				.loading-normal
+					img(src="img/loading-normal.png")
+		.logo
+			img(src="img/logo.png")
+		sound-ctrl.soundCtrl(src="mp3/audio.mp3",loop="true",autoplay="true",preload="true",ng-class="soundclass")
+		.ctrlBar(ng-controller="MenuController as menu")
+			a.web(href="http://vs.com.cn",ng-if="menu.type")
+			a.shop(ng-href="{{shoplink}}",ng-if="menu.type")
+			.menu(ng-class="menu.type",ng-click="menu.menushow()")
+block ng-template
+	//- - url = ""
+	script(type="text/ng-template",id="home.html")
+		.page.homepage(ng-controller="HomeController as home")
+			.content
+				.note
+					p 《滚石》杂志曾评出史上
+					p 最经典100张摇滚唱片封面，
+					p 我们从中精选10张，
+					p 看看你都认识哪些？
+					.btn(ng-click="home.showpop()")
+						img(src="img/btn-enter.png")
+			.pop(ng-show="home.pop")
+				.frontcover
+					img(src="img/pop-content.png")
+					.close(ng-click="home.go()")
+						img(src="img/pop-close.png")
+					.pop-content.note-1
+						p 精选10张经典摇滚唱片
+						p.red 将依次弹出
+						p 请判断唱片封面
+						p.red 跟描述是否一致！
+						//- p 是否一致！
+					.vinyl
+						.vinyl-body
+							img(src="img/vinyl.png")
+	script(type="text/ng-template",id="question.html")
+		.page.question(ng-controller="QuestionController as questions")
+			.content
+				.question-item(ng-hide="ques.hide",ng-repeat="ques in questions.list")
+					.box(class="item-{{ques.img}}")
+						img(src="img/zw.png")
+					.text
+						p 唱片名《{{ques.author}}》
+						p 表演者 {{ques.name}}
+						p {{ques.year}}年发行
+					.btns
+						.btn-wrong(ng-click="questions.selectAnswer(false)")
+							img(src="img/btn-wrong.png")
+						.btn-right(ng-click="questions.selectAnswer(true)")
+							img(src="img/btn-right.png")
+				.overplane(ng-show="questions.over")
+					.frontcover
+						img(src="img/pop-content.png")
+						.pop-content.note-1
+							p 10张经典唱片中
+							p {{questions.Textline1}}
+							p {{questions.Textline2}}
+							p(ng-class="questions.Textline3Class") {{questions.Textline3}}
+							p.red {{questions.Textline4}}>>
+							a.btn-shop(ng-href="{{shoplink}}")
+								img(src="img/btn-shop.png")
+						.vinyl
+							.vinyl-body
+								img(src="img/vinyl.png")
+					.btns
+						.btn-requestion(ng-click="questions.re()")
+							img(src="img/btn-requestion.png")
+						.btn-over(ng-click="questions.showpop()")
+							img(src="img/btn-over.png")
+			.pop(ng-show="questions.pop")
+				.frontcover
+					img(src="img/pop-content.png")
+					.close(ng-click="questions.close()")
+						img(src="img/pop-close.png")
+					.pop-content.note-share(ng-show="questions.shares")
+						h4 分享至
+						.share-list
+							a.wechat(href="javascript:void(0)",ng-click="questions.showWechat()")
+								img(src="img/icon-wechat.png")
+							a.douban(data-share="douban",href="",target="_blank")
+								img(src="img/icon-douban.png")
+							a.weibo(data-share="weibo",href="",target="_blank")
+								img(src="img/icon-weibo.png")
+							a.qzone(data-share="qzone",href="",target="_blank")
+								img(src="img/icon-qzone.png")
+					.pop-content.note-share(ng-hide="questions.shares")
+						p 扫一扫二维码
+						p 分享给微信好友
+						.qr
+							img(src="img/qr.png")
+					.vinyl
+						.vinyl-body
+							img(src="img/vinyl.png")
+			.wechatnote(ng-show="questions.wechatnote",ng-click="questions.hideWechatnote()")
+
+
+
+
+block js
+	- var debug = ".min"
+	//- - debug = ""
+	script(src="js/Zepto.min.js",type="text/javascript")
+	script(src="js/angular.min.js",type="text/javascript")
+	script(src="js/angular-route.min.js",type="text/javascript")
+	script(src="js/angular-touch.min.js",type="text/javascript")
+	script(src="js/angular-animate.min.js",type="text/javascript")
+	script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js",type="text/javascript")
+	//- script(src="/libs/js/megapix-image.js",type="text/javascript")
+	//- script(src="/libs/js/exif.js",type="text/javascript")
+	//- script(src="/libs/js/min/preloadjs-0.4.1.min.js",type="text/javascript")
+	script(src="js/base.js",type="text/javascript")

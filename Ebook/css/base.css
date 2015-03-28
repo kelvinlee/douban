@@ -169,7 +169,6 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -276,8 +275,7 @@ input {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */ }
@@ -299,7 +297,6 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -355,6 +352,12 @@ table {
 td,
 th {
   padding: 0; }
+
+* {
+  -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  font-family: Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self; }
 
 .clearfix:after {
   content: ".";
@@ -456,7 +459,10 @@ img {
 @-webkit-keyframes standup {
   0% {
     -webkit-transform: rotateX(90deg);
-            transform: rotateX(90deg); }
+            transform: rotateX(90deg);
+    opacity: 0; }
+  5% {
+    opacity: 1; }
   70% {
     -webkit-transform: rotateX(-30deg);
             transform: rotateX(-30deg); }
@@ -465,11 +471,15 @@ img {
             transform: rotateX(30deg); }
   100% {
     -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg); } }
+            transform: rotateX(0deg);
+    opacity: 1; } }
 @keyframes standup {
   0% {
     -webkit-transform: rotateX(90deg);
-            transform: rotateX(90deg); }
+            transform: rotateX(90deg);
+    opacity: 0; }
+  5% {
+    opacity: 1; }
   70% {
     -webkit-transform: rotateX(-30deg);
             transform: rotateX(-30deg); }
@@ -478,7 +488,8 @@ img {
             transform: rotateX(30deg); }
   100% {
     -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg); } }
+            transform: rotateX(0deg);
+    opacity: 1; } }
 @-webkit-keyframes rotate360 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -524,91 +535,149 @@ img {
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0) scale(0.5, 0.5);
             transform: translate3d(0, 100%, 0) scale(0.5, 0.5); }
-  100% {
+  16% {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
-            transform: translate3d(0, 0, 0) scale(1, 1); } }
+            transform: translate3d(0, 0, 0) scale(1, 1); }
+  80% {
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1); }
+  100% {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0); } }
 @keyframes page7point1 {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0) scale(0.5, 0.5);
             transform: translate3d(0, 100%, 0) scale(0.5, 0.5); }
-  100% {
+  16% {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
-            transform: translate3d(0, 0, 0) scale(1, 1); } }
+            transform: translate3d(0, 0, 0) scale(1, 1); }
+  80% {
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1); }
+  100% {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0); } }
 @-webkit-keyframes page7point2 {
-  0% {
+  0%,16% {
     opacity: 0;
     -webkit-transform: translate3d(-100%, 60%, 0) scale(0.5, 0.5);
             transform: translate3d(-100%, 60%, 0) scale(0.5, 0.5); }
-  100% {
+  32% {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
-            transform: translate3d(0, 0, 0) scale(1, 1); } }
+            transform: translate3d(0, 0, 0) scale(1, 1); }
+  80% {
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1); }
+  100% {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0); } }
 @keyframes page7point2 {
-  0% {
+  0%,16% {
     opacity: 0;
     -webkit-transform: translate3d(-100%, 60%, 0) scale(0.5, 0.5);
             transform: translate3d(-100%, 60%, 0) scale(0.5, 0.5); }
-  100% {
+  32% {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
-            transform: translate3d(0, 0, 0) scale(1, 1); } }
+            transform: translate3d(0, 0, 0) scale(1, 1); }
+  80% {
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1); }
+  100% {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0); } }
 @-webkit-keyframes page7point3 {
-  0% {
+  0%,32% {
     opacity: 0;
     -webkit-transform: translate3d(-60%, -60%, 0) scale(0.5, 0.5);
             transform: translate3d(-60%, -60%, 0) scale(0.5, 0.5); }
-  100% {
+  48% {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
-            transform: translate3d(0, 0, 0) scale(1, 1); } }
+            transform: translate3d(0, 0, 0) scale(1, 1); }
+  80% {
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1); }
+  100% {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0); } }
 @keyframes page7point3 {
-  0% {
+  0%,32% {
     opacity: 0;
     -webkit-transform: translate3d(-60%, -60%, 0) scale(0.5, 0.5);
             transform: translate3d(-60%, -60%, 0) scale(0.5, 0.5); }
-  100% {
+  48% {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
-            transform: translate3d(0, 0, 0) scale(1, 1); } }
+            transform: translate3d(0, 0, 0) scale(1, 1); }
+  80% {
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1); }
+  100% {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0); } }
 @-webkit-keyframes page7point4 {
-  0% {
+  0%,48% {
     opacity: 0;
     -webkit-transform: translate3d(60%, -60%, 0) scale(0.5, 0.5);
             transform: translate3d(60%, -60%, 0) scale(0.5, 0.5); }
-  100% {
+  64% {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
-            transform: translate3d(0, 0, 0) scale(1, 1); } }
+            transform: translate3d(0, 0, 0) scale(1, 1); }
+  80% {
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1); }
+  100% {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0); } }
 @keyframes page7point4 {
-  0% {
+  0%,48% {
     opacity: 0;
     -webkit-transform: translate3d(60%, -60%, 0) scale(0.5, 0.5);
             transform: translate3d(60%, -60%, 0) scale(0.5, 0.5); }
-  100% {
+  64% {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
-            transform: translate3d(0, 0, 0) scale(1, 1); } }
+            transform: translate3d(0, 0, 0) scale(1, 1); }
+  80% {
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1); }
+  100% {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0); } }
 @-webkit-keyframes page7point5 {
-  0% {
+  0%,64% {
     opacity: 0;
     -webkit-transform: translate3d(100%, 40%, 0) scale(0.5, 0.5);
             transform: translate3d(100%, 40%, 0) scale(0.5, 0.5); }
-  100% {
+  80% {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
-            transform: translate3d(0, 0, 0) scale(1, 1); } }
+            transform: translate3d(0, 0, 0) scale(1, 1);
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1); }
+  100% {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0); } }
 @keyframes page7point5 {
-  0% {
+  0%,64% {
     opacity: 0;
     -webkit-transform: translate3d(100%, 40%, 0) scale(0.5, 0.5);
             transform: translate3d(100%, 40%, 0) scale(0.5, 0.5); }
-  100% {
+  80% {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
-            transform: translate3d(0, 0, 0) scale(1, 1); } }
+            transform: translate3d(0, 0, 0) scale(1, 1);
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1); }
+  100% {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0); } }
 @-webkit-keyframes screen {
   0% {
     -webkit-transform: translate3d(0, 100%, 0);
@@ -961,6 +1030,78 @@ img {
   100% {
     -webkit-transform: scale(0, 1);
             transform: scale(0, 1); } }
+@-webkit-keyframes bigtosmall {
+  0% {
+    -webkit-transform: scale(1.25, 1.25);
+            transform: scale(1.25, 1.25);
+    opacity: 0; }
+  5% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0.75, 0.75);
+            transform: scale(0.75, 0.75); } }
+@keyframes bigtosmall {
+  0% {
+    -webkit-transform: scale(1.25, 1.25);
+            transform: scale(1.25, 1.25);
+    opacity: 0; }
+  5% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0.75, 0.75);
+            transform: scale(0.75, 0.75); } }
+@-webkit-keyframes smalltobig {
+  0% {
+    -webkit-transform: scale(0.75, 0.75);
+            transform: scale(0.75, 0.75);
+    opacity: 0; }
+  5% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1.25, 1.25);
+            transform: scale(1.25, 1.25); } }
+@keyframes smalltobig {
+  0% {
+    -webkit-transform: scale(0.75, 0.75);
+            transform: scale(0.75, 0.75);
+    opacity: 0; }
+  5% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1.25, 1.25);
+            transform: scale(1.25, 1.25); } }
+@-webkit-keyframes downWallet {
+  0% {
+    -webkit-transform: translate3d(0, -2000px, 0) scale(1, 1);
+            transform: translate3d(0, -2000px, 0) scale(1, 1); }
+  60% {
+    -webkit-transform: translate3d(0, 0, 0) scale(0.9, 1.1);
+            transform: translate3d(0, 0, 0) scale(0.9, 1.1); }
+  75% {
+    -webkit-transform: translate3d(0, 0, 0) scale(0.9, 1.1);
+            transform: translate3d(0, 0, 0) scale(0.9, 1.1); }
+  90% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.1, 0.9);
+            transform: translate3d(0, 0, 0) scale(1.1, 0.9); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
+            transform: translate3d(0, 0, 0) scale(1, 1); } }
+@keyframes downWallet {
+  0% {
+    -webkit-transform: translate3d(0, -2000px, 0) scale(1, 1);
+            transform: translate3d(0, -2000px, 0) scale(1, 1); }
+  60% {
+    -webkit-transform: translate3d(0, 0, 0) scale(0.9, 1.1);
+            transform: translate3d(0, 0, 0) scale(0.9, 1.1); }
+  75% {
+    -webkit-transform: translate3d(0, 0, 0) scale(0.9, 1.1);
+            transform: translate3d(0, 0, 0) scale(0.9, 1.1); }
+  90% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.1, 0.9);
+            transform: translate3d(0, 0, 0) scale(1.1, 0.9); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
+            transform: translate3d(0, 0, 0) scale(1, 1); } }
 /* custom */
 .loading {
   position: fixed;
@@ -1199,174 +1340,99 @@ section {
               transform-origin: bottom center; }
       .iphone4 section[data-id="2"] .text {
         width: 55.625%; }
+    section[data-id="2"] .textbox {
+      width: 68.90625%;
+      margin: 0 auto;
+      position: relative; }
+      .iphone4 section[data-id="2"] .textbox {
+        width: 55.125%; }
+      section[data-id="2"] .textbox .text2 {
+        width: 100%;
+        -webkit-transform-origin: 15% center;
+            -ms-transform-origin: 15% center;
+                transform-origin: 15% center; }
+      section[data-id="2"] .textbox .text3, section[data-id="2"] .textbox .text4, section[data-id="2"] .textbox .text5 {
+        position: absolute;
+        top: 0px;
+        left: 0px; }
+      section[data-id="2"] .textbox .text4 {
+        -webkit-transform-origin: 65% center;
+            -ms-transform-origin: 65% center;
+                transform-origin: 65% center; }
     section[data-id="2"] .box-list {
-      width: 78.125%;
-      position: absolute;
-      bottom: 15%;
-      left: 10.9375%; }
+      width: 90.625%;
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 5%; }
       .iphone4 section[data-id="2"] .box-list {
-        width: 62.5%;
+        width: 72.5%;
         bottom: 12%;
-        left: 18.75%; }
+        left: 13.75%; }
       section[data-id="2"] .box-list.boxlist {
         -webkit-transition: all 0.5s ease;
                 transition: all 0.5s ease;
         -webkit-transition-delay: 400ms;
                 transition-delay: 400ms; }
       section[data-id="2"] .box-list .point {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 22%;
-        -webkit-transform: translate3d(-50%, -50%, 0);
-                transform: translate3d(-50%, -50%, 0); }
+        width: 26%;
+        padding: 0 2%;
+        display: inline-block;
+        vertical-align: top; }
+        section[data-id="2"] .box-list .point .pmo {
+          -webkit-transform-origin: bottom center;
+              -ms-transform-origin: bottom center;
+                  transform-origin: bottom center; }
         section[data-id="2"] .box-list .point .pro {
-          position: absolute;
           width: 100%; }
-        section[data-id="2"] .box-list .point.point1 {
-          top: 50%;
-          left: 49.5%; }
-          section[data-id="2"] .box-list .point.point1 .pro {
-            top: 60%;
-            left: -120%; }
-        section[data-id="2"] .box-list .point.point2 {
-          top: 36%;
-          left: 16%; }
-          section[data-id="2"] .box-list .point.point2 .pro {
-            top: -110%;
-            left: -2%; }
-        section[data-id="2"] .box-list .point.point3 {
-          top: 14.5%;
-          left: 49.5%; }
-          section[data-id="2"] .box-list .point.point3 .pro {
-            top: -110%;
-            left: -2%; }
-            .iphone4 section[data-id="2"] .box-list .point.point3 .pro {
-              top: -84%; }
-        section[data-id="2"] .box-list .point.point4 {
-          top: 36%;
-          left: 83%; }
-          section[data-id="2"] .box-list .point.point4 .pro {
-            top: -110%;
-            left: -2%; }
-        section[data-id="2"] .box-list .point.point5 {
-          top: 85%;
-          left: 49.5%; }
-          section[data-id="2"] .box-list .point.point5 .pro {
-            top: 100%;
-            left: -2%; }
-        section[data-id="2"] .box-list .point.point6 {
-          top: 84%;
-          left: 13%; }
-          section[data-id="2"] .box-list .point.point6 .pro {
-            top: 100%;
-            left: -2%; }
-        section[data-id="2"] .box-list .point.point7 {
-          top: 84%;
-          left: 86%; }
-          section[data-id="2"] .box-list .point.point7 .pro {
-            top: 100%;
-            left: -2%; }
+        section[data-id="2"] .box-list .point.point1, section[data-id="2"] .box-list .point.point3, section[data-id="2"] .box-list .point.point4, section[data-id="2"] .box-list .point.point6 {
+          padding-top: 15%; }
+        section[data-id="2"] .box-list .point.point4, section[data-id="2"] .box-list .point.point5, section[data-id="2"] .box-list .point.point6 {
+          margin-top: -15%; }
   section[data-id="3"] {
     background-image: url(../img/bg2.jpg); }
-    section[data-id="3"] .title {
-      width: 75.3125%;
-      margin: 0 auto;
-      margin-top: 8%; }
-      .iphone4 section[data-id="3"] .title {
-        width: 60.25%; }
-    section[data-id="3"] .president {
-      width: 41.40625%;
-      border: solid 1px #ba0100;
-      margin: 0 auto;
-      padding: 2%;
-      margin-top: 3%; }
-      .iphone4 section[data-id="3"] .president {
-        width: 33.125%; }
-      section[data-id="3"] .president .pcontent {
-        position: relative;
-        overflow: hidden; }
-        section[data-id="3"] .president .pcontent .president-bg {
-          position: absolute;
-          top: -50%;
-          left: -100%;
-          width: 300%;
-          z-index: -1;
-          -webkit-animation: rotate360 10s linear;
-                  animation: rotate360 10s linear;
-          -webkit-animation-fill-mode: both;
-                  animation-fill-mode: both;
-          -webkit-animation-iteration-count: infinite;
-                  animation-iteration-count: infinite;
-          font-size: 0;
-          -webkit-transform-origin: center center;
-              -ms-transform-origin: center center;
-                  transform-origin: center center; }
-          section[data-id="3"] .president .pcontent .president-bg img {
-            max-width: none;
-            width: 100%; }
-    section[data-id="3"] .star {
-      margin: 0 auto;
-      width: 5.9375%;
-      margin-top: 3%; }
-      .iphone4 section[data-id="3"] .star {
-        width: 4.75%;
-        margin-top: 2%; }
-    section[data-id="3"] .text1 {
-      margin: 0 auto;
-      width: 71.25%;
-      margin-top: 10%; }
-      .iphone4 section[data-id="3"] .text1 {
-        width: 57%;
-        margin-top: 3%; }
-    section[data-id="3"] .text2 {
-      margin: 0 auto;
-      width: 62.8125%; }
-      .iphone4 section[data-id="3"] .text2 {
-        width: 50.25%; }
-    section[data-id="3"] .text3 {
-      margin: 0 auto;
-      width: 81.5625%; }
-      .iphone4 section[data-id="3"] .text3 {
-        width: 65.25%; }
-  section[data-id="4"] {
-    background-image: url(../img/bg2.jpg); }
-    section[data-id="4"] .box {
+    section[data-id="3"] .box {
       width: 82.5%;
       margin: 0 auto;
       background-image: url(../img/page-4-box.png);
       background-size: 100% 100%;
       padding: 5% 0%;
       margin-top: 8%; }
-      .iphone4 section[data-id="4"] .box {
+      .iphone4 section[data-id="3"] .box {
         width: 66%; }
-      section[data-id="4"] .box .text1 {
+      section[data-id="3"] .box .text1 {
         width: 77.0833333333%;
         margin: 0 auto; }
-      section[data-id="4"] .box .text2 {
+      section[data-id="3"] .box .text2 {
         width: 77.0833333333%;
         margin: 0 auto; }
-      section[data-id="4"] .box .text3 {
+      section[data-id="3"] .box .text3 {
         width: 76.8939393939%;
         margin: 0 auto; }
-      section[data-id="4"] .box .text4 {
-        width: 63.0681818182%;
-        margin: 0 auto; }
-      section[data-id="4"] .box .text5 {
+      section[data-id="3"] .box .text4 {
+        width: 77.6515151515%;
+        margin: 0 auto;
+        position: relative; }
+        section[data-id="3"] .box .text4 .wmd {
+          position: absolute;
+          top: 0;
+          -webkit-transform-origin: bottom center;
+              -ms-transform-origin: bottom center;
+                  transform-origin: bottom center; }
+      section[data-id="3"] .box .text5 {
         width: 77.2727272727%;
         margin: 0 auto; }
-    section[data-id="4"] .lang {
+    section[data-id="3"] .lang {
       width: 100%;
       position: absolute;
       bottom: 1.6%;
       z-index: -1; }
-      section[data-id="4"] .lang .langcontent {
+      section[data-id="3"] .lang .langcontent {
         width: 92.1875%;
         margin: 0 auto;
         position: relative; }
-        section[data-id="4"] .lang .langcontent .bg {
+        section[data-id="3"] .lang .langcontent .bg {
           width: 100%; }
-        section[data-id="4"] .lang .langcontent .lang {
+        section[data-id="3"] .lang .langcontent .lang {
           position: absolute;
           top: 0px;
           left: 0px;
@@ -1380,7 +1446,7 @@ section {
           -webkit-transform-origin: left center;
               -ms-transform-origin: left center;
                   transform-origin: left center; }
-        section[data-id="4"] .lang .langcontent .coin {
+        section[data-id="3"] .lang .langcontent .coin {
           position: absolute;
           top: 0px;
           left: 0px;
@@ -1394,17 +1460,17 @@ section {
           -webkit-transform-origin: center center;
               -ms-transform-origin: center center;
                   transform-origin: center center; }
-  section[data-id="5"] {
+  section[data-id="4"] {
     background-image: url(../img/bg2.jpg); }
-    section[data-id="5"] .title {
+    section[data-id="4"] .title {
       width: 88.4375%;
       position: relative;
       margin: 0 auto;
       margin-top: 5%;
       overflow: hidden; }
-      .iphone4 section[data-id="5"] .title {
+      .iphone4 section[data-id="4"] .title {
         width: 70.75%; }
-      section[data-id="5"] .title .flash {
+      section[data-id="4"] .title .flash {
         position: absolute;
         top: 0px;
         left: 0px;
@@ -1423,254 +1489,221 @@ section {
         -webkit-transform-origin: bottom center;
             -ms-transform-origin: bottom center;
                 transform-origin: bottom center; }
-    section[data-id="5"] .btns {
+    section[data-id="4"] .btns {
       width: 66.875%;
       margin: 0 auto;
       margin-top: 5%; }
-      .iphone4 section[data-id="5"] .btns {
+      .iphone4 section[data-id="4"] .btns {
         width: 53.5%;
         margin-top: 0%; }
-  section[data-id="6"] .title {
-    width: 89.53125%;
-    position: relative;
-    margin: 0 auto;
-    margin-top: 5%;
-    overflow: hidden; }
-    section[data-id="6"] .title img {
-      position: relative;
-      z-index: 2; }
-    .iphone4 section[data-id="6"] .title {
-      width: 62.671875%; }
-    section[data-id="6"] .title .flash {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      bottom: 30%;
-      width: 100%;
-      border-radius: 50%;
-      background: #fff;
-      opacity: 0;
-      -webkit-animation: flash 0.8s ease;
-              animation: flash 0.8s ease;
-      -webkit-animation-fill-mode: both;
-              animation-fill-mode: both;
-      -webkit-animation-iteration-count: infinite;
-              animation-iteration-count: infinite;
-      z-index: 1;
-      -webkit-transform-origin: bottom center;
-          -ms-transform-origin: bottom center;
-              transform-origin: bottom center; }
-  section[data-id="6"] .text1 {
-    width: 43.75%;
-    margin: 0 auto; }
-    .iphone4 section[data-id="6"] .text1 {
-      width: 30.625%; }
-  section[data-id="6"] .text2 {
-    width: 53.125%;
-    margin: 0 auto; }
-    .iphone4 section[data-id="6"] .text2 {
-      width: 37.1875%; }
-  section[data-id="7"] .title {
+  section[data-id="5"] .title {
     width: 69.84375%;
     position: relative;
     margin: 0 auto;
     margin-top: 5%; }
-    .iphone4 section[data-id="7"] .title {
+    .iphone4 section[data-id="5"] .title {
       width: 55.875%;
       margin-top: 5%; }
-  section[data-id="7"] .box {
+  section[data-id="5"] .box {
     width: 71.875%;
     margin: 0 auto;
     position: relative;
     margin-top: 5%; }
-    .iphone4 section[data-id="7"] .box {
+    .iphone4 section[data-id="5"] .box {
       width: 57.5%;
       margin-top: 5%; }
-    .iphone4 section[data-id="7"] .box.fireon {
+    .iphone4 section[data-id="5"] .box.fireon {
       width: 43.125%; }
-    section[data-id="7"] .box .point {
+    section[data-id="5"] .box .point-fire {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 40%;
+      -webkit-transform: translate3d(-50%, -50%, 0);
+              transform: translate3d(-50%, -50%, 0); }
+    section[data-id="5"] .box .point {
       position: absolute;
       width: 32.6086956522%;
       margin-left: -16%;
       -webkit-transition: all 0.5s ease;
               transition: all 0.5s ease; }
-      section[data-id="7"] .box .point .arrow {
+      section[data-id="5"] .box .point .arrow {
         position: absolute;
         width: 50%; }
-      section[data-id="7"] .box .point.point1 {
+      section[data-id="5"] .box .point.point1 {
         top: 0;
         left: 50%; }
-        section[data-id="7"] .box .point.point1 .arrow {
+        section[data-id="5"] .box .point.point1 .arrow {
           top: 25%;
           left: 97%; }
-      section[data-id="7"] .box .point.point2 {
+      section[data-id="5"] .box .point.point2 {
         top: 20%;
         left: 89%; }
-        section[data-id="7"] .box .point.point2 .arrow {
+        section[data-id="5"] .box .point.point2 .arrow {
           top: 85%;
           left: 25%;
           -webkit-transform: rotate(70deg);
               -ms-transform: rotate(70deg);
                   transform: rotate(70deg); }
-      section[data-id="7"] .box .point.point3 {
+      section[data-id="5"] .box .point.point3 {
         top: 64%;
         left: 79%; }
-        section[data-id="7"] .box .point.point3 .arrow {
+        section[data-id="5"] .box .point.point3 .arrow {
           top: 30%;
           left: -58%;
           -webkit-transform: rotate(140deg);
               -ms-transform: rotate(140deg);
                   transform: rotate(140deg); }
-      section[data-id="7"] .box .point.point4 {
+      section[data-id="5"] .box .point.point4 {
         top: 64%;
         left: 23%; }
-        section[data-id="7"] .box .point.point4 .arrow {
+        section[data-id="5"] .box .point.point4 .arrow {
           top: -35%;
           left: -5%;
           -webkit-transform: rotate(-130deg);
               -ms-transform: rotate(-130deg);
                   transform: rotate(-130deg); }
-      section[data-id="7"] .box .point.point5 {
+      section[data-id="5"] .box .point.point5 {
         top: 20%;
         left: 11%; }
-        section[data-id="7"] .box .point.point5 .arrow {
+        section[data-id="5"] .box .point.point5 .arrow {
           top: -30%;
           left: 72%;
           -webkit-transform: rotate(-70deg);
               -ms-transform: rotate(-70deg);
                   transform: rotate(-70deg); }
-  section[data-id="7"] .note {
+  section[data-id="5"] .note {
     font-size: 0.8rem;
     text-align: center; }
-  section[data-id="8"] .title {
-    width: 81.25%;
-    position: relative;
-    margin: 0 auto;
-    margin-top: 5%; }
-    .iphone4 section[data-id="8"] .title {
-      width: 65%; }
-  section[data-id="8"] .box {
-    width: 69.53125%;
-    margin: 0 auto; }
-    .iphone4 section[data-id="8"] .box {
-      width: 55.625%; }
-  section[data-id="9"] .title {
+  section[data-id="6"] .title {
     width: 71.875%;
     margin: 0 auto;
     position: relative;
     margin-top: 5%; }
-    .iphone4 section[data-id="9"] .title {
+    .iphone4 section[data-id="6"] .title {
       width: 57.5%; }
-    .iphone4 section[data-id="9"] .title {
+    .iphone4 section[data-id="6"] .title {
       font-size: 0;
       margin-top: 3%; }
-  section[data-id="9"] .tabs.on1 .point1 .star {
+  section[data-id="6"] .tabs.on1 .point1 .star {
     opacity: 1; }
-  section[data-id="9"] .tabs.on1 .point1 .note {
+  section[data-id="6"] .tabs.on1 .point1 .note {
     opacity: 1; }
-  section[data-id="9"] .tabs.on1 .icons .icon1:before {
+  section[data-id="6"] .tabs.on1 .icons .icon1:before {
     opacity: 1; }
-  section[data-id="9"] .tabs.on1 .icons .icon1 .ico {
+  section[data-id="6"] .tabs.on1 .icons .icon1 .ico {
     width: 80%;
     border: solid 2px #f9ead9;
     background: #00b5f0; }
-    section[data-id="9"] .tabs.on1 .icons .icon1 .ico img {
+    section[data-id="6"] .tabs.on1 .icons .icon1 .ico img {
       -webkit-filter: grayscale(0);
               filter: grayscale(0); }
-  section[data-id="9"] .tabs.on1 .icons .icon1 .name {
-    font-size: 0.6rem;
+  section[data-id="6"] .tabs.on1 .icons .icon1 .name {
+    font-size: 0.8rem;
     color: #fff; }
-  section[data-id="9"] .tabs.on1 .papers .paper1 {
+  section[data-id="6"] .tabs.on1 .papers .paper1 {
     display: block; }
-  section[data-id="9"] .tabs.on2 .point2 .star {
+  section[data-id="6"] .tabs.on2 .point2 .star {
     opacity: 1; }
-  section[data-id="9"] .tabs.on2 .point2 .note {
+  section[data-id="6"] .tabs.on2 .point2 .note {
     opacity: 1; }
-  section[data-id="9"] .tabs.on2 .icons .icon2:before {
+  section[data-id="6"] .tabs.on2 .icons .icon2:before {
     opacity: 1; }
-  section[data-id="9"] .tabs.on2 .icons .icon2 .ico {
+  section[data-id="6"] .tabs.on2 .icons .icon2 .ico {
     width: 80%;
     border: solid 2px #f9ead9;
     background: #00b5f0; }
-    section[data-id="9"] .tabs.on2 .icons .icon2 .ico img {
+    section[data-id="6"] .tabs.on2 .icons .icon2 .ico img {
       -webkit-filter: grayscale(0);
               filter: grayscale(0); }
-  section[data-id="9"] .tabs.on2 .icons .icon2 .name {
-    font-size: 0.6rem;
+  section[data-id="6"] .tabs.on2 .icons .icon2 .name {
+    font-size: 0.8rem;
     color: #fff; }
-  section[data-id="9"] .tabs.on2 .papers .paper2 {
+  section[data-id="6"] .tabs.on2 .papers .paper2 {
     display: block; }
-  section[data-id="9"] .tabs.on3 .point3 .star {
+  section[data-id="6"] .tabs.on3 .point3 .star {
     opacity: 1; }
-  section[data-id="9"] .tabs.on3 .point3 .note {
+  section[data-id="6"] .tabs.on3 .point3 .note {
     opacity: 1; }
-  section[data-id="9"] .tabs.on3 .icons .icon3:before {
+  section[data-id="6"] .tabs.on3 .icons .icon3:before {
     opacity: 1; }
-  section[data-id="9"] .tabs.on3 .icons .icon3 .ico {
+  section[data-id="6"] .tabs.on3 .icons .icon3 .ico {
     width: 80%;
     border: solid 2px #f9ead9;
     background: #00b5f0; }
-    section[data-id="9"] .tabs.on3 .icons .icon3 .ico img {
+    section[data-id="6"] .tabs.on3 .icons .icon3 .ico img {
       -webkit-filter: grayscale(0);
               filter: grayscale(0); }
-  section[data-id="9"] .tabs.on3 .icons .icon3 .name {
-    font-size: 0.6rem;
+  section[data-id="6"] .tabs.on3 .icons .icon3 .name {
+    font-size: 0.8rem;
     color: #fff; }
-  section[data-id="9"] .tabs.on3 .papers .paper3 {
+  section[data-id="6"] .tabs.on3 .papers .paper3 {
     display: block; }
-  section[data-id="9"] .tabs.on4 .point4 .star {
+  section[data-id="6"] .tabs.on4 .point4 .star {
     opacity: 1; }
-  section[data-id="9"] .tabs.on4 .point4 .note {
+  section[data-id="6"] .tabs.on4 .point4 .note {
     opacity: 1; }
-  section[data-id="9"] .tabs.on4 .icons .icon4:before {
+  section[data-id="6"] .tabs.on4 .icons .icon4:before {
     opacity: 1; }
-  section[data-id="9"] .tabs.on4 .icons .icon4 .ico {
+  section[data-id="6"] .tabs.on4 .icons .icon4 .ico {
     width: 80%;
     border: solid 2px #f9ead9;
     background: #00b5f0; }
-    section[data-id="9"] .tabs.on4 .icons .icon4 .ico img {
+    section[data-id="6"] .tabs.on4 .icons .icon4 .ico img {
       -webkit-filter: grayscale(0);
               filter: grayscale(0); }
-  section[data-id="9"] .tabs.on4 .icons .icon4 .name {
-    font-size: 0.6rem;
+  section[data-id="6"] .tabs.on4 .icons .icon4 .name {
+    font-size: 0.8rem;
     color: #fff; }
-  section[data-id="9"] .tabs.on4 .papers .paper4 {
+  section[data-id="6"] .tabs.on4 .papers .paper4 {
     display: block; }
-  section[data-id="9"] .tabs.on5 .point5 .star {
+  section[data-id="6"] .tabs.on5 .point5 .star {
     opacity: 1; }
-  section[data-id="9"] .tabs.on5 .point5 .note {
+  section[data-id="6"] .tabs.on5 .point5 .note {
     opacity: 1; }
-  section[data-id="9"] .tabs.on5 .icons .icon5:before {
+  section[data-id="6"] .tabs.on5 .icons .icon5:before {
     opacity: 1; }
-  section[data-id="9"] .tabs.on5 .icons .icon5 .ico {
+  section[data-id="6"] .tabs.on5 .icons .icon5 .ico {
     width: 80%;
     border: solid 2px #f9ead9;
     background: #00b5f0; }
-    section[data-id="9"] .tabs.on5 .icons .icon5 .ico img {
+    section[data-id="6"] .tabs.on5 .icons .icon5 .ico img {
       -webkit-filter: grayscale(0);
               filter: grayscale(0); }
-  section[data-id="9"] .tabs.on5 .icons .icon5 .name {
-    font-size: 0.6rem;
+  section[data-id="6"] .tabs.on5 .icons .icon5 .name {
+    font-size: 0.8rem;
     color: #fff; }
-  section[data-id="9"] .tabs.on5 .papers .paper5 {
+  section[data-id="6"] .tabs.on5 .papers .paper5 {
     display: block; }
-  section[data-id="9"] .progress-line {
+  section[data-id="6"] .progress-line {
     width: 82.8125%;
     margin: 0 auto;
     height: 6px;
     border-radius: 6px;
     background: #000;
     white-space: nowrap;
-    margin-top: 12%; }
-    .iphone4 section[data-id="9"] .progress-line {
+    margin-top: 12%;
+    position: relative; }
+    .iphone4 section[data-id="6"] .progress-line {
       width: 66.25%; }
-    .iphone4 section[data-id="9"] .progress-line {
+    section[data-id="6"] .progress-line:after {
+      content: " ";
+      position: absolute;
+      top: 50%;
+      right: -0.5rem;
+      width: 1rem;
+      height: 1rem;
+      -webkit-transform: translate3d(0, -50%, 0);
+              transform: translate3d(0, -50%, 0);
+      background: url(../img/page-9-arrow.png) no-repeat top center;
+      background-size: cover; }
+    .iphone4 section[data-id="6"] .progress-line {
       margin-top: 7%; }
-    section[data-id="9"] .progress-line .point-box {
+    section[data-id="6"] .progress-line .point-box {
       width: 19%;
       text-align: center;
       display: inline-block; }
-    section[data-id="9"] .progress-line .point {
+    section[data-id="6"] .progress-line .point {
       display: inline-block;
       width: 10px;
       height: 10px;
@@ -1679,7 +1712,7 @@ section {
       background: #ef5344;
       border: solid 2px #f9ead9;
       top: -6px; }
-      section[data-id="9"] .progress-line .point .star {
+      section[data-id="6"] .progress-line .point .star {
         -webkit-transition: all 0.5s ease;
                 transition: all 0.5s ease;
         opacity: 0;
@@ -1687,7 +1720,7 @@ section {
         top: -6px;
         left: 0px;
         width: 100%; }
-      section[data-id="9"] .progress-line .point .note {
+      section[data-id="6"] .progress-line .point .note {
         -webkit-transition: all 0.5s ease;
                 transition: all 0.5s ease;
         opacity: 0;
@@ -1697,24 +1730,24 @@ section {
         width: 60px;
         -webkit-transform: translate3d(-43%, 0, 0);
                 transform: translate3d(-43%, 0, 0); }
-  section[data-id="9"] .progress-box {
+  section[data-id="6"] .progress-box {
     width: 82.8125%;
     margin: 0 auto;
     border-radius: 10px;
     background: #ef5344;
     margin-top: 10%; }
-    .iphone4 section[data-id="9"] .progress-box {
+    .iphone4 section[data-id="6"] .progress-box {
       width: 66.25%; }
-    section[data-id="9"] .progress-box .icons {
+    section[data-id="6"] .progress-box .icons {
       white-space: nowrap;
       -webkit-transform: translate3d(0%, -40%, 0);
               transform: translate3d(0%, -40%, 0);
       text-align: center; }
-      section[data-id="9"] .progress-box .icons .icon {
+      section[data-id="6"] .progress-box .icons .icon {
         display: inline-block;
         width: 19%;
         position: relative; }
-        section[data-id="9"] .progress-box .icons .icon:before {
+        section[data-id="6"] .progress-box .icons .icon:before {
           -webkit-transition: all 0.5s ease;
                   transition: all 0.5s ease;
           content: " ";
@@ -1729,7 +1762,7 @@ section {
           -webkit-transform: translate3d(-50%, 0, 0);
                   transform: translate3d(-50%, 0, 0);
           opacity: 0; }
-        section[data-id="9"] .progress-box .icons .icon .ico {
+        section[data-id="6"] .progress-box .icons .icon .ico {
           -webkit-transition: all 0.5s ease;
                   transition: all 0.5s ease;
           width: 60%;
@@ -1739,12 +1772,12 @@ section {
           border: solid 2px #d0483b;
           background: #d0483b;
           font-size: 0; }
-          section[data-id="9"] .progress-box .icons .icon .ico img {
+          section[data-id="6"] .progress-box .icons .icon .ico img {
             -webkit-transition: all 0.5s ease;
                     transition: all 0.5s ease;
             -webkit-filter: grayscale(1);
                     filter: grayscale(1); }
-        section[data-id="9"] .progress-box .icons .icon .name {
+        section[data-id="6"] .progress-box .icons .icon .name {
           -webkit-transition: all 0.5s ease;
                   transition: all 0.5s ease;
           position: absolute;
@@ -1754,62 +1787,27 @@ section {
           width: 100%;
           font-size: 0.4rem;
           color: #b33428; }
-    section[data-id="9"] .progress-box .papers .paper {
+    section[data-id="6"] .progress-box .papers .paper {
       display: none; }
-  section[data-id="10"] .line {
-    width: 65.625%;
+  section[data-id="7"] .title {
+    width: 59.21875%;
     margin: 0 auto;
-    margin-top: 5%; }
-    .iphone4 section[data-id="10"] .line {
-      width: 52.5%; }
-  section[data-id="10"] .text1 {
-    width: 71.09375%;
-    margin: 0 auto; }
-    .iphone4 section[data-id="10"] .text1 {
-      width: 56.875%; }
-  section[data-id="10"] .text2 {
-    width: 78.59375%;
-    margin: 0 auto; }
-    .iphone4 section[data-id="10"] .text2 {
-      width: 62.875%; }
-  section[data-id="10"] .text3 {
-    width: 71.875%;
-    margin: 0 auto; }
-    .iphone4 section[data-id="10"] .text3 {
-      width: 57.5%; }
-  section[data-id="10"] .text4 {
-    width: 68.90625%;
-    margin: 0 auto; }
-    .iphone4 section[data-id="10"] .text4 {
-      width: 55.125%; }
-  section[data-id="10"] .text5 {
-    width: 68.59375%;
-    margin: 0 auto; }
-    .iphone4 section[data-id="10"] .text5 {
-      width: 54.875%; }
-  section[data-id="10"] .people {
-    width: 75%;
-    margin: 0 auto;
-    margin-top: -8%; }
-    .iphone4 section[data-id="10"] .people {
-      width: 60%; }
-  section[data-id="11"] .title {
-    width: 82.8125%;
-    margin: 0 auto;
-    margin-top: 5%; }
-    .iphone4 section[data-id="11"] .title {
-      width: 66.25%; }
-    .iphone4 section[data-id="11"] .title {
-      margin-top: 3%; }
-  section[data-id="11"] .pcmobile {
+    margin-top: 5%;
+    margin-bottom: 5%; }
+    .iphone4 section[data-id="7"] .title {
+      width: 47.375%; }
+    .iphone4 section[data-id="7"] .title {
+      margin-top: 3%;
+      margin-bottom: 3%; }
+  section[data-id="7"] .pcmobile {
     width: 78.125%;
     margin: 0 auto;
     position: relative; }
-    .iphone4 section[data-id="11"] .pcmobile {
+    .iphone4 section[data-id="7"] .pcmobile {
       width: 62.5%; }
-    section[data-id="11"] .pcmobile .pc {
+    section[data-id="7"] .pcmobile .pc {
       position: relative; }
-      section[data-id="11"] .pcmobile .pc .gear {
+      section[data-id="7"] .pcmobile .pc .gear {
         position: absolute;
         top: 34%;
         left: 19%;
@@ -1822,22 +1820,25 @@ section {
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite; }
-        .iphone4 section[data-id="11"] .pcmobile .pc .gear {
+        .iphone4 section[data-id="7"] .pcmobile .pc .gear {
           width: 21%; }
-    section[data-id="11"] .pcmobile .mobile, section[data-id="11"] .pcmobile .plus {
+    section[data-id="7"] .pcmobile .mobile {
+      width: 100%; }
+    section[data-id="7"] .pcmobile .plus {
+      display: none;
       position: absolute;
       top: 0px;
       left: 0px;
       width: 100%; }
-    section[data-id="11"] .pcmobile .mobile .screen {
+    section[data-id="7"] .pcmobile .mobile .screen {
       position: absolute;
-      top: 8%;
-      left: 74%;
-      width: 22%;
-      height: 43%;
+      top: 11%;
+      left: 70.5%;
+      width: 21.5%;
+      height: 63%;
       overflow: hidden;
       background: #fabe2a; }
-      section[data-id="11"] .pcmobile .mobile .screen .screen-box {
+      section[data-id="7"] .pcmobile .mobile .screen .screen-box {
         -webkit-animation: screen 3s linear;
                 animation: screen 3s linear;
         -webkit-animation-fill-mode: both;
@@ -1846,28 +1847,29 @@ section {
                 animation-iteration-count: infinite;
         width: 100%;
         height: 100%; }
-      section[data-id="11"] .pcmobile .mobile .screen .bgcolor1, section[data-id="11"] .pcmobile .mobile .screen .bgcolor2, section[data-id="11"] .pcmobile .mobile .screen .bgcolor3 {
+      section[data-id="7"] .pcmobile .mobile .screen .bgcolor1, section[data-id="7"] .pcmobile .mobile .screen .bgcolor2, section[data-id="7"] .pcmobile .mobile .screen .bgcolor3 {
         width: 100%;
         height: 100%; }
-      section[data-id="11"] .pcmobile .mobile .screen .bgcolor1 {
+      section[data-id="7"] .pcmobile .mobile .screen .bgcolor1 {
         background-color: #eb6946; }
-      section[data-id="11"] .pcmobile .mobile .screen .bgcolor2 {
+      section[data-id="7"] .pcmobile .mobile .screen .bgcolor2 {
         background-color: #f98a82; }
-      section[data-id="11"] .pcmobile .mobile .screen .bgcolor3 {
+      section[data-id="7"] .pcmobile .mobile .screen .bgcolor3 {
         background-color: #82b4df; }
-  section[data-id="11"] .text1, section[data-id="11"] .text2 {
-    width: 72.03125%;
-    margin: 0 auto; }
-    .iphone4 section[data-id="11"] .text1, .iphone4 section[data-id="11"] .text2 {
-      width: 50.421875%; }
-  section[data-id="11"] .text1 .fish {
+  section[data-id="7"] .text1, section[data-id="7"] .text2 {
+    width: 49.84375%;
+    margin: 0 auto;
+    margin-top: 3%; }
+    .iphone4 section[data-id="7"] .text1, .iphone4 section[data-id="7"] .text2 {
+      width: 39.875%; }
+  section[data-id="7"] .text1 .fish {
     position: absolute;
     width: 16.2689804772%;
     margin: 0 auto;
     z-index: -1; }
-    .iphone4 section[data-id="11"] .text1 .fish {
+    .iphone4 section[data-id="7"] .text1 .fish {
       width: 13.0151843818%; }
-    section[data-id="11"] .text1 .fish.fish1 {
+    section[data-id="7"] .text1 .fish.fish1 {
       top: 0;
       left: 76%;
       -webkit-animation: sheep 3s ease-out;
@@ -1878,7 +1880,7 @@ section {
               animation-iteration-count: infinite;
       -webkit-animation-delay: 1.5s;
               animation-delay: 1.5s; }
-    section[data-id="11"] .text1 .fish.fish2 {
+    section[data-id="7"] .text1 .fish.fish2 {
       top: 50%;
       left: 76%;
       -webkit-animation: sheep 3s ease-out;
@@ -1887,52 +1889,53 @@ section {
               animation-fill-mode: both;
       -webkit-animation-iteration-count: infinite;
               animation-iteration-count: infinite; }
-  section[data-id="12"] .title {
+  section[data-id="8"] .title {
     width: 78.125%;
     margin: 0 auto;
     margin-top: 5%;
     font-size: 0; }
-    .iphone4 section[data-id="12"] .title {
+    .iphone4 section[data-id="8"] .title {
       width: 62.5%; }
-    .iphone4 section[data-id="12"] .title {
+    .iphone4 section[data-id="8"] .title {
       margin-top: 3%; }
-  section[data-id="12"] .logo-box .logo {
+  section[data-id="8"] .logo-box .logo {
     width: 31.25%;
     margin: 0 auto;
     font-size: 0; }
-    .iphone4 section[data-id="12"] .logo-box .logo {
+    .iphone4 section[data-id="8"] .logo-box .logo {
       width: 25%; }
-  section[data-id="12"] .logo-box .logo-note {
+  section[data-id="8"] .logo-box .logo-note {
     width: 70.3125%;
     margin: 0 auto; }
-    .iphone4 section[data-id="12"] .logo-box .logo-note {
+    .iphone4 section[data-id="8"] .logo-box .logo-note {
       width: 56.25%; }
-  section[data-id="12"] .title2 {
+  section[data-id="8"] .title2 {
     width: 56.25%;
-    margin: 0 auto; }
-    .iphone4 section[data-id="12"] .title2 {
+    margin: 0 auto;
+    margin-top: 3%; }
+    .iphone4 section[data-id="8"] .title2 {
       width: 45%; }
-  section[data-id="12"] .points .point {
+  section[data-id="8"] .points .point {
     width: 75%;
     margin: 0 auto;
     font-size: 0; }
-    .iphone4 section[data-id="12"] .points .point {
+    .iphone4 section[data-id="8"] .points .point {
       width: 60%; }
-  section[data-id="13"] .title {
+  section[data-id="9"] .title {
     width: 78.125%;
     margin: 0 auto;
     margin-top: 5%; }
-    .iphone4 section[data-id="13"] .title {
+    .iphone4 section[data-id="9"] .title {
       width: 54.6875%; }
-    .iphone4 section[data-id="13"] .title {
+    .iphone4 section[data-id="9"] .title {
       margin-top: 3%; }
-  section[data-id="13"] .logo-box .logo {
+  section[data-id="9"] .logo-box .logo {
     width: 50%;
     margin: 0 auto;
     font-size: 0; }
-    .iphone4 section[data-id="13"] .logo-box .logo {
+    .iphone4 section[data-id="9"] .logo-box .logo {
       width: 40%; }
-  section[data-id="13"] .logo-box .text {
+  section[data-id="9"] .logo-box .text {
     font-size: 0.6rem;
     color: #000;
     width: 76.5625%;
@@ -1940,105 +1943,101 @@ section {
     margin-top: 1%;
     margin-bottom: 1%;
     font-weight: bold; }
-    .iphone4 section[data-id="13"] .logo-box .text {
+    .iphone4 section[data-id="9"] .logo-box .text {
       width: 76.5625%; }
-  section[data-id="13"] .advantage {
+  section[data-id="9"] .advantage {
     width: 48.4375%;
     margin: 0 auto; }
-    .iphone4 section[data-id="13"] .advantage {
+    .iphone4 section[data-id="9"] .advantage {
       width: 38.75%; }
-  section[data-id="13"] .advantage-list {
+  section[data-id="9"] .advantage-list {
     width: 75%;
     margin: 0 auto; }
-    .iphone4 section[data-id="13"] .advantage-list {
+    .iphone4 section[data-id="9"] .advantage-list {
       width: 52.5%; }
-    section[data-id="13"] .advantage-list ul {
+    section[data-id="9"] .advantage-list ul {
       white-space: nowrap; }
-      section[data-id="13"] .advantage-list ul li {
+      section[data-id="9"] .advantage-list ul li {
         display: inline-block;
         width: 33%;
         float: left; }
-  section[data-id="13"] .shortcoming {
+  section[data-id="9"] .shortcoming {
     width: 52.5%;
     margin: 0 auto; }
-    .iphone4 section[data-id="13"] .shortcoming {
+    .iphone4 section[data-id="9"] .shortcoming {
       width: 42%; }
-  section[data-id="13"] .shortcoming-list {
+  section[data-id="9"] .shortcoming-list {
     width: 68.75%;
     margin: 0 auto; }
-    .iphone4 section[data-id="13"] .shortcoming-list {
+    .iphone4 section[data-id="9"] .shortcoming-list {
       width: 48.125%; }
-    section[data-id="13"] .shortcoming-list ul {
+    section[data-id="9"] .shortcoming-list ul {
       white-space: nowrap; }
-      section[data-id="13"] .shortcoming-list ul li {
+      section[data-id="9"] .shortcoming-list ul li {
         display: inline-block;
         width: 50%;
         float: left; }
-  section[data-id="14"] .title {
+  section[data-id="10"] .title {
     width: 78.125%;
     margin: 0 auto;
     margin-top: 5%; }
-    .iphone4 section[data-id="14"] .title {
+    .iphone4 section[data-id="10"] .title {
       width: 62.5%; }
-    .iphone4 section[data-id="14"] .title {
+    .iphone4 section[data-id="10"] .title {
       margin-top: 3%; }
-  section[data-id="14"] .note {
+  section[data-id="10"] .note {
     width: 78.125%;
     margin: 0 auto; }
-    .iphone4 section[data-id="14"] .note {
+    .iphone4 section[data-id="10"] .note {
       width: 62.5%; }
-  section[data-id="14"] .text1 {
+  section[data-id="10"] .text1 {
     width: 78.125%;
     margin: 0 auto;
     text-align: center;
     font-size: 0.6rem; }
-    .iphone4 section[data-id="14"] .text1 {
+    .iphone4 section[data-id="10"] .text1 {
       width: 78.125%; }
-  section[data-id="14"] .advantage {
+  section[data-id="10"] .advantage {
     width: 48.4375%;
-    margin: 0 auto; }
-    .iphone4 section[data-id="14"] .advantage {
+    margin: 0 auto;
+    margin-top: 3%; }
+    .iphone4 section[data-id="10"] .advantage {
       width: 38.75%; }
-  section[data-id="14"] .advantage-list {
+  section[data-id="10"] .advantage-list {
     width: 75%;
     margin: 0 auto; }
-    .iphone4 section[data-id="14"] .advantage-list {
+    .iphone4 section[data-id="10"] .advantage-list {
       width: 52.5%; }
-    section[data-id="14"] .advantage-list ul {
+    section[data-id="10"] .advantage-list ul {
       white-space: nowrap; }
-      section[data-id="14"] .advantage-list ul li {
+      section[data-id="10"] .advantage-list ul li {
         display: inline-block;
         width: 50%;
         float: left; }
-  section[data-id="14"] .shortcoming {
+  section[data-id="10"] .shortcoming {
     width: 52.5%;
     margin: 0 auto; }
-    .iphone4 section[data-id="14"] .shortcoming {
+    .iphone4 section[data-id="10"] .shortcoming {
       width: 42%; }
-  section[data-id="14"] .shortcoming-list {
+  section[data-id="10"] .shortcoming-list {
     width: 68.75%;
     margin: 0 auto; }
-    .iphone4 section[data-id="14"] .shortcoming-list {
+    .iphone4 section[data-id="10"] .shortcoming-list {
       width: 48.125%; }
-  section[data-id="15"] .title {
+  section[data-id="11"] .title {
     width: 78.125%;
     margin: 0 auto;
     margin-top: 5%; }
-    .iphone4 section[data-id="15"] .title {
+    .iphone4 section[data-id="11"] .title {
       width: 62.5%; }
-    .iphone4 section[data-id="15"] .title {
+    .iphone4 section[data-id="11"] .title {
       margin-top: 3%; }
-  section[data-id="15"] .note {
-    width: 70.3125%;
-    margin: 0 auto; }
-    .iphone4 section[data-id="15"] .note {
-      width: 56.25%; }
-    section[data-id="15"] .note .text {
+    section[data-id="11"] .title .text {
       position: absolute;
-      top: 31%;
-      left: 10%;
-      width: 33%;
-      height: 10%;
+      top: 44%;
+      left: 17%;
+      width: 27%;
+      height: 6%;
       background: #fff;
       -webkit-animation: covertext 3s linear;
               animation: covertext 3s linear;
@@ -2049,37 +2048,42 @@ section {
       -webkit-transform-origin: right center;
           -ms-transform-origin: right center;
               transform-origin: right center; }
-  section[data-id="15"] .text1 {
+  section[data-id="11"] .note {
+    width: 70.3125%;
+    margin: 0 auto; }
+    .iphone4 section[data-id="11"] .note {
+      width: 56.25%; }
+  section[data-id="11"] .text1 {
     width: 78.125%;
     margin: 0 auto;
     text-align: center;
     font-size: 0.6rem; }
-    .iphone4 section[data-id="15"] .text1 {
+    .iphone4 section[data-id="11"] .text1 {
       width: 78.125%; }
-  section[data-id="15"] .advantage {
+  section[data-id="11"] .advantage {
     width: 48.4375%;
     margin: 0 auto; }
-    .iphone4 section[data-id="15"] .advantage {
+    .iphone4 section[data-id="11"] .advantage {
       width: 38.75%; }
-  section[data-id="15"] .advantage-list {
+  section[data-id="11"] .advantage-list {
     width: 73.4375%;
     margin: 0 auto; }
-    .iphone4 section[data-id="15"] .advantage-list {
+    .iphone4 section[data-id="11"] .advantage-list {
       width: 51.40625%; }
-    section[data-id="15"] .advantage-list ul li {
+    section[data-id="11"] .advantage-list ul li {
       width: 100%; }
-  section[data-id="16"] .box {
+  section[data-id="12"] .box {
     position: relative;
     width: 85.9375%;
     margin: 0 auto;
     margin-top: 8%; }
-    .iphone4 section[data-id="16"] .box {
+    .iphone4 section[data-id="12"] .box {
       width: 68.75%; }
-    section[data-id="16"] .box .spread {
+    section[data-id="12"] .box .spread {
       position: absolute;
       top: 0px;
       left: 0px; }
-      section[data-id="16"] .box .spread .search {
+      section[data-id="12"] .box .spread .search {
         position: absolute;
         top: 70%;
         left: 55%;
@@ -2091,28 +2095,28 @@ section {
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite; }
-        .iphone4 section[data-id="16"] .box .spread .search {
+        .iphone4 section[data-id="12"] .box .spread .search {
           width: 20.7272727273%; }
-    section[data-id="16"] .box .plus {
+    section[data-id="12"] .box .plus {
       position: absolute;
       top: 0px;
       left: 0px; }
-  section[data-id="16"] .money {
+  section[data-id="12"] .money {
     margin-top: 5%;
     position: relative;
     width: 73.4375%;
     margin: 0 auto; }
-    .iphone4 section[data-id="16"] .money {
+    .iphone4 section[data-id="12"] .money {
       width: 58.75%; }
-    section[data-id="16"] .money .pig {
+    section[data-id="12"] .money .pig {
       position: absolute;
       top: 40%;
       right: 0px;
       width: 15.9574468085%;
       margin: 0 auto; }
-      .iphone4 section[data-id="16"] .money .pig {
+      .iphone4 section[data-id="12"] .money .pig {
         width: 15.9574468085%; }
-      section[data-id="16"] .money .pig .coin {
+      section[data-id="12"] .money .pig .coin {
         position: absolute;
         top: 20%;
         left: 37%;
@@ -2125,144 +2129,144 @@ section {
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite; }
-        .iphone4 section[data-id="16"] .money .pig .coin {
+        .iphone4 section[data-id="12"] .money .pig .coin {
           width: 45.3333333333%; }
-  section[data-id="16"] .nexts {
+  section[data-id="12"] .nexts {
     width: 74.21875%;
     margin: 0 auto; }
-    .iphone4 section[data-id="16"] .nexts {
+    .iphone4 section[data-id="12"] .nexts {
       width: 59.375%; }
-  section[data-id="17"] .line {
+  section[data-id="13"] .line {
     width: 81.25%;
     margin: 0 auto;
     margin-top: 5%; }
-    .iphone4 section[data-id="17"] .line {
+    .iphone4 section[data-id="13"] .line {
       width: 65%; }
-  section[data-id="17"] .text1 {
+  section[data-id="13"] .text1 {
     width: 59.6875%;
     margin: 0 auto;
     margin-top: 2%; }
-    .iphone4 section[data-id="17"] .text1 {
+    .iphone4 section[data-id="13"] .text1 {
       width: 47.75%; }
-  section[data-id="17"] .text2 {
+  section[data-id="13"] .text2 {
     width: 42.96875%;
     margin: 0 auto;
     margin-top: 0; }
-    .iphone4 section[data-id="17"] .text2 {
+    .iphone4 section[data-id="13"] .text2 {
       width: 34.375%; }
-  section[data-id="17"] .text3 {
+  section[data-id="13"] .text3 {
     width: 63.125%;
     margin: 0 auto;
     margin-top: 5%; }
-    .iphone4 section[data-id="17"] .text3 {
+    .iphone4 section[data-id="13"] .text3 {
       width: 50.5%; }
-  section[data-id="17"] .text4 {
+  section[data-id="13"] .text4 {
     width: 74.21875%;
     margin: 0 auto;
     margin-top: 0; }
-    .iphone4 section[data-id="17"] .text4 {
+    .iphone4 section[data-id="13"] .text4 {
       width: 59.375%; }
-  section[data-id="17"] .text5 {
+  section[data-id="13"] .text5 {
     width: 64.21875%;
     margin: 0 auto;
     margin-top: 0; }
-    .iphone4 section[data-id="17"] .text5 {
+    .iphone4 section[data-id="13"] .text5 {
       width: 51.375%; }
-  section[data-id="17"] .text6 {
+  section[data-id="13"] .text6 {
     width: 44.6875%;
     margin: 0 auto;
     margin-top: 5%; }
-    .iphone4 section[data-id="17"] .text6 {
+    .iphone4 section[data-id="13"] .text6 {
       width: 35.75%; }
-  section[data-id="17"] .text7 {
+  section[data-id="13"] .text7 {
     width: 44.6875%;
     margin: 0 auto;
     margin-top: 0; }
-    .iphone4 section[data-id="17"] .text7 {
+    .iphone4 section[data-id="13"] .text7 {
       width: 35.75%; }
-  section[data-id="17"] .text8 {
+  section[data-id="13"] .text8 {
     width: 80.9375%;
     margin: 0 auto;
     margin-top: 0; }
-    .iphone4 section[data-id="17"] .text8 {
+    .iphone4 section[data-id="13"] .text8 {
       width: 64.75%; }
-  section[data-id="17"] .text9 {
+  section[data-id="13"] .text9 {
     width: 78.125%;
     margin: 0 auto;
     margin-top: 5%; }
-    .iphone4 section[data-id="17"] .text9 {
+    .iphone4 section[data-id="13"] .text9 {
       width: 62.5%; }
-  section[data-id="18"] {
+  section[data-id="14"] {
     background-image: url(../img/bg-end.jpg); }
-    section[data-id="18"] .redstar {
+    section[data-id="14"] .redstar {
       width: 9.6875%;
       margin: 0 auto;
       margin-top: 5%; }
-      .iphone4 section[data-id="18"] .redstar {
+      .iphone4 section[data-id="14"] .redstar {
         width: 7.75%; }
-      .iphone4 section[data-id="18"] .redstar {
+      .iphone4 section[data-id="14"] .redstar {
         margin-top: 3%; }
-    section[data-id="18"] .redstar2 {
+    section[data-id="14"] .redstar2 {
       width: 9.6875%;
       margin: 0 auto; }
-      .iphone4 section[data-id="18"] .redstar2 {
+      .iphone4 section[data-id="14"] .redstar2 {
         width: 7.75%; }
-    section[data-id="18"] .box {
+    section[data-id="14"] .box {
       width: 84.6875%;
       margin: 0 auto;
       position: relative;
       margin-top: 4%; }
-      .iphone4 section[data-id="18"] .box {
+      .iphone4 section[data-id="14"] .box {
         width: 67.75%; }
-      section[data-id="18"] .box .box-content {
+      section[data-id="14"] .box .box-content {
         position: absolute;
         top: 0px;
         left: 0px;
         width: 100%;
         height: 100%; }
-      section[data-id="18"] .box .text1 {
+      section[data-id="14"] .box .text1 {
         width: 68.2656826568%;
         margin: 0 auto;
         position: relative;
         top: -5%; }
-        .iphone4 section[data-id="18"] .box .text1 {
+        .iphone4 section[data-id="14"] .box .text1 {
           width: 68.2656826568%; }
-      section[data-id="18"] .box .text2 {
+      section[data-id="14"] .box .text2 {
         width: 48.5239852399%;
         margin: 0 auto; }
-        .iphone4 section[data-id="18"] .box .text2 {
+        .iphone4 section[data-id="14"] .box .text2 {
           width: 48.5239852399%; }
-      section[data-id="18"] .box .text3 {
+      section[data-id="14"] .box .text3 {
         width: 80.073800738%;
         margin: 0 auto; }
-        .iphone4 section[data-id="18"] .box .text3 {
+        .iphone4 section[data-id="14"] .box .text3 {
           width: 80.073800738%; }
-      section[data-id="18"] .box .text4 {
+      section[data-id="14"] .box .text4 {
         width: 34.5018450185%;
         margin: 0 auto;
         margin-top: 7%; }
-        .iphone4 section[data-id="18"] .box .text4 {
+        .iphone4 section[data-id="14"] .box .text4 {
           width: 34.5018450185%; }
-      section[data-id="18"] .box .text5 {
+      section[data-id="14"] .box .text5 {
         width: 74.7232472325%;
         margin: 0 auto; }
-        .iphone4 section[data-id="18"] .box .text5 {
+        .iphone4 section[data-id="14"] .box .text5 {
           width: 74.7232472325%; }
-      section[data-id="18"] .box .num-box {
+      section[data-id="14"] .box .num-box {
         text-align: center;
         width: 92.2509225092%;
         margin: 0 auto;
         white-space: nowrap; }
-        .iphone4 section[data-id="18"] .box .num-box {
+        .iphone4 section[data-id="14"] .box .num-box {
           width: 92.2509225092%; }
-        section[data-id="18"] .box .num-box .num-1, section[data-id="18"] .box .num-box .num-2 {
+        section[data-id="14"] .box .num-box .num-1, section[data-id="14"] .box .num-box .num-2 {
           display: inline-block;
           width: 8%; }
-        section[data-id="18"] .box .num-box .nums {
+        section[data-id="14"] .box .num-box .nums {
           width: 100%;
           display: inline-block;
           margin: 0 -20%; }
-        section[data-id="18"] .box .num-box .num {
+        section[data-id="14"] .box .num-box .num {
           -webkit-transition: all 1s ease;
                   transition: all 1s ease;
           display: inline-block;
@@ -2271,32 +2275,32 @@ section {
           background-image: url(../img/nums-bg.png);
           background-size: 1000% 100%;
           background-position: 0% 0%; }
-          .iphone4 section[data-id="18"] .box .num-box .num {
+          .iphone4 section[data-id="14"] .box .num-box .num {
             width: 12.9151291513%; }
-          section[data-id="18"] .box .num-box .num[n="0"] {
+          section[data-id="14"] .box .num-box .num[n="0"] {
             background-position: 1000% 0%; }
-          section[data-id="18"] .box .num-box .num[n="1"] {
+          section[data-id="14"] .box .num-box .num[n="1"] {
             background-position: 900% 0%; }
-          section[data-id="18"] .box .num-box .num[n="2"] {
+          section[data-id="14"] .box .num-box .num[n="2"] {
             background-position: 800% 0%; }
-          section[data-id="18"] .box .num-box .num[n="3"] {
+          section[data-id="14"] .box .num-box .num[n="3"] {
             background-position: 700% 0%; }
-          section[data-id="18"] .box .num-box .num[n="4"] {
+          section[data-id="14"] .box .num-box .num[n="4"] {
             background-position: 600% 0%; }
-          section[data-id="18"] .box .num-box .num[n="5"] {
+          section[data-id="14"] .box .num-box .num[n="5"] {
             background-position: 500% 0%; }
-          section[data-id="18"] .box .num-box .num[n="6"] {
+          section[data-id="14"] .box .num-box .num[n="6"] {
             background-position: 400% 0%; }
-          section[data-id="18"] .box .num-box .num[n="7"] {
+          section[data-id="14"] .box .num-box .num[n="7"] {
             background-position: 300% 0%; }
-          section[data-id="18"] .box .num-box .num[n="8"] {
+          section[data-id="14"] .box .num-box .num[n="8"] {
             background-position: 200% 0%; }
-          section[data-id="18"] .box .num-box .num[n="9"] {
+          section[data-id="14"] .box .num-box .num[n="9"] {
             background-position: 100% 0%; }
-    section[data-id="18"] .invite {
+    section[data-id="14"] .invite {
       width: 67.8125%;
       margin: 0 auto; }
-      .iphone4 section[data-id="18"] .invite {
+      .iphone4 section[data-id="14"] .invite {
         width: 54.25%; }
 
 .gray {

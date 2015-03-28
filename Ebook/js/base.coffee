@@ -2,22 +2,29 @@ parallax = {}
 getNUMs = 1682
 audio1 = document.getElementById("audiobg")
 audio2 = document.getElementById("audioss")
+audio3 = document.getElementById("audiola")
 audioPlaying = true
 # audio2.addEventListener "ended", runAudio
 _playIndex = 0
 runAudio = (index = 0)->
 	_playIndex = index
 	if audioPlaying
-		if index is 16
+		if index is 12
 			$(".audios .text").show()
 			audio2.currentTime = 0 if audio2.currentTime >= 2
 			audio2.play()
 			audio1.pause()
+			audio3.pause()
+		else if index is 13
+			audio3.play()
+			audio2.pause()
+			audio1.pause()
 		else
 			$(".audios .text").hide()
+			audio3.pause()
 			audio2.pause()
 			audio1.play()
-	if index is 16
+	if index is 12
 		$(".audios .text").show()
 	else
 		$(".audios .text").hide()
@@ -85,8 +92,9 @@ readyLoading = (index)->
 	# return true if e.length <= 0 or "true" is e.attr "loaded" 
 	readyLoaded[index] = "loaded"
 	# e.attr "loaded","true"
+	# console.log "#{index} lz:",e.find("[lz-src]").length
 	e.find("[lz-src]").each (i)->
-		# $(this).attr "onload","lzload(#{index})"
+		$(this).attr "onload","lzload(#{index})"
 		$(this).attr "src",$(this).attr "lz-src"
 		true
 	e.find("[data-page]").each (i)->
@@ -97,6 +105,7 @@ lzload = (index)->
 	if not lzloadlist[index]?
 		lzloadlist[index] = 0
 	lzloadlist[index] += 1
+	# console.log lzloadlist
 
 changeNUMs = (n)->
 	n = 99999 if n > 99999
@@ -118,32 +127,32 @@ init = ->
 		indicator: false,		# 有无指示点
 		arrow:     false,		# 有无指示箭头
 		onchange: (index, element, direction)->
-			# console.log "ready loading:",index
+			console.log "ready loading:",index
 			if $(".page").height() < 450
 				$("body").addClass "iphone4"
 			else
 				$("body").removeClass "iphone4"
 			$(".loading").hide() if index is 0
-			if index is 1 and $("#boxlist")[0].style.clip?
-				box = $("#boxlist").offset()
-				$("#boxlist").css
-					"transition-duration": "2.5s"
-					"transition-delay": "400ms"
-					"clip": "rect(-#{box.width/2}px,#{box.width*1.5}px,#{box.height*1.5}px,-#{box.height/2}px)"
-			else if $("#boxlist")[0].style.clip? and index isnt 2
-				box = $("#boxlist").offset()
-				$("#boxlist").css
-					"transition-duration": "0s"
-					"transition-delay": "0s"
-					"clip": "rect(#{box.width}px,0px,0px,#{box.height}px)"
-			if index is 8 and _stopParallax is false
+			# if index is 1 and $("#boxlist")[0].style.clip?
+			# 	box = $("#boxlist").offset()
+			# 	$("#boxlist").css
+			# 		"transition-duration": "2.5s"
+			# 		"transition-delay": "400ms"
+			# 		"clip": "rect(-#{box.width/2}px,#{box.width*1.5}px,#{box.height*1.5}px,-#{box.height/2}px)"
+			# else if $("#boxlist")[0].style.clip? and index isnt 2
+			# 	box = $("#boxlist").offset()
+			# 	$("#boxlist").css
+			# 		"transition-duration": "0s"
+			# 		"transition-delay": "0s"
+			# 		"clip": "rect(#{box.width}px,0px,0px,#{box.height}px)"
+			if index is 5 and _stopParallax is false
 				_stopParallax = true
 			else
 				_stopParallax = false
 			runAudio index
 			readyLoading index
 			readyLoading index+2
-			if index is 17
+			if index is 13
 				_timeout = setTimeout ->
 					changeNUMs getNUMs
 				,1200
@@ -152,16 +161,17 @@ init = ->
 				changeNUMs 1
 		# orientationchange: (orientation)->
 	}
-
+	# parallax.runcode 1
 $(document).ready ->
 	
 	readyLoading 0
 	readyLoading 1
+	runFire()
 	$("#gif").css
 		"-webkit-animation": "none"
-	if $("#boxlist")[0].style.clip?
-		$("#boxlist").addClass("boxlist").css
-			"clip": "rect(160px,0px,0px,160px)"
+	# if $("#boxlist")[0].style.clip?
+	# 	$("#boxlist").addClass("boxlist").css
+	# 		"clip": "rect(160px,0px,0px,160px)"
 	$("#text5").on "webkitAnimationEnd", ()->
 		console.log "finished stamp"
 	

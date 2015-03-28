@@ -40,8 +40,9 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
         options = $.extend({}, $.fn.parallax.defaults, opts);
         this.runcode = function(e){
             // console.log($(this));
+            stage = 2;
             $(this).removeClass("drag");
-            animatePage(e);
+            animatePage(e,"nine");
         }
         return this.each(function() {
             $pages = $(this);
@@ -324,7 +325,7 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
 
     function animatePage(newPage, action) {
         // console.log("asdf",newPage,action);
-        if (typeof _stopParallax != "undefined" && _stopParallax && newPage > 8 && parseInt($(".tabs").attr("now"))<5) {
+        if (typeof _stopParallax != "undefined" && _stopParallax && newPage > 5 && parseInt($(".tabs").attr("now"))<5 && action != "nine") {
             checkPageNine()
             return false
         }

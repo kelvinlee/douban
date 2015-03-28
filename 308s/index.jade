@@ -1,0 +1,124 @@
+extends layout-ng
+
+block title
+	| 这位贵人何不留步，算一卦!
+block css
+	link(rel="stylesheet",href="css/animate.css")
+	link(rel="stylesheet",href="css/base.css")
+	//- script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js",type="text/javascript")
+	script.
+		function showLoad() {
+			 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
+		}
+	
+
+block content
+	div.wechat-share-hide
+		img(src="http://campaign.douban.com/files/campaign/peugeot308s/img/share.jpg")
+	div.wrap(ng-controller="MainController")
+		div.bg
+			//- img(src="img/bg.jpg")
+		div.hideView
+		div.view-animate(ng-view)
+		div#loading.loading.loaded
+			div.loading-logo
+				.loading-normal
+					img(src="img/loading-normal.png")
+		.logo
+			img(src="img/logo.png")
+		//- sound-ctrl.soundCtrl(src="mp3/audio.mp3",loop="true",autoplay="true",preload="true",ng-class="soundclass")
+		//- .ctrlBar(ng-controller="MenuController as menu")
+			a.web(href="http://vs.com.cn",ng-if="menu.type")
+			a.shop(ng-href="{{shoplink}}",ng-if="menu.type")
+			.menu(ng-class="menu.type",ng-click="menu.menushow()")
+block ng-template
+	//- - url = ""
+	script(type="text/ng-template",id="home.html")
+		.page.homepage(ng-controller="HomeController as home")
+			.zw
+			.content(ng-click="home.star()")
+				.kv
+					img(src="img/homepage-kv.png")
+				.gua
+					img(src="img/gua-small.png")
+
+			.car
+				.wall
+					img(src="img/wall.png")
+				.newcar
+					img(src="img/car.png")
+	script(type="text/ng-template",id="Divination.html")
+		.page.Divination(ng-controller="DivinationController as Divination")
+			.zw
+			.content
+				.note
+					img(src="img/note.png")
+					.hand
+						img(src="img/note-hand.png")
+				
+				.table
+					img(src="img/table.jpg")
+					.users
+						img(src="img/d-u-list.png")
+					.box
+						img(src="img/box-bg.png")
+						.shakeNote
+							img(src="img/shake.png")
+						.box-content(ng-class="Divination.run")
+							-for (var i=0;i<5;i++)
+								div.divina(class="divina#{i}")
+									div(class="di#{i}")
+										img(src="img/divina.png")
+							-for (var i=5;i<10;i++)
+								div.divina(class="divina#{i}")
+									div(class="di#{i}")
+										img(src="img/divina-b.png")
+							.box-before
+								img(src="img/box.png")
+	script(type="text/ng-template",id="end.html")
+		.page.Divination(parallax,ng-controller="endController as end")
+			.zw
+			.content
+				.whole
+					img(src="img/end-bg.png")
+					.avatar
+						img(ng-src="img/end-{{end.endid}}-avatar.png")
+					.q
+						img(ng-src="img/end-{{end.endid}}-q.png")
+					.text
+						img(ng-src="img/end-{{end.endid}}-text.png")
+			a.nextPonit(ng-href="#/over/{{end.endid}}")
+				.arrow
+					img(src="img/arrow.png")
+				.text 向上滑动 查看详情
+	script(type="text/ng-template",id="over.html")
+		.page.over(ng-controller="overController as over")
+			.content
+				img(ng-src="img/over-{{over.id}}.jpg")
+				.shareDiv
+					.icons
+						a.wechat(ng-click="over.show(true)")
+							img(src="img/icon-wechat.png")
+						a.weibo(href="",data-share="weibo")
+							img(src="img/icon-weibo.png")
+						a.douban(data-share="douban")
+							img(src="img/icon-douban.png")
+						a.qzone(data-share="qzone")
+							img(src="img/icon-qzone.png")
+					.car
+						img(src="img/car.png")
+			.wechat-note(ng-if="over.wechat",ng-click="over.show(false)")
+
+block js
+	- var debug = ".min"
+	//- - debug = ""
+	script(src="js/Zepto.min.js",type="text/javascript")
+	script(src="js/angular.min.js",type="text/javascript")
+	script(src="js/angular-route.min.js",type="text/javascript")
+	script(src="js/angular-touch.min.js",type="text/javascript")
+	script(src="js/angular-animate.min.js",type="text/javascript")
+	script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js",type="text/javascript")
+	//- script(src="/libs/js/megapix-image.js",type="text/javascript")
+	//- script(src="/libs/js/exif.js",type="text/javascript")
+	//- script(src="/libs/js/min/preloadjs-0.4.1.min.js",type="text/javascript")
+	script(src="js/base.js",type="text/javascript")

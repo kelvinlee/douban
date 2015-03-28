@@ -1,0 +1,317 @@
+@import sass/base
+@import sass/animation
+
+img
+	max-width: 100%
+
+
+.wechat-share-hide
+	+posa
+	+tl(-1000px)
+	// +hide
+	+w(1px)
+
+.bg
+	line-height: 0
+	font-size: 0
+	+posa
+	+tl
+	+wh(100%,100%)
+	overflow: hidden
+	+b("../img/bg.jpg",no-repeat,top,center,cover)
+
+.qrcode
+	margin: 0 auto
+	padding-top: 100px
+	+w(640px)
+	+text-center
+	+hide
+	+large
+		+show
+	+small
+		+hide
+.loading
+	+tran(all,0.5s,linear)
+	+posf
+	+tl
+	bottom: 0px
+	+w(100%)
+	opacity: 0
+	background-color: #fff
+	z-index: -1
+	.ng-hide
+		opacity: 0
+	&.loaded
+		+tran(all,0s,linear)
+		opacity: 1
+		z-index: 99999
+	&.finished
+		.loading-logo
+			opacity: 1	
+			+transform(scale(1,1))
+		span
+			+transform(scale(0.2,0.2))
+			opacity: 0
+	.loading-logo,.loading-normal
+		+tran
+		+posa
+		+tl(50%,50%)
+		+text-center
+		+show
+		+wh(5em,5em)
+		+transform(translate(-50%,-50%))
+		overflow: hidden
+	.loading-normal
+		+wh(3rem,3rem)
+		margin-top: -1.5rem
+		margin-left: -1.5rem
+		+animation(second,1.5s,linear,infinite)
+	.loading-logo-bg
+		+posa
+		+tl()
+		bottom: 0
+		+w(100%)
+		z-index: -1
+		background-image: linear-gradient(-179deg, #06503C 0%, #1EC08E 50%, #A9F4A1 100%)
+		+animation(second,1s,linear,infinite)
+	.loading-logo
+		img
+			+posr
+			z-index: 2
+
+html,body
+	+wh(100%,100%)
+
+.wrap
+	+wh(100%,100%)
+	+posr
+.view-animate
+	+wh(100%,100%)
+	font-size: 0
+	+posa
+	+tl
+	+tran
+	//  view-animate ng-scope ng-animate ng-leave ng-leave-active
+	// view-animate ng-scope ng-animate ng-enter ng-enter-active
+	&.ng-leave
+		+animation(fadeOut)
+	&.ng-enter
+		+animation(fadeIn)
+.logo
+	+posa
+	+tl(0px,0px)
+
+.homepage
+	+posr
+	+wh(100%,100%)
+	.zw
+		+wh(100%,9%)
+	.content
+		+posr
+		z-index: 10
+		+iw(640)
+		+animation(bounceIn,1s)
+		+delay(0.5s)
+		.gua
+			+posa
+			+tl(6%)
+			+w(100%)
+			+animation(second,10s,linear,infinite)
+			z-index: 5
+		.kv
+			+posr
+			z-index: 50
+	.car
+		z-index: 1
+		+posa
+		+bl
+		+w(100%)
+		+animation(fadeInUp)
+		+delay(1s)
+		.newcar
+			+posa
+			+bl(10%)
+			+animation(lightSpeedIn)
+			+delay(2s)
+
+
+.Divination
+	+posr
+	+wh(100%,100%)
+	.zw
+		+wh(100%,9%)
+	.note
+		+posr
+		+iw(538)
+		+animation(rotateInDownRight)
+		+delay(2.5s)
+		.hand
+			+posa
+			+tl
+			+animation(shakeHand,2.5s,linear,infinite)
+			transform-origin: 50% 100%
+	.table
+		+posa
+		+bl
+		+animation(fadeInUp)
+		+delay(0.5s)
+		.users
+			+posa
+			+bl(5%)
+			+animation(flipInY)
+			+delay(1s)
+		.shakeNote
+			+posa
+			+tr(-33%,10%)
+			+iw(152)
+		.box
+			+posa
+			+bl(81%)
+			+iw(640)
+			.iphone4 &
+				left: 10%
+			+animation(fadeInRight)
+			+delay(1.5s)
+			.box-before
+				+posa
+				+tl
+				z-index: 90
+			.box-content
+				+posa
+				+tl
+				+wh(100%,100%)
+				z-index: 50
+				$baseH: 20%
+				.divina
+					+posa
+					+bl($baseH+20%,50%)
+					+iw(26)
+				.divina0
+					+bl($baseH+20%,38%)
+					+transform(rotate(-15deg))
+					z-index: 1
+				.divina1
+					+bl($baseH+16%,61%)
+					+transform(rotate(10deg))
+					z-index: 1
+				.divina2
+					+bl($baseH+17%,45%)
+					+transform(rotate(-13deg))
+					z-index: 1
+				.divina3
+					+bl($baseH+20%,49%)
+					+transform(rotate(5deg))
+					z-index: 1
+				.divina4
+					+bl($baseH+18%,54%)
+					+transform(rotate(3deg))
+					z-index: 1
+				.divina5
+					+bl($baseH+28%,39%)
+					+transform(rotate(-2deg))
+				.divina6
+					+bl($baseH+26%,44%)
+					+transform(rotate(-4deg))
+				.divina7
+					+bl($baseH+31%,52%)
+					+transform(rotate(8deg))
+				.divina8
+					+bl($baseH+36%,50%)
+					+transform(rotate(-8deg))
+				.divina9
+					+bl($baseH+17%,58%)
+					+transform(rotate(4deg))
+				&.run
+					.divina3
+						+animation(dropdown,1s,linear)
+					.di3
+						+animation(dropmovice,1s,linear)
+
+	.whole
+		+posr
+		+iw(640)
+		+animation(bounceIn)
+		.avatar, .q, .text
+			+posa
+			+w(100%)
+		.avatar
+			+tl(10%)
+			+animation(bounceInLeft)
+			+delay(0.5s)
+		.q
+			+tl(10%)
+			+animation(zoomInLeft)
+			+delay(1s)
+		.text
+			+tl(67%)
+			+animation(flipInX,1s)
+			+delay(2s)
+
+.nextPonit
+	+show
+	+posa
+	+bl(10px)
+	+w(100%)
+	.arrow
+		+iw(93)
+	.text
+		+text-center
+		margin-top: 5px
+		color: white
+		font-size: 10px
+
+.over
+	.content
+		+posr
+		.shareDiv
+			+posa
+			+bl(7%)
+		.icons
+			+w(80%)
+			margin: 0 auto
+			display: flex
+			margin-bottom: 10%
+			a
+				+show
+				+text-center
+				img
+					+w(80%)
+				
+.wechat-note
+	+tran
+	+posf
+	+tl
+	+wh(100%,100%)
+	+b("../img/wechat.png",no-repeat,center,top,contain,rgba(0,0,0,0.85))
+	&.ng-enter
+		opacity: 0
+	&.ng-enter-active
+		opacity: 1
+	&.ng-leave
+		opacity: 1
+	&.ng-leave-active
+		opacity: 0
+
+
++keyframes(shakeHand)
+	0%,50%,100%
+		+transform(rotate(0deg))
+	5%,15%,25%
+		+transform(rotate(10deg))
+	10%,20%,30%
+		+transform(rotate(-5deg))
+
++keyframes(dropdown)
+	0%
+		z-index: 1
+	50%
+		z-index: 100
+	100%
+		z-index: 100
++keyframes(dropmovice)
+	0%
+		+transform(translate3d(0,0,0))
+	45%
+		+transform(translate3d(70px,-150%,0) rotate(20deg))
+	100%
+		+transform(translate3d(100px,100%,0) rotate(90deg))
