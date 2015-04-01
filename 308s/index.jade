@@ -83,6 +83,7 @@ block ng-template
 					img(src="img/end-bg.png")
 					.avatar
 						img(ng-src="img/end-{{end.endid}}-avatar.png")
+						img(ng-src="img/copy-{{end.endid}}.png")
 					.q
 						img(ng-src="img/end-{{end.endid}}-q.png")
 					.text
@@ -107,6 +108,8 @@ block ng-template
 							img(src="img/icon-qzone.png")
 					.car
 						img(src="img/car.png")
+					a.text(href="http://m.peugeot.com.cn/car/308s")
+						img(src="img/link.png")
 			.wechat-note(ng-if="over.wechat",ng-click="over.show(false)")
 
 block js

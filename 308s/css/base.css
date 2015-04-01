@@ -1093,8 +1093,8 @@ html, body {
       -webkit-animation-delay: 1s;
               animation-delay: 1s; }
     .Divination .whole .text {
-      top: 67%;
-      left: 0px;
+      top: 75%;
+      left: 10%;
       -webkit-animation: flipInX 1s ease;
               animation: flipInX 1s ease;
       -webkit-animation-fill-mode: both;
@@ -1102,7 +1102,8 @@ html, body {
       -webkit-animation-iteration-count: initial;
               animation-iteration-count: initial;
       -webkit-animation-delay: 2s;
-              animation-delay: 2s; }
+              animation-delay: 2s;
+      width: 80%; }
 
 .nextPonit {
   display: block;
@@ -1125,7 +1126,7 @@ html, body {
   position: relative; }
   .over .content .shareDiv {
     position: absolute;
-    bottom: 7%;
+    bottom: 6%;
     left: 0px; }
   .over .content .icons {
     width: 80%;
@@ -1140,6 +1141,16 @@ html, body {
       text-align: center; }
       .over .content .icons a img {
         width: 80%; }
+  .over .content .text {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px; }
+    .over .content .text img {
+      width: 26.40625%;
+      margin: 0 auto; }
+      .iphone4 .over .content .text img {
+        width: 26.40625%; }
 
 .wechat-note {
   -webkit-transition: all 0.5s ease;
