@@ -229,7 +229,7 @@ loadList = [
 
 _wechat_f = {
   "appid": "",
-  "img_url": "http://campaign.douban.com/files/campaign/peugeot308s/img/share.jpg",
+  "img_url": "http://campaign.douban.com/files/campaign/peugeot308s/img/share-new.jpg",
   "img_width": 300,
   "img_height": 300,
   "link": "http://campaign.douban.com/files/campaign/peugeot308s/default.html",
@@ -239,7 +239,7 @@ _wechat_f = {
 
 _wechat = {
   "appid": "",
-  "img_url": "http://campaign.douban.com/files/campaign/peugeot308s/img/share.jpg",
+  "img_url": "http://campaign.douban.com/files/campaign/peugeot308s/img/share-new.jpg",
   "img_width": 300,
   "img_height": 300,
   "link": "http://campaign.douban.com/files/campaign/peugeot308s/default.html",
